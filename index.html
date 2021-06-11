@@ -370,25 +370,38 @@
 
 
       <div class="col-md-6 content-us">
+        
+        <div class="contact-form" id="contact">
+          
+          <h3 class="text-uppercase">Contact me</h3>
 
-        <form class="contact_us_form row" action="https://formspree.io/f/xwkwyqjp" method="post" id="contactForm" novalidate="novalidate">
-          <div class="form-group col-lg-6">
-              <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-          </div>
-          <div class="form-group col-lg-6">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-          </div>
-          <div class="form-group col-lg-12">
-              <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject*">
-          </div>
-          <div class="form-group col-lg-12">
-              <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
-          </div>
-          <div class="form-group col-lg-12">
-              <button type="submit" value="submit" class="btn submit_btn form-control">Send</button>
-          </div>
-      </form>
-       
+<!---
+          <input type="text" class="form-control" placeholder="Your Name">
+          <input type="text" class="form-control" placeholder="Your Email">
+          <textarea class="form-control" placeholder="Your Message"></textarea>
+          <button type="submit">Send</button>
+
+-->
+
+<form class="contact_us_form row" action="https://formspree.io/f/xwkwyqjp" method="post" id="contactForm" novalidate="novalidate">
+  <div class="form-group col-lg-12">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+  </div>
+  <div class="form-group col-lg-12">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+  </div>
+  <div class="form-group col-lg-12">
+      <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject*">
+  </div>
+  <div class="form-group col-lg-12">
+      <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
+  </div>
+ 
+  <button type="submit">Send</button>
+</form>
+
+
+        </div>
       </div>
     </div>
     <div class="copy pt-4 pb-4">
