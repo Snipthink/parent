@@ -1,522 +1,1313 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <title>SnipThinK</title>
-  <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/85cf8202a1fd49d58c02fa66/script.js"></script> <!-- End cookieyes banner -->
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/85cf8202a1fd49d58c02fa66/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Products Spinner Section ─────────────────────────────────────── */
+    .spt-products-section {
+      padding: 90px 0 100px;
+      background: radial-gradient(ellipse at top left, rgba(5,181,191,0.10) 0%, transparent 55%),
+                  radial-gradient(ellipse at bottom right, rgba(90,126,242,0.12) 0%, transparent 55%),
+                  linear-gradient(160deg, #060f1a 0%, #0a1828 55%, #0e2038 100%);
+      font-family: 'Manrope', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .spt-products-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+    }
+
+    .spt-section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(153,240,238,0.25);
+      background: rgba(13,152,158,0.12);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      color: #99f0ee;
+      margin-bottom: 16px;
+    }
+
+    .spt-section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .spt-section-sub {
+      color: rgba(220,235,248,0.6);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    /* ── Spinner wheel ── */
+    .spt-spinner-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .spt-track {
+      position: relative;
+      width: 380px;
+      height: 380px;
+      margin: 0 auto;
+    }
+
+    .spt-track::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px dashed rgba(153,240,238,0.18);
+    }
+
+    .spt-hub {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #03989e, #0b8f77);
+      box-shadow: 0 0 0 8px rgba(3,152,158,0.15), 0 0 40px rgba(3,152,158,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      z-index: 10;
+      cursor: default;
+    }
+
+    .spt-node {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 64px; height: 64px;
+      margin: -32px 0 0 -32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      border: 2px solid rgba(255,255,255,0.12);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      z-index: 10;
+    }
+
+    .spt-node:hover, .spt-node.active {
+      transform: translate(var(--tx), var(--ty)) scale(1.2) !important;
+      border-color: rgba(153,240,238,0.6);
+      box-shadow: 0 0 24px rgba(3,152,158,0.5);
+    }
+
+    .spt-node-green  { background: linear-gradient(135deg, #03989e, #0b8f77); }
+    .spt-node-orange { background: linear-gradient(135deg, #f29b38, #df6d2f); }
+    .spt-node-blue   { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
+
+    .spt-track svg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+    }
+
+    /* ── Detail card — fixed vertical alignment ── */
+    .spt-detail-card {
+      background: rgba(10,24,40,0.85);
+      border: 1px solid rgba(153,240,238,0.18);
+      border-radius: 24px;
+      padding: 32px 36px;
+      backdrop-filter: blur(12px);
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      transition: opacity 0.35s, transform 0.35s;
+    }
+
+    .spt-detail-card.hidden {
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+    }
+
+    /* Card column — vertically centered beside wheel */
+    .spt-card-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .spt-card-icon {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      flex-shrink: 0;
+    }
+    .spt-card-icon.green  { background: linear-gradient(135deg, #03989e, #0b8f77); box-shadow: 0 10px 24px rgba(3,152,158,0.3); }
+    .spt-card-icon.orange { background: linear-gradient(135deg, #f29b38, #df6d2f); box-shadow: 0 10px 24px rgba(242,155,56,0.3); }
+    .spt-card-icon.blue   { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); box-shadow: 0 10px 24px rgba(30,93,216,0.3); }
+
+    .spt-card-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .spt-tag-green  { background: rgba(3,152,158,0.18); color: #5de8d6; }
+    .spt-tag-orange { background: rgba(242,155,56,0.18); color: #fbbf6a; }
+    .spt-tag-blue   { background: rgba(30,93,216,0.18); color: #93b8f8; }
+
+    .spt-card-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      color: #fff;
+      margin: 0 0 6px;
+      line-height: 1.2;
+    }
+
+    .spt-card-tagline {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .spt-tl-green  { color: #5de8d6; }
+    .spt-tl-orange { color: #fbbf6a; }
+    .spt-tl-blue   { color: #93b8f8; }
+
+    .spt-card-desc {
+      color: rgba(220,235,248,0.72);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .spt-features {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 22px;
+    }
+    .spt-feat {
+      font-size: 0.76rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: rgba(220,235,248,0.75);
+      font-weight: 600;
+    }
+
+    .spt-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      margin-top: auto;
+    }
+    .spt-card-cta:hover { opacity: 0.85; transform: translateX(3px); color: #fff; text-decoration: none; }
+    .spt-cta-green  { background: linear-gradient(135deg, #03989e, #0b8f77); }
+    .spt-cta-orange { background: linear-gradient(135deg, #f29b38, #df6d2f); }
+    .spt-cta-blue   { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
+
+    .spt-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .spt-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: background 0.25s, transform 0.25s;
+      padding: 0;
+    }
+    .spt-dot.active {
+      background: #99f0ee;
+      transform: scale(1.35);
+    }
+
+    .spt-ring-anim {
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      border-top-color: rgba(153,240,238,0.25);
+      animation: spt-spin 8s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes spt-spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 768px) {
+      .spt-track { width: 280px; height: 280px; }
+      .spt-hub { width: 72px; height: 72px; font-size: 1.5rem; }
+      .spt-node { width: 52px; height: 52px; margin: -26px 0 0 -26px; font-size: 1.1rem; }
+      .spt-detail-card { padding: 24px 20px; }
+      .spt-detail-card.hidden { position: static; display: none; }
+    }
+
+    /* ── Nav Products Dropdown ─────────────────────────────────── */
+    .nav-products-dropdown { position: relative; }
+    .nav-products-trigger { display: inline-flex !important; align-items: center; gap: 5px; cursor: pointer; }
+    .nav-products-caret { font-size: 0.7rem; display: inline-block; transition: transform 0.25s; }
+    .nav-products-dropdown:hover .nav-products-caret,
+    .nav-products-dropdown.open .nav-products-caret { transform: rotate(180deg); }
+
+    .nav-products-panel {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      width: 290px;
+      background: linear-gradient(160deg, #071320 0%, #0b1c30 100%);
+      border: 1px solid rgba(153,240,238,0.18);
+      border-radius: 18px;
+      padding: 10px;
+      box-shadow: 0 24px 60px rgba(2,10,21,0.55);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      z-index: 9999;
+      font-family: 'Manrope', sans-serif;
+      overflow: hidden;
+    }
+
+    .nav-products-dropdown:hover .nav-products-panel,
+    .nav-products-dropdown.open .nav-products-panel {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .nav-prod-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #eef5fb;
+      border: 1px solid transparent;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: navCardSlideIn 0.32s forwards;
+    }
+    .nav-prod-card:nth-child(1) { animation-delay: 0.04s; }
+    .nav-prod-card:nth-child(2) { animation-delay: 0.11s; }
+    .nav-prod-card:nth-child(3) { animation-delay: 0.18s; }
+    @keyframes navCardSlideIn { to { opacity: 1; transform: translateY(0); } }
+    .nav-products-dropdown:hover .nav-prod-card,
+    .nav-products-dropdown.open .nav-prod-card { animation: navCardSlideIn 0.32s forwards; }
+    .nav-prod-card:hover { text-decoration: none; transform: translateX(4px); }
+    .nav-prod-green:hover  { background: rgba(3,152,158,0.15);  border-color: rgba(3,152,158,0.3); }
+    .nav-prod-orange:hover { background: rgba(242,155,56,0.15); border-color: rgba(242,155,56,0.3); }
+    .nav-prod-blue:hover   { background: rgba(30,93,216,0.15);  border-color: rgba(30,93,216,0.3); }
+    .nav-prod-card + .nav-prod-card { margin-top: 2px; }
+
+    .nav-prod-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .nav-prod-green  .nav-prod-icon { background: linear-gradient(135deg, #03989e, #0b8f77); }
+    .nav-prod-orange .nav-prod-icon { background: linear-gradient(135deg, #f29b38, #df6d2f); }
+    .nav-prod-blue   .nav-prod-icon { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
+
+    .nav-prod-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+    .nav-prod-name { font-size: 0.88rem; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .nav-prod-sub  { font-size: 0.72rem; color: rgba(220,235,248,0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+    .nav-prod-arrow { font-size: 0.85rem; color: rgba(153,240,238,0.5); flex-shrink: 0; transition: color 0.2s, transform 0.2s; }
+    .nav-prod-card:hover .nav-prod-arrow { color: #99f0ee; transform: translateX(3px); }
+    .nav-products-spinner { display: flex; flex-direction: column; gap: 2px; }
+
+    @media (max-width: 767px) {
+      .nav-products-panel { position: static; transform: none !important; opacity: 1 !important; pointer-events: all !important; width: 100%; border-radius: 12px; margin-top: 6px; box-shadow: none; display: none; }
+      .nav-products-dropdown.open .nav-products-panel { display: block; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       FLOATING PRODUCT BUTTONS
+    ══════════════════════════════════════════════════════════════════ */
+    .fpb-btn {
+      position: fixed;
+      right: 40px;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 6px 20px rgba(2,10,21,0.4);
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s;
+      outline: none;
+      color: #fff;
+      font-family: 'Manrope', sans-serif;
+      z-index: 11800;
+      text-decoration: none;
+    }
+    .fpb-btn-blue   { bottom: 110px; background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
+    .fpb-btn-orange { bottom: 180px; background: linear-gradient(135deg, #f29b38, #df6d2f); }
+    .fpb-btn-green  { bottom: 250px; background: linear-gradient(135deg, #03989e, #0b8f77); }
+    .fpb-btn:hover  { transform: scale(1.12) rotate(-5deg); box-shadow: 0 12px 32px rgba(2,10,21,0.5); }
+
+    .fpb-btn::before {
+      content: attr(data-label);
+      position: absolute;
+      right: 70px; top: 50%;
+      transform: translateY(-50%) translateX(6px);
+      background: rgba(6,15,26,0.95);
+      color: #eef5fb;
+      font-size: 0.71rem; font-weight: 700; letter-spacing: 0.04em;
+      white-space: nowrap; padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.18s, transform 0.18s;
+    }
+    .fpb-btn:hover::before { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+    .fpb-btn::after {
+      content: ''; position: absolute; inset: -5px;
+      border-radius: 50%; border: 2px solid currentColor;
+      opacity: 0; animation: fpbPulse 2.6s ease-in-out infinite;
+    }
+    .fpb-btn-green::after  { color: #03989e; animation-delay: 0s; }
+    .fpb-btn-orange::after { color: #f29b38; animation-delay: 0.8s; }
+    .fpb-btn-blue::after   { color: #5a7ef2; animation-delay: 1.6s; }
+    @keyframes fpbPulse { 0% { transform: scale(1); opacity: 0.4; } 70% { transform: scale(1.6); opacity: 0; } 100% { transform: scale(1.6); opacity: 0; } }
+
+    /* ══════════════════════════════════════════════════════════════════
+       MODAL OVERLAY
+    ══════════════════════════════════════════════════════════════════ */
+    .fpb-overlay {
+      position: fixed; inset: 0;
+      background: rgba(3,9,20,0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 12500;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.26s ease;
+    }
+    .fpb-overlay.open { opacity: 1; pointer-events: all; }
+
+    .fpb-modal {
+      width: 100%; max-width: 680px;
+      max-height: 92vh; overflow-y: auto;
+      border-radius: 28px; overflow: hidden;
+      box-shadow: 0 40px 100px rgba(2,8,20,0.7);
+      transform: translateY(32px) scale(0.95);
+      transition: transform 0.32s cubic-bezier(0.34,1.56,0.64,1);
+      font-family: 'Manrope', sans-serif;
+      scrollbar-width: none;
+    }
+    .fpb-modal::-webkit-scrollbar { display: none; }
+    .fpb-overlay.open .fpb-modal { transform: translateY(0) scale(1); }
+
+    /* ══════════════════════════════════════════════════════════════════
+       MODAL HERO — FIXED: SVG art + text NO OVERLAP
+       Structure:
+         .fpb-hero  (relative container)
+           svg.fpb-hero-bg  (layer 1: art, dimmed, z-index 0)
+           .fpb-hero-scrim  (layer 2: gradient, z-index 1)
+           .fpb-hero-content (layer 3: text, z-index 2)
+           button.fpb-close  (layer 4: button, z-index 3)
+    ══════════════════════════════════════════════════════════════════ */
+    .fpb-hero {
+      position: relative;
+      width: 100%;
+      height: 240px;           /* taller so art has room above text */
+      overflow: hidden;
+      display: block;           /* changed from flex to block */
+    }
+
+    /* Layer 1: SVG art — purely decorative, dimmed */
+    svg.fpb-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      opacity: 0.38;            /* dimmed so it never fights text */
+      z-index: 0;
+    }
+
+    /* Layer 2: gradient scrim — solid at bottom where text lives */
+    .fpb-hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Layer 3: text content — always on top of art */
+    .fpb-hero-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 2;
+      padding: 0 28px 22px;
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+    }
+
+    .fpb-hero-emoji {
+      width: 60px; height: 60px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+
+    .fpb-hero-text { flex: 1; }
+
+    .fpb-hero-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 800;
+      padding: 3px 11px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+
+    .fpb-hero-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.65rem;
+      color: #fff;
+      margin: 0 0 5px;          /* space below name for tagline */
+      line-height: 1.15;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* TAGLINE — clearly visible, never hidden */
+    .fpb-hero-sub {
+      display: block;           /* force block so it never collapses */
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin: 0;
+      opacity: 1;               /* full opacity, no transparency */
+      line-height: 1.4;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+
+    /* Layer 4: close button */
+    .fpb-close {
+      position: absolute;
+      top: 14px; right: 16px;
+      z-index: 3;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.4);
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.18s;
+      line-height: 1;
+    }
+    .fpb-close:hover { background: rgba(0,0,0,0.6); color: #fff; }
+
+    /* ── Modal Body ── */
+    .fpb-modal-body {
+      padding: 24px 28px 28px;
+      border-top: 1px solid rgba(255,255,255,0.08); /* clean separator from hero */
+    }
+
+    .fpb-modal-desc {
+      color: rgba(220,235,248,0.72);
+      font-size: 0.88rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .fpb-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .fpb-stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+    .fpb-stat-val { display: block; font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 3px; }
+    .fpb-stat-lbl { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: rgba(220,235,248,0.4); font-weight: 600; }
+
+    .fpb-feats { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
+    .fpb-feat {
+      font-size: 0.72rem; padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: rgba(220,235,248,0.78);
+      font-weight: 600;
+    }
+
+    .fpb-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .fpb-cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 11px 22px; border-radius: 999px;
+      font-size: 0.83rem; font-weight: 800;
+      color: #fff; text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      border: none; cursor: pointer;
+    }
+    .fpb-cta:hover { opacity: 0.84; transform: translateX(3px); color: #fff; text-decoration: none; }
+    .fpb-cta-green  { background: linear-gradient(135deg, #03989e, #0b8f77); }
+    .fpb-cta-orange { background: linear-gradient(135deg, #f29b38, #df6d2f); }
+    .fpb-cta-blue   { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
+    .fpb-cta-ghost  { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: rgba(220,235,248,0.7); }
+    .fpb-cta-ghost:hover { border-color: rgba(255,255,255,0.3); color: #fff; transform: none; }
+
+    @media (max-width: 500px) {
+      .fpb-btn { right: 14px; width: 54px; height: 54px; font-size: 1.2rem; }
+      .fpb-btn-blue   { bottom: 100px; }
+      .fpb-btn-orange { bottom: 164px; }
+      .fpb-btn-green  { bottom: 228px; }
+      .fpb-hero { height: 200px; }
+      .fpb-hero-name { font-size: 1.3rem; }
+      .fpb-modal-body { padding: 18px 20px 22px; }
+      .fpb-hero-content { padding: 0 16px 18px; }
+    }
+  </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md  fixed-top maine-menu">
+
+  <!-- ── NAVBAR ──────────────────────────────────────────────────────────── -->
+  <nav class="navbar navbar-expand-md fixed-top maine-menu">
     <div class="container">
-      <button class="navbar-toggler ml-auto" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"> <span class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span> </button>
+      <button class="navbar-toggler ml-auto" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse">
+        <span class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span>
+      </button>
       <div id="my-nav" class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active "> <a class="nav-link" href="#">Home</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#about" tabindex="-1" aria-disabled="true">About</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#services" tabindex="-1" aria-disabled="true">services</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#portfolio" tabindex="-1" aria-disabled="true">Portfolio</a></li>
-           <!--  <li class="nav-item"> <a class="nav-link" href="#testimonial" tabindex="-1" aria-disabled="true">Testimonial</a></li>
-       <li class="nav-item"> <a class="nav-link" href="blog.html" tabindex="-1" aria-disabled="true">Blog</a></li> -->
-       <li class="nav-item"> <a class="nav-link" href="tcpp.html" tabindex="-1" aria-disabled="true">Terms and Conditions</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#contact" tabindex="-1" aria-disabled="true">Contact</a></li>
+          <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item nav-products-dropdown" id="navProductsItem">
+            <a class="nav-link nav-products-trigger" href="#our-products" id="navProductsTrigger">
+              Products <span class="nav-products-caret">▾</span>
+            </a>
+            <div class="nav-products-panel" id="navProductsPanel">
+              <div class="nav-products-spinner" id="navSpinner">
+                <a class="nav-prod-card nav-prod-green" href="crinit/crinit.html">
+                  <div class="nav-prod-icon">🌾</div>
+                  <div class="nav-prod-info">
+                    <span class="nav-prod-name">Crinit</span>
+                    <span class="nav-prod-sub">Smart Farm to Fork</span>
+                  </div>
+                  <span class="nav-prod-arrow">→</span>
+                </a>
+                <a class="nav-prod-card nav-prod-orange" href="futuretrack/futuretrack.html">
+                  <div class="nav-prod-icon">🎯</div>
+                  <div class="nav-prod-info">
+                    <span class="nav-prod-name">FutureTrack</span>
+                    <span class="nav-prod-sub">Smart Ed-Tech Platform</span>
+                  </div>
+                  <span class="nav-prod-arrow">→</span>
+                </a>
+                <a class="nav-prod-card nav-prod-blue" href="https://socialmapwork.com/" target="_blank" rel="noopener noreferrer">
+                  <div class="nav-prod-icon">🗺️</div>
+                  <div class="nav-prod-info">
+                    <span class="nav-prod-name">SocialMapWork</span>
+                    <span class="nav-prod-sub">Map Based Problem Reporting</span>
+                  </div>
+                  <span class="nav-prod-arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="tcpp.html">Terms and Conditions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <!-- ── HERO BANNER ──────────────────────────────────────────────────────── -->
   <div class="container-fluid fh5co-home-banner">
-    <div class="card"> <img class="card-img" src="assets/img/banner-img.jpg" alt="">
+    <div class="card">
+      <img class="card-img" src="assets/img/banner-img.jpg" alt="">
       <div class="card-img-overlay">
         <div class="center-text">
-          <h2 class="card-title"> We turn your ideas into digital reality</h2>
-       <!--   <a href="#" class="btn">
-            <svg width="201" height="51" viewBox="0 0 201 51">
-              <defs>
-                <style>
-                .cls-1 {
-                  fill: none;
-                  stroke-width: 1px;
-                  stroke: url(#linear-gradient);
-                }
-              </style>
-              <linearGradient id="linear-gradient" x1="140.508" y1="50.5" x2="60.492" y2="0.5" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#e90e65"/>
-                <stop offset="1" stop-color="#fff"/>
-              </linearGradient>
-            </defs>
-            <rect id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-1" x="0.5" y="0.5" width="200" height="50" rx="25" ry="25"/>
-          </svg>
-        Explore</a> 
-      
-        --> </div>
+          <h2 class="card-title">We turn your ideas into digital reality</h2>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- ── TWO IMAGES ───────────────────────────────────────────────────────── -->
   <div class="container-fluid fh5co-two-img">
     <div class="row">
       <div class="col-sm-6 pr-0 pl-0">
-        <div class="card-img-overlay"> </div>
-        <div class="card"> <img class="card-img" src="assets/img/girl1.jpg" alt="">
-          <div class="card-img-overlay"> </div>
-        </div>
+        <div class="card"><img class="card-img" src="assets/img/girl1.jpg" alt=""><div class="card-img-overlay"></div></div>
       </div>
       <div class="col-sm-6 pr-0 pl-0">
-        <div class="card"> <img class="card-img" src="assets/img/girl2.jpg" alt="">
-          <div class="card-img-overlay"> </div>
-        </div>
+        <div class="card"><img class="card-img" src="assets/img/girl2.jpg" alt=""><div class="card-img-overlay"></div></div>
       </div>
     </div>
   </div>
 
+  <!-- ── ABOUT + SERVICES ─────────────────────────────────────────────────── -->
   <div class="container-fluid fh5co-recent-work">
     <div class="container contact-pop">
       <div class="row">
-        <div class="col-md-6  pr-0">
-          <div class="card"> <img class="card-img w-100" src="assets/img/logo.png" alt="">
-           <!--- <div class="card-img-overlay"> </div> -->
-          </div>
+        <div class="col-md-6 pr-0">
+          <div class="card"><img class="card-img w-100" src="assets/img/logo.png" alt=""></div>
         </div>
-
         <div class="col-md-6 pl-0" id="about">
           <div class="content">
             <h3>SnipThinK</h3>
             <h4>Imagine To Innovate</h4>
             <hr />
             <p>"Work hard to do something great, till your soul comes out from your body and says proudly this body is not useless. It helps billions of people to make their life easier and better than they had, and return back to you, to help more"</p>
-            <a href="about.html" class="btn">ABOUT US</a> </div>
+            <a href="about.html" class="btn">ABOUT US</a>
           </div>
         </div>
       </div>
-    
+
       <div class="container recent" id="services">
         <div class="row">
           <h2>We Provide</h2>
           <div class="owl-carousel owl-carousel2 owl-theme">
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/65.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Website Design</h5>
-                    <p class="card-text">LAMP, MEAN, MERN and Django</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/79.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Mobile App Development</h5>
-                    <p class="card-text">IOS and Android App</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/75.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Cloud Computting </h5>
-                    <p class="card-text">AWS, GCP, Azure, Server Setup</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/76.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Big-Data</h5>
-                    <p class="card-text">Hadoop, Sparks,Cloudera Scala..</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/78.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Internet of Things</h5>
-                    <p class="card-text">NodeMCU, Raspberry Pi, Arduino, Atmel</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/77.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Artificial Intelligence</h5>
-                    <p class="card-text">NLP, Chatbot, ML, TensorFlow, AML</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!------>
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/66.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Digital Marketing Content</h5>
-                    <p class="card-text">Content for Social Media</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/67.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Buiness Email</h5>
-                    <p class="card-text">Get email like info@snipthink.com </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-       
-
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/69.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Video Advertisement </h5>
-                    <p class="card-text">We create premium Ads for company</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/70.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Business Advice</h5>
-                    <p class="card-text">Grow your business with us</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div><div class="card"><img class="card-img" src="assets/img/65.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Website Design</h5><p class="card-text">LAMP, MEAN, MERN and Django</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/79.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Mobile App Development</h5><p class="card-text">IOS and Android App</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/75.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Cloud Computing</h5><p class="card-text">AWS, GCP, Azure, Server Setup</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/76.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Big-Data</h5><p class="card-text">Hadoop, Sparks, Cloudera Scala..</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/78.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Internet of Things</h5><p class="card-text">NodeMCU, Raspberry Pi, Arduino, Atmel</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/77.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Artificial Intelligence</h5><p class="card-text">NLP, Chatbot, ML, TensorFlow, AML</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/66.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Digital Marketing Content</h5><p class="card-text">Content for Social Media</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/67.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Business Email</h5><p class="card-text">Get email like name@company.com</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/69.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Video Advertisement</h5><p class="card-text">We create premium Ads for company</p></div></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/70.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Business Advice</h5><p class="card-text">Grow your business with us</p></div></div></div></div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       OUR PRODUCTS — SPINNER SECTION
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="spt-products-section" id="our-products">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6">
+          <div class="spt-section-kicker">✦ Our Products</div>
+          <h2 class="spt-section-title">Built to Solve<br>Real Problems</h2>
+          <p class="spt-section-sub">Three products. Three domains. One mission — transforming the way people farm, learn, and participate in civic life.</p>
+        </div>
+        <div class="col-lg-6 d-none d-lg-flex justify-content-end align-items-center">
+          <span style="color:rgba(220,235,248,0.35); font-size:0.8rem; font-family:'Manrope',sans-serif; font-weight:600; letter-spacing:0.08em;">CLICK A NODE TO EXPLORE →</span>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+
+        <!-- LEFT: Spinner wheel -->
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <div class="spt-spinner-wrap">
+            <div class="spt-track" id="sptTrack">
+              <div class="spt-ring-anim"></div>
+              <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
+                <line id="spt-line-0" x1="190" y1="190" x2="190" y2="50"  stroke="rgba(153,240,238,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+                <line id="spt-line-1" x1="190" y1="190" x2="350" y2="280" stroke="rgba(242,155,56,0.15)"  stroke-width="1" stroke-dasharray="4 4"/>
+                <line id="spt-line-2" x1="190" y1="190" x2="30"  y2="280" stroke="rgba(90,126,242,0.15)"  stroke-width="1" stroke-dasharray="4 4"/>
+              </svg>
+              <div class="spt-hub">🚀</div>
+              <div class="spt-node spt-node-green active" id="spt-node-0" style="--tx:0px; --ty:-140px; transform:translate(0px,-140px);" onclick="sptSelect(0)" title="Crinit">🌾</div>
+              <div class="spt-node spt-node-orange"        id="spt-node-1" style="--tx:138px; --ty:78px; transform:translate(138px,78px);"   onclick="sptSelect(1)" title="FutureTrack">🎯</div>
+              <div class="spt-node spt-node-blue"          id="spt-node-2" style="--tx:-138px; --ty:78px; transform:translate(-138px,78px);" onclick="sptSelect(2)" title="SocialMapWork">🗺️</div>
+            </div>
+            <div class="spt-dots">
+              <button class="spt-dot active" id="spt-dot-0" onclick="sptSelect(0)" aria-label="Crinit"></button>
+              <button class="spt-dot"        id="spt-dot-1" onclick="sptSelect(1)" aria-label="FutureTrack"></button>
+              <button class="spt-dot"        id="spt-dot-2" onclick="sptSelect(2)" aria-label="SocialMapWork"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Detail cards — wrapped in relative container so hidden cards stack correctly -->
+        <div class="col-lg-7 spt-card-col">
+          <div style="position:relative; min-height:320px;">
+
+            <!-- Card 0: Crinit -->
+            <div class="spt-detail-card" id="spt-card-0">
+              <div class="spt-card-icon green">🌾</div>
+              <span class="spt-card-tag spt-tag-green">Agriculture &amp; IoT</span>
+              <h3 class="spt-card-name">Crinit</h3>
+              <p class="spt-card-tagline spt-tl-green">Smart Farm to Fork</p>
+              <p class="spt-card-desc">Crinit is an IoT-powered connected farming platform that bridges the gap between cultivation and consumption. It delivers real-time sensor-driven crop management, agricultural automation, and end-to-end supply chain visibility — giving farmers intelligent tools to monitor soil health, water usage, and harvest readiness, while ensuring consumers receive verified, traceable produce directly from source.</p>
+              <div class="spt-features">
+                <span class="spt-feat">IoT Sensors</span>
+                <span class="spt-feat">Crop Monitoring</span>
+                <span class="spt-feat">Smart Irrigation</span>
+                <span class="spt-feat">Supply Chain Tracing</span>
+                <span class="spt-feat">Agricultural Automation</span>
+                <span class="spt-feat">Real-time Alerts</span>
+              </div>
+              <a href="crinit/crinit.html" class="spt-card-cta spt-cta-green">Explore Crinit <span>→</span></a>
+            </div>
+
+            <!-- Card 1: FutureTrack -->
+            <div class="spt-detail-card hidden" id="spt-card-1">
+              <div class="spt-card-icon orange">🎯</div>
+              <span class="spt-card-tag spt-tag-orange">Education Technology</span>
+              <h3 class="spt-card-name">FutureTrack</h3>
+              <p class="spt-card-tagline spt-tl-orange">Smart Ed-Tech Platform</p>
+              <p class="spt-card-desc">FutureTrack transforms traditional paper-based education into a fully digital, guided experience. Designed to empower students, teachers, and institutions, it offers structured focus workflows, progress tracking dashboards, and measurable learning outcomes. From timed practice sessions to performance analytics, FutureTrack turns everyday study habits into data-driven growth journeys.</p>
+              <div class="spt-features">
+                <span class="spt-feat">Focus Workflows</span>
+                <span class="spt-feat">Progress Tracking</span>
+                <span class="spt-feat">Digital Assessments</span>
+                <span class="spt-feat">Analytics Dashboard</span>
+                <span class="spt-feat">Student Engagement</span>
+                <span class="spt-feat">Paper-free Learning</span>
+              </div>
+              <a href="futuretrack/futuretrack.html" class="spt-card-cta spt-cta-orange">Explore FutureTrack <span>→</span></a>
+            </div>
+
+            <!-- Card 2: SocialMapWork -->
+            <div class="spt-detail-card hidden" id="spt-card-2">
+              <div class="spt-card-icon blue">🗺️</div>
+              <span class="spt-card-tag spt-tag-blue">Civic Tech &amp; Community</span>
+              <h3 class="spt-card-name">SocialMapWork</h3>
+              <p class="spt-card-tagline spt-tl-blue">Map Based Problem Reporting System</p>
+              <p class="spt-card-desc">SocialMapWork is a community-powered civic action platform that puts local issues on the map — literally. Citizens can pin, report, and track public problems like potholes, broken infrastructure, or sanitation concerns directly on an interactive map. Built around social visibility and public engagement, it creates accountability between communities and local authorities, turning passive frustration into organised, location-tagged civic action.</p>
+              <div class="spt-features">
+                <span class="spt-feat">Interactive Map</span>
+                <span class="spt-feat">Issue Reporting</span>
+                <span class="spt-feat">Civic Engagement</span>
+                <span class="spt-feat">Community Voting</span>
+                <span class="spt-feat">Authority Alerts</span>
+                <span class="spt-feat">Status Tracking</span>
+              </div>
+              <a href="https://socialmapwork.com/" target="_blank" rel="noopener noreferrer" class="spt-card-cta spt-cta-blue">Visit SocialMapWork <span>→</span></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTFOLIO ──────────────────────────────────────────────────────── -->
   <div class="container-fluid recent fh5co-portfolio" id="portfolio">
     <div class="container">
       <h2>Portfolios</h2>
       <div class="row">
-        <div class="bx bx-1">
-          <div class="card"> <img class="card-img" src="assets/img/portfolio-img1.png" alt="">
-            <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-              <div class="bottom-text">
-                <h5 class="card-title">Graphics Design </h5>
-              </div>
-            </div>
+        <div class="bx bx-1"><div class="card"><img class="card-img" src="assets/img/portfolio-img1.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Graphics Design</h5></div></div></div></div>
+        <div class="bx bx-2"><div class="card"><img class="card-img" src="assets/img/portfolio-img2.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Dynamic Website</h5></div></div></div></div>
+        <div class="bx bx-3"><div class="card"><img class="card-img" src="assets/img/portfolio-img3.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Content Creation</h5></div></div></div></div>
+        <div class="bx bx-4"><div class="card"><img class="card-img" src="assets/img/portfolio-img4.png" alt=""><div class="card-img-overlay"><a href="https://www.crinit.com"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a><div class="bottom-text"><h5 class="card-title">Static Website</h5></div></div></div></div>
+        <div class="bx bx-middle" style="padding:0;">
+          <div class="bx bx-5"><div class="card"><img class="card-img" src="assets/img/portfolio-img5.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Video Advertisement</h5></div></div></div></div>
+          <div class="bx bx-6"><div class="card"><img class="card-img" src="assets/img/portfolio-img6.jpg" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Artificial Intelligence</h5></div></div></div></div>
+          <div>
+            <div class="bx bx-7"><div class="card"><img class="card-img" src="assets/img/portfolio-img7.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Business Plan</h5></div></div></div></div>
+            <div class="bx bx-8"><div class="card"><img class="card-img" src="assets/img/portfolio-img8.jpg" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Cloud Computing</h5></div></div></div></div>
           </div>
         </div>
-        <div class="bx bx-2">
-          <div class="card"> <img class="card-img" src="assets/img/portfolio-img2.png" alt="">
-            <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-              <div class="bottom-text">
-                <h5 class="card-title">Dynamic Website</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bx bx-3">
-          <div class="card"> <img class="card-img" src="assets/img/portfolio-img3.png" alt="">
-            <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-              <div class="bottom-text">
-                <h5 class="card-title">Content Creation</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bx bx-4">
-          <div class="card"> <img class="card-img" src="assets/img/portfolio-img4.png" alt="">
-            <div class="card-img-overlay"> <a href="https://www.crinit.com"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a>
-              <div class="bottom-text">
-                <h5 class="card-title">Static Website</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bx bx-middle" style="padding: 0;">
-          <div class="bx bx-5">
-            <div class="card"> <img class="card-img" src="assets/img/portfolio-img5.png" alt="">
-              <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                <div class="bottom-text">
-                  <h5 class="card-title">Video Advertisement</h5>
-                </div>
-              </div>
-            </div>
-          </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="bx bx-6">
-            <div class="card"> <img class="card-img" src="assets/img/portfolio-img6.jpg" alt="">
-              <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                <div class="bottom-text">
-                  <h5 class="card-title">Artificial Intelligence </h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-
-            <div class="bx bx-7">
-              <div class="card"> <img class="card-img" src="assets/img/portfolio-img7.png" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Business Plan</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bx bx-8">
-              <div class="card"> <img class="card-img" src="assets/img/portfolio-img8.jpg" alt="">
-                <div class="card-img-overlay"> <!--<a href="#"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a> -->
-                  <div class="bottom-text">
-                    <h5 class="card-title">Cloud Computting</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!---
-  <div class="container-fluid fh5co-recent-work services">
-    <div class="container recent">
-      <div class="row">
-        <h2>services of the month</h2>
-        <div class="owl-carousel owl-carousel3 owl-theme">
-          <div>
-            <div class="card"> <img class="card-img" src="assets/img/services-img1.png" alt="">
-              <div class="card-img-overlay">
-                <div class="bottom-text">
-                  <h5 class="card-title">Sed ut perspiciatis unde &nbsp; iste natus error sit volup</h5>
-                  <a href="#">Read more <img src="assets/img/double-right.svg" alt=""></a> 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card"> <img class="card-img" src="assets/img/services-img2.png"  alt="">
-              <div class="card-img-overlay">
-                <div class="bottom-text">
-                  <h5 class="card-title">Sed ut perspiciatis unde &nbsp; iste natus error sit volup</h5>
-                  <a href="#">Read more <img src="assets/img/double-right.svg" alt=""></a> 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card"> <img class="card-img" src="assets/img/services-img3.png" alt="">
-              <div class="card-img-overlay">
-                <div class="bottom-text">
-                  <h5 class="card-title">Sed ut perspiciatis unde &nbsp; iste natus error sit volup</h5>
-                  <a href="#">Read more <img src="assets/img/double-right.svg" alt=""></a> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
----------------------
-  <div class="container-fluid fh5co-about-me" id="testimonial">
-    <div id="my-carousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="card"> <img class="card-img d-block w-100" src="assets/img/about-me-img.jpg" alt="">
-          <div class="card-img-overlay">
-            <h2>People says about me</h2>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-caption d-md-block"> <img src="assets/img/quote-icon.png" alt="">
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-          </div>
-        </div>
-        <div class="carousel-item active">
-          <div class="carousel-caption d-md-block"> <img src="assets/img/quote-icon.png" alt="">
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-caption d-md-block"> <img src="assets/img/quote-icon.png" alt="">
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-          </div>
-        </div>
-      </div>
-      <ol class="carousel-indicators">
-        <li data-target="#my-carousel" data-slide-to="0" > <img src="assets/img/about-me-img1.png" alt=""> <span>Sherrie Rose</span> </li>
-        <li class="active" data-target="#my-carousel" data-slide-to="1" aria-current="location"> <img src="assets/img/about-me-img2.png" alt=""> <span>Sherrie Rose</span> </li>
-        <li data-target="#my-carousel" data-slide-to="2"> <img src="assets/img/about-me-img3.png" alt=""> <span>Sherrie Rose</span> </li>
-      </ol>
-    </div>
-  </div>
--->
+  <!-- ── SOCIAL / INSTAGRAM ──────────────────────────────────────────────── -->
   <div class="container-fluid fh5co-insta-feed services">
     <div class="container recent">
       <div class="row mb-5 pb-5">
         <div class="col-lg-6">
           <div class="twit-box">
-            <div class="media mb-3"> <img class="align-self-start mr-3 rounded-circle" src="assets/img/snipthinktwit.png" alt="">
+            <div class="media mb-3">
+              <img class="align-self-start mr-3 rounded-circle" src="assets/img/snipthinktwit.png" alt="">
               <div class="media-body">
                 <h5 class="mb-0 mt-3">SnipThinK</h5>
                 <p>@snipthink</p>
               </div>
             </div>
-            <p class="text-justify">"Our mission is to observe people's everyday life common problems in a systematic way to solve them. by deep thinking, planing with the best strategy to develop the easiest possible tech-based solution for them." </p>
-            <div class="clearfix"> <a href="https://twitter.com/snipthink" class="btn btn-primary mt-2 float-right">Follow</a> </div>
+            <p class="text-justify">"Our mission is to observe people's everyday life common problems in a systematic way to solve them. by deep thinking, planing with the best strategy to develop the easiest possible tech-based solution for them."</p>
+            <div class="clearfix"><a href="https://twitter.com/snipthink" class="btn btn-primary mt-2 float-right">Follow</a></div>
           </div>
         </div>
         <div class="col-lg-6 feed-caro">
           <h2>Instagram feed</h2>
-
           <div class="owl-carousel owl-carousel4 owl-theme">
-
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/feed-img1.png" alt="">
-                <div class="card-img-overlay"> 
-
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/feed-img2.png"  alt="">
-                <div class="card-img-overlay"> 
-                </div>
-              </div>
-            </div>
-
-         
-          <div>
-              <div class="card"> <img class="card-img" src="assets/img/feed-img5.png"  alt="">
-                <div class="card-img-overlay"> </div>
-              </div>
-            </div>
-        
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/feed-img4.png"  alt="">
-                <div class="card-img-overlay"> </div>
-              </div>
-            </div>
-        
-<!--
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/feed-img3.png"  alt="">
-                <div class="card-img-overlay"> </div>
-              </div>
-            </div>
--->
-            <div>
-              <div class="card"> <img class="card-img" src="assets/img/feed-img6.png"  alt="">
-                <div class="card-img-overlay"> </div>
-              </div>
-            </div>
-        
-
-      </div>
-      </div>
+            <div><div class="card"><img class="card-img" src="assets/img/feed-img1.png" alt=""><div class="card-img-overlay"></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/feed-img2.png" alt=""><div class="card-img-overlay"></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/feed-img5.png" alt=""><div class="card-img-overlay"></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/feed-img4.png" alt=""><div class="card-img-overlay"></div></div></div>
+            <div><div class="card"><img class="card-img" src="assets/img/feed-img6.png" alt=""><div class="card-img-overlay"></div></div></div>
+          </div>
+        </div>
       </div>
       <h2 class="text-center d-block">Our Social Media</h2>
       <div class="row social-links">
         <ul class="nav mx-auto">
-          <li class="nav-item"> <a class="nav-link" href="https://www.facebook.com/SnipThinK-106710934942936"><img src="assets/img/facebook.png" alt=""></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="https://twitter.com/snipthink"><img src="assets/img/twitter.png" alt=""></a> </li>
-         <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/snipthink/"><img src="assets/img/instagram.png" alt=""></a> </li>
-        <!--  <li class="nav-item"> <a class="nav-link" href="#"><img src="assets/img/google-plus.png" alt=""></a> </li> -->
+          <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/SnipThinK-106710934942936"><img src="assets/img/facebook.png" alt=""></a></li>
+          <li class="nav-item"><a class="nav-link" href="https://twitter.com/snipthink"><img src="assets/img/twitter.png" alt=""></a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/snipthink/"><img src="assets/img/instagram.png" alt=""></a></li>
         </ul>
       </div>
     </div>
   </div>
-  <footer class="container-fluid p-0 pr-0">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://api.whatsapp.com/send?phone=918952872163&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
-<i class="fa fa-whatsapp my-float"></i>
-</a>
-    
-    
-    
-    <div class="row mr-0 ml-0">
-      <div class="col-md-6 pr-0 pl-0 map">
 
-     <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13035.46901327725!2d-80.85396551628644!3d35.234674411422155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8856a03af474f38f%3A0xf8301daadf5f7670!2sFourth+Ward%2C+Charlotte%2C+NC%2C+USA!5e0!3m2!1sen!2sin!4v1551001218548"  style="border:0" allowfullscreen></iframe>
-     -->
-        <iframe class="map" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=26.1373431,86.3556195&amp;key=AIzaSyAlED-1aT9PsSNL8g5fiT3oVS48eaSAztY"></iframe>
-       
-  }
+  <!-- ── 3 FLOATING BUTTONS ─────────────────────────────────────────────── -->
+  <button class="fpb-btn fpb-btn-green"  data-label="Crinit — Farm to Fork"         onclick="fpbOpen('crinit')"        aria-label="Crinit">🌾</button>
+  <button class="fpb-btn fpb-btn-orange" data-label="FutureTrack — Smart Ed-Tech"   onclick="fpbOpen('futuretrack')"   aria-label="FutureTrack">🎯</button>
+  <button class="fpb-btn fpb-btn-blue"   data-label="SocialMapWork — Civic Mapping" onclick="fpbOpen('socialmapwork')" aria-label="SocialMapWork">🗺️</button>
 
-   
-                 
-    
+  <!-- ═══ Modal: Crinit ═══════════════════════════════════════════════════ -->
+  <div class="fpb-overlay" id="fpb-overlay-crinit" onclick="fpbOverlayClose(event,'crinit')">
+    <div class="fpb-modal">
+      <div class="fpb-hero">
+
+        <!-- Layer 1: SVG art (dimmed via opacity on the element) -->
+        <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="crinit-sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#042d1a"/>
+              <stop offset="100%" stop-color="#0a4a2c"/>
+            </linearGradient>
+            <linearGradient id="crinit-ground" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0d5c34"/>
+              <stop offset="100%" stop-color="#073d22"/>
+            </linearGradient>
+            <radialGradient id="crinit-sun" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#f5e642" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#f5e642" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="680" height="190" fill="url(#crinit-sky)"/>
+          <rect y="115" width="680" height="75" fill="url(#crinit-ground)"/>
+          <circle cx="580" cy="55" r="44" fill="url(#crinit-sun)"/>
+          <circle cx="580" cy="55" r="22" fill="#f5e642" opacity="0.7"/>
+          <g opacity="0.55" stroke="#22c468" stroke-width="1.5">
+            <line x1="0" y1="130" x2="680" y2="130"/>
+            <line x1="0" y1="144" x2="680" y2="144"/>
+            <line x1="0" y1="158" x2="680" y2="158"/>
+            <line x1="0" y1="172" x2="680" y2="172"/>
+          </g>
+          <g fill="#22c468" opacity="0.7">
+            <rect x="40"  y="100" width="4" height="28" rx="2"/>
+            <rect x="100" y="96"  width="4" height="32" rx="2"/>
+            <rect x="160" y="103" width="4" height="25" rx="2"/>
+            <rect x="220" y="98"  width="4" height="30" rx="2"/>
+            <rect x="280" y="101" width="4" height="27" rx="2"/>
+            <rect x="340" y="95"  width="4" height="33" rx="2"/>
+            <rect x="400" y="102" width="4" height="26" rx="2"/>
+          </g>
+          <g fill="#2ee87a" opacity="0.6">
+            <ellipse cx="44"  cy="108" rx="10" ry="4" transform="rotate(-30 44 108)"/>
+            <ellipse cx="104" cy="104" rx="10" ry="4" transform="rotate(25 104 104)"/>
+            <ellipse cx="164" cy="111" rx="10" ry="4" transform="rotate(-25 164 111)"/>
+            <ellipse cx="224" cy="106" rx="10" ry="4" transform="rotate(30 224 106)"/>
+          </g>
+          <g>
+            <circle cx="120" cy="72" r="8" fill="#03989e" opacity="0.9"/>
+            <circle cx="120" cy="72" r="14" fill="#03989e" opacity="0.2"/>
+            <line x1="120" y1="80" x2="120" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+            <circle cx="260" cy="60" r="8" fill="#03989e" opacity="0.9"/>
+            <circle cx="260" cy="60" r="14" fill="#03989e" opacity="0.2"/>
+            <line x1="260" y1="68" x2="260" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+            <circle cx="420" cy="66" r="8" fill="#03989e" opacity="0.9"/>
+            <circle cx="420" cy="66" r="14" fill="#03989e" opacity="0.2"/>
+            <line x1="420" y1="74" x2="420" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+          </g>
+          <g stroke="#5de8d6" stroke-width="1" fill="none" opacity="0.5">
+            <path d="M112,60 Q120,50 128,60"/>
+            <path d="M107,54 Q120,40 133,54"/>
+            <path d="M252,48 Q260,38 268,48"/>
+            <path d="M247,42 Q260,28 273,42"/>
+          </g>
+        </svg>
+
+        <!-- Layer 2: gradient scrim — green theme, opaque at bottom -->
+        <div class="fpb-hero-scrim" style="background: linear-gradient(to top, rgba(4,22,14,1) 0%, rgba(4,22,14,0.92) 30%, rgba(4,22,14,0.55) 60%, rgba(4,22,14,0.1) 100%);"></div>
+
+        <!-- Layer 3: text content -->
+        <div class="fpb-hero-content">
+          <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#03989e,#0b8f77);">🌾</div>
+          <div class="fpb-hero-text">
+            <span class="fpb-hero-tag" style="background:rgba(3,152,158,0.3);color:#5de8d6;">Agriculture &amp; IoT</span>
+            <h2 class="fpb-hero-name">Crinit</h2>
+            <span class="fpb-hero-sub" style="color:#5de8d6;">Smart Farm to Fork</span>
+          </div>
+        </div>
+
+        <!-- Layer 4: close button -->
+        <button class="fpb-close" onclick="fpbClose('crinit')" aria-label="Close">&times;</button>
       </div>
 
+      <div class="fpb-modal-body" style="background:linear-gradient(160deg,#071320,#0b1c30);">
+        <p class="fpb-modal-desc">Crinit is an IoT-powered connected farming platform bridging cultivation and consumption. Real-time sensor-driven crop management, agricultural automation, and end-to-end supply chain visibility give farmers intelligent tools to monitor soil health, water usage, and harvest readiness — while ensuring consumers receive verified, traceable produce directly from source.</p>
+        <div class="fpb-stats">
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">Real-time</span><span class="fpb-stat-lbl">Monitoring</span></div>
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">IoT</span><span class="fpb-stat-lbl">Sensor Network</span></div>
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">Farm→Fork</span><span class="fpb-stat-lbl">Traceability</span></div>
+        </div>
+        <div class="fpb-feats">
+          <span class="fpb-feat">IoT Sensors</span><span class="fpb-feat">Crop Monitoring</span>
+          <span class="fpb-feat">Smart Irrigation</span><span class="fpb-feat">Supply Chain Tracing</span>
+          <span class="fpb-feat">Agricultural Automation</span><span class="fpb-feat">Harvest Analytics</span>
+          <span class="fpb-feat">Weather Integration</span><span class="fpb-feat">Mobile Alerts</span>
+        </div>
+        <div class="fpb-cta-row">
+          <a href="crinit/crinit.html" class="fpb-cta fpb-cta-green">Explore Crinit →</a>
+          <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('crinit')">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- ═══ Modal: FutureTrack ══════════════════════════════════════════════ -->
+  <div class="fpb-overlay" id="fpb-overlay-futuretrack" onclick="fpbOverlayClose(event,'futuretrack')">
+    <div class="fpb-modal">
+      <div class="fpb-hero">
+
+        <!-- Layer 1: SVG art -->
+        <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ft-bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1c1200"/>
+              <stop offset="100%" stop-color="#2e1e00"/>
+            </linearGradient>
+            <linearGradient id="ft-bar1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f29b38"/>
+              <stop offset="100%" stop-color="#df6d2f"/>
+            </linearGradient>
+            <linearGradient id="ft-bar2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#fbbf6a"/>
+              <stop offset="100%" stop-color="#f29b38"/>
+            </linearGradient>
+          </defs>
+          <rect width="680" height="190" fill="url(#ft-bg)"/>
+          <g stroke="#f29b38" stroke-width="0.4" opacity="0.12">
+            <line x1="0" y1="30"  x2="680" y2="30"/>  <line x1="0" y1="60"  x2="680" y2="60"/>
+            <line x1="0" y1="90"  x2="680" y2="90"/>  <line x1="0" y1="120" x2="680" y2="120"/>
+            <line x1="0" y1="150" x2="680" y2="150"/> <line x1="0" y1="180" x2="680" y2="180"/>
+            <line x1="80"  y1="0" x2="80"  y2="190"/> <line x1="160" y1="0" x2="160" y2="190"/>
+            <line x1="240" y1="0" x2="240" y2="190"/> <line x1="320" y1="0" x2="320" y2="190"/>
+            <line x1="400" y1="0" x2="400" y2="190"/> <line x1="480" y1="0" x2="480" y2="190"/>
+            <line x1="560" y1="0" x2="560" y2="190"/>
+          </g>
+          <g>
+            <rect x="60"  y="90"  width="28" height="65" rx="4" fill="url(#ft-bar1)" opacity="0.75"/>
+            <rect x="100" y="70"  width="28" height="85" rx="4" fill="url(#ft-bar2)" opacity="0.75"/>
+            <rect x="140" y="50"  width="28" height="105" rx="4" fill="url(#ft-bar1)" opacity="0.75"/>
+            <rect x="180" y="80"  width="28" height="75" rx="4" fill="url(#ft-bar2)" opacity="0.75"/>
+            <rect x="220" y="40"  width="28" height="115" rx="4" fill="url(#ft-bar1)" opacity="0.9"/>
+          </g>
+          <polyline points="74,90 114,70 154,50 194,80 234,40" stroke="#fbbf6a" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+          <circle cx="74"  cy="90" r="4" fill="#fbbf6a"/>
+          <circle cx="114" cy="70" r="4" fill="#fbbf6a"/>
+          <circle cx="154" cy="50" r="4" fill="#fbbf6a"/>
+          <circle cx="194" cy="80" r="4" fill="#fbbf6a"/>
+          <circle cx="234" cy="40" r="5" fill="#fff" stroke="#fbbf6a" stroke-width="2"/>
+          <g transform="translate(500,65)">
+            <circle cx="0" cy="0" r="46" fill="none" stroke="#f29b38" stroke-width="1.5" opacity="0.25"/>
+            <circle cx="0" cy="0" r="34" fill="none" stroke="#f29b38" stroke-width="1.5" opacity="0.35"/>
+            <circle cx="0" cy="0" r="22" fill="none" stroke="#f29b38" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="0" cy="0" r="11" fill="#f29b38" opacity="0.65"/>
+            <circle cx="0" cy="0" r="5"  fill="#fff" opacity="0.9"/>
+            <line x1="-60" y1="-22" x2="-14" y2="-3" stroke="#fbbf6a" stroke-width="2"/>
+            <polygon points="-14,-3 -24,-10 -20,4" fill="#fbbf6a"/>
+          </g>
+          <g transform="translate(590,95)" opacity="0.55">
+            <rect x="0"  y="0"  width="18" height="70" rx="2" fill="#f29b38"/>
+            <rect x="22" y="10" width="18" height="60" rx="2" fill="#df6d2f"/>
+            <rect x="44" y="5"  width="18" height="65" rx="2" fill="#fbbf6a"/>
+          </g>
+        </svg>
+
+        <!-- Layer 2: scrim — orange theme -->
+        <div class="fpb-hero-scrim" style="background: linear-gradient(to top, rgba(20,9,0,1) 0%, rgba(20,9,0,0.92) 30%, rgba(20,9,0,0.55) 60%, rgba(20,9,0,0.1) 100%);"></div>
+
+        <!-- Layer 3: text content -->
+        <div class="fpb-hero-content">
+          <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#f29b38,#df6d2f);">🎯</div>
+          <div class="fpb-hero-text">
+            <span class="fpb-hero-tag" style="background:rgba(242,155,56,0.3);color:#fbbf6a;">Education Technology</span>
+            <h2 class="fpb-hero-name">FutureTrack</h2>
+            <span class="fpb-hero-sub" style="color:#fbbf6a;">Smart Ed-Tech Platform</span>
+          </div>
+        </div>
+
+        <!-- Layer 4: close -->
+        <button class="fpb-close" onclick="fpbClose('futuretrack')" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="fpb-modal-body" style="background:linear-gradient(160deg,#120900,#1e1100);">
+        <p class="fpb-modal-desc">FutureTrack transforms traditional paper-based education into a fully digital, guided experience. Designed for students, teachers, and institutions — structured focus workflows, progress tracking dashboards, and measurable learning outcomes turn everyday study habits into data-driven growth journeys.</p>
+        <div class="fpb-stats">
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#fbbf6a;">Digital</span><span class="fpb-stat-lbl">Assessments</span></div>
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#fbbf6a;">Smart</span><span class="fpb-stat-lbl">Workflows</span></div>
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#fbbf6a;">Live</span><span class="fpb-stat-lbl">Analytics</span></div>
+        </div>
+        <div class="fpb-feats">
+          <span class="fpb-feat">Focus Workflows</span><span class="fpb-feat">Progress Tracking</span>
+          <span class="fpb-feat">Digital Assessments</span><span class="fpb-feat">Analytics Dashboard</span>
+          <span class="fpb-feat">Student Engagement</span><span class="fpb-feat">Paper-free Learning</span>
+          <span class="fpb-feat">Teacher Tools</span><span class="fpb-feat">Performance Reports</span>
+        </div>
+        <div class="fpb-cta-row">
+          <a href="futuretrack/futuretrack.html" class="fpb-cta fpb-cta-orange">Explore FutureTrack →</a>
+          <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('futuretrack')">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Modal: SocialMapWork ════════════════════════════════════════════ -->
+  <div class="fpb-overlay" id="fpb-overlay-socialmapwork" onclick="fpbOverlayClose(event,'socialmapwork')">
+    <div class="fpb-modal">
+      <div class="fpb-hero">
+
+        <!-- Layer 1: SVG art -->
+        <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="smw-bg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#050c2a"/>
+              <stop offset="100%" stop-color="#0a1540"/>
+            </linearGradient>
+            <radialGradient id="smw-glow1" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#5a7ef2" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#5a7ef2" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="smw-glow2" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#93b8f8" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#93b8f8" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="680" height="190" fill="url(#smw-bg)"/>
+          <g stroke="#1e5dd8" stroke-width="0.7" opacity="0.3">
+            <line x1="0" y1="40"  x2="680" y2="40"/>  <line x1="0" y1="80"  x2="680" y2="80"/>
+            <line x1="0" y1="120" x2="680" y2="120"/> <line x1="0" y1="160" x2="680" y2="160"/>
+            <line x1="80"  y1="0" x2="80"  y2="190"/> <line x1="160" y1="0" x2="160" y2="190"/>
+            <line x1="240" y1="0" x2="240" y2="190"/> <line x1="320" y1="0" x2="320" y2="190"/>
+            <line x1="400" y1="0" x2="400" y2="190"/> <line x1="480" y1="0" x2="480" y2="190"/>
+            <line x1="560" y1="0" x2="560" y2="190"/>
+          </g>
+          <g stroke="#93b8f8" stroke-width="3" fill="none" opacity="0.3" stroke-linecap="round">
+            <path d="M0,95 Q170,75 340,95 Q510,115 680,95"/>
+            <path d="M200,0 Q210,95 200,190"/>
+            <path d="M440,0 Q450,95 440,190"/>
+          </g>
+          <g fill="#1e5dd8" opacity="0.2">
+            <rect x="90"  y="50"  width="50" height="30" rx="3"/>
+            <rect x="90"  y="90"  width="50" height="20" rx="3"/>
+            <rect x="260" y="40"  width="40" height="50" rx="3"/>
+            <rect x="350" y="100" width="60" height="25" rx="3"/>
+            <rect x="470" y="50"  width="45" height="35" rx="3"/>
+          </g>
+          <circle cx="140" cy="68" r="28" fill="url(#smw-glow1)"/>
+          <circle cx="320" cy="85" r="22" fill="url(#smw-glow2)"/>
+          <circle cx="500" cy="62" r="26" fill="url(#smw-glow1)"/>
+          <g>
+            <path d="M140,48 a16,16 0 1,1 0.01,0 Z" fill="#e24b4a"/>
+            <circle cx="140" cy="48" r="6" fill="#fff" opacity="0.9"/>
+            <path d="M140,64 L134,80 L146,80 Z" fill="#e24b4a"/>
+            <path d="M320,65 a14,14 0 1,1 0.01,0 Z" fill="#5a7ef2"/>
+            <circle cx="320" cy="65" r="5" fill="#fff" opacity="0.9"/>
+            <path d="M320,79 L314,93 L326,93 Z" fill="#5a7ef2"/>
+            <path d="M500,42 a15,15 0 1,1 0.01,0 Z" fill="#f29b38"/>
+            <circle cx="500" cy="42" r="5.5" fill="#fff" opacity="0.9"/>
+            <path d="M500,57 L494,71 L506,71 Z" fill="#f29b38"/>
+          </g>
+          <g stroke="#93b8f8" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.35" fill="none">
+            <line x1="140" y1="72" x2="320" y2="79"/>
+            <line x1="320" y1="79" x2="500" y2="57"/>
+          </g>
+        </svg>
+
+        <!-- Layer 2: scrim — blue theme -->
+        <div class="fpb-hero-scrim" style="background: linear-gradient(to top, rgba(5,9,26,1) 0%, rgba(5,9,26,0.92) 30%, rgba(5,9,26,0.55) 60%, rgba(5,9,26,0.1) 100%);"></div>
+
+        <!-- Layer 3: text content -->
+        <div class="fpb-hero-content">
+          <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#1e5dd8,#5a7ef2);">🗺️</div>
+          <div class="fpb-hero-text">
+            <span class="fpb-hero-tag" style="background:rgba(30,93,216,0.3);color:#93b8f8;">Civic Tech &amp; Community</span>
+            <h2 class="fpb-hero-name">SocialMapWork</h2>
+            <span class="fpb-hero-sub" style="color:#93b8f8;">Map Based Problem Reporting</span>
+          </div>
+        </div>
+
+        <!-- Layer 4: close -->
+        <button class="fpb-close" onclick="fpbClose('socialmapwork')" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="fpb-modal-body" style="background:linear-gradient(160deg,#05091a,#0a1230);">
+        <p class="fpb-modal-desc">SocialMapWork is a community-powered civic action platform that puts local issues on the map — literally. Citizens pin, report, and track public problems like potholes, broken infrastructure, or sanitation concerns on an interactive map, creating accountability between communities and local authorities.</p>
+        <div class="fpb-stats">
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Map</span><span class="fpb-stat-lbl">Based Pinning</span></div>
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Civic</span><span class="fpb-stat-lbl">Engagement</span></div>
+          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Live</span><span class="fpb-stat-lbl">Status Updates</span></div>
+        </div>
+        <div class="fpb-feats">
+          <span class="fpb-feat">Interactive Map</span><span class="fpb-feat">Issue Reporting</span>
+          <span class="fpb-feat">Civic Engagement</span><span class="fpb-feat">Community Voting</span>
+          <span class="fpb-feat">Authority Alerts</span><span class="fpb-feat">Status Tracking</span>
+          <span class="fpb-feat">Location Tagging</span><span class="fpb-feat">Public Dashboard</span>
+        </div>
+        <div class="fpb-cta-row">
+          <a href="https://socialmapwork.com/" target="_blank" rel="noopener noreferrer" class="fpb-cta fpb-cta-blue">Visit SocialMapWork →</a>
+          <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('socialmapwork')">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer class="container-fluid p-0 pr-0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=918952872163&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <div class="row mr-0 ml-0">
+      <div class="col-md-6 pr-0 pl-0 map">
+        <iframe class="map" width="100%" height="450" frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?q=26.1373431,86.3556195&key=AIzaSyAlED-1aT9PsSNL8g5fiT3oVS48eaSAztY"></iframe>
+      </div>
       <div class="col-md-6 content-us">
-        
         <div class="contact-form" id="contact">
-          
           <h3 class="text-uppercase">Contact us</h3>
-
-<!---
-          <input type="text" class="form-control" placeholder="Your Name">
-          <input type="text" class="form-control" placeholder="Your Email">
-          <textarea class="form-control" placeholder="Your Message"></textarea>
-          <button type="submit">Send</button>
-
--->
-
-<form class="contact_us_form row" action="https://formspree.io/f/xrgrkkjw" method="post" id="contactForm" novalidate="novalidate">
-  <div class="form-group col-lg-12">
-      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-  </div>
-  <div class="form-group col-lg-12">
-      <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-  </div>
-  <div class="form-group col-lg-12">
-      <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject*">
-  </div>
-  <div class="form-group col-lg-12">
-      <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
-  </div>
- 
-  <button type="submit">Send</button>
-</form>
-
-
+          <form class="contact_us_form row" action="https://formspree.io/f/xrgrkkjw" method="post" id="contactForm" novalidate="novalidate">
+            <div class="form-group col-lg-12"><input type="text" class="form-control" id="name" name="name" placeholder="Name"></div>
+            <div class="form-group col-lg-12"><input type="email" class="form-control" id="email" name="email" placeholder="Email"></div>
+            <div class="form-group col-lg-12"><input type="text" class="form-control" id="subject" name="subject" placeholder="Subject*"></div>
+            <div class="form-group col-lg-12"><textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea></div>
+            <button type="submit">Send</button>
+          </form>
         </div>
       </div>
     </div>
     <div class="copy pt-4 pb-4">
-      <p><a href="https://snipthink.com" target="_blank"> &copy; 2019 SnipThinK</a>  &nbsp;  |  &nbsp; Design by <a href="https://snipthink.com" target="_blank">SnipThinK</a> &nbsp; | &nbsp;  All rights reserved</p>
+      <p><a href="https://snipthink.com" target="_blank">&copy; 2019 SnipThinK</a> &nbsp;|&nbsp; Design by <a href="https://snipthink.com" target="_blank">SnipThinK</a> &nbsp;|&nbsp; All rights reserved</p>
     </div>
   </footer>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
-  <script src="assets/js/jquery-3.3.1.slim.min.js"></script> 
-  <script src="assets/js/popper.min.js" ></script> 
-  <script src="assets/js/bootstrap.min.js"></script> 
-  <script src="assets/js/owl.carousel.min.js"></script> 
+  <!-- ── SCRIPTS ─────────────────────────────────────────────────────────── -->
+  <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    var sptCurrent = 0;
+    var sptTotal = 3;
+
+    function sptSelect(idx) {
+      for (var i = 0; i < sptTotal; i++) {
+        var node = document.getElementById('spt-node-' + i);
+        var card = document.getElementById('spt-card-' + i);
+        var dot  = document.getElementById('spt-dot-'  + i);
+        if (node) node.classList.remove('active');
+        if (card) card.classList.add('hidden');
+        if (dot)  dot.classList.remove('active');
+      }
+      var selNode = document.getElementById('spt-node-' + idx);
+      var selCard = document.getElementById('spt-card-' + idx);
+      var selDot  = document.getElementById('spt-dot-'  + idx);
+      if (selNode) selNode.classList.add('active');
+      if (selCard) selCard.classList.remove('hidden');
+      if (selDot)  selDot.classList.add('active');
+      sptCurrent = idx;
+    }
+
+    setInterval(function () {
+      sptSelect((sptCurrent + 1) % sptTotal);
+    }, 4000);
+
+    (function () {
+      var item    = document.getElementById('navProductsItem');
+      var trigger = document.getElementById('navProductsTrigger');
+      if (!item || !trigger) return;
+      trigger.addEventListener('click', function (e) {
+        if (window.innerWidth < 768) {
+          e.preventDefault();
+          item.classList.toggle('open');
+        }
+      });
+    })();
+
+    function fpbOpen(id) {
+      document.querySelectorAll('.fpb-overlay.open').forEach(function(el) {
+        el.classList.remove('open');
+      });
+      var overlay = document.getElementById('fpb-overlay-' + id);
+      if (overlay) {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function fpbClose(id) {
+      var overlay = document.getElementById('fpb-overlay-' + id);
+      if (overlay) overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function fpbOverlayClose(e, id) {
+      if (e.target === e.currentTarget) fpbClose(id);
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.fpb-overlay.open').forEach(function(el) {
+          el.classList.remove('open');
+        });
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 
 </body>
 </html>
