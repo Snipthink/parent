@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gurukul ERP</title>
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Boot Loader -->
+  <div id="boot-loader">
+    <div class="boot-inner">
+      <img src="../images/favicon.svg" alt="Gurukul" class="boot-logo">
+      <div class="boot-spinner"></div>
+      <p class="boot-text">Initialising Gurukul…</p>
+    </div>
+  </div>
+
+  <!-- Auth Screen (role-select, login, signup, setup) -->
+  <div id="auth-screen" style="display:none;">
+    <div id="auth-view"></div>
+  </div>
+
+  <!-- App Shell -->
+  <div id="shell" style="display:none;">
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sb-logo">
+        <img src="../images/favicon.svg" alt="Gurukul" class="sb-logo-img">
+        <span class="sb-logo-text">Gurukul</span>
+      </div>
+
+      <div class="sb-user" id="sb-user">
+        <!-- Filled by app.js renderSidebar() -->
+      </div>
+
+      <nav class="sb-nav" id="sb-nav">
+        <!-- Filled by app.js renderSidebar() -->
+      </nav>
+
+      <div class="sb-footer" id="sb-footer">
+        <!-- Language selector + logout + backup filled by app.js -->
+      </div>
+    </aside>
+
+    <!-- Main content area -->
+    <div id="main">
+
+      <!-- Top bar (mobile hamburger + breadcrumb) -->
+      <div id="topbar">
+        <button id="menu-btn" onclick="APP.toggleSidebar()" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span id="topbar-title" class="topbar-title">Dashboard</span>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" id="topbar-lang-btn" title="Language" onclick="APP.toggleLangPicker()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+            </svg>
+          </button>
+          <div id="topbar-lang-dropdown" class="lang-dropdown" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Route view target -->
+      <div id="view"></div>
+
+    </div><!-- /#main -->
+
+    <!-- Mobile sidebar overlay -->
+    <div id="sb-overlay" onclick="APP.toggleSidebar()"></div>
+
+  </div><!-- /#shell -->
+
+  <!-- Toast container -->
+  <div id="toast-container"></div>
+
+  <!-- ─── Vendor scripts ─── -->
+  <!-- sql.js WebAssembly SQLite -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/sql-wasm.js"></script>
+
+  <!-- QR Code generator -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- jsPDF for receipt/ID-card PDF export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- ─── Core JS (order matters) ─── -->
+  <script src="js/db.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- ─── Modules ─── -->
+  <script src="modules/notifications.js"></script>
+  <script src="modules/role-select.js"></script>
+  <script src="modules/auth-screen.js"></script>
+  <script src="modules/dashboard.js"></script>
+  <script src="modules/admin.js"></script>
+  <script src="modules/departments.js"></script>
+  <script src="modules/classroom.js"></script>
+  <script src="modules/syllabus.js"></script>
+  <script src="modules/attendance.js"></script>
+  <script src="modules/noticeboard.js"></script>
+  <script src="modules/clubs.js"></script>
+  <script src="modules/admissions.js"></script>
+  <script src="modules/idcard.js"></script>
+  <script src="modules/exams.js"></script>
+  <script src="modules/results.js"></script>
+  <script src="modules/fees.js"></script>
+  <script src="modules/hr.js"></script>
+  <script src="modules/transport.js"></script>
+
+  <!-- ─── Boot ─── -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => APP.boot());
+  </script>
+
+</body>
+</html>

@@ -25,11 +25,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo-icon{width:28px;height:28px;object-fit:contain}
-.logo-text{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--cyan);letter-spacing:2px}
+.logo-text{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--cyan);letter-spacing:0.5px}
 .logo-sub{font-size:10px;color:var(--muted);margin-left:4px}
 .nav-links{display:flex;list-style:none;gap:4px}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border-radius:8px;transition:all 0.2s}
 .nav-links a:hover{color:var(--cyan);background:rgba(70,213,249,0.08)}
+.nav-dashboard-btn{color:var(--cyan)!important;border:1px solid var(--cyan);border-radius:8px;padding:6px 16px!important;margin-left:8px;font-weight:600!important}
+.nav-dashboard-btn:hover{background:var(--cyan)!important;color:#060c14!important}
 .hamburger{display:none;background:none;border:none;color:var(--text);font-size:24px;cursor:pointer;line-height:1}
 
 /* ── Buttons ──────────────────────────────────────────────────── */
