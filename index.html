@@ -2,414 +2,480 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>SnipThinK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnipThinK — Imagine To Innovate</title>
+  <meta name="description" content="SnipThinK is a technology company turning ideas into digital reality. We build websites, mobile apps, AI solutions, and cloud services — and create products like Crinit, FutureTrack, and SocialMapWork.">
+  <link rel="icon" href="assets/img/logo.png">
+  <meta property="og:site_name" content="SnipThinK">
+  <meta property="og:title" content="SnipThinK — Imagine To Innovate">
+  <meta property="og:description" content="SnipThinK builds digital solutions across agriculture, education, and civic tech. Explore our products: Crinit, FutureTrack, and SocialMapWork.">
+  <meta property="og:image" content="https://snipthink.org/assets/img/banner-img.jpg">
+  <meta property="og:url" content="https://snipthink.org">
+  <meta property="og:type" content="website">
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/85cf8202a1fd49d58c02fa66/script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* ── Products Spinner Section ─────────────────────────────────────── */
-    .spt-products-section {
-      padding: 90px 0 100px;
-      background: radial-gradient(ellipse at top left, rgba(5,181,191,0.10) 0%, transparent 55%),
-                  radial-gradient(ellipse at bottom right, rgba(90,126,242,0.12) 0%, transparent 55%),
-                  linear-gradient(160deg, #060f1a 0%, #0a1828 55%, #0e2038 100%);
-      font-family: 'Manrope', sans-serif;
-      overflow: hidden;
-      position: relative;
+    /* ══════════════════════════════════════════════════════════════════
+       CSS VARIABLES — SnipThinK Brand
+    ══════════════════════════════════════════════════════════════════ */
+    :root {
+      --bg:     #060a10;
+      --bg2:    #0a1018;
+      --bg3:    #0f1620;
+      --border: #141f2e;
+      --text:   #c8d6e5;
+      --muted:  #5a6a7a;
+      --teal:   #03989e;
+      --teal2:  #0b8f77;
+      --blue:   #3498db;
+      --orange: #46d5f9;
+      --purple: #9b59b6;
+      --green:  #27ae60;
     }
 
-    .spt-products-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 36px 36px;
-      pointer-events: none;
+    /* ── Reset & Base ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    a { text-decoration: none; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       NAVBAR
+    ══════════════════════════════════════════════════════════════════ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(6,10,16,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .navbar.scrolled { background: rgba(6,10,16,0.97); box-shadow: 0 4px 30px rgba(0,0,0,0.35); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 66px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 34px; height: 34px; border-radius: 8px; overflow: hidden; }
+    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px; font-weight: 800;
+      color: var(--teal); letter-spacing: 2px;
+    }
+    .nav-links { display: flex; list-style: none; gap: 4px; align-items: center; }
+    .nav-links > li { position: relative; }
+    .nav-links a {
+      color: var(--muted); font-size: 13px; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px; transition: all 0.2s;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .nav-links a:hover { color: var(--teal); background: rgba(3,152,158,0.08); }
+    .nav-links a.active { color: var(--teal); }
+
+    /* Products dropdown */
+    .nav-products-dropdown:hover .nav-dropdown-panel,
+    .nav-products-dropdown.open .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .nav-dropdown-panel {
+      position: absolute; top: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 260px;
+      background: rgba(10,16,24,0.97);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .nav-dropdown-panel::before {
+      content: ''; position: absolute; bottom: 100%; left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-bottom-color: var(--border);
+    }
+    .nav-prod-card {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px; border-radius: 10px;
+      color: var(--text); transition: background 0.2s;
+    }
+    .nav-prod-card:hover { background: rgba(255,255,255,0.05); color: #fff; }
+    .nav-prod-icon { font-size: 22px; }
+    .nav-prod-name { font-size: 13px; font-weight: 700; color: #fff; display: block; }
+    .nav-prod-sub { font-size: 11px; color: var(--muted); display: block; }
+    .nav-prod-arrow { margin-left: auto; font-size: 13px; color: var(--muted); }
+    .nav-prod-card:hover .nav-prod-arrow { color: var(--teal); }
+
+    /* Hamburger */
+    .hamburger { display: none; background: none; border: none; color: var(--text); font-size: 24px; cursor: pointer; padding: 4px; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       BUTTONS
+    ══════════════════════════════════════════════════════════════════ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 10px;
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: all 0.3s; border: none; font-family: 'Inter', sans-serif;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(3,152,158,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(3,152,158,0.45); color: #fff; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); background: transparent; }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* ══════════════════════════════════════════════════════════════════
+       GRADIENT TEXT
+    ══════════════════════════════════════════════════════════════════ */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--teal), #06d6de, var(--teal2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    .spt-section-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(153,240,238,0.25);
-      background: rgba(13,152,158,0.12);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 800;
-      color: #99f0ee;
+    /* ══════════════════════════════════════════════════════════════════
+       SECTIONS
+    ══════════════════════════════════════════════════════════════════ */
+    .section { padding: 100px 0; }
+    .section-dark { background: var(--bg2); }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-tag {
+      display: inline-block; padding: 4px 16px;
+      background: rgba(3,152,158,0.1); border: 1px solid rgba(3,152,158,0.25);
+      border-radius: 20px; font-size: 11px; color: var(--teal);
+      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
       margin-bottom: 16px;
     }
-
-    .spt-section-title {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: #fff;
-      line-height: 1.1;
-      margin: 0 0 12px;
+    .section-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 14px;
     }
+    .section-header p { color: var(--muted); font-size: 16px; max-width: 520px; margin: 0 auto; line-height: 1.7; }
 
-    .spt-section-sub {
-      color: rgba(220,235,248,0.6);
-      font-size: 1rem;
-      line-height: 1.7;
-      max-width: 500px;
-    }
-
-    /* ── Spinner wheel ── */
-    .spt-spinner-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 0;
-    }
-
-    .spt-track {
-      position: relative;
-      width: 380px;
-      height: 380px;
-      margin: 0 auto;
-    }
-
-    .spt-track::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 1px dashed rgba(153,240,238,0.18);
-    }
-
-    .spt-hub {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 96px; height: 96px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #03989e, #0b8f77);
-      box-shadow: 0 0 0 8px rgba(3,152,158,0.15), 0 0 40px rgba(3,152,158,0.3);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-      z-index: 10;
-      cursor: default;
-    }
-
-    .spt-node {
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 64px; height: 64px;
-      margin: -32px 0 0 -32px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
-      cursor: pointer;
-      border: 2px solid rgba(255,255,255,0.12);
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-      z-index: 10;
-    }
-
-    .spt-node:hover, .spt-node.active {
-      transform: translate(var(--tx), var(--ty)) scale(1.2) !important;
-      border-color: rgba(153,240,238,0.6);
-      box-shadow: 0 0 24px rgba(3,152,158,0.5);
-    }
-
-    .spt-node-green  { background: linear-gradient(135deg, #03989e, #0b8f77); }
-    .spt-node-orange { background: linear-gradient(135deg, #f29b38, #df6d2f); }
-    .spt-node-blue   { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
-
-    .spt-track svg {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-    }
-
-    /* ── Detail card — fixed vertical alignment ── */
-    .spt-detail-card {
-      background: rgba(10,24,40,0.85);
-      border: 1px solid rgba(153,240,238,0.18);
-      border-radius: 24px;
-      padding: 32px 36px;
-      backdrop-filter: blur(12px);
-      min-height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      transition: opacity 0.35s, transform 0.35s;
-    }
-
-    .spt-detail-card.hidden {
-      opacity: 0;
-      transform: translateY(12px);
-      pointer-events: none;
-      position: absolute;
-      top: 0; left: 0; right: 0;
-    }
-
-    /* Card column — vertically centered beside wheel */
-    .spt-card-col {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    /* ══════════════════════════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 110px 24px 70px; max-width: 1200px; margin: 0 auto;
       position: relative;
     }
+    .hero-bg {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(3,152,158,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(11,143,119,0.05) 0%, transparent 50%);
+      pointer-events: none; z-index: -1;
+    }
+    .hero-content { flex: 1; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block; padding: 7px 18px;
+      background: rgba(3,152,158,0.1); border: 1px solid rgba(3,152,158,0.25);
+      border-radius: 20px; font-size: 12px; color: var(--teal);
+      font-weight: 600; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(38px, 6vw, 68px);
+      font-weight: 800; line-height: 1.1; margin-bottom: 22px; color: #fff;
+    }
+    .hero-desc {
+      font-size: 17px; color: var(--muted); line-height: 1.75;
+      max-width: 540px; margin-bottom: 36px;
+    }
+    .hero-btns { display: flex; gap: 14px; margin-bottom: 56px; flex-wrap: wrap; }
+    .hero-stats { display: flex; gap: 48px; flex-wrap: wrap; }
+    .stat { display: flex; flex-direction: column; }
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px; font-weight: 800; color: var(--teal); line-height: 1;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 500; }
 
-    .spt-card-icon {
-      width: 56px; height: 56px;
-      border-radius: 16px;
+    /* Floating cards */
+    .hero-visual {
+      position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      width: 380px; height: 380px; pointer-events: none;
+    }
+    .float-card {
+      position: absolute;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 14px; padding: 14px 18px;
+      display: flex; align-items: center; gap: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      animation: float 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .fc-icon { font-size: 26px; }
+    .fc-text { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .fc-text strong { font-size: 17px; display: block; }
+    .fc-teal  { color: var(--teal); }
+    .fc-blue  { color: var(--blue); }
+    .fc-orange{ color: var(--orange); }
+    .fc1 { top: 8%;  left: 5%;   animation-delay: 0s; }
+    .fc2 { top: 52%; right: 2%;  animation-delay: 1.5s; }
+    .fc3 { bottom: 14%; left: 15%; animation-delay: 3s; }
+    .fc4 { top: 22%; right: 18%; animation-delay: 4.5s; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+
+    /* ══════════════════════════════════════════════════════════════════
+       ABOUT / VALUES
+    ══════════════════════════════════════════════════════════════════ */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .about-text h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 18px;
+    }
+    .about-text p { color: var(--muted); font-size: 15px; line-height: 1.8; margin-bottom: 14px; }
+    .about-text .btn { margin-top: 8px; }
+    .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .value-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px;
+      transition: all 0.3s;
+    }
+    .value-card:hover { border-color: rgba(3,152,158,0.3); transform: translateY(-3px); }
+    .value-icon { font-size: 28px; margin-bottom: 10px; }
+    .value-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #fff; margin-bottom: 6px; }
+    .value-card p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════════════════════════════════ */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .service-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 14px; padding: 26px 24px;
+      position: relative; overflow: hidden;
+      transition: all 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); border-color: rgba(3,152,158,0.35); }
+    .service-card:hover .sc-glow { opacity: 0.22; }
+    .sc-glow {
+      position: absolute; top: -40px; right: -40px;
+      width: 120px; height: 120px; border-radius: 50%;
+      background: var(--teal); filter: blur(50px); opacity: 0.1; transition: opacity 0.3s;
+    }
+    .sc-icon { font-size: 32px; margin-bottom: 14px; }
+    .service-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; color: #fff; margin-bottom: 8px; }
+    .service-card p { font-size: 12px; color: var(--muted); line-height: 1.65; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       PRODUCTS
+    ══════════════════════════════════════════════════════════════════ */
+    .products-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 18px; padding: 32px;
+      position: relative; overflow: hidden;
+      transition: all 0.3s;
+    }
+    .product-card:hover { transform: translateY(-5px); }
+    .pc-glow {
+      position: absolute; top: -50px; right: -50px;
+      width: 160px; height: 160px; border-radius: 50%;
+      filter: blur(60px); opacity: 0.14;
+    }
+    .pc-glow-teal   { background: var(--teal); }
+    .pc-glow-orange { background: var(--orange); }
+    .pc-glow-blue   { background: var(--blue); }
+    .product-card:hover .pc-glow { opacity: 0.25; }
+    .product-card:hover.prod-teal   { border-color: rgba(3,152,158,0.4); }
+    .product-card:hover.prod-orange { border-color: rgba(70,213,249,0.4); }
+    .product-card:hover.prod-blue   { border-color: rgba(52,152,219,0.4); }
+    .pc-icon { font-size: 40px; margin-bottom: 16px; }
+    .product-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
+    .pc-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+    .pc-tag-teal   { color: var(--teal); }
+    .pc-tag-orange { color: var(--orange); }
+    .pc-tag-blue   { color: var(--blue); }
+    .product-card > p { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+    .pc-features { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
+    .pc-features span {
+      font-size: 11px; padding: 4px 11px;
+      border-radius: 12px; font-weight: 600;
+    }
+    .pc-feat-teal   { background: rgba(3,152,158,0.1);  border: 1px solid rgba(3,152,158,0.2);  color: var(--teal); }
+    .pc-feat-orange { background: rgba(70,213,249,0.1); border: 1px solid rgba(70,213,249,0.2); color: var(--orange); }
+    .pc-feat-blue   { background: rgba(52,152,219,0.1); border: 1px solid rgba(52,152,219,0.2); color: var(--blue); }
+    .btn-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 700; transition: all 0.2s;
+    }
+    .btn-link-teal   { color: var(--teal); }
+    .btn-link-orange { color: var(--orange); }
+    .btn-link-blue   { color: var(--blue); }
+    .btn-link:hover { letter-spacing: 1px; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       STATS BAR
+    ══════════════════════════════════════════════════════════════════ */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+    }
+    .stat-block {
+      background: var(--bg3); padding: 36px 24px; text-align: center;
+      transition: background 0.3s;
+    }
+    .stat-block:hover { background: rgba(3,152,158,0.05); }
+    .sb-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 40px; font-weight: 800; color: var(--teal);
+      display: block; line-height: 1; margin-bottom: 6px;
+    }
+    .sb-label { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════════════════════════════════ */
+    .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+    .contact-info-cards { display: flex; flex-direction: column; gap: 14px; }
+    .cc {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+      display: flex; align-items: center; gap: 16px;
+      transition: all 0.3s;
+    }
+    .cc:hover { border-color: rgba(3,152,158,0.3); }
+    .cc-icon { font-size: 28px; flex-shrink: 0; }
+    .cc-label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .cc-value { font-size: 14px; color: var(--teal); font-weight: 600; }
+    .cc-value a { color: var(--teal); }
+    .contact-form-wrap {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 18px; padding: 36px;
+    }
+    .contact-form-wrap h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px; color: #fff; margin-bottom: 24px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: 12px; color: var(--muted);
+      font-weight: 600; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 16px;
+      color: var(--text); font-size: 14px; font-family: 'Inter', sans-serif;
+      outline: none; transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--teal); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .btn-submit {
+      width: 100%; padding: 14px; background: linear-gradient(135deg, var(--teal), var(--teal2));
+      color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
+      cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.3s;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(3,152,158,0.4); }
+
+    /* ══════════════════════════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════════════════════════ */
+    .footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 70px 0 30px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 36px;
+      margin-bottom: 48px;
+    }
+    .footer-col h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px; color: #fff; margin-bottom: 16px; font-weight: 700;
+    }
+    .footer-col p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: var(--muted); font-size: 13px; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--teal); }
+    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .footer-brand-icon { font-size: 26px; }
+    .footer-brand-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px; font-weight: 800; color: var(--teal); letter-spacing: 2px;
+    }
+    .footer-socials { display: flex; gap: 10px; margin-top: 18px; }
+    .footer-social {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--bg3); border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 18px;
-      flex-shrink: 0;
+      font-size: 15px; transition: all 0.2s;
     }
-    .spt-card-icon.green  { background: linear-gradient(135deg, #03989e, #0b8f77); box-shadow: 0 10px 24px rgba(3,152,158,0.3); }
-    .spt-card-icon.orange { background: linear-gradient(135deg, #f29b38, #df6d2f); box-shadow: 0 10px 24px rgba(242,155,56,0.3); }
-    .spt-card-icon.blue   { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); box-shadow: 0 10px 24px rgba(30,93,216,0.3); }
+    .footer-social:hover { border-color: var(--teal); background: rgba(3,152,158,0.12); }
+    .footer-bottom {
+      text-align: center; padding-top: 28px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bottom p { font-size: 12px; color: var(--muted); }
+    .footer-bottom a { color: var(--muted); }
+    .footer-bottom a:hover { color: var(--teal); }
 
-    .spt-card-tag {
-      display: inline-block;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-weight: 800;
-      padding: 4px 12px;
-      border-radius: 999px;
-      margin-bottom: 10px;
+    /* ══════════════════════════════════════════════════════════════════
+       WHATSAPP FLOAT
+    ══════════════════════════════════════════════════════════════════ */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; left: 24px;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; z-index: 11700;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .spt-tag-green  { background: rgba(3,152,158,0.18); color: #5de8d6; }
-    .spt-tag-orange { background: rgba(242,155,56,0.18); color: #fbbf6a; }
-    .spt-tag-blue   { background: rgba(30,93,216,0.18); color: #93b8f8; }
-
-    .spt-card-name {
-      font-family: 'Fraunces', serif;
-      font-size: 1.5rem;
-      color: #fff;
-      margin: 0 0 6px;
-      line-height: 1.2;
-    }
-
-    .spt-card-tagline {
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 12px;
-    }
-    .spt-tl-green  { color: #5de8d6; }
-    .spt-tl-orange { color: #fbbf6a; }
-    .spt-tl-blue   { color: #93b8f8; }
-
-    .spt-card-desc {
-      color: rgba(220,235,248,0.72);
-      font-size: 0.9rem;
-      line-height: 1.75;
-      margin-bottom: 22px;
-    }
-
-    .spt-features {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-bottom: 22px;
-    }
-    .spt-feat {
-      font-size: 0.76rem;
-      padding: 4px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-      color: rgba(220,235,248,0.75);
-      font-weight: 600;
-    }
-
-    .spt-card-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #fff;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-      margin-top: auto;
-    }
-    .spt-card-cta:hover { opacity: 0.85; transform: translateX(3px); color: #fff; text-decoration: none; }
-    .spt-cta-green  { background: linear-gradient(135deg, #03989e, #0b8f77); }
-    .spt-cta-orange { background: linear-gradient(135deg, #f29b38, #df6d2f); }
-    .spt-cta-blue   { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
-
-    .spt-dots {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 32px;
-    }
-    .spt-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255,255,255,0.2);
-      cursor: pointer;
-      transition: background 0.25s, transform 0.25s;
-      padding: 0;
-    }
-    .spt-dot.active {
-      background: #99f0ee;
-      transform: scale(1.35);
-    }
-
-    .spt-ring-anim {
-      position: absolute;
-      inset: -20px;
-      border-radius: 50%;
-      border: 1px solid transparent;
-      border-top-color: rgba(153,240,238,0.25);
-      animation: spt-spin 8s linear infinite;
-      pointer-events: none;
-    }
-    @keyframes spt-spin { to { transform: rotate(360deg); } }
-
-    @media (max-width: 768px) {
-      .spt-track { width: 280px; height: 280px; }
-      .spt-hub { width: 72px; height: 72px; font-size: 1.5rem; }
-      .spt-node { width: 52px; height: 52px; margin: -26px 0 0 -26px; font-size: 1.1rem; }
-      .spt-detail-card { padding: 24px 20px; }
-      .spt-detail-card.hidden { position: static; display: none; }
-    }
-
-    /* ── Nav Products Dropdown ─────────────────────────────────── */
-    .nav-products-dropdown { position: relative; }
-    .nav-products-trigger { display: inline-flex !important; align-items: center; gap: 5px; cursor: pointer; }
-    .nav-products-caret { font-size: 0.7rem; display: inline-block; transition: transform 0.25s; }
-    .nav-products-dropdown:hover .nav-products-caret,
-    .nav-products-dropdown.open .nav-products-caret { transform: rotate(180deg); }
-
-    .nav-products-panel {
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 50%;
-      transform: translateX(-50%) translateY(-8px);
-      width: 290px;
-      background: linear-gradient(160deg, #071320 0%, #0b1c30 100%);
-      border: 1px solid rgba(153,240,238,0.18);
-      border-radius: 18px;
-      padding: 10px;
-      box-shadow: 0 24px 60px rgba(2,10,21,0.55);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.22s ease, transform 0.22s ease;
-      z-index: 9999;
-      font-family: 'Manrope', sans-serif;
-      overflow: hidden;
-    }
-
-    .nav-products-dropdown:hover .nav-products-panel,
-    .nav-products-dropdown.open .nav-products-panel {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .nav-prod-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 11px 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #eef5fb;
-      border: 1px solid transparent;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-      opacity: 0;
-      transform: translateY(14px);
-      animation: navCardSlideIn 0.32s forwards;
-    }
-    .nav-prod-card:nth-child(1) { animation-delay: 0.04s; }
-    .nav-prod-card:nth-child(2) { animation-delay: 0.11s; }
-    .nav-prod-card:nth-child(3) { animation-delay: 0.18s; }
-    @keyframes navCardSlideIn { to { opacity: 1; transform: translateY(0); } }
-    .nav-products-dropdown:hover .nav-prod-card,
-    .nav-products-dropdown.open .nav-prod-card { animation: navCardSlideIn 0.32s forwards; }
-    .nav-prod-card:hover { text-decoration: none; transform: translateX(4px); }
-    .nav-prod-green:hover  { background: rgba(3,152,158,0.15);  border-color: rgba(3,152,158,0.3); }
-    .nav-prod-orange:hover { background: rgba(242,155,56,0.15); border-color: rgba(242,155,56,0.3); }
-    .nav-prod-blue:hover   { background: rgba(30,93,216,0.15);  border-color: rgba(30,93,216,0.3); }
-    .nav-prod-card + .nav-prod-card { margin-top: 2px; }
-
-    .nav-prod-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-    .nav-prod-green  .nav-prod-icon { background: linear-gradient(135deg, #03989e, #0b8f77); }
-    .nav-prod-orange .nav-prod-icon { background: linear-gradient(135deg, #f29b38, #df6d2f); }
-    .nav-prod-blue   .nav-prod-icon { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
-
-    .nav-prod-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
-    .nav-prod-name { font-size: 0.88rem; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .nav-prod-sub  { font-size: 0.72rem; color: rgba(220,235,248,0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
-    .nav-prod-arrow { font-size: 0.85rem; color: rgba(153,240,238,0.5); flex-shrink: 0; transition: color 0.2s, transform 0.2s; }
-    .nav-prod-card:hover .nav-prod-arrow { color: #99f0ee; transform: translateX(3px); }
-    .nav-products-spinner { display: flex; flex-direction: column; gap: 2px; }
-
-    @media (max-width: 767px) {
-      .nav-products-panel { position: static; transform: none !important; opacity: 1 !important; pointer-events: all !important; width: 100%; border-radius: 12px; margin-top: 6px; box-shadow: none; display: none; }
-      .nav-products-dropdown.open .nav-products-panel { display: block; }
-    }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.55); }
 
     /* ══════════════════════════════════════════════════════════════════
        FLOATING PRODUCT BUTTONS
     ══════════════════════════════════════════════════════════════════ */
     .fpb-btn {
-      position: fixed;
-      right: 40px;
-      width: 60px; height: 60px;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
+      position: fixed; right: 20px;
+      height: 48px; padding: 0 16px 0 12px;
+      border-radius: 999px; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 1.25rem; white-space: nowrap;
       box-shadow: 0 6px 20px rgba(2,10,21,0.4);
       transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s;
-      outline: none;
-      color: #fff;
-      font-family: 'Manrope', sans-serif;
-      z-index: 11800;
-      text-decoration: none;
+      outline: none; color: #fff;
+      font-family: 'Inter', sans-serif; z-index: 11800;
+    }
+    .fpb-btn-name {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em;
     }
     .fpb-btn-blue   { bottom: 110px; background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
-    .fpb-btn-orange { bottom: 180px; background: linear-gradient(135deg, #f29b38, #df6d2f); }
-    .fpb-btn-green  { bottom: 250px; background: linear-gradient(135deg, #03989e, #0b8f77); }
-    .fpb-btn:hover  { transform: scale(1.12) rotate(-5deg); box-shadow: 0 12px 32px rgba(2,10,21,0.5); }
-
-    .fpb-btn::before {
-      content: attr(data-label);
-      position: absolute;
-      right: 70px; top: 50%;
-      transform: translateY(-50%) translateX(6px);
-      background: rgba(6,15,26,0.95);
-      color: #eef5fb;
-      font-size: 0.71rem; font-weight: 700; letter-spacing: 0.04em;
-      white-space: nowrap; padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.18s, transform 0.18s;
-    }
-    .fpb-btn:hover::before { opacity: 1; transform: translateY(-50%) translateX(0); }
-
+    .fpb-btn-orange { bottom: 168px; background: linear-gradient(135deg, #46d5f9, #1ab8d4); }
+    .fpb-btn-green  { bottom: 226px; background: linear-gradient(135deg, #03989e, #0b8f77); }
+    .fpb-btn:hover  { transform: scale(1.07) translateX(-3px); box-shadow: 0 12px 32px rgba(2,10,21,0.5); }
     .fpb-btn::after {
       content: ''; position: absolute; inset: -5px;
-      border-radius: 50%; border: 2px solid currentColor;
+      border-radius: 999px; border: 2px solid currentColor;
       opacity: 0; animation: fpbPulse 2.6s ease-in-out infinite;
     }
     .fpb-btn-green::after  { color: #03989e; animation-delay: 0s; }
-    .fpb-btn-orange::after { color: #f29b38; animation-delay: 0.8s; }
+    .fpb-btn-orange::after { color: #46d5f9; animation-delay: 0.8s; }
     .fpb-btn-blue::after   { color: #5a7ef2; animation-delay: 1.6s; }
     @keyframes fpbPulse { 0% { transform: scale(1); opacity: 0.4; } 70% { transform: scale(1.6); opacity: 0; } 100% { transform: scale(1.6); opacity: 0; } }
 
@@ -418,197 +484,137 @@
     ══════════════════════════════════════════════════════════════════ */
     .fpb-overlay {
       position: fixed; inset: 0;
-      background: rgba(3,9,20,0.75);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      z-index: 12500;
-      display: flex; align-items: center; justify-content: center;
-      padding: 1rem;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.26s ease;
+      background: rgba(3,9,20,0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      z-index: 12500; display: flex; align-items: center; justify-content: center;
+      padding: 1rem; opacity: 0; pointer-events: none; transition: opacity 0.26s ease;
     }
     .fpb-overlay.open { opacity: 1; pointer-events: all; }
-
     .fpb-modal {
-      width: 100%; max-width: 680px;
-      max-height: 92vh; overflow-y: auto;
+      width: 100%; max-width: 680px; max-height: 92vh; overflow-y: auto;
       border-radius: 28px; overflow: hidden;
       box-shadow: 0 40px 100px rgba(2,8,20,0.7);
       transform: translateY(32px) scale(0.95);
       transition: transform 0.32s cubic-bezier(0.34,1.56,0.64,1);
-      font-family: 'Manrope', sans-serif;
-      scrollbar-width: none;
+      font-family: 'Inter', sans-serif; scrollbar-width: none;
     }
     .fpb-modal::-webkit-scrollbar { display: none; }
     .fpb-overlay.open .fpb-modal { transform: translateY(0) scale(1); }
 
-    /* ══════════════════════════════════════════════════════════════════
-       MODAL HERO — FIXED: SVG art + text NO OVERLAP
-       Structure:
-         .fpb-hero  (relative container)
-           svg.fpb-hero-bg  (layer 1: art, dimmed, z-index 0)
-           .fpb-hero-scrim  (layer 2: gradient, z-index 1)
-           .fpb-hero-content (layer 3: text, z-index 2)
-           button.fpb-close  (layer 4: button, z-index 3)
-    ══════════════════════════════════════════════════════════════════ */
     .fpb-hero {
-      position: relative;
-      width: 100%;
-      height: 240px;           /* taller so art has room above text */
-      overflow: hidden;
-      display: block;           /* changed from flex to block */
+      position: relative; width: 100%; height: 240px;
+      overflow: hidden; display: block;
     }
-
-    /* Layer 1: SVG art — purely decorative, dimmed */
     svg.fpb-hero-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      opacity: 0.38;            /* dimmed so it never fights text */
-      z-index: 0;
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      opacity: 0.38; z-index: 0;
     }
-
-    /* Layer 2: gradient scrim — solid at bottom where text lives */
-    .fpb-hero-scrim {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* Layer 3: text content — always on top of art */
+    .fpb-hero-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
     .fpb-hero-content {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      z-index: 2;
-      padding: 0 28px 22px;
-      display: flex;
-      align-items: flex-end;
-      gap: 16px;
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+      padding: 0 28px 22px; display: flex; align-items: flex-end; gap: 16px;
     }
-
     .fpb-hero-emoji {
-      width: 60px; height: 60px;
-      border-radius: 18px;
+      width: 60px; height: 60px; border-radius: 18px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.7rem;
-      flex-shrink: 0;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      font-size: 1.7rem; flex-shrink: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.35);
     }
-
     .fpb-hero-text { flex: 1; }
-
     .fpb-hero-tag {
-      display: inline-block;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-weight: 800;
-      padding: 3px 11px;
-      border-radius: 999px;
-      margin-bottom: 6px;
+      display: inline-block; font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 0.15em;
+      font-weight: 800; padding: 3px 11px; border-radius: 999px; margin-bottom: 6px;
     }
-
     .fpb-hero-name {
-      font-family: 'Fraunces', serif;
-      font-size: 1.65rem;
-      color: #fff;
-      margin: 0 0 5px;          /* space below name for tagline */
-      line-height: 1.15;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.65rem; color: #fff; margin: 0 0 5px;
+      line-height: 1.15; text-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
-
-    /* TAGLINE — clearly visible, never hidden */
     .fpb-hero-sub {
-      display: block;           /* force block so it never collapses */
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      margin: 0;
-      opacity: 1;               /* full opacity, no transparency */
-      line-height: 1.4;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+      display: block; font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.09em;
+      margin: 0; opacity: 1; line-height: 1.4; text-shadow: 0 1px 6px rgba(0,0,0,0.5);
     }
-
-    /* Layer 4: close button */
     .fpb-close {
-      position: absolute;
-      top: 14px; right: 16px;
-      z-index: 3;
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(0,0,0,0.4);
-      color: rgba(255,255,255,0.9);
-      font-size: 1.05rem;
-      cursor: pointer;
+      position: absolute; top: 14px; right: 16px; z-index: 3;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.25); background: rgba(0,0,0,0.4);
+      color: rgba(255,255,255,0.9); font-size: 1.05rem; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
-      transition: background 0.18s;
-      line-height: 1;
+      transition: background 0.18s; line-height: 1;
     }
     .fpb-close:hover { background: rgba(0,0,0,0.6); color: #fff; }
-
-    /* ── Modal Body ── */
-    .fpb-modal-body {
-      padding: 24px 28px 28px;
-      border-top: 1px solid rgba(255,255,255,0.08); /* clean separator from hero */
-    }
-
-    .fpb-modal-desc {
-      color: rgba(220,235,248,0.72);
-      font-size: 0.88rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .fpb-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+    .fpb-modal-body { padding: 24px 28px 28px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .fpb-modal-desc { color: rgba(220,235,248,0.72); font-size: 0.88rem; line-height: 1.8; margin-bottom: 20px; }
+    .fpb-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 20px; }
     .fpb-stat {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 12px 8px;
-      text-align: center;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 12px 8px; text-align: center;
     }
     .fpb-stat-val { display: block; font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 3px; }
     .fpb-stat-lbl { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: rgba(220,235,248,0.4); font-weight: 600; }
-
     .fpb-feats { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
     .fpb-feat {
-      font-size: 0.72rem; padding: 4px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-      color: rgba(220,235,248,0.78);
-      font-weight: 600;
+      font-size: 0.72rem; padding: 4px 12px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);
+      color: rgba(220,235,248,0.78); font-weight: 600;
     }
-
     .fpb-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
     .fpb-cta {
       display: inline-flex; align-items: center; gap: 7px;
       padding: 11px 22px; border-radius: 999px;
-      font-size: 0.83rem; font-weight: 800;
-      color: #fff; text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-      border: none; cursor: pointer;
+      font-size: 0.83rem; font-weight: 800; color: #fff;
+      transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer;
     }
-    .fpb-cta:hover { opacity: 0.84; transform: translateX(3px); color: #fff; text-decoration: none; }
+    .fpb-cta:hover { opacity: 0.84; transform: translateX(3px); color: #fff; }
     .fpb-cta-green  { background: linear-gradient(135deg, #03989e, #0b8f77); }
-    .fpb-cta-orange { background: linear-gradient(135deg, #f29b38, #df6d2f); }
+    .fpb-cta-orange { background: linear-gradient(135deg, #46d5f9, #1ab8d4); }
     .fpb-cta-blue   { background: linear-gradient(135deg, #1e5dd8, #5a7ef2); }
     .fpb-cta-ghost  { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: rgba(220,235,248,0.7); }
     .fpb-cta-ghost:hover { border-color: rgba(255,255,255,0.3); color: #fff; transform: none; }
 
-    @media (max-width: 500px) {
-      .fpb-btn { right: 14px; width: 54px; height: 54px; font-size: 1.2rem; }
-      .fpb-btn-blue   { bottom: 100px; }
-      .fpb-btn-orange { bottom: 164px; }
-      .fpb-btn-green  { bottom: 228px; }
+    /* ══════════════════════════════════════════════════════════════════
+       AOS ANIMATIONS
+    ══════════════════════════════════════════════════════════════════ */
+    [data-aos] { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.25,0.46,0.45,0.94); }
+    [data-aos].visible { opacity: 1; transform: translateY(0); }
+    [data-aos][data-aos-left] { transform: translateX(-30px); }
+    [data-aos][data-aos-left].visible { transform: translateX(0); }
+    [data-aos][style*="--delay"] { transition-delay: var(--delay); }
+
+    /* ══════════════════════════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stats-bar { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 66px; left: 0; right: 0; background: rgba(6,10,16,0.98); flex-direction: column; padding: 16px; border-bottom: 1px solid var(--border); gap: 2px; }
+      .nav-links.open { display: flex; }
+      .nav-dropdown-panel { position: static; opacity: 1; pointer-events: all; transform: none; box-shadow: none; background: transparent; border: none; padding: 0 0 0 12px; min-width: unset; }
+      .nav-dropdown-panel::before { display: none; }
+      .hamburger { display: block; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 90px 20px 60px; min-height: auto; }
+      .hero h1 { font-size: 32px; }
+      .hero-stats { gap: 24px; }
+      .stat-num { font-size: 30px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .fpb-btn { right: 12px; height: 40px; padding: 0 12px 0 10px; font-size: 1.1rem; gap: 6px; }
+      .fpb-btn-name { font-size: 0.7rem; }
+      .fpb-btn-blue   { bottom: 96px; }
+      .fpb-btn-orange { bottom: 146px; }
+      .fpb-btn-green  { bottom: 196px; }
+      .whatsapp-float { bottom: 20px; left: 16px; width: 46px; height: 46px; font-size: 22px; }
       .fpb-hero { height: 200px; }
       .fpb-hero-name { font-size: 1.3rem; }
       .fpb-modal-body { padding: 18px 20px 22px; }
@@ -616,698 +622,806 @@
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ── NAVBAR ──────────────────────────────────────────────────────────── -->
-  <nav class="navbar navbar-expand-md fixed-top maine-menu">
-    <div class="container">
-      <button class="navbar-toggler ml-auto" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse">
-        <span class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span>
-      </button>
-      <div id="my-nav" class="collapse navbar-collapse">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item nav-products-dropdown" id="navProductsItem">
-            <a class="nav-link nav-products-trigger" href="#our-products" id="navProductsTrigger">
-              Products <span class="nav-products-caret">▾</span>
-            </a>
-            <div class="nav-products-panel" id="navProductsPanel">
-              <div class="nav-products-spinner" id="navSpinner">
-                <a class="nav-prod-card nav-prod-green" href="crinit/crinit.html">
-                  <div class="nav-prod-icon">🌾</div>
-                  <div class="nav-prod-info">
-                    <span class="nav-prod-name">Crinit</span>
-                    <span class="nav-prod-sub">Smart Farm to Fork</span>
-                  </div>
-                  <span class="nav-prod-arrow">→</span>
-                </a>
-                <a class="nav-prod-card nav-prod-orange" href="futuretrack/futuretrack.html">
-                  <div class="nav-prod-icon">🎯</div>
-                  <div class="nav-prod-info">
-                    <span class="nav-prod-name">FutureTrack</span>
-                    <span class="nav-prod-sub">Smart Ed-Tech Platform</span>
-                  </div>
-                  <span class="nav-prod-arrow">→</span>
-                </a>
-                <a class="nav-prod-card nav-prod-blue" href="https://socialmapwork.com/" target="_blank" rel="noopener noreferrer">
-                  <div class="nav-prod-icon">🗺️</div>
-                  <div class="nav-prod-info">
-                    <span class="nav-prod-name">SocialMapWork</span>
-                    <span class="nav-prod-sub">Map Based Problem Reporting</span>
-                  </div>
-                  <span class="nav-prod-arrow">→</span>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="tcpp.html">Terms and Conditions</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<div class="hero-bg"></div>
 
-  <!-- ── HERO BANNER ──────────────────────────────────────────────────────── -->
-  <div class="container-fluid fh5co-home-banner">
-    <div class="card">
-      <img class="card-img" src="assets/img/banner-img.jpg" alt="">
-      <div class="card-img-overlay">
-        <div class="center-text">
-          <h2 class="card-title">We turn your ideas into digital reality</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── TWO IMAGES ───────────────────────────────────────────────────────── -->
-  <div class="container-fluid fh5co-two-img">
-    <div class="row">
-      <div class="col-sm-6 pr-0 pl-0">
-        <div class="card"><img class="card-img" src="assets/img/girl1.jpg" alt=""><div class="card-img-overlay"></div></div>
-      </div>
-      <div class="col-sm-6 pr-0 pl-0">
-        <div class="card"><img class="card-img" src="assets/img/girl2.jpg" alt=""><div class="card-img-overlay"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── ABOUT + SERVICES ─────────────────────────────────────────────────── -->
-  <div class="container-fluid fh5co-recent-work">
-    <div class="container contact-pop">
-      <div class="row">
-        <div class="col-md-6 pr-0">
-          <div class="card"><img class="card-img w-100" src="assets/img/logo.png" alt=""></div>
-        </div>
-        <div class="col-md-6 pl-0" id="about">
-          <div class="content">
-            <h3>SnipThinK</h3>
-            <h4>Imagine To Innovate</h4>
-            <hr />
-            <p>"Work hard to do something great, till your soul comes out from your body and says proudly this body is not useless. It helps billions of people to make their life easier and better than they had, and return back to you, to help more"</p>
-            <a href="about.html" class="btn">ABOUT US</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="container recent" id="services">
-        <div class="row">
-          <h2>We Provide</h2>
-          <div class="owl-carousel owl-carousel2 owl-theme">
-            <div><div class="card"><img class="card-img" src="assets/img/65.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Website Design</h5><p class="card-text">LAMP, MEAN, MERN and Django</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/79.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Mobile App Development</h5><p class="card-text">IOS and Android App</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/75.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Cloud Computing</h5><p class="card-text">AWS, GCP, Azure, Server Setup</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/76.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Big-Data</h5><p class="card-text">Hadoop, Sparks, Cloudera Scala..</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/78.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Internet of Things</h5><p class="card-text">NodeMCU, Raspberry Pi, Arduino, Atmel</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/77.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Artificial Intelligence</h5><p class="card-text">NLP, Chatbot, ML, TensorFlow, AML</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/66.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Digital Marketing Content</h5><p class="card-text">Content for Social Media</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/67.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Business Email</h5><p class="card-text">Get email like name@company.com</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/69.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Video Advertisement</h5><p class="card-text">We create premium Ads for company</p></div></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/70.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Business Advice</h5><p class="card-text">Grow your business with us</p></div></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       OUR PRODUCTS — SPINNER SECTION
-  ═══════════════════════════════════════════════════════════════════════════ -->
-  <section class="spt-products-section" id="our-products">
-    <div class="container">
-      <div class="row align-items-center mb-5">
-        <div class="col-lg-6">
-          <div class="spt-section-kicker">✦ Our Products</div>
-          <h2 class="spt-section-title">Built to Solve<br>Real Problems</h2>
-          <p class="spt-section-sub">Three products. Three domains. One mission — transforming the way people farm, learn, and participate in civic life.</p>
-        </div>
-        <div class="col-lg-6 d-none d-lg-flex justify-content-end align-items-center">
-          <span style="color:rgba(220,235,248,0.35); font-size:0.8rem; font-family:'Manrope',sans-serif; font-weight:600; letter-spacing:0.08em;">CLICK A NODE TO EXPLORE →</span>
-        </div>
-      </div>
-
-      <div class="row align-items-center">
-
-        <!-- LEFT: Spinner wheel -->
-        <div class="col-lg-5 mb-5 mb-lg-0">
-          <div class="spt-spinner-wrap">
-            <div class="spt-track" id="sptTrack">
-              <div class="spt-ring-anim"></div>
-              <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
-                <line id="spt-line-0" x1="190" y1="190" x2="190" y2="50"  stroke="rgba(153,240,238,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
-                <line id="spt-line-1" x1="190" y1="190" x2="350" y2="280" stroke="rgba(242,155,56,0.15)"  stroke-width="1" stroke-dasharray="4 4"/>
-                <line id="spt-line-2" x1="190" y1="190" x2="30"  y2="280" stroke="rgba(90,126,242,0.15)"  stroke-width="1" stroke-dasharray="4 4"/>
-              </svg>
-              <div class="spt-hub">🚀</div>
-              <div class="spt-node spt-node-green active" id="spt-node-0" style="--tx:0px; --ty:-140px; transform:translate(0px,-140px);" onclick="sptSelect(0)" title="Crinit">🌾</div>
-              <div class="spt-node spt-node-orange"        id="spt-node-1" style="--tx:138px; --ty:78px; transform:translate(138px,78px);"   onclick="sptSelect(1)" title="FutureTrack">🎯</div>
-              <div class="spt-node spt-node-blue"          id="spt-node-2" style="--tx:-138px; --ty:78px; transform:translate(-138px,78px);" onclick="sptSelect(2)" title="SocialMapWork">🗺️</div>
-            </div>
-            <div class="spt-dots">
-              <button class="spt-dot active" id="spt-dot-0" onclick="sptSelect(0)" aria-label="Crinit"></button>
-              <button class="spt-dot"        id="spt-dot-1" onclick="sptSelect(1)" aria-label="FutureTrack"></button>
-              <button class="spt-dot"        id="spt-dot-2" onclick="sptSelect(2)" aria-label="SocialMapWork"></button>
-            </div>
-          </div>
-        </div>
-
-        <!-- RIGHT: Detail cards — wrapped in relative container so hidden cards stack correctly -->
-        <div class="col-lg-7 spt-card-col">
-          <div style="position:relative; min-height:320px;">
-
-            <!-- Card 0: Crinit -->
-            <div class="spt-detail-card" id="spt-card-0">
-              <div class="spt-card-icon green">🌾</div>
-              <span class="spt-card-tag spt-tag-green">Agriculture &amp; IoT</span>
-              <h3 class="spt-card-name">Crinit</h3>
-              <p class="spt-card-tagline spt-tl-green">Smart Farm to Fork</p>
-              <p class="spt-card-desc">Crinit is an IoT-powered connected farming platform that bridges the gap between cultivation and consumption. It delivers real-time sensor-driven crop management, agricultural automation, and end-to-end supply chain visibility — giving farmers intelligent tools to monitor soil health, water usage, and harvest readiness, while ensuring consumers receive verified, traceable produce directly from source.</p>
-              <div class="spt-features">
-                <span class="spt-feat">IoT Sensors</span>
-                <span class="spt-feat">Crop Monitoring</span>
-                <span class="spt-feat">Smart Irrigation</span>
-                <span class="spt-feat">Supply Chain Tracing</span>
-                <span class="spt-feat">Agricultural Automation</span>
-                <span class="spt-feat">Real-time Alerts</span>
-              </div>
-              <a href="crinit/crinit.html" class="spt-card-cta spt-cta-green">Explore Crinit <span>→</span></a>
-            </div>
-
-            <!-- Card 1: FutureTrack -->
-            <div class="spt-detail-card hidden" id="spt-card-1">
-              <div class="spt-card-icon orange">🎯</div>
-              <span class="spt-card-tag spt-tag-orange">Education Technology</span>
-              <h3 class="spt-card-name">FutureTrack</h3>
-              <p class="spt-card-tagline spt-tl-orange">Smart Ed-Tech Platform</p>
-              <p class="spt-card-desc">FutureTrack transforms traditional paper-based education into a fully digital, guided experience. Designed to empower students, teachers, and institutions, it offers structured focus workflows, progress tracking dashboards, and measurable learning outcomes. From timed practice sessions to performance analytics, FutureTrack turns everyday study habits into data-driven growth journeys.</p>
-              <div class="spt-features">
-                <span class="spt-feat">Focus Workflows</span>
-                <span class="spt-feat">Progress Tracking</span>
-                <span class="spt-feat">Digital Assessments</span>
-                <span class="spt-feat">Analytics Dashboard</span>
-                <span class="spt-feat">Student Engagement</span>
-                <span class="spt-feat">Paper-free Learning</span>
-              </div>
-              <a href="futuretrack/futuretrack.html" class="spt-card-cta spt-cta-orange">Explore FutureTrack <span>→</span></a>
-            </div>
-
-            <!-- Card 2: SocialMapWork -->
-            <div class="spt-detail-card hidden" id="spt-card-2">
-              <div class="spt-card-icon blue">🗺️</div>
-              <span class="spt-card-tag spt-tag-blue">Civic Tech &amp; Community</span>
-              <h3 class="spt-card-name">SocialMapWork</h3>
-              <p class="spt-card-tagline spt-tl-blue">Map Based Problem Reporting System</p>
-              <p class="spt-card-desc">SocialMapWork is a community-powered civic action platform that puts local issues on the map — literally. Citizens can pin, report, and track public problems like potholes, broken infrastructure, or sanitation concerns directly on an interactive map. Built around social visibility and public engagement, it creates accountability between communities and local authorities, turning passive frustration into organised, location-tagged civic action.</p>
-              <div class="spt-features">
-                <span class="spt-feat">Interactive Map</span>
-                <span class="spt-feat">Issue Reporting</span>
-                <span class="spt-feat">Civic Engagement</span>
-                <span class="spt-feat">Community Voting</span>
-                <span class="spt-feat">Authority Alerts</span>
-                <span class="spt-feat">Status Tracking</span>
-              </div>
-              <a href="https://socialmapwork.com/" target="_blank" rel="noopener noreferrer" class="spt-card-cta spt-cta-blue">Visit SocialMapWork <span>→</span></a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PORTFOLIO ──────────────────────────────────────────────────────── -->
-  <div class="container-fluid recent fh5co-portfolio" id="portfolio">
-    <div class="container">
-      <h2>Portfolios</h2>
-      <div class="row">
-        <div class="bx bx-1"><div class="card"><img class="card-img" src="assets/img/portfolio-img1.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Graphics Design</h5></div></div></div></div>
-        <div class="bx bx-2"><div class="card"><img class="card-img" src="assets/img/portfolio-img2.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Dynamic Website</h5></div></div></div></div>
-        <div class="bx bx-3"><div class="card"><img class="card-img" src="assets/img/portfolio-img3.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Content Creation</h5></div></div></div></div>
-        <div class="bx bx-4"><div class="card"><img class="card-img" src="assets/img/portfolio-img4.png" alt=""><div class="card-img-overlay"><a href="https://www.crinit.com"><img src="assets/img/heart.png" class="heart" alt="heart icon"></a><div class="bottom-text"><h5 class="card-title">Static Website</h5></div></div></div></div>
-        <div class="bx bx-middle" style="padding:0;">
-          <div class="bx bx-5"><div class="card"><img class="card-img" src="assets/img/portfolio-img5.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Video Advertisement</h5></div></div></div></div>
-          <div class="bx bx-6"><div class="card"><img class="card-img" src="assets/img/portfolio-img6.jpg" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Artificial Intelligence</h5></div></div></div></div>
-          <div>
-            <div class="bx bx-7"><div class="card"><img class="card-img" src="assets/img/portfolio-img7.png" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Business Plan</h5></div></div></div></div>
-            <div class="bx bx-8"><div class="card"><img class="card-img" src="assets/img/portfolio-img8.jpg" alt=""><div class="card-img-overlay"><div class="bottom-text"><h5 class="card-title">Cloud Computing</h5></div></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── SOCIAL / INSTAGRAM ──────────────────────────────────────────────── -->
-  <div class="container-fluid fh5co-insta-feed services">
-    <div class="container recent">
-      <div class="row mb-5 pb-5">
-        <div class="col-lg-6">
-          <div class="twit-box">
-            <div class="media mb-3">
-              <img class="align-self-start mr-3 rounded-circle" src="assets/img/snipthinktwit.png" alt="">
-              <div class="media-body">
-                <h5 class="mb-0 mt-3">SnipThinK</h5>
-                <p>@snipthink</p>
-              </div>
-            </div>
-            <p class="text-justify">"Our mission is to observe people's everyday life common problems in a systematic way to solve them. by deep thinking, planing with the best strategy to develop the easiest possible tech-based solution for them."</p>
-            <div class="clearfix"><a href="https://twitter.com/snipthink" class="btn btn-primary mt-2 float-right">Follow</a></div>
-          </div>
-        </div>
-        <div class="col-lg-6 feed-caro">
-          <h2>Instagram feed</h2>
-          <div class="owl-carousel owl-carousel4 owl-theme">
-            <div><div class="card"><img class="card-img" src="assets/img/feed-img1.png" alt=""><div class="card-img-overlay"></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/feed-img2.png" alt=""><div class="card-img-overlay"></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/feed-img5.png" alt=""><div class="card-img-overlay"></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/feed-img4.png" alt=""><div class="card-img-overlay"></div></div></div>
-            <div><div class="card"><img class="card-img" src="assets/img/feed-img6.png" alt=""><div class="card-img-overlay"></div></div></div>
-          </div>
-        </div>
-      </div>
-      <h2 class="text-center d-block">Our Social Media</h2>
-      <div class="row social-links">
-        <ul class="nav mx-auto">
-          <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/SnipThinK-106710934942936"><img src="assets/img/facebook.png" alt=""></a></li>
-          <li class="nav-item"><a class="nav-link" href="https://twitter.com/snipthink"><img src="assets/img/twitter.png" alt=""></a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/snipthink/"><img src="assets/img/instagram.png" alt=""></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── 3 FLOATING BUTTONS ─────────────────────────────────────────────── -->
-  <button class="fpb-btn fpb-btn-green"  data-label="Crinit — Farm to Fork"         onclick="fpbOpen('crinit')"        aria-label="Crinit">🌾</button>
-  <button class="fpb-btn fpb-btn-orange" data-label="FutureTrack — Smart Ed-Tech"   onclick="fpbOpen('futuretrack')"   aria-label="FutureTrack">🎯</button>
-  <button class="fpb-btn fpb-btn-blue"   data-label="SocialMapWork — Civic Mapping" onclick="fpbOpen('socialmapwork')" aria-label="SocialMapWork">🗺️</button>
-
-  <!-- ═══ Modal: Crinit ═══════════════════════════════════════════════════ -->
-  <div class="fpb-overlay" id="fpb-overlay-crinit" onclick="fpbOverlayClose(event,'crinit')">
-    <div class="fpb-modal">
-      <div class="fpb-hero">
-
-        <!-- Layer 1: SVG art (dimmed via opacity on the element) -->
-        <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="crinit-sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#042d1a"/>
-              <stop offset="100%" stop-color="#0a4a2c"/>
-            </linearGradient>
-            <linearGradient id="crinit-ground" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#0d5c34"/>
-              <stop offset="100%" stop-color="#073d22"/>
-            </linearGradient>
-            <radialGradient id="crinit-sun" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#f5e642" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#f5e642" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <rect width="680" height="190" fill="url(#crinit-sky)"/>
-          <rect y="115" width="680" height="75" fill="url(#crinit-ground)"/>
-          <circle cx="580" cy="55" r="44" fill="url(#crinit-sun)"/>
-          <circle cx="580" cy="55" r="22" fill="#f5e642" opacity="0.7"/>
-          <g opacity="0.55" stroke="#22c468" stroke-width="1.5">
-            <line x1="0" y1="130" x2="680" y2="130"/>
-            <line x1="0" y1="144" x2="680" y2="144"/>
-            <line x1="0" y1="158" x2="680" y2="158"/>
-            <line x1="0" y1="172" x2="680" y2="172"/>
-          </g>
-          <g fill="#22c468" opacity="0.7">
-            <rect x="40"  y="100" width="4" height="28" rx="2"/>
-            <rect x="100" y="96"  width="4" height="32" rx="2"/>
-            <rect x="160" y="103" width="4" height="25" rx="2"/>
-            <rect x="220" y="98"  width="4" height="30" rx="2"/>
-            <rect x="280" y="101" width="4" height="27" rx="2"/>
-            <rect x="340" y="95"  width="4" height="33" rx="2"/>
-            <rect x="400" y="102" width="4" height="26" rx="2"/>
-          </g>
-          <g fill="#2ee87a" opacity="0.6">
-            <ellipse cx="44"  cy="108" rx="10" ry="4" transform="rotate(-30 44 108)"/>
-            <ellipse cx="104" cy="104" rx="10" ry="4" transform="rotate(25 104 104)"/>
-            <ellipse cx="164" cy="111" rx="10" ry="4" transform="rotate(-25 164 111)"/>
-            <ellipse cx="224" cy="106" rx="10" ry="4" transform="rotate(30 224 106)"/>
-          </g>
-          <g>
-            <circle cx="120" cy="72" r="8" fill="#03989e" opacity="0.9"/>
-            <circle cx="120" cy="72" r="14" fill="#03989e" opacity="0.2"/>
-            <line x1="120" y1="80" x2="120" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
-            <circle cx="260" cy="60" r="8" fill="#03989e" opacity="0.9"/>
-            <circle cx="260" cy="60" r="14" fill="#03989e" opacity="0.2"/>
-            <line x1="260" y1="68" x2="260" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
-            <circle cx="420" cy="66" r="8" fill="#03989e" opacity="0.9"/>
-            <circle cx="420" cy="66" r="14" fill="#03989e" opacity="0.2"/>
-            <line x1="420" y1="74" x2="420" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
-          </g>
-          <g stroke="#5de8d6" stroke-width="1" fill="none" opacity="0.5">
-            <path d="M112,60 Q120,50 128,60"/>
-            <path d="M107,54 Q120,40 133,54"/>
-            <path d="M252,48 Q260,38 268,48"/>
-            <path d="M247,42 Q260,28 273,42"/>
-          </g>
-        </svg>
-
-        <!-- Layer 2: gradient scrim — green theme, opaque at bottom -->
-        <div class="fpb-hero-scrim" style="background: linear-gradient(to top, rgba(4,22,14,1) 0%, rgba(4,22,14,0.92) 30%, rgba(4,22,14,0.55) 60%, rgba(4,22,14,0.1) 100%);"></div>
-
-        <!-- Layer 3: text content -->
-        <div class="fpb-hero-content">
-          <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#03989e,#0b8f77);">🌾</div>
-          <div class="fpb-hero-text">
-            <span class="fpb-hero-tag" style="background:rgba(3,152,158,0.3);color:#5de8d6;">Agriculture &amp; IoT</span>
-            <h2 class="fpb-hero-name">Crinit</h2>
-            <span class="fpb-hero-sub" style="color:#5de8d6;">Smart Farm to Fork</span>
-          </div>
-        </div>
-
-        <!-- Layer 4: close button -->
-        <button class="fpb-close" onclick="fpbClose('crinit')" aria-label="Close">&times;</button>
-      </div>
-
-      <div class="fpb-modal-body" style="background:linear-gradient(160deg,#071320,#0b1c30);">
-        <p class="fpb-modal-desc">Crinit is an IoT-powered connected farming platform bridging cultivation and consumption. Real-time sensor-driven crop management, agricultural automation, and end-to-end supply chain visibility give farmers intelligent tools to monitor soil health, water usage, and harvest readiness — while ensuring consumers receive verified, traceable produce directly from source.</p>
-        <div class="fpb-stats">
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">Real-time</span><span class="fpb-stat-lbl">Monitoring</span></div>
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">IoT</span><span class="fpb-stat-lbl">Sensor Network</span></div>
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">Farm→Fork</span><span class="fpb-stat-lbl">Traceability</span></div>
-        </div>
-        <div class="fpb-feats">
-          <span class="fpb-feat">IoT Sensors</span><span class="fpb-feat">Crop Monitoring</span>
-          <span class="fpb-feat">Smart Irrigation</span><span class="fpb-feat">Supply Chain Tracing</span>
-          <span class="fpb-feat">Agricultural Automation</span><span class="fpb-feat">Harvest Analytics</span>
-          <span class="fpb-feat">Weather Integration</span><span class="fpb-feat">Mobile Alerts</span>
-        </div>
-        <div class="fpb-cta-row">
-          <a href="crinit/crinit.html" class="fpb-cta fpb-cta-green">Explore Crinit →</a>
-          <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('crinit')">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ Modal: FutureTrack ══════════════════════════════════════════════ -->
-  <div class="fpb-overlay" id="fpb-overlay-futuretrack" onclick="fpbOverlayClose(event,'futuretrack')">
-    <div class="fpb-modal">
-      <div class="fpb-hero">
-
-        <!-- Layer 1: SVG art -->
-        <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ft-bg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#1c1200"/>
-              <stop offset="100%" stop-color="#2e1e00"/>
-            </linearGradient>
-            <linearGradient id="ft-bar1" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#f29b38"/>
-              <stop offset="100%" stop-color="#df6d2f"/>
-            </linearGradient>
-            <linearGradient id="ft-bar2" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#fbbf6a"/>
-              <stop offset="100%" stop-color="#f29b38"/>
-            </linearGradient>
-          </defs>
-          <rect width="680" height="190" fill="url(#ft-bg)"/>
-          <g stroke="#f29b38" stroke-width="0.4" opacity="0.12">
-            <line x1="0" y1="30"  x2="680" y2="30"/>  <line x1="0" y1="60"  x2="680" y2="60"/>
-            <line x1="0" y1="90"  x2="680" y2="90"/>  <line x1="0" y1="120" x2="680" y2="120"/>
-            <line x1="0" y1="150" x2="680" y2="150"/> <line x1="0" y1="180" x2="680" y2="180"/>
-            <line x1="80"  y1="0" x2="80"  y2="190"/> <line x1="160" y1="0" x2="160" y2="190"/>
-            <line x1="240" y1="0" x2="240" y2="190"/> <line x1="320" y1="0" x2="320" y2="190"/>
-            <line x1="400" y1="0" x2="400" y2="190"/> <line x1="480" y1="0" x2="480" y2="190"/>
-            <line x1="560" y1="0" x2="560" y2="190"/>
-          </g>
-          <g>
-            <rect x="60"  y="90"  width="28" height="65" rx="4" fill="url(#ft-bar1)" opacity="0.75"/>
-            <rect x="100" y="70"  width="28" height="85" rx="4" fill="url(#ft-bar2)" opacity="0.75"/>
-            <rect x="140" y="50"  width="28" height="105" rx="4" fill="url(#ft-bar1)" opacity="0.75"/>
-            <rect x="180" y="80"  width="28" height="75" rx="4" fill="url(#ft-bar2)" opacity="0.75"/>
-            <rect x="220" y="40"  width="28" height="115" rx="4" fill="url(#ft-bar1)" opacity="0.9"/>
-          </g>
-          <polyline points="74,90 114,70 154,50 194,80 234,40" stroke="#fbbf6a" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
-          <circle cx="74"  cy="90" r="4" fill="#fbbf6a"/>
-          <circle cx="114" cy="70" r="4" fill="#fbbf6a"/>
-          <circle cx="154" cy="50" r="4" fill="#fbbf6a"/>
-          <circle cx="194" cy="80" r="4" fill="#fbbf6a"/>
-          <circle cx="234" cy="40" r="5" fill="#fff" stroke="#fbbf6a" stroke-width="2"/>
-          <g transform="translate(500,65)">
-            <circle cx="0" cy="0" r="46" fill="none" stroke="#f29b38" stroke-width="1.5" opacity="0.25"/>
-            <circle cx="0" cy="0" r="34" fill="none" stroke="#f29b38" stroke-width="1.5" opacity="0.35"/>
-            <circle cx="0" cy="0" r="22" fill="none" stroke="#f29b38" stroke-width="1.5" opacity="0.5"/>
-            <circle cx="0" cy="0" r="11" fill="#f29b38" opacity="0.65"/>
-            <circle cx="0" cy="0" r="5"  fill="#fff" opacity="0.9"/>
-            <line x1="-60" y1="-22" x2="-14" y2="-3" stroke="#fbbf6a" stroke-width="2"/>
-            <polygon points="-14,-3 -24,-10 -20,4" fill="#fbbf6a"/>
-          </g>
-          <g transform="translate(590,95)" opacity="0.55">
-            <rect x="0"  y="0"  width="18" height="70" rx="2" fill="#f29b38"/>
-            <rect x="22" y="10" width="18" height="60" rx="2" fill="#df6d2f"/>
-            <rect x="44" y="5"  width="18" height="65" rx="2" fill="#fbbf6a"/>
-          </g>
-        </svg>
-
-        <!-- Layer 2: scrim — orange theme -->
-        <div class="fpb-hero-scrim" style="background: linear-gradient(to top, rgba(20,9,0,1) 0%, rgba(20,9,0,0.92) 30%, rgba(20,9,0,0.55) 60%, rgba(20,9,0,0.1) 100%);"></div>
-
-        <!-- Layer 3: text content -->
-        <div class="fpb-hero-content">
-          <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#f29b38,#df6d2f);">🎯</div>
-          <div class="fpb-hero-text">
-            <span class="fpb-hero-tag" style="background:rgba(242,155,56,0.3);color:#fbbf6a;">Education Technology</span>
-            <h2 class="fpb-hero-name">FutureTrack</h2>
-            <span class="fpb-hero-sub" style="color:#fbbf6a;">Smart Ed-Tech Platform</span>
-          </div>
-        </div>
-
-        <!-- Layer 4: close -->
-        <button class="fpb-close" onclick="fpbClose('futuretrack')" aria-label="Close">&times;</button>
-      </div>
-
-      <div class="fpb-modal-body" style="background:linear-gradient(160deg,#120900,#1e1100);">
-        <p class="fpb-modal-desc">FutureTrack transforms traditional paper-based education into a fully digital, guided experience. Designed for students, teachers, and institutions — structured focus workflows, progress tracking dashboards, and measurable learning outcomes turn everyday study habits into data-driven growth journeys.</p>
-        <div class="fpb-stats">
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#fbbf6a;">Digital</span><span class="fpb-stat-lbl">Assessments</span></div>
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#fbbf6a;">Smart</span><span class="fpb-stat-lbl">Workflows</span></div>
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#fbbf6a;">Live</span><span class="fpb-stat-lbl">Analytics</span></div>
-        </div>
-        <div class="fpb-feats">
-          <span class="fpb-feat">Focus Workflows</span><span class="fpb-feat">Progress Tracking</span>
-          <span class="fpb-feat">Digital Assessments</span><span class="fpb-feat">Analytics Dashboard</span>
-          <span class="fpb-feat">Student Engagement</span><span class="fpb-feat">Paper-free Learning</span>
-          <span class="fpb-feat">Teacher Tools</span><span class="fpb-feat">Performance Reports</span>
-        </div>
-        <div class="fpb-cta-row">
-          <a href="futuretrack/futuretrack.html" class="fpb-cta fpb-cta-orange">Explore FutureTrack →</a>
-          <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('futuretrack')">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ Modal: SocialMapWork ════════════════════════════════════════════ -->
-  <div class="fpb-overlay" id="fpb-overlay-socialmapwork" onclick="fpbOverlayClose(event,'socialmapwork')">
-    <div class="fpb-modal">
-      <div class="fpb-hero">
-
-        <!-- Layer 1: SVG art -->
-        <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="smw-bg" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#050c2a"/>
-              <stop offset="100%" stop-color="#0a1540"/>
-            </linearGradient>
-            <radialGradient id="smw-glow1" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#5a7ef2" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#5a7ef2" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="smw-glow2" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#93b8f8" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#93b8f8" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <rect width="680" height="190" fill="url(#smw-bg)"/>
-          <g stroke="#1e5dd8" stroke-width="0.7" opacity="0.3">
-            <line x1="0" y1="40"  x2="680" y2="40"/>  <line x1="0" y1="80"  x2="680" y2="80"/>
-            <line x1="0" y1="120" x2="680" y2="120"/> <line x1="0" y1="160" x2="680" y2="160"/>
-            <line x1="80"  y1="0" x2="80"  y2="190"/> <line x1="160" y1="0" x2="160" y2="190"/>
-            <line x1="240" y1="0" x2="240" y2="190"/> <line x1="320" y1="0" x2="320" y2="190"/>
-            <line x1="400" y1="0" x2="400" y2="190"/> <line x1="480" y1="0" x2="480" y2="190"/>
-            <line x1="560" y1="0" x2="560" y2="190"/>
-          </g>
-          <g stroke="#93b8f8" stroke-width="3" fill="none" opacity="0.3" stroke-linecap="round">
-            <path d="M0,95 Q170,75 340,95 Q510,115 680,95"/>
-            <path d="M200,0 Q210,95 200,190"/>
-            <path d="M440,0 Q450,95 440,190"/>
-          </g>
-          <g fill="#1e5dd8" opacity="0.2">
-            <rect x="90"  y="50"  width="50" height="30" rx="3"/>
-            <rect x="90"  y="90"  width="50" height="20" rx="3"/>
-            <rect x="260" y="40"  width="40" height="50" rx="3"/>
-            <rect x="350" y="100" width="60" height="25" rx="3"/>
-            <rect x="470" y="50"  width="45" height="35" rx="3"/>
-          </g>
-          <circle cx="140" cy="68" r="28" fill="url(#smw-glow1)"/>
-          <circle cx="320" cy="85" r="22" fill="url(#smw-glow2)"/>
-          <circle cx="500" cy="62" r="26" fill="url(#smw-glow1)"/>
-          <g>
-            <path d="M140,48 a16,16 0 1,1 0.01,0 Z" fill="#e24b4a"/>
-            <circle cx="140" cy="48" r="6" fill="#fff" opacity="0.9"/>
-            <path d="M140,64 L134,80 L146,80 Z" fill="#e24b4a"/>
-            <path d="M320,65 a14,14 0 1,1 0.01,0 Z" fill="#5a7ef2"/>
-            <circle cx="320" cy="65" r="5" fill="#fff" opacity="0.9"/>
-            <path d="M320,79 L314,93 L326,93 Z" fill="#5a7ef2"/>
-            <path d="M500,42 a15,15 0 1,1 0.01,0 Z" fill="#f29b38"/>
-            <circle cx="500" cy="42" r="5.5" fill="#fff" opacity="0.9"/>
-            <path d="M500,57 L494,71 L506,71 Z" fill="#f29b38"/>
-          </g>
-          <g stroke="#93b8f8" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.35" fill="none">
-            <line x1="140" y1="72" x2="320" y2="79"/>
-            <line x1="320" y1="79" x2="500" y2="57"/>
-          </g>
-        </svg>
-
-        <!-- Layer 2: scrim — blue theme -->
-        <div class="fpb-hero-scrim" style="background: linear-gradient(to top, rgba(5,9,26,1) 0%, rgba(5,9,26,0.92) 30%, rgba(5,9,26,0.55) 60%, rgba(5,9,26,0.1) 100%);"></div>
-
-        <!-- Layer 3: text content -->
-        <div class="fpb-hero-content">
-          <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#1e5dd8,#5a7ef2);">🗺️</div>
-          <div class="fpb-hero-text">
-            <span class="fpb-hero-tag" style="background:rgba(30,93,216,0.3);color:#93b8f8;">Civic Tech &amp; Community</span>
-            <h2 class="fpb-hero-name">SocialMapWork</h2>
-            <span class="fpb-hero-sub" style="color:#93b8f8;">Map Based Problem Reporting</span>
-          </div>
-        </div>
-
-        <!-- Layer 4: close -->
-        <button class="fpb-close" onclick="fpbClose('socialmapwork')" aria-label="Close">&times;</button>
-      </div>
-
-      <div class="fpb-modal-body" style="background:linear-gradient(160deg,#05091a,#0a1230);">
-        <p class="fpb-modal-desc">SocialMapWork is a community-powered civic action platform that puts local issues on the map — literally. Citizens pin, report, and track public problems like potholes, broken infrastructure, or sanitation concerns on an interactive map, creating accountability between communities and local authorities.</p>
-        <div class="fpb-stats">
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Map</span><span class="fpb-stat-lbl">Based Pinning</span></div>
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Civic</span><span class="fpb-stat-lbl">Engagement</span></div>
-          <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Live</span><span class="fpb-stat-lbl">Status Updates</span></div>
-        </div>
-        <div class="fpb-feats">
-          <span class="fpb-feat">Interactive Map</span><span class="fpb-feat">Issue Reporting</span>
-          <span class="fpb-feat">Civic Engagement</span><span class="fpb-feat">Community Voting</span>
-          <span class="fpb-feat">Authority Alerts</span><span class="fpb-feat">Status Tracking</span>
-          <span class="fpb-feat">Location Tagging</span><span class="fpb-feat">Public Dashboard</span>
-        </div>
-        <div class="fpb-cta-row">
-          <a href="https://socialmapwork.com/" target="_blank" rel="noopener noreferrer" class="fpb-cta fpb-cta-blue">Visit SocialMapWork →</a>
-          <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('socialmapwork')">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
-  <footer class="container-fluid p-0 pr-0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <a href="https://api.whatsapp.com/send?phone=918952872163&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
-      <i class="fa fa-whatsapp my-float"></i>
+<!-- ═══════════════════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="SnipThinK Home">
+      <div class="logo-icon"><img src="assets/img/logo.png" alt="SnipThinK logo"></div>
+      <span class="logo-text">SnipThinK</span>
     </a>
-    <div class="row mr-0 ml-0">
-      <div class="col-md-6 pr-0 pl-0 map">
-        <iframe class="map" width="100%" height="450" frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?q=26.1373431,86.3556195&key=AIzaSyAlED-1aT9PsSNL8g5fiT3oVS48eaSAztY"></iframe>
+    <button class="hamburger" id="ham" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"     onclick="closeMenu()">Home</a></li>
+      <li><a href="#about"    onclick="closeMenu()">About</a></li>
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li class="nav-products-dropdown" id="navProductsDrop">
+        <a href="#products" onclick="toggleDropdown(event)">Products ▾</a>
+        <div class="nav-dropdown-panel" id="navDropPanel">
+          <a class="nav-prod-card" href="crinit/crinit.html">
+            <span class="nav-prod-icon">🌾</span>
+            <span><span class="nav-prod-name">Crinit</span><span class="nav-prod-sub">Smart Farm to Fork</span></span>
+            <span class="nav-prod-arrow">→</span>
+          </a>
+          <a class="nav-prod-card" href="futuretrack/futuretrack.html">
+            <span class="nav-prod-icon"><img src="futuretrack/images/favicon.svg" alt="FutureTrack" style="width:22px;height:22px;object-fit:contain;vertical-align:middle;"></span>
+            <span><span class="nav-prod-name">FutureTrack</span><span class="nav-prod-sub">Smart Ed-Tech Platform</span></span>
+            <span class="nav-prod-arrow">→</span>
+          </a>
+          <a class="nav-prod-card" href="https://socialmapwork.com/" target="_blank" rel="noopener">
+            <span class="nav-prod-icon">🗺️</span>
+            <span><span class="nav-prod-name">SocialMapWork</span><span class="nav-prod-sub">Civic Map Reporting</span></span>
+            <span class="nav-prod-arrow">→</span>
+          </a>
+        </div>
+      </li>
+      <li><a href="#contact"  onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">💡 Technology Company · India</div>
+    <h1>Imagine.<br>Build.<br><span class="gradient-text">Innovate.</span></h1>
+    <p class="hero-desc">SnipThinK is a full-stack technology company that turns ideas into digital reality — from custom software and mobile apps to AI solutions, cloud infrastructure, and its own product portfolio.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn btn-primary">Explore Products</a>
+      <a href="#contact"  class="btn btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Products</span>
       </div>
-      <div class="col-md-6 content-us">
-        <div class="contact-form" id="contact">
-          <h3 class="text-uppercase">Contact us</h3>
-          <form class="contact_us_form row" action="https://formspree.io/f/xrgrkkjw" method="post" id="contactForm" novalidate="novalidate">
-            <div class="form-group col-lg-12"><input type="text" class="form-control" id="name" name="name" placeholder="Name"></div>
-            <div class="form-group col-lg-12"><input type="email" class="form-control" id="email" name="email" placeholder="Email"></div>
-            <div class="form-group col-lg-12"><input type="text" class="form-control" id="subject" name="subject" placeholder="Subject*"></div>
-            <div class="form-group col-lg-12"><textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea></div>
-            <button type="submit">Send</button>
-          </form>
+      <div class="stat">
+        <span class="stat-num" data-target="10">0</span>+
+        <span class="stat-label">Services</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="5">0</span>+
+        <span class="stat-label">Years</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="float-card fc1">
+      <div class="fc-icon">🌾</div>
+      <div class="fc-text">Crinit IoT<br><strong class="fc-teal">Live</strong></div>
+    </div>
+    <div class="float-card fc2">
+      <div class="fc-icon">🎯</div>
+      <div class="fc-text">FutureTrack<br><strong class="fc-orange">+42%</strong></div>
+    </div>
+    <div class="float-card fc3">
+      <div class="fc-icon">🗺️</div>
+      <div class="fc-text">Civic Issues<br><strong class="fc-blue">Mapped</strong></div>
+    </div>
+    <div class="float-card fc4">
+      <div class="fc-icon">☁️</div>
+      <div class="fc-text">Cloud<br><strong class="fc-teal">99.9%</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════════════════════════════ -->
+<div class="section-dark">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-block">
+        <span class="sb-num" data-target="3">0</span>
+        <span class="sb-label">Products Built</span>
+      </div>
+      <div class="stat-block">
+        <span class="sb-num" data-target="10">0</span>+
+        <span class="sb-label">Services Offered</span>
+      </div>
+      <div class="stat-block">
+        <span class="sb-num" data-target="5">0</span>+
+        <span class="sb-label">Years Active</span>
+      </div>
+      <div class="stat-block">
+        <span class="sb-num" data-target="100">0</span>%
+        <span class="sb-label">Passion Driven</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text" data-aos>
+        <span class="section-tag">Who We Are</span>
+        <h2>Technology that<br><span class="gradient-text">Solves Real Problems</span></h2>
+        <p>SnipThinK is an independent technology company based in Bihar, India. We build custom digital solutions for businesses and individuals — websites, mobile apps, cloud systems, and AI integrations — while also developing our own products that tackle real-world challenges in agriculture, education, and civic engagement.</p>
+        <p>We believe technology should be practical, accessible, and impactful. Every project we take on, and every product we ship, is driven by that conviction.</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:8px">Work With Us →</a>
+      </div>
+      <div class="values-grid">
+        <div class="value-card" data-aos style="--delay:0.1s">
+          <div class="value-icon">🎯</div>
+          <h4>Problem First</h4>
+          <p>We start with the real problem, not the technology. Every solution is shaped by the challenge it needs to solve.</p>
+        </div>
+        <div class="value-card" data-aos style="--delay:0.2s">
+          <div class="value-icon">⚡</div>
+          <h4>Pragmatic</h4>
+          <p>No over-engineering. We build what works, ships fast, and can be maintained without a PhD.</p>
+        </div>
+        <div class="value-card" data-aos style="--delay:0.3s">
+          <div class="value-icon">🌱</div>
+          <h4>Long Term</h4>
+          <p>We build for the long run — products and services designed to grow, not just launch.</p>
+        </div>
+        <div class="value-card" data-aos style="--delay:0.4s">
+          <div class="value-icon">🤝</div>
+          <h4>Honest</h4>
+          <p>Transparent timelines, honest scoping, and clear communication — always.</p>
         </div>
       </div>
     </div>
-    <div class="copy pt-4 pb-4">
-      <p><a href="https://snipthink.com" target="_blank">&copy; 2019 SnipThinK</a> &nbsp;|&nbsp; Design by <a href="https://snipthink.com" target="_blank">SnipThinK</a> &nbsp;|&nbsp; All rights reserved</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════════════════════════════ -->
+<section class="section section-dark" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2>Services We<br><span class="gradient-text">Deliver</span></h2>
+      <p>End-to-end digital services — from idea to deployment</p>
     </div>
-  </footer>
+    <div class="services-grid">
 
-  <!-- ── SCRIPTS ─────────────────────────────────────────────────────────── -->
-  <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/owl.carousel.min.js"></script>
-  <script src="assets/js/main.js"></script>
+      <div class="service-card" data-aos style="--delay:0s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">🌐</div>
+        <h3>Website Design</h3>
+        <p>Custom, responsive websites that look sharp on every device — from landing pages to full business portals.</p>
+      </div>
 
-  <script>
-    var sptCurrent = 0;
-    var sptTotal = 3;
+      <div class="service-card" data-aos style="--delay:0.05s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">📱</div>
+        <h3>Mobile App Development</h3>
+        <p>Cross-platform Android and iOS apps built for performance, usability, and real-world reliability.</p>
+      </div>
 
-    function sptSelect(idx) {
-      for (var i = 0; i < sptTotal; i++) {
-        var node = document.getElementById('spt-node-' + i);
-        var card = document.getElementById('spt-card-' + i);
-        var dot  = document.getElementById('spt-dot-'  + i);
-        if (node) node.classList.remove('active');
-        if (card) card.classList.add('hidden');
-        if (dot)  dot.classList.remove('active');
-      }
-      var selNode = document.getElementById('spt-node-' + idx);
-      var selCard = document.getElementById('spt-card-' + idx);
-      var selDot  = document.getElementById('spt-dot-'  + idx);
-      if (selNode) selNode.classList.add('active');
-      if (selCard) selCard.classList.remove('hidden');
-      if (selDot)  selDot.classList.add('active');
-      sptCurrent = idx;
+      <div class="service-card" data-aos style="--delay:0.1s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">☁️</div>
+        <h3>Cloud Solutions</h3>
+        <p>Scalable cloud infrastructure, API integrations, and server-side systems that handle growth without breaking.</p>
+      </div>
+
+      <div class="service-card" data-aos style="--delay:0.15s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">📊</div>
+        <h3>Big Data &amp; Analytics</h3>
+        <p>Data pipelines, dashboards, and reporting systems that turn raw numbers into business clarity.</p>
+      </div>
+
+      <div class="service-card" data-aos style="--delay:0.2s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">📡</div>
+        <h3>IoT Development</h3>
+        <p>Connected hardware solutions — sensor networks, firmware, and cloud-linked IoT platforms.</p>
+      </div>
+
+      <div class="service-card" data-aos style="--delay:0.25s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">🤖</div>
+        <h3>AI &amp; Automation</h3>
+        <p>Intelligent automation, machine learning integrations, and AI-powered features for your product or workflow.</p>
+      </div>
+
+      <div class="service-card" data-aos style="--delay:0.3s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">📣</div>
+        <h3>Digital Marketing</h3>
+        <p>SEO, social media, content strategy, and paid campaigns designed to grow your digital footprint.</p>
+      </div>
+
+      <div class="service-card" data-aos style="--delay:0.35s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">✉️</div>
+        <h3>Business Email Setup</h3>
+        <p>Professional domain email configuration with hosting, aliases, and email deliverability best practices.</p>
+      </div>
+
+      <div class="service-card" data-aos style="--delay:0.4s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">🎬</div>
+        <h3>Video Ads &amp; Content</h3>
+        <p>Promotional videos, product demos, and social-ready content that communicates your brand clearly.</p>
+      </div>
+
+      <div class="service-card" data-aos style="--delay:0.45s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">💼</div>
+        <h3>Business Consulting</h3>
+        <p>Technology strategy, product planning, and digital transformation advice for startups and SMEs.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PRODUCTS
+═══════════════════════════════════════════════════════════════════ -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Our Products</span>
+      <h2>Built by SnipThinK,<br><span class="gradient-text">For the Real World</span></h2>
+      <p>Three distinct products tackling agriculture, education, and civic tech</p>
+    </div>
+    <div class="products-grid">
+
+      <!-- Crinit -->
+      <div class="product-card prod-teal" data-aos style="--delay:0s">
+        <div class="pc-glow pc-glow-teal"></div>
+        <div class="pc-icon">🌾</div>
+        <h3>Crinit</h3>
+        <span class="pc-tag pc-tag-teal">AgriTech · Farm to Fork</span>
+        <p>An IoT-powered connected farming platform. Real-time crop monitoring, smart irrigation, supply chain tracing, and agricultural automation — from soil sensor to dinner table.</p>
+        <div class="pc-features">
+          <span class="pc-feat-teal">IoT Sensors</span>
+          <span class="pc-feat-teal">Smart Irrigation</span>
+          <span class="pc-feat-teal">Cloud Dashboard</span>
+          <span class="pc-feat-teal">Farm to Table</span>
+        </div>
+        <a href="crinit/crinit.html" class="btn-link btn-link-teal">Explore Crinit →</a>
+      </div>
+
+      <!-- FutureTrack -->
+      <div class="product-card prod-orange" data-aos style="--delay:0.15s">
+        <div class="pc-glow pc-glow-orange"></div>
+        <div class="pc-icon"><img src="futuretrack/images/favicon.svg" alt="FutureTrack" style="width:40px;height:40px;object-fit:contain;"></div>
+        <h3>FutureTrack</h3>
+        <span class="pc-tag pc-tag-orange">EdTech · Paperless Learning</span>
+        <p>India's paperless education platform. Focus mode, structured module tests, progress tracking dashboards, and performance analytics — turning study habits into measurable outcomes.</p>
+        <div class="pc-features">
+          <span class="pc-feat-orange">Focus Mode</span>
+          <span class="pc-feat-orange">Module Tests</span>
+          <span class="pc-feat-orange">Progress Tracking</span>
+          <span class="pc-feat-orange">Analytics</span>
+        </div>
+        <a href="futuretrack/futuretrack.html" class="btn-link btn-link-orange">Explore FutureTrack →</a>
+      </div>
+
+      <!-- SocialMapWork -->
+      <div class="product-card prod-blue" data-aos style="--delay:0.3s">
+        <div class="pc-glow pc-glow-blue"></div>
+        <div class="pc-icon">🗺️</div>
+        <h3>SocialMapWork</h3>
+        <span class="pc-tag pc-tag-blue">Civic Tech · Community Action</span>
+        <p>A community-powered civic action platform. Citizens pin, report, and track local public problems on an interactive map — creating accountability between communities and authorities.</p>
+        <div class="pc-features">
+          <span class="pc-feat-blue">Map Pinning</span>
+          <span class="pc-feat-blue">Issue Reporting</span>
+          <span class="pc-feat-blue">Civic Voting</span>
+          <span class="pc-feat-blue">Status Tracking</span>
+        </div>
+        <a href="https://socialmapwork.com/" target="_blank" rel="noopener" class="btn-link btn-link-blue">Visit SocialMapWork →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════════════════════════ -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Get in Touch</span>
+      <h2>Let's Build<br><span class="gradient-text">Something Together</span></h2>
+      <p>Have a project in mind, or just want to explore what's possible?</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info-cards" data-aos>
+        <div class="cc">
+          <div class="cc-icon">✉️</div>
+          <div>
+            <div class="cc-label">Email</div>
+            <div class="cc-value"><a href="mailto:snipthink@gmail.com">snipthink@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="cc">
+          <div class="cc-icon">🌐</div>
+          <div>
+            <div class="cc-label">Website</div>
+            <div class="cc-value"><a href="https://snipthink.org" target="_blank" rel="noopener">snipthink.org</a></div>
+          </div>
+        </div>
+        <div class="cc">
+          <div class="cc-icon">📍</div>
+          <div>
+            <div class="cc-label">Location</div>
+            <div class="cc-value">Bihar, India</div>
+          </div>
+        </div>
+        <div class="cc">
+          <div class="cc-icon">💬</div>
+          <div>
+            <div class="cc-label">WhatsApp</div>
+            <div class="cc-value"><a href="https://api.whatsapp.com/send?phone=918952872163&text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20SnipThinK%20services." target="_blank" rel="noopener">+91 89528 72163</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap" data-aos style="--delay:0.1s">
+        <h3>Send a Message</h3>
+        <form action="https://formspree.io/f/xrgrkkjw" method="POST" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cname">Name</label>
+              <input type="text" id="cname" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="cemail">Email</label>
+              <input type="email" id="cemail" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="csubject">Subject</label>
+            <input type="text" id="csubject" name="subject" placeholder="What's this about?" required>
+          </div>
+          <div class="form-group">
+            <label for="cmessage">Message</label>
+            <textarea id="cmessage" name="message" placeholder="Tell us about your project or question..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <span class="footer-brand-icon">💡</span>
+          <span class="footer-brand-name">SnipThinK</span>
+        </div>
+        <p>A technology company turning ideas into digital reality. Building services and products that solve real problems across agriculture, education, and civic tech.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/SnipThinK-106710934942936" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">&#x1F426;</a>
+          <a href="https://twitter.com/snipthink" class="footer-social" target="_blank" rel="noopener" aria-label="Twitter / X">𝕏</a>
+          <a href="https://www.instagram.com/snipthink/" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="crinit/crinit.html">Crinit — AgriTech</a></li>
+          <li><a href="futuretrack/futuretrack.html">FutureTrack — EdTech</a></li>
+          <li><a href="https://socialmapwork.com/" target="_blank" rel="noopener">SocialMapWork — Civic</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Website Design</a></li>
+          <li><a href="#services">Mobile Apps</a></li>
+          <li><a href="#services">Cloud Solutions</a></li>
+          <li><a href="#services">IoT Development</a></li>
+          <li><a href="#services">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="tcpp.html">Terms &amp; Privacy</a></li>
+          <li><a href="mailto:snipthink@gmail.com">Email Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SnipThinK. All rights reserved.</p>
+      <p>Made with ❤️ in Bihar, India &nbsp;|&nbsp; <a href="tcpp.html">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     WHATSAPP FLOAT
+═══════════════════════════════════════════════════════════════════ -->
+<a href="https://api.whatsapp.com/send?phone=918952872163&text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20SnipThinK%20services." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     3 FLOATING PRODUCT BUTTONS
+═══════════════════════════════════════════════════════════════════ -->
+<button class="fpb-btn fpb-btn-green"  onclick="fpbOpen('crinit')"        aria-label="Crinit"><span>🌾</span><span class="fpb-btn-name">Crinit</span></button>
+<button class="fpb-btn fpb-btn-orange" onclick="fpbOpen('futuretrack')"   aria-label="FutureTrack"><span><img src="futuretrack/images/favicon.svg" alt="FutureTrack" style="width:1.25rem;height:1.25rem;object-fit:contain;vertical-align:middle;"></span><span class="fpb-btn-name">FutureTrack</span></button>
+<button class="fpb-btn fpb-btn-blue"   onclick="fpbOpen('socialmapwork')" aria-label="SocialMapWork"><span>🗺️</span><span class="fpb-btn-name">SocialMapWork</span></button>
+
+<!-- ═══ Modal: Crinit ═══════════════════════════════════════════════ -->
+<div class="fpb-overlay" id="fpb-overlay-crinit" onclick="fpbOverlayClose(event,'crinit')">
+  <div class="fpb-modal">
+    <div class="fpb-hero">
+      <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="crinit-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#042d1a"/>
+            <stop offset="100%" stop-color="#0a4a2c"/>
+          </linearGradient>
+          <linearGradient id="crinit-ground" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0d5c34"/>
+            <stop offset="100%" stop-color="#073d22"/>
+          </linearGradient>
+          <radialGradient id="crinit-sun" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#f5e642" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#f5e642" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="680" height="190" fill="url(#crinit-sky)"/>
+        <rect y="115" width="680" height="75" fill="url(#crinit-ground)"/>
+        <circle cx="580" cy="55" r="44" fill="url(#crinit-sun)"/>
+        <circle cx="580" cy="55" r="22" fill="#f5e642" opacity="0.7"/>
+        <g opacity="0.55" stroke="#22c468" stroke-width="1.5">
+          <line x1="0" y1="130" x2="680" y2="130"/>
+          <line x1="0" y1="144" x2="680" y2="144"/>
+          <line x1="0" y1="158" x2="680" y2="158"/>
+          <line x1="0" y1="172" x2="680" y2="172"/>
+        </g>
+        <g fill="#22c468" opacity="0.7">
+          <rect x="40"  y="100" width="4" height="28" rx="2"/>
+          <rect x="100" y="96"  width="4" height="32" rx="2"/>
+          <rect x="160" y="103" width="4" height="25" rx="2"/>
+          <rect x="220" y="98"  width="4" height="30" rx="2"/>
+          <rect x="280" y="101" width="4" height="27" rx="2"/>
+          <rect x="340" y="95"  width="4" height="33" rx="2"/>
+          <rect x="400" y="102" width="4" height="26" rx="2"/>
+        </g>
+        <g fill="#2ee87a" opacity="0.6">
+          <ellipse cx="44"  cy="108" rx="10" ry="4" transform="rotate(-30 44 108)"/>
+          <ellipse cx="104" cy="104" rx="10" ry="4" transform="rotate(25 104 104)"/>
+          <ellipse cx="164" cy="111" rx="10" ry="4" transform="rotate(-25 164 111)"/>
+          <ellipse cx="224" cy="106" rx="10" ry="4" transform="rotate(30 224 106)"/>
+        </g>
+        <g>
+          <circle cx="120" cy="72" r="8" fill="#03989e" opacity="0.9"/>
+          <circle cx="120" cy="72" r="14" fill="#03989e" opacity="0.2"/>
+          <line x1="120" y1="80" x2="120" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+          <circle cx="260" cy="60" r="8" fill="#03989e" opacity="0.9"/>
+          <circle cx="260" cy="60" r="14" fill="#03989e" opacity="0.2"/>
+          <line x1="260" y1="68" x2="260" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+          <circle cx="420" cy="66" r="8" fill="#03989e" opacity="0.9"/>
+          <circle cx="420" cy="66" r="14" fill="#03989e" opacity="0.2"/>
+          <line x1="420" y1="74" x2="420" y2="128" stroke="#03989e" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+        </g>
+        <g stroke="#5de8d6" stroke-width="1" fill="none" opacity="0.5">
+          <path d="M112,60 Q120,50 128,60"/>
+          <path d="M107,54 Q120,40 133,54"/>
+          <path d="M252,48 Q260,38 268,48"/>
+          <path d="M247,42 Q260,28 273,42"/>
+        </g>
+      </svg>
+      <div class="fpb-hero-scrim" style="background:linear-gradient(to top,rgba(4,22,14,1) 0%,rgba(4,22,14,0.92) 30%,rgba(4,22,14,0.55) 60%,rgba(4,22,14,0.1) 100%);"></div>
+      <div class="fpb-hero-content">
+        <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#03989e,#0b8f77);">🌾</div>
+        <div class="fpb-hero-text">
+          <span class="fpb-hero-tag" style="background:rgba(3,152,158,0.3);color:#5de8d6;">Agriculture &amp; IoT</span>
+          <h2 class="fpb-hero-name">Crinit</h2>
+          <span class="fpb-hero-sub" style="color:#5de8d6;">Smart Farm to Fork</span>
+        </div>
+      </div>
+      <button class="fpb-close" onclick="fpbClose('crinit')" aria-label="Close">&times;</button>
+    </div>
+    <div class="fpb-modal-body" style="background:linear-gradient(160deg,#071320,#0b1c30);">
+      <p class="fpb-modal-desc">Crinit is an IoT-powered connected farming platform bridging cultivation and consumption. Real-time sensor-driven crop management, agricultural automation, and end-to-end supply chain visibility give farmers intelligent tools to monitor soil health, water usage, and harvest readiness — while ensuring consumers receive verified, traceable produce directly from source.</p>
+      <div class="fpb-stats">
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">Real-time</span><span class="fpb-stat-lbl">Monitoring</span></div>
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">IoT</span><span class="fpb-stat-lbl">Sensor Network</span></div>
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#5de8d6;">Farm→Fork</span><span class="fpb-stat-lbl">Traceability</span></div>
+      </div>
+      <div class="fpb-feats">
+        <span class="fpb-feat">IoT Sensors</span><span class="fpb-feat">Crop Monitoring</span>
+        <span class="fpb-feat">Smart Irrigation</span><span class="fpb-feat">Supply Chain Tracing</span>
+        <span class="fpb-feat">Agricultural Automation</span><span class="fpb-feat">Harvest Analytics</span>
+        <span class="fpb-feat">Weather Integration</span><span class="fpb-feat">Mobile Alerts</span>
+      </div>
+      <div class="fpb-cta-row">
+        <a href="crinit/crinit.html" class="fpb-cta fpb-cta-green">Explore Crinit →</a>
+        <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('crinit')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Modal: FutureTrack ══════════════════════════════════════════ -->
+<div class="fpb-overlay" id="fpb-overlay-futuretrack" onclick="fpbOverlayClose(event,'futuretrack')">
+  <div class="fpb-modal">
+    <div class="fpb-hero">
+      <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ft-bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#001a20"/>
+            <stop offset="100%" stop-color="#002a35"/>
+          </linearGradient>
+          <linearGradient id="ft-bar1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#46d5f9"/>
+            <stop offset="100%" stop-color="#1ab8d4"/>
+          </linearGradient>
+          <linearGradient id="ft-bar2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#a8edfc"/>
+            <stop offset="100%" stop-color="#46d5f9"/>
+          </linearGradient>
+        </defs>
+        <rect width="680" height="190" fill="url(#ft-bg)"/>
+        <g stroke="#46d5f9" stroke-width="0.4" opacity="0.12">
+          <line x1="0" y1="30"  x2="680" y2="30"/>  <line x1="0" y1="60"  x2="680" y2="60"/>
+          <line x1="0" y1="90"  x2="680" y2="90"/>  <line x1="0" y1="120" x2="680" y2="120"/>
+          <line x1="0" y1="150" x2="680" y2="150"/> <line x1="0" y1="180" x2="680" y2="180"/>
+          <line x1="80"  y1="0" x2="80"  y2="190"/> <line x1="160" y1="0" x2="160" y2="190"/>
+          <line x1="240" y1="0" x2="240" y2="190"/> <line x1="320" y1="0" x2="320" y2="190"/>
+          <line x1="400" y1="0" x2="400" y2="190"/> <line x1="480" y1="0" x2="480" y2="190"/>
+          <line x1="560" y1="0" x2="560" y2="190"/>
+        </g>
+        <g>
+          <rect x="60"  y="90"  width="28" height="65" rx="4" fill="url(#ft-bar1)" opacity="0.75"/>
+          <rect x="100" y="70"  width="28" height="85" rx="4" fill="url(#ft-bar2)" opacity="0.75"/>
+          <rect x="140" y="50"  width="28" height="105" rx="4" fill="url(#ft-bar1)" opacity="0.75"/>
+          <rect x="180" y="80"  width="28" height="75" rx="4" fill="url(#ft-bar2)" opacity="0.75"/>
+          <rect x="220" y="40"  width="28" height="115" rx="4" fill="url(#ft-bar1)" opacity="0.9"/>
+        </g>
+        <polyline points="74,90 114,70 154,50 194,80 234,40" stroke="#a8edfc" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+        <circle cx="74"  cy="90" r="4" fill="#a8edfc"/>
+        <circle cx="114" cy="70" r="4" fill="#a8edfc"/>
+        <circle cx="154" cy="50" r="4" fill="#a8edfc"/>
+        <circle cx="194" cy="80" r="4" fill="#a8edfc"/>
+        <circle cx="234" cy="40" r="5" fill="#fff" stroke="#a8edfc" stroke-width="2"/>
+        <g transform="translate(500,65)">
+          <circle cx="0" cy="0" r="46" fill="none" stroke="#46d5f9" stroke-width="1.5" opacity="0.25"/>
+          <circle cx="0" cy="0" r="34" fill="none" stroke="#46d5f9" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="0" cy="0" r="22" fill="none" stroke="#46d5f9" stroke-width="1.5" opacity="0.5"/>
+          <circle cx="0" cy="0" r="11" fill="#46d5f9" opacity="0.65"/>
+          <circle cx="0" cy="0" r="5"  fill="#fff" opacity="0.9"/>
+          <line x1="-60" y1="-22" x2="-14" y2="-3" stroke="#a8edfc" stroke-width="2"/>
+          <polygon points="-14,-3 -24,-10 -20,4" fill="#a8edfc"/>
+        </g>
+        <g transform="translate(590,95)" opacity="0.55">
+          <rect x="0"  y="0"  width="18" height="70" rx="2" fill="#46d5f9"/>
+          <rect x="22" y="10" width="18" height="60" rx="2" fill="#1ab8d4"/>
+          <rect x="44" y="5"  width="18" height="65" rx="2" fill="#a8edfc"/>
+        </g>
+      </svg>
+      <div class="fpb-hero-scrim" style="background:linear-gradient(to top,rgba(0,20,28,1) 0%,rgba(0,20,28,0.92) 30%,rgba(0,20,28,0.55) 60%,rgba(0,20,28,0.1) 100%);"></div>
+      <div class="fpb-hero-content">
+        <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#46d5f9,#1ab8d4);display:flex;align-items:center;justify-content:center;"><img src="futuretrack/images/favicon.svg" alt="FutureTrack" style="width:38px;height:38px;object-fit:contain;"></div>
+        <div class="fpb-hero-text">
+          <span class="fpb-hero-tag" style="background:rgba(70,213,249,0.2);color:#a8edfc;">Education Technology</span>
+          <h2 class="fpb-hero-name">FutureTrack</h2>
+          <span class="fpb-hero-sub" style="color:#a8edfc;">Smart Ed-Tech Platform</span>
+        </div>
+      </div>
+      <button class="fpb-close" onclick="fpbClose('futuretrack')" aria-label="Close">&times;</button>
+    </div>
+    <div class="fpb-modal-body" style="background:linear-gradient(160deg,#120900,#1e1100);">
+      <p class="fpb-modal-desc">FutureTrack transforms traditional paper-based education into a fully digital, guided experience. Designed for students, teachers, and institutions — structured focus workflows, progress tracking dashboards, and measurable learning outcomes turn everyday study habits into data-driven growth journeys.</p>
+      <div class="fpb-stats">
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#a8edfc;">Digital</span><span class="fpb-stat-lbl">Assessments</span></div>
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#a8edfc;">Smart</span><span class="fpb-stat-lbl">Workflows</span></div>
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#a8edfc;">Live</span><span class="fpb-stat-lbl">Analytics</span></div>
+      </div>
+      <div class="fpb-feats">
+        <span class="fpb-feat">Focus Workflows</span><span class="fpb-feat">Progress Tracking</span>
+        <span class="fpb-feat">Digital Assessments</span><span class="fpb-feat">Analytics Dashboard</span>
+        <span class="fpb-feat">Student Engagement</span><span class="fpb-feat">Paper-free Learning</span>
+        <span class="fpb-feat">Teacher Tools</span><span class="fpb-feat">Performance Reports</span>
+      </div>
+      <div class="fpb-cta-row">
+        <a href="futuretrack/futuretrack.html" class="fpb-cta fpb-cta-orange">Explore FutureTrack →</a>
+        <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('futuretrack')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Modal: SocialMapWork ════════════════════════════════════════ -->
+<div class="fpb-overlay" id="fpb-overlay-socialmapwork" onclick="fpbOverlayClose(event,'socialmapwork')">
+  <div class="fpb-modal">
+    <div class="fpb-hero">
+      <svg class="fpb-hero-bg" viewBox="0 0 680 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="smw-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#050c2a"/>
+            <stop offset="100%" stop-color="#0a1540"/>
+          </linearGradient>
+          <radialGradient id="smw-glow1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#5a7ef2" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#5a7ef2" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="smw-glow2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#93b8f8" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#93b8f8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="680" height="190" fill="url(#smw-bg)"/>
+        <g stroke="#1e5dd8" stroke-width="0.7" opacity="0.3">
+          <line x1="0" y1="40"  x2="680" y2="40"/>  <line x1="0" y1="80"  x2="680" y2="80"/>
+          <line x1="0" y1="120" x2="680" y2="120"/> <line x1="0" y1="160" x2="680" y2="160"/>
+          <line x1="80"  y1="0" x2="80"  y2="190"/> <line x1="160" y1="0" x2="160" y2="190"/>
+          <line x1="240" y1="0" x2="240" y2="190"/> <line x1="320" y1="0" x2="320" y2="190"/>
+          <line x1="400" y1="0" x2="400" y2="190"/> <line x1="480" y1="0" x2="480" y2="190"/>
+          <line x1="560" y1="0" x2="560" y2="190"/>
+        </g>
+        <g stroke="#93b8f8" stroke-width="3" fill="none" opacity="0.3" stroke-linecap="round">
+          <path d="M0,95 Q170,75 340,95 Q510,115 680,95"/>
+          <path d="M200,0 Q210,95 200,190"/>
+          <path d="M440,0 Q450,95 440,190"/>
+        </g>
+        <g fill="#1e5dd8" opacity="0.2">
+          <rect x="90"  y="50"  width="50" height="30" rx="3"/>
+          <rect x="90"  y="90"  width="50" height="20" rx="3"/>
+          <rect x="260" y="40"  width="40" height="50" rx="3"/>
+          <rect x="350" y="100" width="60" height="25" rx="3"/>
+          <rect x="470" y="50"  width="45" height="35" rx="3"/>
+        </g>
+        <circle cx="140" cy="68" r="28" fill="url(#smw-glow1)"/>
+        <circle cx="320" cy="85" r="22" fill="url(#smw-glow2)"/>
+        <circle cx="500" cy="62" r="26" fill="url(#smw-glow1)"/>
+        <g>
+          <path d="M140,48 a16,16 0 1,1 0.01,0 Z" fill="#e24b4a"/>
+          <circle cx="140" cy="48" r="6" fill="#fff" opacity="0.9"/>
+          <path d="M140,64 L134,80 L146,80 Z" fill="#e24b4a"/>
+          <path d="M320,65 a14,14 0 1,1 0.01,0 Z" fill="#5a7ef2"/>
+          <circle cx="320" cy="65" r="5" fill="#fff" opacity="0.9"/>
+          <path d="M320,79 L314,93 L326,93 Z" fill="#5a7ef2"/>
+          <path d="M500,42 a15,15 0 1,1 0.01,0 Z" fill="#46d5f9"/>
+          <circle cx="500" cy="42" r="5.5" fill="#fff" opacity="0.9"/>
+          <path d="M500,57 L494,71 L506,71 Z" fill="#46d5f9"/>
+        </g>
+        <g stroke="#93b8f8" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.35" fill="none">
+          <line x1="140" y1="72" x2="320" y2="79"/>
+          <line x1="320" y1="79" x2="500" y2="57"/>
+        </g>
+      </svg>
+      <div class="fpb-hero-scrim" style="background:linear-gradient(to top,rgba(5,9,26,1) 0%,rgba(5,9,26,0.92) 30%,rgba(5,9,26,0.55) 60%,rgba(5,9,26,0.1) 100%);"></div>
+      <div class="fpb-hero-content">
+        <div class="fpb-hero-emoji" style="background:linear-gradient(135deg,#1e5dd8,#5a7ef2);">🗺️</div>
+        <div class="fpb-hero-text">
+          <span class="fpb-hero-tag" style="background:rgba(30,93,216,0.3);color:#93b8f8;">Civic Tech &amp; Community</span>
+          <h2 class="fpb-hero-name">SocialMapWork</h2>
+          <span class="fpb-hero-sub" style="color:#93b8f8;">Map Based Problem Reporting</span>
+        </div>
+      </div>
+      <button class="fpb-close" onclick="fpbClose('socialmapwork')" aria-label="Close">&times;</button>
+    </div>
+    <div class="fpb-modal-body" style="background:linear-gradient(160deg,#05091a,#0a1230);">
+      <p class="fpb-modal-desc">SocialMapWork is a community-powered civic action platform that puts local issues on the map — literally. Citizens pin, report, and track public problems like potholes, broken infrastructure, or sanitation concerns on an interactive map, creating accountability between communities and local authorities.</p>
+      <div class="fpb-stats">
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Map</span><span class="fpb-stat-lbl">Based Pinning</span></div>
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Civic</span><span class="fpb-stat-lbl">Engagement</span></div>
+        <div class="fpb-stat"><span class="fpb-stat-val" style="color:#93b8f8;">Live</span><span class="fpb-stat-lbl">Status Updates</span></div>
+      </div>
+      <div class="fpb-feats">
+        <span class="fpb-feat">Interactive Map</span><span class="fpb-feat">Issue Reporting</span>
+        <span class="fpb-feat">Civic Engagement</span><span class="fpb-feat">Community Voting</span>
+        <span class="fpb-feat">Authority Alerts</span><span class="fpb-feat">Status Tracking</span>
+        <span class="fpb-feat">Location Tagging</span><span class="fpb-feat">Public Dashboard</span>
+      </div>
+      <div class="fpb-cta-row">
+        <a href="https://socialmapwork.com/" target="_blank" rel="noopener noreferrer" class="fpb-cta fpb-cta-blue">Visit SocialMapWork →</a>
+        <button class="fpb-cta fpb-cta-ghost" onclick="fpbClose('socialmapwork')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════════════════════════ -->
+<script>
+  /* ── Navbar scroll ── */
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  /* ── Mobile menu ── */
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  /* ── Products dropdown (mobile toggle) ── */
+  function toggleDropdown(e) {
+    if (window.innerWidth < 768) {
+      e.preventDefault();
+      document.getElementById('navProductsDrop').classList.toggle('open');
     }
+  }
 
-    setInterval(function () {
-      sptSelect((sptCurrent + 1) % sptTotal);
-    }, 4000);
-
-    (function () {
-      var item    = document.getElementById('navProductsItem');
-      var trigger = document.getElementById('navProductsTrigger');
-      if (!item || !trigger) return;
-      trigger.addEventListener('click', function (e) {
-        if (window.innerWidth < 768) {
-          e.preventDefault();
-          item.classList.toggle('open');
-        }
-      });
-    })();
-
-    function fpbOpen(id) {
-      document.querySelectorAll('.fpb-overlay.open').forEach(function(el) {
-        el.classList.remove('open');
-      });
-      var overlay = document.getElementById('fpb-overlay-' + id);
-      if (overlay) {
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
+  /* ── Stat counter animation ── */
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var duration = 1400;
+    var start = performance.now();
+    function step(now) {
+      var p = Math.min((now - start) / duration, 1);
+      el.textContent = Math.floor(p * target);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target;
     }
+    requestAnimationFrame(step);
+  }
 
-    function fpbClose(id) {
-      var overlay = document.getElementById('fpb-overlay-' + id);
-      if (overlay) overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    }
+  /* ── AOS (Animate on Scroll) ── */
+  var aosEls = document.querySelectorAll('[data-aos]');
+  var counterEls = document.querySelectorAll('[data-target]');
+  var countedSet = new Set();
 
-    function fpbOverlayClose(e, id) {
-      if (e.target === e.currentTarget) fpbClose(id);
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.fpb-overlay.open').forEach(function(el) {
-          el.classList.remove('open');
-        });
-        document.body.style.overflow = '';
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       }
     });
-  </script>
+  }, { threshold: 0.12 });
+
+  var counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !countedSet.has(entry.target)) {
+        countedSet.add(entry.target);
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  aosEls.forEach(function(el) { observer.observe(el); });
+  counterEls.forEach(function(el) { counterObserver.observe(el); });
+
+  /* ── Modal functions ── */
+  function fpbOpen(id) {
+    document.querySelectorAll('.fpb-overlay.open').forEach(function(el) { el.classList.remove('open'); });
+    var overlay = document.getElementById('fpb-overlay-' + id);
+    if (overlay) { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  }
+  function fpbClose(id) {
+    var overlay = document.getElementById('fpb-overlay-' + id);
+    if (overlay) overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function fpbOverlayClose(e, id) { if (e.target === e.currentTarget) fpbClose(id); }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.fpb-overlay.open').forEach(function(el) { el.classList.remove('open'); });
+      document.body.style.overflow = '';
+    }
+  });
+</script>
 
 </body>
 </html>

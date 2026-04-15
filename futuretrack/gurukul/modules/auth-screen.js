@@ -442,19 +442,6 @@ Router.register('/setup', (query, view) => {
                   placeholder="Full address with city, state, PIN"></textarea>
       </div>
 
-      <!-- FTPEN info box -->
-      <div class="ftpen-info-box">
-        <div class="ftpen-icon">🎓</div>
-        <div>
-          <div class="ftpen-title">FutureTrack Permanent Education Number (FTPEN)</div>
-          <div class="ftpen-desc">
-            Each student admitted through Gurukul ERP will automatically receive a unique FTPEN —
-            similar to UDISE/APAAR. Format: <span class="ftpen-sample">FT-2026-XXXXXXXX</span>.
-            Generated on admission approval — students must enter it to log in.
-          </div>
-        </div>
-      </div>
-
       <button class="btn-primary full-btn" style="margin-top:8px" onclick="doSetup()">
         <span data-i18n="setup.create">Create School & Enter Dashboard</span>
       </button>
@@ -465,30 +452,40 @@ Router.register('/setup', (query, view) => {
 
 function doSetup() {
   const user = Auth.currentUser();
-  if (!user) return;
-  const name = document.getElementById('setupName').value.trim();
+  if (!user) { Router.navigate('/role-select'); return; }
+
+  const name = document.getElementById('setupName')?.value.trim();
   const err  = document.getElementById('setup-err');
+
   if (!name) { showAuthErr(err, I18N.get('setup.err_name')); return; }
 
-  const school = DB.saveSchool({
-    name,
-    type:    document.getElementById('setupType').value,
-    board:   document.getElementById('setupBoard').value,
-    medium:  document.getElementById('setupMedium').value,
-    phone:   document.getElementById('setupPhone').value.trim(),
-    email:   document.getElementById('setupEmail').value.trim(),
-    address: document.getElementById('setupAddress').value.trim(),
-    adminId: user.id
-  });
+  try {
+    const school = DB.saveSchool({
+      name,
+      type:    document.getElementById('setupType').value,
+      board:   document.getElementById('setupBoard').value,
+      medium:  document.getElementById('setupMedium').value,
+      phone:   document.getElementById('setupPhone').value.trim(),
+      email:   document.getElementById('setupEmail').value.trim(),
+      address: document.getElementById('setupAddress').value.trim(),
+      adminId: user.id
+    });
 
-  DB.updateUser(user.id, { schoolId: school.id });
-  const updatedUser = { ...user, schoolId: school.id };
-  DB.setCurrentUser(updatedUser);
+    // Link school to admin user and persist to session
+    DB.updateUser(user.id, { schoolId: school.id });
+    const updatedUser = { ...user, schoolId: school.id };
+    DB.setCurrentUser(updatedUser);
 
-  showToast(`School created! Share your School ID with staff: ${school.id}`, 'success', 7000);
+    // Show school ID — admin must share this with teachers
+    showToast(`School created! School ID: ${school.id} — share this with your staff.`, 'success', 7000);
 
-  APP.showShell(updatedUser);
-  Router.navigate('/dashboard');
+    // Switch to shell and go to dashboard
+    APP.showShell(updatedUser);
+    Router.navigate('/dashboard');
+  } catch(e) {
+    console.error('Setup error:', e);
+    showAuthErr(err, 'Failed to create school: ' + (e.message || 'Unknown error'));
+  }
 }
 
 // ── Helpers ───────────────────────────────────────────────────────

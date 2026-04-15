@@ -154,17 +154,24 @@ async function boot() {
 
   // Auth guard — runs before every route
   Router.beforeEach((path) => {
-    const AUTH_PATHS = ['/role-select', '/login', '/signup', '/setup'];
+    const AUTH_PATHS  = ['/role-select', '/login', '/signup'];
+    const SETUP_PATH  = '/setup';
     const user = Auth.currentUser();
 
-    if (!user && !AUTH_PATHS.includes(path)) {
-      // Not logged in — send to role-select (will render in auth-screen)
+    if (!user && !AUTH_PATHS.includes(path) && path !== SETUP_PATH) {
+      // Not logged in — send to role-select
       showAuth();
       Router.navigate('/role-select');
       return false;
     }
-    if (user && AUTH_PATHS.includes(path) && path !== '/setup') {
-      // Already logged in — send to dashboard
+    if (!user && path === SETUP_PATH) {
+      // Must be logged in to reach setup
+      showAuth();
+      Router.navigate('/role-select');
+      return false;
+    }
+    if (user && AUTH_PATHS.includes(path)) {
+      // Already logged in — send to dashboard (not setup, setup is a valid post-login step)
       showShell(user);
       Router.navigate('/dashboard');
       return false;
