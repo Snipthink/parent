@@ -501,6 +501,31 @@ textarea.form-control{resize:vertical;min-height:80px}
 @keyframes bootPulse{0%,100%{opacity:0.7;transform:scale(0.97)}50%{opacity:1;transform:scale(1.03)}}
 .boot-text{font-size:12px;color:var(--muted);font-family:'Space Grotesk',sans-serif;letter-spacing:0.05em}
 
+/* ── 2-Step Signup Wizard ────────────────────────────────────────── */
+.signup-steps{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:28px}
+.ss-step{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--muted);transition:all 0.3s;flex-shrink:0}
+.ss-step.active{border-color:var(--cyan);background:rgba(70,213,249,0.12);color:var(--cyan)}
+.ss-step.done{border-color:var(--green);background:rgba(34,197,94,0.12);color:var(--green)}
+.ss-line{flex:1;height:2px;background:var(--border);max-width:60px;transition:background 0.3s}
+.ss-line.done{background:var(--green)}
+.signup-step-label{text-align:center;font-size:11px;color:var(--muted);margin-bottom:20px}
+
+/* Live email check */
+.email-check-msg{font-size:12px;margin-top:5px;padding:4px 8px;border-radius:6px;display:none}
+.email-check-msg.visible{display:block}
+.ecm-taken{color:#f87171;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2)}
+.ecm-free{color:#4ade80;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2)}
+
+/* Password strength */
+.pw-strength-bar{height:4px;border-radius:2px;margin-top:6px;transition:all 0.4s;background:var(--border)}
+
+/* FTPEN info box */
+.ftpen-info-box{background:rgba(70,213,249,0.07);border:1px solid rgba(70,213,249,0.2);border-radius:12px;padding:16px;margin-bottom:20px;display:flex;gap:12px;align-items:flex-start}
+.ftpen-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.ftpen-title{font-size:13px;font-weight:700;color:var(--cyan);margin-bottom:4px}
+.ftpen-desc{font-size:12px;color:var(--muted);line-height:1.6}
+.ftpen-sample{display:inline-block;margin-top:6px;font-family:'Space Grotesk',monospace;font-size:12px;font-weight:700;color:#fff;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:3px 10px;letter-spacing:0.05em}
+
 @media(max-width:768px){
   .dash-hero-content{flex-direction:column;align-items:flex-start}
   .dash-hero-right{width:100%}

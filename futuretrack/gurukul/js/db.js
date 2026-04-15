@@ -624,6 +624,14 @@ const DB = (() => {
     return getById(table, id);
   }
 
+  // ── FTPEN generator ───────────────────────────────────────────
+  function generateFTPEN() {
+    const yr  = new Date().getFullYear();
+    const rnd = Math.random().toString(36).slice(2,6).toUpperCase() +
+                Math.random().toString(36).slice(2,6).toUpperCase();
+    return `FT-${yr}-${rnd}`;
+  }
+
   // ── Notifications ─────────────────────────────────────────────
   function pushNotification(d) {
     const id = uid();
@@ -727,6 +735,8 @@ const DB = (() => {
     // dashboard
     getDashboardStats,
     // notifications
-    pushNotification, getNotifications, countUnread, markNotifRead, markAllNotifsRead
+    pushNotification, getNotifications, countUnread, markNotifRead, markAllNotifsRead,
+    // ftpen
+    generateFTPEN
   };
 })();

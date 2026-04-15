@@ -92,6 +92,7 @@ function updateAdmStatus(id, status) {
       const student = DB.saveStudent({
         schoolId: user.schoolId, classId: adm.classId, sectionId: adm.sectionId,
         session: adm.session, status: 'active',
+        ftpen: DB.generateFTPEN(),
         name: fd.name, dob: fd.dob, gender: fd.gender,
         fatherName: fd.fatherName, motherName: fd.motherName,
         phone: fd.phone, email: fd.email, address: fd.address,
