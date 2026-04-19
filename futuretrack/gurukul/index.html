@@ -86,15 +86,9 @@
   <!-- Toast container -->
   <div id="toast-container"></div>
 
-  <!-- ─── Vendor scripts ─── -->
-  <!-- sql.js WebAssembly SQLite -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/sql-wasm.js"></script>
-
-  <!-- QR Code generator -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-  <!-- jsPDF for receipt/ID-card PDF export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- ─── Vendor scripts (local — works fully offline) ─── -->
+  <script src="vendors/sql-wasm.js"></script>
+  <!-- qrcode.min.js and jspdf.umd.min.js loaded lazily by idcard.js when needed -->
 
   <!-- ─── Core JS (order matters) ─── -->
   <script src="js/db.js"></script>

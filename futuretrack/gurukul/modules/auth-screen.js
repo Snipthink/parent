@@ -476,6 +476,10 @@ function doSetup() {
     const updatedUser = { ...user, schoolId: school.id };
     DB.setCurrentUser(updatedUser);
 
+    // Update DB persistence key to use the school name as the filename
+    DB.setSchoolCode(school.name);
+    DB.flushDB(); // immediate push so Android saves <schoolname>.db right away
+
     // Show school ID — admin must share this with teachers
     showToast(`School created! School ID: ${school.id} — share this with your staff.`, 'success', 7000);
 

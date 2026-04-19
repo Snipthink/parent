@@ -73,11 +73,56 @@ const DB = (() => {
   const getBlob    = (key)       => idbGet(IDB_STORE_BLOB, key);
   const deleteBlob = (key)       => idbDel(IDB_STORE_BLOB, key);
 
-  // ── Persist SQLite binary to IndexedDB ────────────────────────
-  async function persistDB() {
+  // ── School code (used as filename on Android: <code>.db) ──────
+  // Derived from the schools table after first setup. Falls back to
+  // 'gurukul_default' until a school is created.
+  let _schoolCode = 'gurukul_default';
+
+  function _sanitizeCode(raw) {
+    if (!raw) return 'gurukul_default';
+    return raw.trim().toLowerCase()
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_+|_+$/g, '')
+      .substring(0, 40) || 'gurukul_default';
+  }
+
+  /** Call after saveSchool() to update the school code used for persistence. */
+  function setSchoolCode(nameOrCode) {
+    _schoolCode = _sanitizeCode(nameOrCode);
+  }
+
+  function getSchoolCode() { return _schoolCode; }
+
+  // ── Persist SQLite binary → Android phone via server ──────────
+  // Debounced: at most one push every 1.5 s to avoid hammering the server
+  // on bulk inserts while still saving frequently enough.
+  let _persistTimer = null;
+
+  function persistDB() {
     if (!_db) return;
-    const data = _db.export();          // Uint8Array
-    await idbPut(IDB_STORE_DB, 'main', data);
+    if (_persistTimer) clearTimeout(_persistTimer);
+    _persistTimer = setTimeout(_doPush, 1500);
+  }
+
+  async function _doPush() {
+    _persistTimer = null;
+    if (!_db) return;
+    try {
+      const data = _db.export();   // Uint8Array
+      await fetch(`/api/gurukul/db/push?school=${encodeURIComponent(_schoolCode)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/octet-stream' },
+        body: data
+      });
+    } catch (e) {
+      console.warn('[GK-DB] push failed:', e);
+    }
+  }
+
+  /** Force an immediate save (e.g. after school setup). Returns a Promise. */
+  async function flushDB() {
+    if (_persistTimer) { clearTimeout(_persistTimer); _persistTimer = null; }
+    return _doPush();
   }
 
   // ── Export DB as downloadable file ────────────────────────────
@@ -87,7 +132,7 @@ const DB = (() => {
     const blob = new Blob([data], { type: 'application/octet-stream' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'gurukul.db';
+    a.download = (_schoolCode || 'gurukul') + '.db';
     a.click();
   }
 
@@ -96,7 +141,12 @@ const DB = (() => {
     const buf  = await file.arrayBuffer();
     const data = new Uint8Array(buf);
     _db = new _sql.Database(data);
-    await persistDB();
+    // Try to read school name from the imported DB
+    try {
+      const row = first('SELECT name FROM schools LIMIT 1');
+      if (row && row.name) setSchoolCode(row.name);
+    } catch (_) {}
+    persistDB();
   }
 
   // ── SQL helpers ───────────────────────────────────────────────
@@ -323,13 +373,45 @@ const DB = (() => {
 
   // ── Init ──────────────────────────────────────────────────────
   async function init() {
-    // sql.js is loaded via CDN script tag as window.initSqlJs
-    _sql = await window.initSqlJs({
-      locateFile: file =>
-        `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/${file}`
-    });
-    const saved = await idbGet(IDB_STORE_DB, 'main');
-    _db = saved ? new _sql.Database(saved) : new _sql.Database();
+    _sql = await window.initSqlJs({ locateFile: file => `vendors/${file}` });
+
+    // Try to pull the DB from the Android server.
+    // On first run (no DB yet) the server returns 204 → create fresh DB.
+    let loaded = false;
+    try {
+      // First check if there are any school DBs saved on the device
+      const listRes = await fetch('/api/gurukul/db/list');
+      if (listRes.ok) {
+        const listJson = await listRes.json();
+        const schools = listJson.schools || [];
+        // Use the first saved school, or default
+        if (schools.length > 0) {
+          _schoolCode = schools[0];
+        }
+      }
+
+      const res = await fetch(`/api/gurukul/db/pull?school=${encodeURIComponent(_schoolCode)}`);
+      if (res.ok && res.status !== 204) {
+        const buf  = await res.arrayBuffer();
+        const data = new Uint8Array(buf);
+        if (data.length > 0) {
+          _db = new _sql.Database(data);
+          loaded = true;
+          // Sync school code from the DB itself
+          try {
+            const row = first('SELECT name FROM schools LIMIT 1');
+            if (row && row.name) setSchoolCode(row.name);
+          } catch (_) {}
+        }
+      }
+    } catch (e) {
+      console.warn('[GK-DB] pull failed, starting fresh:', e);
+    }
+
+    if (!loaded) {
+      _db = new _sql.Database();
+    }
+
     createSchema();
     return true;
   }
@@ -690,7 +772,8 @@ const DB = (() => {
   const saveClubMember= d => genericSave('clubMembers', d, ['clubId','memberId','memberType','role']);
 
   return {
-    init, uid, persistDB, exportDBFile, importDBFile,
+    init, uid, persistDB, flushDB, exportDBFile, importDBFile,
+    setSchoolCode, getSchoolCode,
     // blobs
     saveBlob, getBlob, deleteBlob,
     // auth
