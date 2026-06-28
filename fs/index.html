@@ -27,12 +27,12 @@
       --transition:0.22s cubic-bezier(0.4,0,0.2,1);
     }
     [data-bs-theme="light"] {
-      --ft-bg:#f3f9f5;--ft-bg-2:#e8f5ed;--ft-bg-3:#ddf0e6;
-      --ft-glass:rgba(255,255,255,0.72);--ft-glass-md:rgba(255,255,255,0.85);--ft-glass-hi:rgba(255,255,255,0.95);
-      --ft-border:rgba(20,31,46,0.10);--ft-border-hi:rgba(20,31,46,0.18);
-      --ft-text:#0d2416;--ft-muted:#4a6b58;--ft-dim:#7a9a88;
-      --ft-shadow:0 8px 32px rgba(39,174,96,0.12),0 2px 8px rgba(39,174,96,0.08);
-      --ft-shadow-lg:0 24px 80px rgba(39,174,96,0.18),0 4px 16px rgba(39,174,96,0.10);
+      --ft-bg:#f6faf8;--ft-bg-2:#eef7f2;--ft-bg-3:#ffffff;
+      --ft-glass:rgba(255,255,255,0.88);--ft-glass-md:rgba(255,255,255,0.96);--ft-glass-hi:#ffffff;
+      --ft-border:rgba(20,31,46,0.14);--ft-border-hi:rgba(20,31,46,0.24);
+      --ft-text:#102016;--ft-muted:#34483d;--ft-dim:#647568;
+      --ft-shadow:0 12px 32px rgba(23,68,42,0.10),0 2px 8px rgba(23,68,42,0.06);
+      --ft-shadow-lg:0 28px 80px rgba(23,68,42,0.16),0 4px 18px rgba(23,68,42,0.08);
     }
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -50,14 +50,15 @@
     .ft-hr{border:none;border-top:1px solid var(--ft-border);margin:0}
 
     /* BUTTONS */
-    .btn-ft-primary{background:var(--ft-grad);color:var(--ft-ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border:none;border-radius:var(--ft-r-pill);padding:.65rem 1.6rem;transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition);display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+    .btn-ft-primary{background:var(--ft-grad);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border:none;border-radius:var(--ft-r-pill);padding:.65rem 1.6rem;transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition);display:inline-flex;align-items:center;gap:6px;cursor:pointer;box-shadow:0 8px 26px rgba(39,174,96,.28)}
     .btn-ft-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(39,174,96,.32);opacity:.92;color:var(--ft-ink)}
     .btn-ft-primary:active{transform:scale(.97)}
     .btn-ft-ghost{background:var(--ft-glass);color:var(--ft-text);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.88rem;border:1px solid var(--ft-border-hi);border-radius:var(--ft-r-pill);padding:.62rem 1.4rem;transition:background var(--transition),transform var(--transition),border-color var(--transition);display:inline-flex;align-items:center;gap:6px;cursor:pointer;text-decoration:none}
     .btn-ft-ghost:hover{background:var(--ft-glass-md);border-color:var(--ft-green);transform:translateY(-2px);color:var(--ft-text)}
-    .btn-play{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:var(--ft-r-pill);color:#fff;display:inline-flex;align-items:center;gap:10px;padding:.55rem 1.3rem .55rem .6rem;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;transition:background var(--transition),transform var(--transition);text-decoration:none}
-    .btn-play:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);color:#fff}
-    .play-icon-svg{width:32px;height:32px;background:var(--ft-grad);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .btn-play{background:linear-gradient(135deg,#111827,#0f3f28 52%,#27ae60);border:1px solid rgba(39,174,96,.38);border-radius:18px;color:#fff;display:inline-flex;align-items:center;gap:12px;padding:.68rem 1.35rem .68rem .72rem;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition);text-decoration:none;box-shadow:0 14px 34px rgba(10,25,18,.30),inset 0 1px 0 rgba(255,255,255,.16)}
+    .btn-play:hover{transform:translateY(-3px);box-shadow:0 20px 42px rgba(39,174,96,.35),inset 0 1px 0 rgba(255,255,255,.18);opacity:.98;color:#fff}
+    .btn-play:active{transform:translateY(0) scale(.98)}
+    .play-icon-svg{width:36px;height:36px;background:linear-gradient(135deg,#27ae60,#2ecc71);border:1px solid rgba(255,255,255,.28);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 18px rgba(39,174,96,.28)}
 
     /* NAVBAR */
     .ft-navbar{position:sticky;top:0;z-index:1000;background:rgba(6,10,16,.82);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid var(--ft-border);padding:.75rem 0;transition:background var(--transition)}
@@ -125,15 +126,28 @@
     .step-card p{color:var(--ft-muted);font-size:.92rem;margin:0}
 
     /* QUALITY */
-    .quality-section{background:linear-gradient(135deg,rgba(39,174,96,.05) 0%,rgba(52,152,219,.04) 100%)}
-    .quality-card{border-radius:var(--ft-r-lg);padding:1.75rem;height:100%;transition:transform var(--transition),box-shadow var(--transition)}
-    .quality-card:hover{transform:translateY(-5px);box-shadow:0 0 60px rgba(39,174,96,.18)}
-    .q-badge{display:inline-block;border-radius:var(--ft-r-pill);font-size:.72rem;font-weight:700;padding:5px 12px;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.05em}
-    .q-good .q-badge{background:rgba(39,174,96,.15);color:#2ecc71}
-    .q-mod  .q-badge{background:rgba(243,156,18,.18);color:#f8c471}
-    .q-limit .q-badge,.q-avoid .q-badge{background:rgba(231,76,60,.14);color:#f5b7b1}
-    .quality-card h3{font-size:1.1rem;margin-bottom:.5rem}
-    .quality-card p{color:var(--ft-muted);font-size:.88rem;margin:0}
+    .quality-section{background:linear-gradient(135deg,rgba(39,174,96,.07) 0%,rgba(52,152,219,.05) 100%)}
+    .quality-card{border-radius:22px;padding:1.45rem;height:100%;transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);position:relative;overflow:hidden;box-shadow:var(--ft-shadow)}
+    .quality-card::before{content:'';position:absolute;inset:0;opacity:.9;pointer-events:none}
+    .quality-card:hover{transform:translateY(-8px);box-shadow:var(--ft-shadow-lg)}
+    .quality-card>*{position:relative;z-index:1}
+    .q-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:1.15rem}
+    .q-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.45rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+    .q-badge{display:inline-flex;align-items:center;border-radius:var(--ft-r-pill);font-size:.68rem;font-weight:800;padding:6px 12px;text-transform:uppercase;letter-spacing:.08em}
+    .quality-card h3{font-size:1.18rem;margin:0 0 .65rem;color:var(--ft-text)}
+    .quality-card p{color:var(--ft-muted);font-size:.92rem;line-height:1.72;margin:0}
+    .q-good{border-color:rgba(39,174,96,.28)}
+    .q-good::before{background:linear-gradient(145deg,rgba(39,174,96,.18),transparent 58%)}
+    .q-good .q-icon,.q-good .q-badge{background:rgba(39,174,96,.16);color:#2ecc71}
+    .q-mod{border-color:rgba(243,156,18,.30)}
+    .q-mod::before{background:linear-gradient(145deg,rgba(243,156,18,.18),transparent 58%)}
+    .q-mod .q-icon,.q-mod .q-badge{background:rgba(243,156,18,.16);color:#f39c12}
+    .q-limit{border-color:rgba(230,126,34,.32)}
+    .q-limit::before{background:linear-gradient(145deg,rgba(230,126,34,.18),transparent 58%)}
+    .q-limit .q-icon,.q-limit .q-badge{background:rgba(230,126,34,.16);color:#e67e22}
+    .q-avoid{border-color:rgba(231,76,60,.32)}
+    .q-avoid::before{background:linear-gradient(145deg,rgba(231,76,60,.16),transparent 58%)}
+    .q-avoid .q-icon,.q-avoid .q-badge{background:rgba(231,76,60,.16);color:#e74c3c}
 
     /* MISSION */
     .mission-section{background:linear-gradient(145deg,var(--ft-bg-2),var(--ft-bg-3))}
@@ -149,13 +163,17 @@
     .worldmap-section{background:linear-gradient(180deg,var(--ft-bg-2) 0%,var(--ft-bg) 100%);overflow:hidden}
     .map-container{position:relative;border-radius:var(--ft-r-xl);overflow:hidden}
     .map-svg-wrap{position:relative;width:100%}
-    .map-svg-wrap svg{width:100%;height:auto;display:block}
-    /* country fills */
-    .country{fill:rgba(255,255,255,.07);stroke:rgba(255,255,255,.18);stroke-width:.6;stroke-linejoin:round;transition:fill .2s,filter .2s}
-    .country-diabetes{fill:rgba(243,156,18,.32);stroke:rgba(243,156,18,.65)}
-    .country-bp{fill:rgba(231,76,60,.28);stroke:rgba(231,76,60,.55)}
-    .country-both{fill:rgba(243,156,18,.36);stroke:rgba(243,156,18,.7)}
-    .country-diabetes:hover,.country-bp:hover,.country-both:hover,.country:hover{filter:brightness(1.35);cursor:pointer}
+    .map-art{position:relative;min-height:clamp(240px,42vw,520px);border-radius:18px;overflow:hidden;background:radial-gradient(circle at 28% 38%,rgba(52,152,219,.12),transparent 30%),radial-gradient(circle at 68% 32%,rgba(39,174,96,.10),transparent 32%),rgba(52,152,219,.035)}
+    .map-art::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 55%);pointer-events:none;z-index:2}
+    .map-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:clamp(12px,2.5vw,34px);filter:drop-shadow(0 18px 32px rgba(0,0,0,.28));opacity:.96}
+    .map-hotspot{position:absolute;left:var(--x);top:var(--y);width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.88);background:var(--dot);box-shadow:0 0 0 8px color-mix(in srgb,var(--dot) 20%,transparent),0 0 28px color-mix(in srgb,var(--dot) 62%,transparent);transform:translate(-50%,-50%);z-index:4;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .map-hotspot::after{content:'';position:absolute;inset:-9px;border:2px solid var(--dot);border-radius:50%;animation:mapPulse 2.4s ease-out infinite}
+    .map-hotspot:hover{transform:translate(-50%,-50%) scale(1.18);box-shadow:0 0 0 10px color-mix(in srgb,var(--dot) 24%,transparent),0 0 36px color-mix(in srgb,var(--dot) 72%,transparent)}
+    .map-hotspot.diabetes{--dot:var(--ft-amber)}
+    .map-hotspot.bp{--dot:var(--ft-red)}
+    .map-hotspot.both{--dot:#e67e22}
+    .map-label{position:absolute;left:var(--x);top:var(--y);z-index:3;transform:translate(-50%,-120%);padding:3px 8px;border-radius:999px;background:rgba(6,10,16,.62);border:1px solid rgba(255,255,255,.10);color:#fff;font-size:.72rem;font-weight:800;line-height:1;white-space:nowrap;backdrop-filter:blur(10px)}
+    @keyframes mapPulse{0%{transform:scale(.65);opacity:.75}100%{transform:scale(2.4);opacity:0}}
     /* legend */
     .map-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.25rem;justify-content:center}
     .leg-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--ft-muted)}
@@ -272,6 +290,51 @@
     .ft-footer a{color:var(--ft-muted);font-size:.85rem;text-decoration:none}
     .ft-footer a:hover{color:var(--ft-green)}
     .ft-footer p{font-size:.8rem;color:var(--ft-dim);margin:0}
+
+    [data-bs-theme="light"] body::before{opacity:.10}
+    [data-bs-theme="light"] body::after{opacity:.08}
+    [data-bs-theme="light"] .ft-navbar{box-shadow:0 8px 24px rgba(20,31,46,.08)}
+    [data-bs-theme="light"] .glass,
+    [data-bs-theme="light"] .glass-md,
+    [data-bs-theme="light"] .step-card,
+    [data-bs-theme="light"] .feature-card,
+    [data-bs-theme="light"] .quality-card,
+    [data-bs-theme="light"] .map-stat-card,
+    [data-bs-theme="light"] .proj-card,
+    [data-bs-theme="light"] .report-preview-card,
+    [data-bs-theme="light"] .carousel-mini,
+    [data-bs-theme="light"] .wizard-card,
+    [data-bs-theme="light"] .report-metric-card,
+    [data-bs-theme="light"] .wiz-slider-card,
+    [data-bs-theme="light"] .wiz-gender-row,
+    [data-bs-theme="light"] .download-card-wrap{box-shadow:var(--ft-shadow);background:var(--ft-glass-hi)}
+    [data-bs-theme="light"] .phone-device,
+    [data-bs-theme="light"] .phone-scan-box,
+    [data-bs-theme="light"] .phone-result-panel,
+    [data-bs-theme="light"] .phone-chip,
+    [data-bs-theme="light"] .stat-strip-card,
+    [data-bs-theme="light"] .packet-card,
+    [data-bs-theme="light"] .map-tooltip{background:#fff;color:var(--ft-text);box-shadow:var(--ft-shadow)}
+    [data-bs-theme="light"] .ft-form-control,
+    [data-bs-theme="light"] .wiz-option{background:#fff;color:var(--ft-text);border-color:var(--ft-border-hi)}
+    [data-bs-theme="light"] .ft-form-control::placeholder{color:#6d7b70}
+    [data-bs-theme="light"] .btn-ft-ghost,
+    [data-bs-theme="light"] .theme-btn,
+    [data-bs-theme="light"] .carousel-ctrl,
+    [data-bs-theme="light"] .wiz-close{background:#fff;color:var(--ft-text);border-color:var(--ft-border-hi);box-shadow:0 6px 18px rgba(20,31,46,.07)}
+    [data-bs-theme="light"] .btn-ft-ghost:hover,
+    [data-bs-theme="light"] .theme-btn:hover,
+    [data-bs-theme="light"] .carousel-ctrl:hover,
+    [data-bs-theme="light"] .wiz-close:hover{background:#f1f8f4;border-color:rgba(39,174,96,.38)}
+    [data-bs-theme="light"] .q-good .q-icon,[data-bs-theme="light"] .q-good .q-badge{color:#157347}
+    [data-bs-theme="light"] .q-mod .q-icon,[data-bs-theme="light"] .q-mod .q-badge{color:#9a5c00}
+    [data-bs-theme="light"] .q-limit .q-icon,[data-bs-theme="light"] .q-limit .q-badge{color:#a24f04}
+    [data-bs-theme="light"] .q-avoid .q-icon,[data-bs-theme="light"] .q-avoid .q-badge{color:#b02a1f}
+    [data-bs-theme="light"] .map-art{background:radial-gradient(circle at 28% 38%,rgba(52,152,219,.10),transparent 30%),radial-gradient(circle at 68% 32%,rgba(39,174,96,.08),transparent 32%),#f8fbff}
+    [data-bs-theme="light"] .map-img{filter:drop-shadow(0 18px 30px rgba(20,31,46,.12));opacity:.92}
+    [data-bs-theme="light"] .map-label{background:rgba(255,255,255,.86);border-color:rgba(20,31,46,.12);color:var(--ft-text)}
+    [data-bs-theme="light"] .leg-base{background:rgba(20,31,46,.08);border-color:rgba(20,31,46,.22)}
+    [data-bs-theme="light"] .btn-play small{color:rgba(255,255,255,.78)!important}
 
     /* REVEAL */
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
@@ -427,10 +490,34 @@
       <p>FutureTrack turns long label text into practical guidance you can use while shopping, packing lunch, or comparing snacks at home.</p>
     </div>
     <div class="row g-4">
-      <div class="col-sm-6 col-xl-3 reveal delay-1"><div class="quality-card glass q-good"><div class="q-badge">Good</div><h3>Better Choice</h3><p>Balanced nutrition, cleaner ingredients, and better daily suitability for the whole family.</p></div></div>
-      <div class="col-sm-6 col-xl-3 reveal delay-2"><div class="quality-card glass q-mod"><div class="q-badge">Moderate</div><h3>Consume Mindfully</h3><p>Some concerns may need attention — sugar, salt, oils, or additives present but manageable.</p></div></div>
-      <div class="col-sm-6 col-xl-3 reveal delay-3"><div class="quality-card glass q-limit"><div class="q-badge">Limit</div><h3>Less Frequent</h3><p>Ultra-processed patterns or nutrition concerns make it better for occasional consumption only.</p></div></div>
-      <div class="col-sm-6 col-xl-3 reveal delay-4"><div class="quality-card glass q-avoid"><div class="q-badge">Avoid Often</div><h3>High Concern</h3><p>Repeated consumption may conflict with healthier everyday food habits and long-term wellness.</p></div></div>
+      <div class="col-sm-6 col-xl-3 reveal delay-1">
+        <div class="quality-card glass q-good">
+          <div class="q-head"><div class="q-icon"><i class="bi bi-check2-circle"></i></div><div class="q-badge">Good Choice</div></div>
+          <h3>Balanced Daily Pick</h3>
+          <p>Balanced nutrition, cleaner ingredients, and better daily suitability for the whole family.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xl-3 reveal delay-2">
+        <div class="quality-card glass q-mod">
+          <div class="q-head"><div class="q-icon"><i class="bi bi-exclamation-circle"></i></div><div class="q-badge">Consume Mindfully</div></div>
+          <h3>Manageable Concerns</h3>
+          <p>Some concerns may need attention, such as sugar, salt, oils, or additives, but they remain manageable with moderate consumption.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xl-3 reveal delay-3">
+        <div class="quality-card glass q-limit">
+          <div class="q-head"><div class="q-icon"><i class="bi bi-hourglass-split"></i></div><div class="q-badge">Less Frequent</div></div>
+          <h3>Occasional Choice</h3>
+          <p>Ultra-processed ingredients or nutritional concerns make this better suited for occasional consumption.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xl-3 reveal delay-4">
+        <div class="quality-card glass q-avoid">
+          <div class="q-head"><div class="q-icon"><i class="bi bi-shield-exclamation"></i></div><div class="q-badge">High Concern</div></div>
+          <h3>Limit Repetition</h3>
+          <p>Frequent consumption may not align with healthier everyday eating habits and long-term wellness goals.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -457,127 +544,19 @@
     <div class="map-container glass reveal delay-1" style="padding:1.5rem;">
       <div class="map-svg-wrap" style="position:relative;">
         <div class="map-tooltip" id="mapTooltip"></div>
-        <!-- World map built on an equirectangular-style world atlas path set (recognizable continent silhouettes) -->
-        <svg viewBox="0 0 2000 1001" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map showing diabetes and blood pressure burden by country">
-          <title>Global diabetes and hypertension burden</title>
-          <rect width="2000" height="1001" fill="rgba(52,152,219,0.04)" rx="14"/>
-
-          <!-- Graticule -->
-          <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
-            <line x1="0" y1="500" x2="2000" y2="500" stroke-dasharray="4,7"/>
-            <line x1="1000" y1="0" x2="1000" y2="1001" stroke-dasharray="4,7"/>
-            <line x1="0" y1="250" x2="2000" y2="250" stroke-dasharray="2,9" opacity=".6"/>
-            <line x1="0" y1="750" x2="2000" y2="750" stroke-dasharray="2,9" opacity=".6"/>
-            <line x1="500" y1="0" x2="500" y2="1001" stroke-dasharray="2,9" opacity=".6"/>
-            <line x1="1500" y1="0" x2="1500" y2="1001" stroke-dasharray="2,9" opacity=".6"/>
-          </g>
-
-          <!-- ============ NORTH AMERICA ============ -->
-          <path class="country" data-country="Canada" data-diabetes="3.7M" data-bp="6M"
-            d="M205,150 L300,120 L400,108 L470,118 L520,108 L560,118 L590,148 L575,175 L600,195 L580,225 L520,235 L470,222 L430,235 L380,222 L340,235 L300,215 L250,222 L210,195 L185,175 Z"/>
-          <path class="country country-both" data-country="United States" data-diabetes="37.3M" data-bp="108M"
-            d="M210,235 L300,218 L380,225 L430,238 L470,225 L520,238 L575,228 L595,245 L585,275 L555,295 L520,300 L480,290 L440,300 L400,292 L360,300 L320,288 L280,295 L240,280 L215,260 Z"/>
-          <path class="country country-diabetes" data-country="Mexico" data-diabetes="14.1M" data-bp="15M"
-            d="M250,300 L320,292 L370,302 L400,320 L390,345 L355,360 L320,352 L290,335 L265,322 Z"/>
-          <path class="country" data-country="Central America" d="M355,362 L390,348 L405,368 L388,388 L362,382 Z"/>
-
-          <!-- ============ SOUTH AMERICA ============ -->
-          <path class="country" data-country="Colombia/Venezuela" d="M388,390 L430,378 L460,395 L450,418 L412,425 L385,410 Z"/>
-          <path class="country country-both" data-country="Brazil" data-diabetes="16.8M" data-bp="36M"
-            d="M412,427 L470,415 L520,430 L545,470 L535,530 L495,565 L450,558 L420,520 L405,470 Z"/>
-          <path class="country" data-country="Peru" d="M388,412 L412,425 L405,470 L378,478 L362,448 Z"/>
-          <path class="country" data-country="Bolivia" d="M405,472 L440,462 L450,495 L420,508 L400,492 Z"/>
-          <path class="country" data-country="Chile" d="M378,480 L400,470 L405,560 L388,610 L370,605 L375,540 Z"/>
-          <path class="country" data-country="Argentina" d="M403,510 L450,498 L470,560 L455,615 L420,635 L398,600 L395,550 Z"/>
-
-          <!-- ============ EUROPE ============ -->
-          <path class="country" data-country="United Kingdom &amp; Ireland" data-diabetes="4.3M" data-bp="14M"
-            d="M905,205 L935,198 L945,222 L928,238 L905,230 Z"/>
-          <path class="country" data-country="Scandinavia" data-diabetes="1.6M" data-bp="4M"
-            d="M965,140 L1010,128 L1030,165 L1020,210 L990,215 L965,185 Z"/>
-          <path class="country" data-country="France" data-diabetes="4.2M" data-bp="13M"
-            d="M918,238 L965,228 L975,262 L948,278 L915,268 Z"/>
-          <path class="country" data-country="Germany" data-diabetes="7.5M" data-bp="22M"
-            d="M955,210 L995,205 L1003,238 L975,248 L950,232 Z"/>
-          <path class="country" data-country="Spain" data-diabetes="5.1M" data-bp="14M"
-            d="M885,265 L935,255 L945,282 L905,298 L878,282 Z"/>
-          <path class="country" data-country="Italy" data-diabetes="3.9M" data-bp="15M"
-            d="M965,250 L995,245 L1005,272 L985,300 L968,278 Z"/>
-          <path class="country" data-country="Poland" data-diabetes="3M" data-bp="9M"
-            d="M998,205 L1035,200 L1042,230 L1010,238 L998,222 Z"/>
-          <path class="country" data-country="Ukraine" data-diabetes="2.3M" data-bp="13M"
-            d="M1040,210 L1095,200 L1110,232 L1080,250 L1042,238 Z"/>
-          <path class="country country-bp" data-country="Russia" data-diabetes="10.9M" data-bp="59M"
-            d="M1015,120 L1330,85 L1460,110 L1480,160 L1430,190 L1330,180 L1230,200 L1140,195 L1090,215 L1040,205 L1018,165 Z"/>
-          <path class="country country-diabetes" data-country="Turkey" data-diabetes="7.8M" data-bp="19M"
-            d="M1045,255 L1115,242 L1130,268 L1090,285 L1045,275 Z"/>
-
-          <!-- ============ AFRICA ============ -->
-          <path class="country" data-country="Morocco/Algeria" d="M870,300 L965,288 L975,335 L920,350 L875,335 Z"/>
-          <path class="country country-diabetes" data-country="Egypt" data-diabetes="10.9M" data-bp="26M"
-            d="M1000,300 L1055,292 L1062,335 L1020,345 L995,328 Z"/>
-          <path class="country" data-country="Libya" d="M965,300 L1000,295 L1005,335 L968,338 Z"/>
-          <path class="country" data-country="Sudan" d="M1000,345 L1062,338 L1070,395 L1025,405 L998,385 Z"/>
-          <path class="country country-diabetes" data-country="Nigeria" data-diabetes="11.2M" data-bp="38M"
-            d="M880,400 L945,390 L955,425 L915,440 L875,425 Z"/>
-          <path class="country" data-country="Ethiopia/Horn of Africa" d="M1060,385 L1115,375 L1130,410 L1090,425 L1055,410 Z"/>
-          <path class="country" data-country="DR Congo" d="M925,440 L1000,428 L1015,475 L965,490 L920,475 Z"/>
-          <path class="country" data-country="East Africa" d="M1000,440 L1055,428 L1065,470 L1015,485 L998,468 Z"/>
-          <path class="country" data-country="Southern Africa" d="M930,495 L1020,480 L1035,540 L975,560 L920,535 Z"/>
-
-          <!-- ============ MIDDLE EAST ============ -->
-          <path class="country country-both" data-country="Saudi Arabia" data-diabetes="7M" data-bp="14M"
-            d="M1085,300 L1180,285 L1200,330 L1150,355 L1090,340 Z"/>
-          <path class="country country-diabetes" data-country="UAE/Gulf" data-diabetes="1.1M" data-bp="1.5M"
-            d="M1180,322 L1215,312 L1222,332 L1192,342 Z"/>
-          <path class="country country-both" data-country="Iran" data-diabetes="6.4M" data-bp="16M"
-            d="M1135,260 L1225,248 L1245,295 L1195,310 L1140,295 Z"/>
-          <path class="country" data-country="Iraq" d="M1100,265 L1140,258 L1148,295 L1108,300 Z"/>
-
-          <!-- ============ SOUTH ASIA ============ -->
-          <path class="country country-both" data-country="Pakistan" data-diabetes="33M" data-bp="53M"
-            d="M1228,260 L1295,248 L1310,290 L1270,318 L1228,300 Z"/>
-          <path class="country country-both" data-country="India" data-diabetes="77M" data-bp="220M"
-            d="M1270,295 L1340,270 L1395,290 L1410,340 L1395,400 L1355,440 L1310,425 L1280,380 L1262,335 Z"/>
-          <path class="country country-diabetes" data-country="Bangladesh" data-diabetes="13.1M" data-bp="27M"
-            d="M1395,335 L1425,325 L1432,355 L1405,365 Z"/>
-          <path class="country" data-country="Nepal" d="M1300,272 L1365,260 L1370,285 L1308,295 Z"/>
-          <path class="country" data-country="Sri Lanka" d="M1330,435 L1352,428 L1358,452 L1336,458 Z"/>
-
-          <!-- ============ EAST / SE ASIA ============ -->
-          <path class="country country-both" data-country="China" data-diabetes="141M" data-bp="270M"
-            d="M1320,140 L1480,115 L1560,150 L1565,225 L1520,270 L1450,278 L1390,255 L1345,215 L1318,180 Z"/>
-          <path class="country" data-country="Mongolia" d="M1340,118 L1450,100 L1480,130 L1430,150 L1350,148 Z"/>
-          <path class="country country-bp" data-country="Japan" data-diabetes="10.7M" data-bp="43M"
-            d="M1585,180 L1615,165 L1635,205 L1620,240 L1595,230 L1582,205 Z"/>
-          <path class="country" data-country="South Korea" d="M1545,195 L1572,188 L1578,212 L1552,218 Z"/>
-          <path class="country" data-country="Myanmar" d="M1380,290 L1420,278 L1432,330 L1398,342 Z"/>
-          <path class="country" data-country="Thailand/Indochina" d="M1410,330 L1455,318 L1468,375 L1432,392 L1408,365 Z"/>
-          <path class="country" data-country="Vietnam" d="M1455,300 L1485,292 L1498,360 L1472,378 L1458,335 Z"/>
-          <path class="country" data-country="Philippines" d="M1530,300 L1572,290 L1580,330 L1545,345 L1525,322 Z"/>
-          <path class="country" data-country="Malaysia" d="M1430,395 L1480,385 L1492,408 L1450,418 Z"/>
-          <path class="country country-diabetes" data-country="Indonesia" data-diabetes="19.5M" data-bp="63M"
-            d="M1420,420 L1560,400 L1620,425 L1600,460 L1500,470 L1430,450 Z"/>
-
-          <!-- ============ OCEANIA ============ -->
-          <path class="country" data-country="Australia" data-diabetes="1.3M" data-bp="6M"
-            d="M1560,510 L1700,495 L1760,530 L1745,590 L1670,620 L1590,600 L1555,555 Z"/>
-          <path class="country" data-country="New Zealand" d="M1790,580 L1815,568 L1825,605 L1800,618 Z"/>
-
-          <!-- Hotspot pulses for top burden countries -->
-          <circle cx="1430" cy="190" r="11" fill="rgba(243,156,18,0.32)" stroke="rgba(243,156,18,0.85)" stroke-width="2"><animate attributeName="r" values="11;22;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
-          <circle cx="1330" cy="350" r="11" fill="rgba(231,76,60,0.32)" stroke="rgba(231,76,60,0.85)" stroke-width="2"><animate attributeName="r" values="11;22;11" dur="2.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.1s" repeatCount="indefinite"/></circle>
-          <circle cx="395" cy="265" r="9" fill="rgba(243,156,18,0.32)" stroke="rgba(243,156,18,0.85)" stroke-width="2"><animate attributeName="r" values="9;18;9" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.8s" repeatCount="indefinite"/></circle>
-          <circle cx="1270" cy="285" r="8" fill="rgba(243,156,18,0.32)" stroke="rgba(243,156,18,0.8)" stroke-width="1.5"><animate attributeName="r" values="8;16;8" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.6s" repeatCount="indefinite"/></circle>
-          <circle cx="475" cy="495" r="8" fill="rgba(243,156,18,0.32)" stroke="rgba(243,156,18,0.8)" stroke-width="1.5"><animate attributeName="r" values="8;16;8" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="3s" repeatCount="indefinite"/></circle>
-
-          <!-- Labels -->
-          <text x="1430" y="170" text-anchor="middle" font-size="15" fill="rgba(255,210,130,0.95)" font-family="Inter,sans-serif" font-weight="700">China</text>
-          <text x="1330" y="335" text-anchor="middle" font-size="15" fill="rgba(255,140,140,0.95)" font-family="Inter,sans-serif" font-weight="700">India</text>
-          <text x="395" y="250" text-anchor="middle" font-size="13" fill="rgba(255,170,110,0.95)" font-family="Inter,sans-serif" font-weight="700">USA</text>
-          <text x="1270" y="270" text-anchor="middle" font-size="12" fill="rgba(255,210,130,0.95)" font-family="Inter,sans-serif" font-weight="700">Pakistan</text>
-          <text x="475" y="480" text-anchor="middle" font-size="12" fill="rgba(255,170,110,0.95)" font-family="Inter,sans-serif" font-weight="700">Brazil</text>
-        </svg>
+        <div class="map-art" role="img" aria-label="World map showing diabetes and blood pressure burden by country">
+          <img class="map-img" src="assets/world-map.png" alt="Dotted world map" loading="lazy">
+          <button class="map-hotspot both" style="--x:73%;--y:34%;" data-country="China" data-diabetes="141M" data-bp="270M" aria-label="China health burden"></button>
+          <button class="map-hotspot bp" style="--x:67%;--y:46%;" data-country="India" data-diabetes="77M" data-bp="220M" aria-label="India health burden"></button>
+          <button class="map-hotspot both" style="--x:23%;--y:39%;" data-country="United States" data-diabetes="37.3M" data-bp="108M" aria-label="United States health burden"></button>
+          <button class="map-hotspot diabetes" style="--x:64%;--y:39%;" data-country="Pakistan" data-diabetes="33M" data-bp="53M" aria-label="Pakistan health burden"></button>
+          <button class="map-hotspot both" style="--x:35%;--y:67%;" data-country="Brazil" data-diabetes="16.8M" data-bp="36M" aria-label="Brazil health burden"></button>
+          <span class="map-label" style="--x:73%;--y:30%;">China</span>
+          <span class="map-label" style="--x:67%;--y:42%;">India</span>
+          <span class="map-label" style="--x:23%;--y:35%;">USA</span>
+          <span class="map-label" style="--x:64%;--y:35%;">Pakistan</span>
+          <span class="map-label" style="--x:35%;--y:63%;">Brazil</span>
+        </div>
       </div>
 
       <!-- Legend -->
@@ -738,9 +717,9 @@
           <h2>Carry a food-quality scanner <span class="grad-text">in your pocket.</span></h2>
           <p class="text-muted-ft mt-3" style="font-size:1.05rem;">Use FutureTrack before buying packaged food, while comparing snacks, or when a label looks healthy but the ingredients tell a different story.</p>
           <div class="d-flex flex-wrap gap-3 mt-4">
-            <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.snipthink.futuretrack" target="_blank" rel="noopener" style="background:#fff;border-color:transparent;color:#060a10;">
+            <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.snipthink.futuretrack" target="_blank" rel="noopener">
               <div class="play-icon-svg"><i class="bi bi-play-fill" style="color:var(--ft-ink);font-size:1rem;margin-left:2px;"></i></div>
-              <span><small style="display:block;font-size:.68rem;font-weight:400;color:#555;">Get it on</small><strong>Google Play</strong></span>
+              <span><small style="display:block;font-size:.68rem;font-weight:400;color:rgba(255,255,255,.75);">Get it on</small><strong>Google Play</strong></span>
             </a>
             <a class="btn-ft-ghost" href="#quality">View Quality Ratings</a>
           </div>
