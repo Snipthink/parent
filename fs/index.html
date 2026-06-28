@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="FutureTrack by SnipThink — Scan packaged food labels and make smarter everyday food choices." />
-  <meta name="theme-color" content="#041a10" />
+  <meta name="theme-color" content="#060a10" />
   <title>FutureTrack by SnipThink | Scan Food Packets. Choose Better.</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
@@ -15,13 +15,13 @@
 
   <style>
     :root {
-      --ft-bg:#041a10;--ft-bg-2:#071f14;--ft-bg-3:#0c2a1c;
+      --ft-bg:#060a10;--ft-bg-2:#0a1018;--ft-bg-3:#0f1620;
       --ft-glass:rgba(255,255,255,0.055);--ft-glass-md:rgba(255,255,255,0.09);--ft-glass-hi:rgba(255,255,255,0.13);
       --ft-border:rgba(255,255,255,0.10);--ft-border-hi:rgba(255,255,255,0.20);
-      --ft-text:#eef7f2;--ft-muted:#8faaa0;--ft-dim:#5c7a6d;
-      --ft-green:#3fe08a;--ft-cyan:#38d1e8;--ft-amber:#ffbe55;--ft-red:#ff6b6b;--ft-ink:#051208;
+      --ft-text:#c8d6e5;--ft-muted:#5a6a7a;--ft-dim:#425160;
+      --ft-green:#27ae60;--ft-green2:#1a7a42;--ft-cyan:#3498db;--ft-amber:#f39c12;--ft-red:#e74c3c;--ft-ink:#06100a;
       --ft-r:10px;--ft-r-lg:16px;--ft-r-xl:24px;--ft-r-pill:999px;
-      --ft-grad:linear-gradient(135deg,var(--ft-green),var(--ft-cyan));
+      --ft-grad:linear-gradient(135deg,var(--ft-green),var(--ft-green2));
       --ft-shadow:0 8px 32px rgba(0,0,0,0.38),0 2px 8px rgba(0,0,0,0.22);
       --ft-shadow-lg:0 24px 80px rgba(0,0,0,0.52),0 4px 16px rgba(0,0,0,0.28);
       --transition:0.22s cubic-bezier(0.4,0,0.2,1);
@@ -29,10 +29,10 @@
     [data-bs-theme="light"] {
       --ft-bg:#f3f9f5;--ft-bg-2:#e8f5ed;--ft-bg-3:#ddf0e6;
       --ft-glass:rgba(255,255,255,0.72);--ft-glass-md:rgba(255,255,255,0.85);--ft-glass-hi:rgba(255,255,255,0.95);
-      --ft-border:rgba(17,42,28,0.10);--ft-border-hi:rgba(17,42,28,0.18);
+      --ft-border:rgba(20,31,46,0.10);--ft-border-hi:rgba(20,31,46,0.18);
       --ft-text:#0d2416;--ft-muted:#4a6b58;--ft-dim:#7a9a88;
-      --ft-shadow:0 8px 32px rgba(14,52,32,0.12),0 2px 8px rgba(14,52,32,0.08);
-      --ft-shadow-lg:0 24px 80px rgba(14,52,32,0.18),0 4px 16px rgba(14,52,32,0.10);
+      --ft-shadow:0 8px 32px rgba(39,174,96,0.12),0 2px 8px rgba(39,174,96,0.08);
+      --ft-shadow-lg:0 24px 80px rgba(39,174,96,0.18),0 4px 16px rgba(39,174,96,0.10);
     }
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -51,7 +51,7 @@
 
     /* BUTTONS */
     .btn-ft-primary{background:var(--ft-grad);color:var(--ft-ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border:none;border-radius:var(--ft-r-pill);padding:.65rem 1.6rem;transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition);display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-    .btn-ft-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(63,224,138,.32);opacity:.92;color:var(--ft-ink)}
+    .btn-ft-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(39,174,96,.32);opacity:.92;color:var(--ft-ink)}
     .btn-ft-primary:active{transform:scale(.97)}
     .btn-ft-ghost{background:var(--ft-glass);color:var(--ft-text);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.88rem;border:1px solid var(--ft-border-hi);border-radius:var(--ft-r-pill);padding:.62rem 1.4rem;transition:background var(--transition),transform var(--transition),border-color var(--transition);display:inline-flex;align-items:center;gap:6px;cursor:pointer;text-decoration:none}
     .btn-ft-ghost:hover{background:var(--ft-glass-md);border-color:var(--ft-green);transform:translateY(-2px);color:var(--ft-text)}
@@ -60,8 +60,8 @@
     .play-icon-svg{width:32px;height:32px;background:var(--ft-grad);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
     /* NAVBAR */
-    .ft-navbar{position:sticky;top:0;z-index:1000;background:rgba(4,26,16,.82);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid var(--ft-border);padding:.75rem 0;transition:background var(--transition)}
-    [data-bs-theme="light"] .ft-navbar{background:rgba(243,249,245,.88)}
+    .ft-navbar{position:sticky;top:0;z-index:1000;background:rgba(6,10,16,.82);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid var(--ft-border);padding:.75rem 0;transition:background var(--transition)}
+    [data-bs-theme="light"] .ft-navbar{background:rgba(248,250,252,.88)}
     .ft-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ft-text)}
     .ft-brand-mark{width:40px;height:40px;background:var(--ft-grad);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1rem;color:var(--ft-ink);flex-shrink:0}
     .ft-brand-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;line-height:1.1}
@@ -82,7 +82,7 @@
 
     /* PHONE MOCK */
     .phone-wrap{position:relative;display:flex;justify-content:center}
-    .phone-device{width:min(300px,80vw);aspect-ratio:10/20;background:linear-gradient(160deg,rgba(63,224,138,.13) 0%,rgba(56,209,232,.08) 60%,var(--ft-bg-3) 100%);border:1px solid var(--ft-border-hi);border-radius:30px;box-shadow:var(--ft-shadow-lg),inset 0 1px 0 rgba(255,255,255,.12);overflow:hidden;padding:20px 16px;display:grid;gap:10px;align-content:start;position:relative}
+    .phone-device{width:min(300px,80vw);aspect-ratio:10/20;background:linear-gradient(160deg,rgba(39,174,96,.13) 0%,rgba(52,152,219,.08) 60%,var(--ft-bg-3) 100%);border:1px solid var(--ft-border-hi);border-radius:30px;box-shadow:var(--ft-shadow-lg),inset 0 1px 0 rgba(255,255,255,.12);overflow:hidden;padding:20px 16px;display:grid;gap:10px;align-content:start;position:relative}
     .phone-statusbar{display:flex;justify-content:space-between;align-items:center;font-size:.62rem;color:var(--ft-muted)}
     .phone-statusbar strong{width:28px;height:28px;border-radius:50%;background:var(--ft-grad);color:var(--ft-ink);font-weight:900;font-size:.7rem;display:flex;align-items:center;justify-content:center}
     .phone-scan-box{background:rgba(255,255,255,.055);border:1px solid var(--ft-border);border-radius:var(--ft-r);padding:12px}
@@ -118,20 +118,20 @@
 
     /* STEPS */
     .step-card{border-radius:var(--ft-r-lg);padding:2rem;height:100%;transition:transform var(--transition),border-color var(--transition);position:relative;overflow:hidden}
-    .step-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(63,224,138,.06) 0%,transparent 60%);pointer-events:none}
-    .step-card:hover{transform:translateY(-4px);border-color:rgba(63,224,138,.3)}
+    .step-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(39,174,96,.06) 0%,transparent 60%);pointer-events:none}
+    .step-card:hover{transform:translateY(-4px);border-color:rgba(39,174,96,.3)}
     .step-num{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:var(--ft-r-pill);background:var(--ft-grad);color:var(--ft-ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:1.05rem;margin-bottom:1.1rem}
     .step-card h3{font-size:1.15rem;margin-bottom:.5rem}
     .step-card p{color:var(--ft-muted);font-size:.92rem;margin:0}
 
     /* QUALITY */
-    .quality-section{background:linear-gradient(135deg,rgba(63,224,138,.05) 0%,rgba(56,209,232,.04) 100%)}
+    .quality-section{background:linear-gradient(135deg,rgba(39,174,96,.05) 0%,rgba(52,152,219,.04) 100%)}
     .quality-card{border-radius:var(--ft-r-lg);padding:1.75rem;height:100%;transition:transform var(--transition),box-shadow var(--transition)}
-    .quality-card:hover{transform:translateY(-5px);box-shadow:0 0 60px rgba(63,224,138,.18)}
+    .quality-card:hover{transform:translateY(-5px);box-shadow:0 0 60px rgba(39,174,96,.18)}
     .q-badge{display:inline-block;border-radius:var(--ft-r-pill);font-size:.72rem;font-weight:700;padding:5px 12px;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.05em}
-    .q-good .q-badge{background:rgba(63,224,138,.15);color:#7dffb8}
-    .q-mod  .q-badge{background:rgba(255,190,85,.18);color:#ffe09a}
-    .q-limit .q-badge,.q-avoid .q-badge{background:rgba(255,107,107,.14);color:#ffaaaa}
+    .q-good .q-badge{background:rgba(39,174,96,.15);color:#2ecc71}
+    .q-mod  .q-badge{background:rgba(243,156,18,.18);color:#f8c471}
+    .q-limit .q-badge,.q-avoid .q-badge{background:rgba(231,76,60,.14);color:#f5b7b1}
     .quality-card h3{font-size:1.1rem;margin-bottom:.5rem}
     .quality-card p{color:var(--ft-muted);font-size:.88rem;margin:0}
 
@@ -152,17 +152,17 @@
     .map-svg-wrap svg{width:100%;height:auto;display:block}
     /* country fills */
     .country{fill:rgba(255,255,255,.07);stroke:rgba(255,255,255,.18);stroke-width:.6;stroke-linejoin:round;transition:fill .2s,filter .2s}
-    .country-diabetes{fill:rgba(255,190,85,.32);stroke:rgba(255,190,85,.65)}
-    .country-bp{fill:rgba(255,107,107,.28);stroke:rgba(255,107,107,.55)}
-    .country-both{fill:rgba(255,140,70,.36);stroke:rgba(255,140,70,.7)}
+    .country-diabetes{fill:rgba(243,156,18,.32);stroke:rgba(243,156,18,.65)}
+    .country-bp{fill:rgba(231,76,60,.28);stroke:rgba(231,76,60,.55)}
+    .country-both{fill:rgba(243,156,18,.36);stroke:rgba(243,156,18,.7)}
     .country-diabetes:hover,.country-bp:hover,.country-both:hover,.country:hover{filter:brightness(1.35);cursor:pointer}
     /* legend */
     .map-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.25rem;justify-content:center}
     .leg-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--ft-muted)}
     .leg-dot{width:14px;height:14px;border-radius:4px;flex-shrink:0}
-    .leg-amber{background:rgba(255,190,85,.55);border:1px solid rgba(255,190,85,.8)}
-    .leg-red{background:rgba(255,107,107,.5);border:1px solid rgba(255,107,107,.8)}
-    .leg-orange{background:rgba(255,140,70,.55);border:1px solid rgba(255,140,70,.8)}
+    .leg-amber{background:rgba(243,156,18,.55);border:1px solid rgba(243,156,18,.8)}
+    .leg-red{background:rgba(231,76,60,.5);border:1px solid rgba(231,76,60,.8)}
+    .leg-orange{background:rgba(243,156,18,.55);border:1px solid rgba(243,156,18,.8)}
     .leg-base{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22)}
     /* stat cards above map */
     .map-stat-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:1.5rem}
@@ -182,18 +182,18 @@
     .proj-card .proj-yr{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ft-muted);margin-bottom:6px}
     .proj-card .proj-num{font-size:1.5rem;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif}
     .proj-card .proj-desc{font-size:.78rem;color:var(--ft-muted);margin-top:3px;line-height:1.4}
-    .proj-amber{border-color:rgba(255,190,85,.3)}.proj-red{border-color:rgba(255,107,107,.3)}.proj-cyan{border-color:rgba(56,209,232,.3)}
+    .proj-amber{border-color:rgba(243,156,18,.3)}.proj-red{border-color:rgba(231,76,60,.3)}.proj-cyan{border-color:rgba(52,152,219,.3)}
 
     /* FEATURES */
     .feature-card{border-radius:var(--ft-r-lg);padding:1.75rem;height:100%;transition:transform var(--transition),border-color var(--transition);position:relative;overflow:hidden}
-    .feature-card:hover{transform:translateY(-4px);border-color:rgba(63,224,138,.28)}
+    .feature-card:hover{transform:translateY(-4px);border-color:rgba(39,174,96,.28)}
     .feat-icon{width:48px;height:48px;background:var(--ft-glass-md);border:1px solid var(--ft-border-hi);border-radius:var(--ft-r);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--ft-green);margin-bottom:1.1rem}
     .feature-card h3{font-size:1.05rem;margin-bottom:.45rem}
     .feature-card p{color:var(--ft-muted);font-size:.88rem;margin:0}
     .feat-tag{position:absolute;top:14px;right:14px;background:var(--ft-glass);border:1px solid var(--ft-border);border-radius:6px;font-size:.62rem;font-weight:700;letter-spacing:.08em;color:var(--ft-green);padding:3px 8px}
 
     /* LIFESTYLE */
-    .lifestyle-section{background:linear-gradient(135deg,rgba(56,209,232,.05) 0%,rgba(63,224,138,.04) 100%)}
+    .lifestyle-section{background:linear-gradient(135deg,rgba(52,152,219,.05) 0%,rgba(39,174,96,.04) 100%)}
     .report-preview-card{border-radius:var(--ft-r-xl);padding:2rem}
     .ring-wrap{width:130px;height:130px;background:conic-gradient(var(--ft-green) 82%,rgba(255,255,255,.10) 0);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
     .ring-inner{width:96px;height:96px;border-radius:50%;background:var(--ft-bg-3);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:900}
@@ -205,17 +205,17 @@
 
     /* PARENTS */
     .packet-visual{display:grid;gap:10px;transform:rotate(-3deg)}
-    .packet-card{background:linear-gradient(135deg,rgba(63,224,138,.22),rgba(56,209,232,.14));border:1px solid var(--ft-border);border-radius:var(--ft-r);padding:16px 20px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem}
+    .packet-card{background:linear-gradient(135deg,rgba(39,174,96,.22),rgba(52,152,219,.14));border:1px solid var(--ft-border);border-radius:var(--ft-r);padding:16px 20px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem}
     .packet-card:nth-child(2){transform:translateX(18px)}.packet-card:nth-child(3){transform:translateX(8px)}
 
     /* BRANDS */
-    .brands-section{background:linear-gradient(135deg,rgba(56,209,232,.05) 0%,rgba(63,224,138,.04) 100%)}
+    .brands-section{background:linear-gradient(135deg,rgba(52,152,219,.05) 0%,rgba(39,174,96,.04) 100%)}
 
     /* DOWNLOAD */
-    .download-card-wrap{border-radius:var(--ft-r-xl);overflow:hidden;background:linear-gradient(135deg,rgba(63,224,138,.10) 0%,rgba(56,209,232,.08) 100%),var(--ft-glass)}
-    .carousel-mini{background:linear-gradient(160deg,rgba(63,224,138,.15) 0%,var(--ft-bg-3) 100%);border:1px solid var(--ft-border-hi);border-radius:20px;padding:20px 16px;min-height:260px;display:grid;align-content:start;gap:10px}
+    .download-card-wrap{border-radius:var(--ft-r-xl);overflow:hidden;background:linear-gradient(135deg,rgba(39,174,96,.10) 0%,rgba(52,152,219,.08) 100%),var(--ft-glass)}
+    .carousel-mini{background:linear-gradient(160deg,rgba(39,174,96,.15) 0%,var(--ft-bg-3) 100%);border:1px solid var(--ft-border-hi);border-radius:20px;padding:20px 16px;min-height:260px;display:grid;align-content:start;gap:10px}
     .carousel-mini h5{font-size:1.1rem;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;margin:0}
-    .carousel-mini .mc-badge{display:inline-block;background:rgba(255,190,85,.18);border:1px solid rgba(255,190,85,.35);border-radius:999px;color:var(--ft-amber);font-size:.78rem;font-weight:700;padding:5px 12px}
+    .carousel-mini .mc-badge{display:inline-block;background:rgba(243,156,18,.18);border:1px solid rgba(243,156,18,.35);border-radius:999px;color:var(--ft-amber);font-size:.78rem;font-weight:700;padding:5px 12px}
     .carousel-mini .mc-row{background:rgba(255,255,255,.055);border:1px solid var(--ft-border);border-radius:8px;padding:8px 12px;font-size:.78rem;color:var(--ft-muted)}
     .carousel-ctrl{width:40px;height:40px;border-radius:50%;background:var(--ft-glass);border:1px solid var(--ft-border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;color:var(--ft-text);transition:background var(--transition);flex-shrink:0}
     .carousel-ctrl:hover{background:var(--ft-glass-md)}
@@ -230,7 +230,7 @@
     /* WIZARD */
     .wizard-overlay{position:fixed;inset:0;background:rgba(2,10,6,.82);z-index:9000;display:none;align-items:center;justify-content:center;padding:1rem}
     .wizard-overlay.open{display:flex}
-    .wizard-card{background:linear-gradient(145deg,rgba(63,224,138,.09),rgba(56,209,232,.07)),var(--ft-bg-2);border:1px solid var(--ft-border-hi);border-radius:var(--ft-r-xl);box-shadow:var(--ft-shadow-lg);width:min(680px,100%);max-height:90vh;overflow-y:auto;padding:clamp(1.5rem,5vw,2.8rem);position:relative}
+    .wizard-card{background:linear-gradient(145deg,rgba(39,174,96,.09),rgba(52,152,219,.07)),var(--ft-bg-2);border:1px solid var(--ft-border-hi);border-radius:var(--ft-r-xl);box-shadow:var(--ft-shadow-lg);width:min(680px,100%);max-height:90vh;overflow-y:auto;padding:clamp(1.5rem,5vw,2.8rem);position:relative}
     .wiz-progress{height:5px;background:rgba(255,255,255,.10);border-radius:999px;margin:1rem 3rem 1.5rem 0;overflow:hidden}
     .wiz-progress-fill{height:100%;background:var(--ft-grad);border-radius:999px;transition:width .3s ease}
     .wiz-close{position:absolute;top:14px;right:16px;width:34px;height:34px;border-radius:var(--ft-r);background:var(--ft-glass);border:1px solid var(--ft-border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;color:var(--ft-text);transition:background var(--transition)}
@@ -238,7 +238,7 @@
     .wiz-options{display:grid;gap:10px;margin-top:1.25rem}
     .wiz-option{background:var(--ft-glass);border:1px solid var(--ft-border);border-radius:var(--ft-r);padding:.9rem 1.1rem;text-align:left;cursor:pointer;color:var(--ft-text);font-size:.92rem;font-family:'Inter',sans-serif;transition:background var(--transition),border-color var(--transition),transform var(--transition)}
     .wiz-option:hover{background:var(--ft-glass-md);border-color:var(--ft-border-hi);transform:translateX(4px)}
-    .wiz-option.selected{background:rgba(63,224,138,.12);border-color:var(--ft-green)}
+    .wiz-option.selected{background:rgba(39,174,96,.12);border-color:var(--ft-green)}
     .wiz-field-group{display:grid;gap:10px;margin-top:1rem}
     .wiz-field-group select.ft-form-control option{background:var(--ft-bg-2)}
     .report-metric-card{background:var(--ft-glass);border:1px solid var(--ft-border);border-radius:var(--ft-r);padding:1rem;margin-bottom:.75rem}
@@ -460,7 +460,7 @@
         <!-- World map built on an equirectangular-style world atlas path set (recognizable continent silhouettes) -->
         <svg viewBox="0 0 2000 1001" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map showing diabetes and blood pressure burden by country">
           <title>Global diabetes and hypertension burden</title>
-          <rect width="2000" height="1001" fill="rgba(56,209,232,0.04)" rx="14"/>
+          <rect width="2000" height="1001" fill="rgba(52,152,219,0.04)" rx="14"/>
 
           <!-- Graticule -->
           <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
@@ -565,11 +565,11 @@
           <path class="country" data-country="New Zealand" d="M1790,580 L1815,568 L1825,605 L1800,618 Z"/>
 
           <!-- Hotspot pulses for top burden countries -->
-          <circle cx="1430" cy="190" r="11" fill="rgba(255,190,85,0.32)" stroke="rgba(255,190,85,0.85)" stroke-width="2"><animate attributeName="r" values="11;22;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
-          <circle cx="1330" cy="350" r="11" fill="rgba(255,107,107,0.32)" stroke="rgba(255,107,107,0.85)" stroke-width="2"><animate attributeName="r" values="11;22;11" dur="2.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.1s" repeatCount="indefinite"/></circle>
-          <circle cx="395" cy="265" r="9" fill="rgba(255,140,70,0.32)" stroke="rgba(255,140,70,0.85)" stroke-width="2"><animate attributeName="r" values="9;18;9" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.8s" repeatCount="indefinite"/></circle>
-          <circle cx="1270" cy="285" r="8" fill="rgba(255,190,85,0.32)" stroke="rgba(255,190,85,0.8)" stroke-width="1.5"><animate attributeName="r" values="8;16;8" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.6s" repeatCount="indefinite"/></circle>
-          <circle cx="475" cy="495" r="8" fill="rgba(255,140,70,0.32)" stroke="rgba(255,140,70,0.8)" stroke-width="1.5"><animate attributeName="r" values="8;16;8" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="3s" repeatCount="indefinite"/></circle>
+          <circle cx="1430" cy="190" r="11" fill="rgba(243,156,18,0.32)" stroke="rgba(243,156,18,0.85)" stroke-width="2"><animate attributeName="r" values="11;22;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
+          <circle cx="1330" cy="350" r="11" fill="rgba(231,76,60,0.32)" stroke="rgba(231,76,60,0.85)" stroke-width="2"><animate attributeName="r" values="11;22;11" dur="2.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.1s" repeatCount="indefinite"/></circle>
+          <circle cx="395" cy="265" r="9" fill="rgba(243,156,18,0.32)" stroke="rgba(243,156,18,0.85)" stroke-width="2"><animate attributeName="r" values="9;18;9" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.8s" repeatCount="indefinite"/></circle>
+          <circle cx="1270" cy="285" r="8" fill="rgba(243,156,18,0.32)" stroke="rgba(243,156,18,0.8)" stroke-width="1.5"><animate attributeName="r" values="8;16;8" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="2.6s" repeatCount="indefinite"/></circle>
+          <circle cx="475" cy="495" r="8" fill="rgba(243,156,18,0.32)" stroke="rgba(243,156,18,0.8)" stroke-width="1.5"><animate attributeName="r" values="8;16;8" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.25;1" dur="3s" repeatCount="indefinite"/></circle>
 
           <!-- Labels -->
           <text x="1430" y="170" text-anchor="middle" font-size="15" fill="rgba(255,210,130,0.95)" font-family="Inter,sans-serif" font-weight="700">China</text>
@@ -738,7 +738,7 @@
           <h2>Carry a food-quality scanner <span class="grad-text">in your pocket.</span></h2>
           <p class="text-muted-ft mt-3" style="font-size:1.05rem;">Use FutureTrack before buying packaged food, while comparing snacks, or when a label looks healthy but the ingredients tell a different story.</p>
           <div class="d-flex flex-wrap gap-3 mt-4">
-            <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.snipthink.futuretrack" target="_blank" rel="noopener" style="background:#fff;border-color:transparent;color:#041a10;">
+            <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.snipthink.futuretrack" target="_blank" rel="noopener" style="background:#fff;border-color:transparent;color:#060a10;">
               <div class="play-icon-svg"><i class="bi bi-play-fill" style="color:var(--ft-ink);font-size:1rem;margin-left:2px;"></i></div>
               <span><small style="display:block;font-size:.68rem;font-weight:400;color:#555;">Get it on</small><strong>Google Play</strong></span>
             </a>
