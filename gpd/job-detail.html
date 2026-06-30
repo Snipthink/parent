@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Details — Kaarigar</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="dark" data-page="job-detail">
+
+<header class="kg-navbar">
+  <div class="container">
+    <a href="index.html" class="kg-brand"><span class="mark">K</span>Kaarigar</a>
+    <nav class="kg-nav-links" id="kgNavLinks">
+      <a href="index.html#home">Home</a>
+      <a href="job-search.html">Find Jobs</a>
+      <a href="index.html#how-it-works">How it Works</a>
+      <a href="index.html#post-job">Post a Job</a>
+      <a href="how-to-apply.html">Applicant Guide</a>
+    </nav>
+    <div class="kg-nav-actions">
+      <div class="theme-toggle" title="Toggle light / dark"><div class="knob"></div></div>
+      <a class="btn btn-primary" href="how-to-apply.html">Get Future Track App</a>
+      <button class="kg-toggler" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="kg-section" style="padding-top:40px;">
+  <div class="container" style="max-width:780px;">
+    <a href="job-search.html" class="text-muted" style="font-size:13px; display:inline-block; margin-bottom:18px;">← Back to Find Jobs</a>
+    <div id="jobDetailContainer">
+      <div style="text-align:center; padding:50px 0;">
+        <div style="font-size:34px; margin-bottom:10px;">🔎</div>
+        <p class="text-muted">Loading job details…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stay in Touch dialog: opens a prefilled Instagram DM to @futuretrack__. -->
+<div class="pj-modal" id="stayInTouchModal">
+  <div class="pj-dialog">
+    <button class="pj-close" id="sitClose" aria-label="Close">✕</button>
+    <div class="eyebrow">Stay in touch</div>
+    <h3 style="margin-bottom:6px;">Send us a message</h3>
+    <p class="text-muted" style="margin-bottom:18px; font-size:13.5px;">This opens a direct message to us on Instagram (@futuretrack__) with your details filled in.</p>
+    <div class="am-form">
+      <div>
+        <label class="form-label">Your Name</label>
+        <input type="text" id="sitName" class="form-control" placeholder="Your name">
+      </div>
+      <div>
+        <label class="form-label">Message</label>
+        <textarea id="sitMessage" class="form-control" rows="4" placeholder="What can we help you with?"></textarea>
+      </div>
+      <button class="btn btn-primary" id="sitSubmit" type="button" style="justify-content:center;">Send via Instagram →</button>
+    </div>
+  </div>
+</div>
+
+<footer class="kg-footer" id="kgFooter"></footer>
+
+<script src="js/data/jobs-india.js"></script>
+<script src="js/data/jobs-usa.js"></script>
+<script src="js/data/jobs-germany.js"></script>
+<script src="js/data/jobs-canada.js"></script>
+<script src="js/data/jobs-australia.js"></script>
+<script src="js/data/companies.js"></script>
+<script src="js/data/testimonials.js"></script>
+<script src="js/data/projects.js"></script>
+<script src="js/data/categories.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

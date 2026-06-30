@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions — Kaarigar</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="dark" data-page="static">
+
+<header class="kg-navbar">
+  <div class="container">
+    <a href="index.html" class="kg-brand"><span class="mark">K</span>Kaarigar</a>
+    <nav class="kg-nav-links" id="kgNavLinks">
+      <a href="index.html#home">Home</a>
+      <a href="job-search.html">Find Jobs</a>
+      <a href="index.html#how-it-works">How it Works</a>
+      <a href="index.html#post-job">Post a Job</a>
+      <a href="how-to-apply.html">Applicant Guide</a>
+    </nav>
+    <div class="kg-nav-actions">
+      <div class="theme-toggle" title="Toggle light / dark"><div class="knob"></div></div>
+      <a class="btn btn-primary" href="how-to-apply.html">Get Future Track App</a>
+      <button class="kg-toggler" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="kg-hero" style="padding:50px 0 26px;">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;">Legal</div>
+    <h1 style="font-size:32px;">Terms &amp; Conditions</h1>
+    <p>Last updated: June 20, 2026</p>
+  </div>
+</section>
+
+<section class="kg-section" style="padding-top:10px;">
+  <div class="container kg-panel" style="max-width:840px; padding:36px; line-height:1.8;">
+
+    <h4>1. About Kaarigar</h4>
+    <p class="muted">Kaarigar ("we", "us", "the Platform") is a job-listing portal that connects job seekers with verified employers across India, the USA, Germany, Canada and Australia. Kaarigar is a listing service only — we are not a recruitment agency, employer, or party to any employment contract formed between a job seeker and a company listed on the Platform.</p>
+
+    <h4>2. No Fees to Job Seekers</h4>
+    <p class="muted">Kaarigar never charges job seekers to browse, search, or apply for jobs. Applications are submitted directly to each employer's own Google Form. If anyone claiming to represent Kaarigar asks you for money, a "processing fee," or your banking details to "release" a job offer, it is not us, and you should report it immediately using the <strong>Stay in Touch</strong> button in the footer below.</p>
+
+    <h4>3. Accuracy of Listings</h4>
+    <p class="muted">Job listings are supplied by employers and may change without notice (salary, vacancies, deadlines, assessment requirements). Kaarigar makes reasonable efforts to keep listings current but does not guarantee that any specific job remains open, that you will be shortlisted, or that any salary, visa-sponsorship, or benefit claim made by an employer is accurate. Always confirm details directly with the hiring company before relying on them.</p>
+
+    <h4>4. Assessments</h4>
+    <p class="muted">Some employers require a skills assessment before shortlisting, shown as an "Assessment Needed" tag on the relevant listing. Assessments are administered by, and scored according to criteria set by, the employer — Kaarigar has no role in assessment outcomes.</p>
+
+    <h4>5. Acceptable Use</h4>
+    <p class="muted">You agree not to misuse the Platform, including submitting false information, scraping data at scale, attempting to bypass an employer's application process, or using listings for purposes other than genuine job search or genuine hiring.</p>
+
+    <h4>6. Employer Responsibilities</h4>
+    <p class="muted">Employers posting through the "Post a Job" flow are solely responsible for the accuracy, legality, and fairness of their listings, including compliance with applicable labour and anti-discrimination law in the country where the role is based.</p>
+
+    <h4>7. Limitation of Liability</h4>
+    <p class="muted">Kaarigar is provided "as is." To the maximum extent permitted by law, Kaarigar is not liable for any loss arising from your reliance on a listing, your interactions with an employer, or any outcome of an application submitted through a third-party Google Form.</p>
+
+    <h4>8. Changes to These Terms</h4>
+    <p class="muted">We may update these Terms from time to time; continued use of the Platform after an update constitutes acceptance of the revised Terms.</p>
+
+    <h4>9. Contact</h4>
+    <p class="muted">Questions about these Terms can be sent to us using the <strong>Stay in Touch</strong> button in the footer below.</p>
+
+    <p class="muted" style="margin-top:24px;">See also our <a href="privacy.html" style="color:var(--accent-2); font-weight:600;">Privacy Policy</a>.</p>
+  </div>
+</section>
+
+<!-- Stay in Touch dialog: opens a prefilled Instagram DM to @futuretrack__. -->
+<div class="pj-modal" id="stayInTouchModal">
+  <div class="pj-dialog">
+    <button class="pj-close" id="sitClose" aria-label="Close">✕</button>
+    <div class="eyebrow">Stay in touch</div>
+    <h3 style="margin-bottom:6px;">Send us a message</h3>
+    <p class="text-muted" style="margin-bottom:18px; font-size:13.5px;">This opens a direct message to us on Instagram (@futuretrack__) with your details filled in.</p>
+    <div class="am-form">
+      <div>
+        <label class="form-label">Your Name</label>
+        <input type="text" id="sitName" class="form-control" placeholder="Your name">
+      </div>
+      <div>
+        <label class="form-label">Message</label>
+        <textarea id="sitMessage" class="form-control" rows="4" placeholder="What can we help you with?"></textarea>
+      </div>
+      <button class="btn btn-primary" id="sitSubmit" type="button" style="justify-content:center;">Send via Instagram →</button>
+    </div>
+  </div>
+</div>
+
+<footer class="kg-footer" id="kgFooter"></footer>
+
+<script src="js/data/jobs-india.js"></script>
+<script src="js/data/jobs-usa.js"></script>
+<script src="js/data/jobs-germany.js"></script>
+<script src="js/data/jobs-canada.js"></script>
+<script src="js/data/jobs-australia.js"></script>
+<script src="js/data/companies.js"></script>
+<script src="js/data/testimonials.js"></script>
+<script src="js/data/projects.js"></script>
+<script src="js/data/categories.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
