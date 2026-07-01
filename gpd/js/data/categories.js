@@ -1049,4 +1049,4 @@ window.CATEGORIES_DATA=[
   "last_updated": ""
 }
 
-]
+];
