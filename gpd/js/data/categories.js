@@ -1,234 +1,132 @@
+/**
+ * categories.js
+ * Canonical source: data/categories/categories.csv
+ * Drives the "Post a Job" dialog AND the icon shown next to each category
+ * chip elsewhere on the site. Lives in its own file (separate from jobs,
+ * companies, testimonials, projects) so you can update categories without
+ * touching anything else. Edit the CSV, then re-run gen_categories.py to
+ * re-sync icons / Google Form links / dates.
+ */
 window.CATEGORIES_DATA = [
   {
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "mason",
-    "sub_category_name": "Mason",
-    "icon": "assets/icons/mason.svg",
+    "serial_no": "1",
+    "category_id": "skilled-trade",
+    "category_name": "Skilled Trade",
+    "sub_category_id": "electrical",
+    "sub_category_name": "Electrical",
+    "icon": "assets/icons/electrical.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-electrical",
+    "last_updated": "2026-06-20"
   },
   {
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "electrician",
-    "sub_category_name": "Electrician",
-    "icon": "assets/icons/electrician.svg",
+    "serial_no": "2",
+    "category_id": "skilled-trade",
+    "category_name": "Skilled Trade",
+    "sub_category_id": "plumbing",
+    "sub_category_name": "Plumbing",
+    "icon": "assets/icons/plumbing.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-plumbing",
+    "last_updated": "2026-06-20"
   },
   {
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "plumber",
-    "sub_category_name": "Plumber",
-    "icon": "assets/icons/plumber.svg",
+    "serial_no": "3",
+    "category_id": "skilled-trade",
+    "category_name": "Skilled Trade",
+    "sub_category_id": "welding",
+    "sub_category_name": "Welding",
+    "icon": "assets/icons/welding.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-welding",
+    "last_updated": "2026-06-20"
   },
   {
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "carpenter",
-    "sub_category_name": "Carpenter",
-    "icon": "assets/icons/carpenter.svg",
+    "serial_no": "4",
+    "category_id": "skilled-trade",
+    "category_name": "Skilled Trade",
+    "sub_category_id": "hvac",
+    "sub_category_name": "HVAC",
+    "icon": "assets/icons/hvac.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-hvac",
+    "last_updated": "2026-06-20"
   },
   {
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "welder",
-    "sub_category_name": "Welder",
-    "icon": "assets/icons/welder.svg",
+    "serial_no": "5",
+    "category_id": "healthcare",
+    "category_name": "Healthcare",
+    "sub_category_id": "nursing",
+    "sub_category_name": "Nursing",
+    "icon": "assets/icons/nursing.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-nursing",
+    "last_updated": "2026-06-22"
   },
   {
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "painter",
-    "sub_category_name": "Painter",
-    "icon": "assets/icons/painter.svg",
+    "serial_no": "6",
+    "category_id": "healthcare",
+    "category_name": "Healthcare",
+    "sub_category_id": "elderly-care",
+    "sub_category_name": "Elderly Care",
+    "icon": "assets/icons/elderly-care.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-eldercare",
+    "last_updated": "2026-06-22"
   },
   {
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "steel-fixer",
-    "sub_category_name": "Steel Fixer",
-    "icon": "assets/icons/steel-fixer.svg",
+    "serial_no": "7",
+    "category_id": "it",
+    "category_name": "IT",
+    "sub_category_id": "software-dev",
+    "sub_category_name": "Software Development",
+    "icon": "assets/icons/software-dev.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-swdev",
+    "last_updated": "2026-06-25"
   },
   {
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "tile-installer",
-    "sub_category_name": "Tile Installer",
-    "icon": "assets/icons/tile-installer.svg",
+    "serial_no": "8",
+    "category_id": "it",
+    "category_name": "IT",
+    "sub_category_id": "data",
+    "sub_category_name": "Data",
+    "icon": "assets/icons/data.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-data",
+    "last_updated": "2026-06-25"
   },
-
   {
+    "serial_no": "9",
     "category_id": "manufacturing",
     "category_name": "Manufacturing",
-    "sub_category_id": "machine-operator",
-    "sub_category_name": "Machine Operator",
-    "icon": "assets/icons/machine-operator.svg",
+    "sub_category_id": "welding-mfg",
+    "sub_category_name": "Welding & Fabrication",
+    "icon": "assets/icons/welding.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-mfgwelding",
+    "last_updated": "2026-06-18"
   },
   {
-    "category_id": "manufacturing",
-    "category_name": "Manufacturing",
-    "sub_category_id": "cnc-operator",
-    "sub_category_name": "CNC Operator",
-    "icon": "assets/icons/cnc-operator.svg",
+    "serial_no": "10",
+    "category_id": "construction",
+    "category_name": "Construction",
+    "sub_category_id": "site-mgmt",
+    "sub_category_name": "Site Management",
+    "icon": "assets/icons/site-mgmt.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-sitemgmt",
+    "last_updated": "2026-06-18"
   },
   {
-    "category_id": "manufacturing",
-    "category_name": "Manufacturing",
-    "sub_category_id": "production-operator",
-    "sub_category_name": "Production Operator",
-    "icon": "assets/icons/production-operator.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "manufacturing",
-    "category_name": "Manufacturing",
-    "sub_category_id": "assembly-line-worker",
-    "sub_category_name": "Assembly Line Worker",
-    "icon": "assets/icons/assembly-line-worker.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "manufacturing",
-    "category_name": "Manufacturing",
-    "sub_category_id": "quality-inspector",
-    "sub_category_name": "Quality Inspector",
-    "icon": "assets/icons/quality-inspector.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "manufacturing",
-    "category_name": "Manufacturing",
-    "sub_category_id": "packaging-operator",
-    "sub_category_name": "Packaging Operator",
-    "icon": "assets/icons/packaging-operator.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "manufacturing",
-    "category_name": "Manufacturing",
-    "sub_category_id": "helper",
-    "sub_category_name": "Helper",
-    "icon": "assets/icons/helper.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "manufacturing",
-    "category_name": "Manufacturing",
-    "sub_category_id": "forklift-operator",
-    "sub_category_name": "Forklift Operator",
-    "icon": "assets/icons/forklift-operator.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-
-  {
+    "serial_no": "11",
     "category_id": "logistics",
-    "category_name": "Logistics & Delivery",
-    "sub_category_id": "delivery-executive",
-    "sub_category_name": "Delivery Executive",
-    "icon": "assets/icons/delivery-executive.svg",
+    "category_name": "Logistics",
+    "sub_category_id": "warehouse",
+    "sub_category_name": "Warehouse",
+    "icon": "assets/icons/warehouse.svg",
     "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "logistics",
-    "category_name": "Logistics & Delivery",
-    "sub_category_id": "warehouse-associate",
-    "sub_category_name": "Warehouse Associate",
-    "icon": "assets/icons/warehouse-associate.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "logistics",
-    "category_name": "Logistics & Delivery",
-    "sub_category_id": "picker-packer",
-    "sub_category_name": "Picker & Packer",
-    "icon": "assets/icons/picker-packer.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "logistics",
-    "category_name": "Logistics & Delivery",
-    "sub_category_id": "loader-unloader",
-    "sub_category_name": "Loader & Unloader",
-    "icon": "assets/icons/loader-unloader.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "logistics",
-    "category_name": "Logistics & Delivery",
-    "sub_category_id": "inventory-assistant",
-    "sub_category_name": "Inventory Assistant",
-    "icon": "assets/icons/inventory-assistant.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "logistics",
-    "category_name": "Logistics & Delivery",
-    "sub_category_id": "courier-executive",
-    "sub_category_name": "Courier Executive",
-    "icon": "assets/icons/courier-executive.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
-  },
-  {
-    "category_id": "logistics",
-    "category_name": "Logistics & Delivery",
-    "sub_category_id": "ecommerce-delivery-executive",
-    "sub_category_name": "E-commerce Delivery Executive",
-    "icon": "assets/icons/ecommerce-delivery-executive.svg",
-    "language": "en",
-    "google_form_link": "",
-    "last_updated": "2026-07-01"
+    "google_form_link": "https://forms.gle/sample-category-warehouse",
+    "last_updated": "2026-06-15"
   }
 ];
