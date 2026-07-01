@@ -1,4 +1,4 @@
-[
+window.CATEGORIES_DATA=[
   {
     "serial_no": "",
     "category_id": "electronics",
