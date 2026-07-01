@@ -1,132 +1,1052 @@
-/**
- * categories.js
- * Canonical source: data/categories/categories.csv
- * Drives the "Post a Job" dialog AND the icon shown next to each category
- * chip elsewhere on the site. Lives in its own file (separate from jobs,
- * companies, testimonials, projects) so you can update categories without
- * touching anything else. Edit the CSV, then re-run gen_categories.py to
- * re-sync icons / Google Form links / dates.
- */
-window.CATEGORIES_DATA = [
+[
   {
-    "serial_no": "1",
-    "category_id": "skilled-trade",
-    "category_name": "Skilled Trade",
-    "sub_category_id": "electrical",
-    "sub_category_name": "Electrical",
-    "icon": "assets/icons/electrical.svg",
+    "serial_no": "",
+    "category_id": "electronics",
+    "category_name": "Electronics",
+    "sub_category_id": "electronics-technician",
+    "sub_category_name": "Electronics Technician",
+    "icon": "assets/icons/electronics-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-electrical",
-    "last_updated": "2026-06-20"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "2",
-    "category_id": "skilled-trade",
-    "category_name": "Skilled Trade",
-    "sub_category_id": "plumbing",
-    "sub_category_name": "Plumbing",
-    "icon": "assets/icons/plumbing.svg",
+    "serial_no": "",
+    "category_id": "electronics",
+    "category_name": "Electronics",
+    "sub_category_id": "mobile-repair-technician",
+    "sub_category_name": "Mobile Repair Technician",
+    "icon": "assets/icons/mobile-repair-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-plumbing",
-    "last_updated": "2026-06-20"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "3",
-    "category_id": "skilled-trade",
-    "category_name": "Skilled Trade",
-    "sub_category_id": "welding",
-    "sub_category_name": "Welding",
-    "icon": "assets/icons/welding.svg",
+    "serial_no": "",
+    "category_id": "electronics",
+    "category_name": "Electronics",
+    "sub_category_id": "laptop-technician",
+    "sub_category_name": "Laptop Technician",
+    "icon": "assets/icons/laptop-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-welding",
-    "last_updated": "2026-06-20"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "4",
-    "category_id": "skilled-trade",
-    "category_name": "Skilled Trade",
-    "sub_category_id": "hvac",
-    "sub_category_name": "HVAC",
-    "icon": "assets/icons/hvac.svg",
+    "serial_no": "",
+    "category_id": "electronics",
+    "category_name": "Electronics",
+    "sub_category_id": "computer-technician",
+    "sub_category_name": "Computer Technician",
+    "icon": "assets/icons/computer-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-hvac",
-    "last_updated": "2026-06-20"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "5",
-    "category_id": "healthcare",
-    "category_name": "Healthcare",
-    "sub_category_id": "nursing",
-    "sub_category_name": "Nursing",
-    "icon": "assets/icons/nursing.svg",
+    "serial_no": "",
+    "category_id": "electronics",
+    "category_name": "Electronics",
+    "sub_category_id": "cctv-technician",
+    "sub_category_name": "CCTV Technician",
+    "icon": "assets/icons/cctv-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-nursing",
-    "last_updated": "2026-06-22"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "6",
-    "category_id": "healthcare",
-    "category_name": "Healthcare",
-    "sub_category_id": "elderly-care",
-    "sub_category_name": "Elderly Care",
-    "icon": "assets/icons/elderly-care.svg",
+    "serial_no": "",
+    "category_id": "electronics",
+    "category_name": "Electronics",
+    "sub_category_id": "tv-technician",
+    "sub_category_name": "TV Technician",
+    "icon": "assets/icons/tv-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-eldercare",
-    "last_updated": "2026-06-22"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "7",
-    "category_id": "it",
-    "category_name": "IT",
-    "sub_category_id": "software-dev",
-    "sub_category_name": "Software Development",
-    "icon": "assets/icons/software-dev.svg",
+    "serial_no": "",
+    "category_id": "electronics",
+    "category_name": "Electronics",
+    "sub_category_id": "home-appliance-technician",
+    "sub_category_name": "Home Appliance Technician",
+    "icon": "assets/icons/home-appliance-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-swdev",
-    "last_updated": "2026-06-25"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "8",
-    "category_id": "it",
-    "category_name": "IT",
-    "sub_category_id": "data",
-    "sub_category_name": "Data",
-    "icon": "assets/icons/data.svg",
+    "serial_no": "",
+    "category_id": "electronics",
+    "category_name": "Electronics",
+    "sub_category_id": "solar-technician",
+    "sub_category_name": "Solar Technician",
+    "icon": "assets/icons/solar-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-data",
-    "last_updated": "2026-06-25"
+    "google_form_link": "",
+    "last_updated": ""
+  },
+
+  {
+    "serial_no": "",
+    "category_id": "automotive",
+    "category_name": "Automotive",
+    "sub_category_id": "car-mechanic",
+    "sub_category_name": "Car Mechanic",
+    "icon": "assets/icons/car-mechanic.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "9",
-    "category_id": "manufacturing",
-    "category_name": "Manufacturing",
-    "sub_category_id": "welding-mfg",
-    "sub_category_name": "Welding & Fabrication",
-    "icon": "assets/icons/welding.svg",
+    "serial_no": "",
+    "category_id": "automotive",
+    "category_name": "Automotive",
+    "sub_category_id": "bike-mechanic",
+    "sub_category_name": "Bike Mechanic",
+    "icon": "assets/icons/bike-mechanic.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-mfgwelding",
-    "last_updated": "2026-06-18"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "10",
-    "category_id": "construction",
-    "category_name": "Construction",
-    "sub_category_id": "site-mgmt",
-    "sub_category_name": "Site Management",
-    "icon": "assets/icons/site-mgmt.svg",
+    "serial_no": "",
+    "category_id": "automotive",
+    "category_name": "Automotive",
+    "sub_category_id": "automobile-technician",
+    "sub_category_name": "Automobile Technician",
+    "icon": "assets/icons/automobile-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-sitemgmt",
-    "last_updated": "2026-06-18"
+    "google_form_link": "",
+    "last_updated": ""
   },
   {
-    "serial_no": "11",
-    "category_id": "logistics",
-    "category_name": "Logistics",
-    "sub_category_id": "warehouse",
-    "sub_category_name": "Warehouse",
-    "icon": "assets/icons/warehouse.svg",
+    "serial_no": "",
+    "category_id": "automotive",
+    "category_name": "Automotive",
+    "sub_category_id": "ev-technician",
+    "sub_category_name": "EV Technician",
+    "icon": "assets/icons/ev-technician.svg",
     "language": "en",
-    "google_form_link": "https://forms.gle/sample-category-warehouse",
-    "last_updated": "2026-06-15"
-  }
-];
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "automotive",
+    "category_name": "Automotive",
+    "sub_category_id": "tyre-technician",
+    "sub_category_name": "Tyre Technician",
+    "icon": "assets/icons/tyre-technician.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "automotive",
+    "category_name": "Automotive",
+    "sub_category_id": "service-advisor",
+    "sub_category_name": "Service Advisor",
+    "icon": "assets/icons/service-advisor.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+
+  {
+    "serial_no": "",
+    "category_id": "security",
+    "category_name": "Security",
+    "sub_category_id": "security-guard",
+    "sub_category_name": "Security Guard",
+    "icon": "assets/icons/security-guard.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "security",
+    "category_name": "Security",
+    "sub_category_id": "security-supervisor",
+    "sub_category_name": "Security Supervisor",
+    "icon": "assets/icons/security-supervisor.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "security",
+    "category_name": "Security",
+    "sub_category_id": "cctv-operator",
+    "sub_category_name": "CCTV Operator",
+    "icon": "assets/icons/cctv-operator.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "security",
+    "category_name": "Security",
+    "sub_category_id": "fire-safety-officer",
+    "sub_category_name": "Fire Safety Officer",
+    "icon": "assets/icons/fire-safety-officer.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "security",
+    "category_name": "Security",
+    "sub_category_id": "bouncer",
+    "sub_category_name": "Bouncer",
+    "icon": "assets/icons/bouncer.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+
+  {
+    "serial_no": "",
+    "category_id": "hospitality",
+    "category_name": "Hospitality",
+    "sub_category_id": "cook",
+    "sub_category_name": "Cook",
+    "icon": "assets/icons/cook.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "hospitality",
+    "category_name": "Hospitality",
+    "sub_category_id": "chef",
+    "sub_category_name": "Chef",
+    "icon": "assets/icons/chef.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "hospitality",
+    "category_name": "Hospitality",
+    "sub_category_id": "waiter",
+    "sub_category_name": "Waiter",
+    "icon": "assets/icons/waiter.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "hospitality",
+    "category_name": "Hospitality",
+    "sub_category_id": "housekeeping",
+    "sub_category_name": "Housekeeping",
+    "icon": "assets/icons/housekeeping.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "hospitality",
+    "category_name": "Hospitality",
+    "sub_category_id": "kitchen-helper",
+    "sub_category_name": "Kitchen Helper",
+    "icon": "assets/icons/kitchen-helper.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+
+  {
+    "serial_no": "",
+    "category_id": "retail",
+    "category_name": "Retail",
+    "sub_category_id": "sales-executive",
+    "sub_category_name": "Sales Executive",
+    "icon": "assets/icons/sales-executive.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "retail",
+    "category_name": "Retail",
+    "sub_category_id": "cashier",
+    "sub_category_name": "Cashier",
+    "icon": "assets/icons/cashier.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "retail",
+    "category_name": "Retail",
+    "sub_category_id": "store-keeper",
+    "sub_category_name": "Store Keeper",
+    "icon": "assets/icons/store-keeper.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "retail",
+    "category_name": "Retail",
+    "sub_category_id": "billing-executive",
+    "sub_category_name": "Billing Executive",
+    "icon": "assets/icons/billing-executive.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+  {
+    "serial_no": "",
+    "category_id": "retail",
+    "category_name": "Retail",
+    "sub_category_id": "customer-service-associate",
+    "sub_category_name": "Customer Service Associate",
+    "icon": "assets/icons/customer-service-associate.svg",
+    "language": "en",
+    "google_form_link": "",
+    "last_updated": ""
+  },
+{
+  "serial_no": "",
+  "category_id": "agriculture",
+  "category_name": "Agriculture",
+  "sub_category_id": "farm-worker",
+  "sub_category_name": "Farm Worker",
+  "icon": "assets/icons/farm-worker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "agriculture",
+  "category_name": "Agriculture",
+  "sub_category_id": "dairy-worker",
+  "sub_category_name": "Dairy Worker",
+  "icon": "assets/icons/dairy-worker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "agriculture",
+  "category_name": "Agriculture",
+  "sub_category_id": "poultry-worker",
+  "sub_category_name": "Poultry Worker",
+  "icon": "assets/icons/poultry-worker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "agriculture",
+  "category_name": "Agriculture",
+  "sub_category_id": "tractor-driver",
+  "sub_category_name": "Tractor Driver",
+  "icon": "assets/icons/tractor-driver.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "agriculture",
+  "category_name": "Agriculture",
+  "sub_category_id": "irrigation-technician",
+  "sub_category_name": "Irrigation Technician",
+  "icon": "assets/icons/irrigation-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "telecom",
+  "category_name": "Telecom",
+  "sub_category_id": "fiber-technician",
+  "sub_category_name": "Fiber Technician",
+  "icon": "assets/icons/fiber-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "telecom",
+  "category_name": "Telecom",
+  "sub_category_id": "broadband-technician",
+  "sub_category_name": "Broadband Technician",
+  "icon": "assets/icons/broadband-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "telecom",
+  "category_name": "Telecom",
+  "sub_category_id": "tower-technician",
+  "sub_category_name": "Tower Technician",
+  "icon": "assets/icons/tower-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "telecom",
+  "category_name": "Telecom",
+  "sub_category_id": "telecom-technician",
+  "sub_category_name": "Telecom Technician",
+  "icon": "assets/icons/telecom-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "telecom",
+  "category_name": "Telecom",
+  "sub_category_id": "cable-technician",
+  "sub_category_name": "Cable Technician",
+  "icon": "assets/icons/cable-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "domestic-services",
+  "category_name": "Domestic Services",
+  "sub_category_id": "maid",
+  "sub_category_name": "Maid",
+  "icon": "assets/icons/maid.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "domestic-services",
+  "category_name": "Domestic Services",
+  "sub_category_id": "home-cook",
+  "sub_category_name": "Home Cook",
+  "icon": "assets/icons/home-cook.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "domestic-services",
+  "category_name": "Domestic Services",
+  "sub_category_id": "driver",
+  "sub_category_name": "Driver",
+  "icon": "assets/icons/driver.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "domestic-services",
+  "category_name": "Domestic Services",
+  "sub_category_id": "babysitter",
+  "sub_category_name": "Babysitter",
+  "icon": "assets/icons/babysitter.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "domestic-services",
+  "category_name": "Domestic Services",
+  "sub_category_id": "caretaker",
+  "sub_category_name": "Caretaker",
+  "icon": "assets/icons/caretaker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "cleaning-facility",
+  "category_name": "Cleaning & Facility Management",
+  "sub_category_id": "housekeeping-staff",
+  "sub_category_name": "Housekeeping Staff",
+  "icon": "assets/icons/housekeeping-staff.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "cleaning-facility",
+  "category_name": "Cleaning & Facility Management",
+  "sub_category_id": "office-cleaner",
+  "sub_category_name": "Office Cleaner",
+  "icon": "assets/icons/office-cleaner.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "cleaning-facility",
+  "category_name": "Cleaning & Facility Management",
+  "sub_category_id": "industrial-cleaner",
+  "sub_category_name": "Industrial Cleaner",
+  "icon": "assets/icons/industrial-cleaner.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "cleaning-facility",
+  "category_name": "Cleaning & Facility Management",
+  "sub_category_id": "pest-control-technician",
+  "sub_category_name": "Pest Control Technician",
+  "icon": "assets/icons/pest-control-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "cleaning-facility",
+  "category_name": "Cleaning & Facility Management",
+  "sub_category_id": "laundry-staff",
+  "sub_category_name": "Laundry Staff",
+  "icon": "assets/icons/laundry-staff.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "beauty-wellness",
+  "category_name": "Beauty & Wellness",
+  "sub_category_id": "beautician",
+  "sub_category_name": "Beautician",
+  "icon": "assets/icons/beautician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "beauty-wellness",
+  "category_name": "Beauty & Wellness",
+  "sub_category_id": "hair-stylist",
+  "sub_category_name": "Hair Stylist",
+  "icon": "assets/icons/hair-stylist.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "beauty-wellness",
+  "category_name": "Beauty & Wellness",
+  "sub_category_id": "barber",
+  "sub_category_name": "Barber",
+  "icon": "assets/icons/barber.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "beauty-wellness",
+  "category_name": "Beauty & Wellness",
+  "sub_category_id": "spa-therapist",
+  "sub_category_name": "Spa Therapist",
+  "icon": "assets/icons/spa-therapist.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "beauty-wellness",
+  "category_name": "Beauty & Wellness",
+  "sub_category_id": "nail-technician",
+  "sub_category_name": "Nail Technician",
+  "icon": "assets/icons/nail-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "food-processing",
+  "category_name": "Food Processing",
+  "sub_category_id": "food-production-operator",
+  "sub_category_name": "Food Production Operator",
+  "icon": "assets/icons/food-production-operator.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "food-processing",
+  "category_name": "Food Processing",
+  "sub_category_id": "bakery-worker",
+  "sub_category_name": "Bakery Worker",
+  "icon": "assets/icons/bakery-worker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "food-processing",
+  "category_name": "Food Processing",
+  "sub_category_id": "packaging-operator",
+  "sub_category_name": "Packaging Operator",
+  "icon": "assets/icons/packaging-operator.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "food-processing",
+  "category_name": "Food Processing",
+  "sub_category_id": "quality-checker",
+  "sub_category_name": "Quality Checker",
+  "icon": "assets/icons/quality-checker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "food-processing",
+  "category_name": "Food Processing",
+  "sub_category_id": "meat-processing-worker",
+  "sub_category_name": "Meat Processing Worker",
+  "icon": "assets/icons/meat-processing-worker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "textile-garment",
+  "category_name": "Textile & Garment",
+  "sub_category_id": "tailor",
+  "sub_category_name": "Tailor",
+  "icon": "assets/icons/tailor.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "textile-garment",
+  "category_name": "Textile & Garment",
+  "sub_category_id": "sewing-machine-operator",
+  "sub_category_name": "Sewing Machine Operator",
+  "icon": "assets/icons/sewing-machine-operator.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "textile-garment",
+  "category_name": "Textile & Garment",
+  "sub_category_id": "cutting-master",
+  "sub_category_name": "Cutting Master",
+  "icon": "assets/icons/cutting-master.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "textile-garment",
+  "category_name": "Textile & Garment",
+  "sub_category_id": "embroidery-operator",
+  "sub_category_name": "Embroidery Operator",
+  "icon": "assets/icons/embroidery-operator.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "textile-garment",
+  "category_name": "Textile & Garment",
+  "sub_category_id": "ironing-staff",
+  "sub_category_name": "Ironing Staff",
+  "icon": "assets/icons/ironing-staff.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "office-support",
+  "category_name": "Office Support",
+  "sub_category_id": "office-assistant",
+  "sub_category_name": "Office Assistant",
+  "icon": "assets/icons/office-assistant.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "office-support",
+  "category_name": "Office Support",
+  "sub_category_id": "data-entry-operator",
+  "sub_category_name": "Data Entry Operator",
+  "icon": "assets/icons/data-entry-operator.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "office-support",
+  "category_name": "Office Support",
+  "sub_category_id": "receptionist",
+  "sub_category_name": "Receptionist",
+  "icon": "assets/icons/receptionist.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "office-support",
+  "category_name": "Office Support",
+  "sub_category_id": "office-boy",
+  "sub_category_name": "Office Boy",
+  "icon": "assets/icons/office-boy.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "office-support",
+  "category_name": "Office Support",
+  "sub_category_id": "document-assistant",
+  "sub_category_name": "Document Assistant",
+  "icon": "assets/icons/document-assistant.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "it-support",
+  "category_name": "IT & Technical Support",
+  "sub_category_id": "computer-technician",
+  "sub_category_name": "Computer Technician",
+  "icon": "assets/icons/computer-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "it-support",
+  "category_name": "IT & Technical Support",
+  "sub_category_id": "hardware-technician",
+  "sub_category_name": "Hardware Technician",
+  "icon": "assets/icons/hardware-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "it-support",
+  "category_name": "IT & Technical Support",
+  "sub_category_id": "network-technician",
+  "sub_category_name": "Network Technician",
+  "icon": "assets/icons/network-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "it-support",
+  "category_name": "IT & Technical Support",
+  "sub_category_id": "desktop-support-engineer",
+  "sub_category_name": "Desktop Support Engineer",
+  "icon": "assets/icons/desktop-support-engineer.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "it-support",
+  "category_name": "IT & Technical Support",
+  "sub_category_id": "printer-technician",
+  "sub_category_name": "Printer Technician",
+  "icon": "assets/icons/printer-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+}
+{
+  "serial_no": "",
+  "category_id": "education-support",
+  "category_name": "Education Support",
+  "sub_category_id": "lab-assistant",
+  "sub_category_name": "Lab Assistant",
+  "icon": "assets/icons/lab-assistant.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "education-support",
+  "category_name": "Education Support",
+  "sub_category_id": "school-bus-driver",
+  "sub_category_name": "School Bus Driver",
+  "icon": "assets/icons/school-bus-driver.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "education-support",
+  "category_name": "Education Support",
+  "sub_category_id": "hostel-warden",
+  "sub_category_name": "Hostel Warden",
+  "icon": "assets/icons/hostel-warden.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "education-support",
+  "category_name": "Education Support",
+  "sub_category_id": "office-assistant",
+  "sub_category_name": "Office Assistant",
+  "icon": "assets/icons/office-assistant.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "education-support",
+  "category_name": "Education Support",
+  "sub_category_id": "librarian-assistant",
+  "sub_category_name": "Librarian Assistant",
+  "icon": "assets/icons/librarian-assistant.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "marine-shipping",
+  "category_name": "Marine & Shipping",
+  "sub_category_id": "deck-crew",
+  "sub_category_name": "Deck Crew",
+  "icon": "assets/icons/deck-crew.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "marine-shipping",
+  "category_name": "Marine & Shipping",
+  "sub_category_id": "port-worker",
+  "sub_category_name": "Port Worker",
+  "icon": "assets/icons/port-worker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "marine-shipping",
+  "category_name": "Marine & Shipping",
+  "sub_category_id": "crane-operator",
+  "sub_category_name": "Crane Operator",
+  "icon": "assets/icons/crane-operator.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "marine-shipping",
+  "category_name": "Marine & Shipping",
+  "sub_category_id": "ship-maintenance-technician",
+  "sub_category_name": "Ship Maintenance Technician",
+  "icon": "assets/icons/ship-maintenance-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "marine-shipping",
+  "category_name": "Marine & Shipping",
+  "sub_category_id": "cargo-handler",
+  "sub_category_name": "Cargo Handler",
+  "icon": "assets/icons/cargo-handler.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "aviation-support",
+  "category_name": "Aviation Support",
+  "sub_category_id": "ground-staff",
+  "sub_category_name": "Ground Staff",
+  "icon": "assets/icons/ground-staff.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "aviation-support",
+  "category_name": "Aviation Support",
+  "sub_category_id": "baggage-handler",
+  "sub_category_name": "Baggage Handler",
+  "icon": "assets/icons/baggage-handler.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "aviation-support",
+  "category_name": "Aviation Support",
+  "sub_category_id": "aircraft-cleaner",
+  "sub_category_name": "Aircraft Cleaner",
+  "icon": "assets/icons/aircraft-cleaner.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "aviation-support",
+  "category_name": "Aviation Support",
+  "sub_category_id": "aircraft-maintenance-technician",
+  "sub_category_name": "Aircraft Maintenance Technician",
+  "icon": "assets/icons/aircraft-maintenance-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "aviation-support",
+  "category_name": "Aviation Support",
+  "sub_category_id": "ramp-agent",
+  "sub_category_name": "Ramp Agent",
+  "icon": "assets/icons/ramp-agent.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+
+{
+  "serial_no": "",
+  "category_id": "mining-energy",
+  "category_name": "Mining & Energy",
+  "sub_category_id": "mining-worker",
+  "sub_category_name": "Mining Worker",
+  "icon": "assets/icons/mining-worker.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "mining-energy",
+  "category_name": "Mining & Energy",
+  "sub_category_id": "solar-technician",
+  "sub_category_name": "Solar Technician",
+  "icon": "assets/icons/solar-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "mining-energy",
+  "category_name": "Mining & Energy",
+  "sub_category_id": "wind-turbine-technician",
+  "sub_category_name": "Wind Turbine Technician",
+  "icon": "assets/icons/wind-turbine-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "mining-energy",
+  "category_name": "Mining & Energy",
+  "sub_category_id": "battery-technician",
+  "sub_category_name": "Battery Technician",
+  "icon": "assets/icons/battery-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+},
+{
+  "serial_no": "",
+  "category_id": "mining-energy",
+  "category_name": "Mining & Energy",
+  "sub_category_id": "generator-technician",
+  "sub_category_name": "Generator Technician",
+  "icon": "assets/icons/generator-technician.svg",
+  "language": "en",
+  "google_form_link": "",
+  "last_updated": ""
+}
+
+]
