@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ecosystem — Connecting Ideas, Innovation & Global Impact</title>
+<meta name="description" content="A global innovation ecosystem uniting YouthLabCo, Perception of India, IGATT, InnoP Global and DINNTEK.">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Inline favicon (no external file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b63d6'/%3E%3Cstop offset='1' stop-color='%2314a76c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='url(%23g)'/%3E%3Ctext x='12' y='17' font-size='13' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EE%3C/text%3E%3C/svg%3E">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --white:#ffffff;
+  --ink:#0e1b2c;
+  --ink-soft:#425063;
+  --deep-blue:#0a2e5c;
+  --blue:#1b63d6;
+  --green:#14a76c;
+  --teal:#0ea5a0;
+  --saffron:#e08a2c;
+  --mist:#f3f7fb;
+  --mist-green:#f1faf6;
+  --line:#e3e9f1;
+  --grad: linear-gradient(135deg, var(--blue) 0%, var(--teal) 55%, var(--green) 100%);
+  --grad-soft: linear-gradient(135deg, rgba(27,99,214,.10), rgba(20,167,108,.10));
+  --shadow-soft: 0 10px 40px -12px rgba(10,46,92,.18);
+  --radius: 20px;
+}
+
+[data-theme="dark"]{
+  --white:#0b1420;
+  --ink:#eef3f9;
+  --ink-soft:#aab6c6;
+  --mist:#0f1c2c;
+  --mist-green:#0e1e1a;
+  --line:#1e2c3e;
+  --shadow-soft: 0 10px 40px -12px rgba(0,0,0,.5);
+}
+
+.icon{
+  width:1em; height:1em;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  vertical-align:-0.15em;
+  display:inline-block;
+}
+.icon text{ stroke:none; fill:currentColor; }
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  transition:background .3s ease, color .3s ease;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,.display-font{
+  font-family:'Space Grotesk', sans-serif;
+  color:var(--ink);
+  letter-spacing:-0.02em;
+}
+.mono{
+  font-family:'IBM Plex Mono', monospace;
+  letter-spacing:.06em;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:600;
+}
+.text-soft{ color:var(--ink-soft); }
+.section{ padding:6.5rem 0; position:relative; }
+.section-mist{ background:var(--mist); }
+.section-mist-green{ background:var(--mist-green); }
+@media (max-width:768px){ .section{ padding:4rem 0; } }
+
+.btn-grad{
+  background:var(--grad);
+  color:#fff !important;
+  border:none;
+  padding:.85rem 1.9rem;
+  border-radius:100px;
+  font-weight:600;
+  font-size:.95rem;
+  transition:transform .25s ease, box-shadow .25s ease;
+  box-shadow:0 8px 24px -8px rgba(27,99,214,.55);
+}
+.btn-grad:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -8px rgba(27,99,214,.6); color:#fff; }
+.btn-outline-line{
+  border:1.5px solid var(--line);
+  color:var(--ink);
+  padding:.85rem 1.9rem;
+  border-radius:100px;
+  font-weight:600;
+  font-size:.95rem;
+  background:transparent;
+  transition:.25s ease;
+}
+.btn-outline-line:hover{ border-color:var(--blue); color:var(--blue); background:rgba(27,99,214,.06); }
+
+/* NAV */
+.navbar{
+  padding:1rem 0;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(14px) saturate(160%);
+  -webkit-backdrop-filter:blur(14px) saturate(160%);
+  border-bottom:1px solid var(--line);
+  transition:background .3s ease;
+}
+[data-theme="dark"] .navbar{ background:rgba(11,20,32,.75); }
+.navbar-brand{
+  font-family:'Space Grotesk', sans-serif;
+  font-weight:700;
+  font-size:1.25rem;
+  color:var(--ink) !important;
+  display:flex; align-items:center; gap:.55rem;
+}
+.brand-mark{
+  width:34px;height:34px;border-radius:9px;
+  background:var(--grad);
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#fff; font-weight:700; font-size:.95rem;
+}
+.nav-link{
+  color:var(--ink-soft) !important;
+  font-weight:500;
+  font-size:.92rem;
+  margin:0 .5rem;
+}
+.nav-link:hover{ color:var(--blue) !important; }
+.theme-toggle{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--line);
+  display:inline-flex;align-items:center;justify-content:center;
+  background:transparent; color:var(--ink); cursor:pointer;
+  transition:.25s ease;
+}
+.theme-toggle:hover{ border-color:var(--blue); color:var(--blue); }
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:92vh;
+  display:flex; align-items:center;
+  padding-top:6rem;
+  overflow:hidden;
+  background:radial-gradient(circle at 15% 20%, rgba(27,99,214,.08), transparent 45%),
+             radial-gradient(circle at 85% 75%, rgba(20,167,108,.10), transparent 45%);
+}
+#hero-canvas{ position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+.hero-content{ position:relative; z-index:2; }
+.hero .eyebrow{ display:inline-flex; align-items:center; gap:.5rem; }
+.hero .eyebrow .dot{ width:6px;height:6px;border-radius:50%; background:var(--green); display:inline-block; }
+.hero h1{
+  font-size:clamp(2.3rem, 5vw, 4.2rem);
+  font-weight:700;
+  line-height:1.06;
+  margin:1.1rem 0 1.4rem;
+}
+.hero h1 .grad-text{
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero p.lead{
+  font-size:1.1rem;
+  color:var(--ink-soft);
+  max-width:640px;
+  line-height:1.7;
+}
+.hero-btns{ display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.2rem; }
+
+/* GLASS CARD */
+.glass{
+  background:rgba(255,255,255,.6);
+  backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:var(--shadow-soft);
+  border-radius:var(--radius);
+}
+[data-theme="dark"] .glass{ background:rgba(20,30,45,.55); border-color:rgba(255,255,255,.06); }
+
+/* ORG CARDS */
+.org-card{
+  border-radius:var(--radius);
+  padding:2.1rem;
+  height:100%;
+  background:var(--white);
+  border:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.org-card::before{
+  content:"";
+  position:absolute; top:0; left:0; right:0; height:4px;
+  background:var(--accent, var(--grad));
+}
+.org-card:hover{ transform:translateY(-8px); box-shadow:var(--shadow-soft); }
+.org-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--accent-soft, var(--grad-soft));
+  color:var(--accent-color, var(--blue));
+  font-size:1.4rem;
+  margin-bottom:1.2rem;
+}
+.org-card h3{ font-size:1.3rem; margin-bottom:.4rem; }
+.org-tagline{ color:var(--ink-soft); font-size:.92rem; margin-bottom:1.1rem; min-height:44px; }
+.tag-pill{
+  display:inline-block;
+  font-size:.72rem;
+  font-family:'IBM Plex Mono', monospace;
+  padding:.28rem .7rem;
+  border-radius:100px;
+  background:var(--mist);
+  color:var(--ink-soft);
+  margin:0 .35rem .35rem 0;
+}
+.org-card .visit-link{
+  font-weight:600; font-size:.9rem; color:var(--accent-color, var(--blue));
+  display:inline-flex; align-items:center; gap:.4rem;
+  text-decoration:none; margin-top:1rem;
+}
+.org-card .visit-link .icon{ transition:transform .25s ease; }
+.org-card .visit-link:hover .icon{ transform:translateX(4px); }
+
+/* FLOW */
+.flow-wrap{ position:relative; padding:2rem 0; }
+.flow-track{
+  display:flex; align-items:stretch; gap:0; overflow-x:auto; padding-bottom:1rem;
+  scrollbar-width:thin;
+}
+.flow-step{
+  flex:0 0 auto; width:210px;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  padding:0 .5rem;
+}
+.flow-node{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--white); border:2px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem; color:var(--blue);
+  margin-bottom:1rem;
+  position:relative; z-index:2;
+  transition:.3s ease;
+}
+.flow-step.is-active .flow-node{ border-color:var(--blue); background:var(--grad); color:#fff; box-shadow:0 8px 22px -8px rgba(27,99,214,.55); }
+.flow-connector{
+  flex:0 0 auto; width:60px; align-self:flex-start; margin-top:32px;
+  height:2px; background:repeating-linear-gradient(90deg, var(--blue) 0 6px, transparent 6px 12px);
+  position:relative;
+}
+.flow-step small{ font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--ink-soft); }
+.flow-step .flow-label{ font-weight:600; font-size:.95rem; }
+
+/* FOCUS AREAS */
+.focus-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:1rem; }
+.focus-chip{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:1.2rem 1rem;
+  text-align:center;
+  background:var(--white);
+  transition:.3s ease;
+}
+.focus-chip:hover{ border-color:var(--teal); transform:translateY(-4px); box-shadow:var(--shadow-soft); }
+.focus-chip .icon{ width:1.5rem; height:1.5rem; color:var(--teal); margin-bottom:.6rem; display:block; margin-inline:auto; }
+.focus-chip span{ font-size:.85rem; font-weight:600; }
+
+/* STATS */
+.stat-box{ text-align:center; padding:1.5rem 1rem; }
+.stat-num{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;
+  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.stat-label{ color:var(--ink-soft); font-size:.88rem; font-family:'IBM Plex Mono', monospace; letter-spacing:.03em; }
+
+/* PROGRAM CARDS */
+.program-card{
+  border-radius:16px; padding:1.6rem; height:100%;
+  background:var(--white); border:1px solid var(--line);
+  transition:.3s ease;
+}
+.program-card:hover{ border-color:var(--teal); box-shadow:var(--shadow-soft); transform:translateY(-4px); }
+.program-card .icon{ width:1.6rem; height:1.6rem; color:var(--teal); margin-bottom:.9rem; display:block; }
+
+/* PARTNER CARDS */
+.partner-card{
+  border-radius:var(--radius); padding:2rem; height:100%;
+  background:linear-gradient(180deg, var(--white), var(--mist));
+  border:1px solid var(--line);
+  text-align:center;
+  transition:.3s ease;
+}
+.partner-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-soft); }
+.partner-card .icon{ width:2rem; height:2rem; margin-bottom:1rem; color:var(--blue); }
+
+/* NEWS */
+.filter-btn{
+  border:1px solid var(--line); background:transparent; color:var(--ink-soft);
+  padding:.5rem 1.1rem; border-radius:100px; font-size:.85rem; font-weight:600;
+  margin:0 .4rem .6rem 0; transition:.25s ease; cursor:pointer;
+}
+.filter-btn.active, .filter-btn:hover{ background:var(--grad); color:#fff; border-color:transparent; }
+.news-card{
+  border-radius:16px; overflow:hidden; border:1px solid var(--line); background:var(--white);
+  transition:.3s ease; height:100%;
+}
+.news-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-soft); }
+.news-thumb{
+  height:150px; background:var(--grad-soft);
+  display:flex; align-items:center; justify-content:center; font-size:2rem; color:var(--blue);
+}
+.news-card .body{ padding:1.3rem; }
+.news-tag{
+  font-family:'IBM Plex Mono', monospace; font-size:.68rem; color:var(--teal); text-transform:uppercase; letter-spacing:.08em;
+}
+
+/* LEADERSHIP */
+.leader-card{ text-align:center; }
+.avatar-ring{
+  width:110px;height:110px;border-radius:50%;
+  margin:0 auto 1rem; padding:4px;
+  background:var(--grad);
+  display:flex; align-items:center; justify-content:center;
+}
+.avatar-ring .avatar{
+  width:100%;height:100%;border-radius:50%;
+  background:var(--white); display:flex; align-items:center; justify-content:center;
+  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:var(--blue);
+}
+.leader-card h4{ font-size:1.05rem; margin-bottom:.1rem; }
+.leader-role{ font-size:.82rem; color:var(--teal); font-family:'IBM Plex Mono', monospace; margin-bottom:.6rem; }
+.leader-bio{ font-size:.85rem; color:var(--ink-soft); }
+
+/* GLOBAL NETWORK */
+.network-wrap{ position:relative; border-radius:24px; overflow:hidden; background:var(--deep-blue); min-height:420px; }
+#network-canvas{ position:absolute; inset:0; width:100%; height:100%; }
+.network-overlay{ position:relative; z-index:2; padding:3rem; color:#fff; }
+.hub-pill{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16);
+  padding:.5rem 1rem; border-radius:100px; font-size:.82rem; margin:0 .5rem .6rem 0;
+  backdrop-filter:blur(6px);
+}
+.hub-pill .dot{ width:7px;height:7px;border-radius:50%; background:var(--teal); }
+
+/* TESTIMONIALS */
+.testi-card{
+  border-radius:var(--radius); padding:2.4rem; background:var(--white); border:1px solid var(--line);
+  max-width:760px; margin:0 auto; text-align:center;
+}
+.testi-quote{ font-size:1.15rem; line-height:1.7; color:var(--ink); font-family:'Space Grotesk', sans-serif; font-weight:500; }
+.testi-quote .icon{ color:var(--teal); font-size:1.6rem; }
+.carousel-indicators [data-bs-target]{ background:var(--blue); }
+
+/* CTA */
+.cta-section{
+  background:var(--grad);
+  border-radius:28px;
+  padding:4rem 2rem;
+  text-align:center;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.cta-section h2{ color:#fff; }
+.cta-section .btn-outline-line{ border-color:rgba(255,255,255,.55); color:#fff; }
+.cta-section .btn-outline-line:hover{ background:rgba(255,255,255,.15); border-color:#fff; }
+.cta-section .btn-white{
+  background:#fff; color:var(--blue) !important; padding:.85rem 1.9rem; border-radius:100px; font-weight:700; border:none;
+}
+
+/* FOOTER */
+footer{ background:var(--deep-blue); color:#c8d5e8; padding:4rem 0 2rem; }
+footer h6{ color:#fff; font-family:'Space Grotesk',sans-serif; font-weight:600; margin-bottom:1.1rem; font-size:.95rem;}
+footer a{ color:#aebedb; text-decoration:none; font-size:.88rem; display:block; margin-bottom:.6rem; transition:.2s ease; }
+footer a:hover{ color:#fff; }
+.footer-social a{ display:inline-flex; width:36px;height:36px;border-radius:50%; border:1px solid rgba(255,255,255,.2); align-items:center; justify-content:center; margin-right:.6rem; }
+.footer-bottom{ border-top:1px solid rgba(255,255,255,.12); margin-top:2.5rem; padding-top:1.5rem; font-size:.8rem; color:#8fa1c2; }
+
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:none; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Every icon on this page is plain inline SVG (no external icon font/CDN dependency). -->
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#top">
+      <span class="brand-mark">E</span> The Ecosystem
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#ecosystem">Organizations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+        <button class="theme-toggle" id="themeToggle" title="Toggle dark mode"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/>
+  <circle cx="9.3" cy="10" r="1" fill="currentColor" stroke="none"/>
+  <circle cx="14.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg></button>
+        <a href="#partner" class="btn btn-grad btn-sm">Become a Partner</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas id="hero-canvas"></canvas>
+  <div class="container hero-content">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="eyebrow"><span class="dot"></span> A Global Innovation Ecosystem</span>
+        <h1>Connecting <span class="grad-text">Ideas, Innovation,</span> and Global Impact</h1>
+        <p class="lead">We unite entrepreneurs, researchers, innovators, educators, investors, governments, industries, and changemakers to create solutions for humanity's greatest challenges — in technology, agriculture, sustainability, education, health, and economic development.</p>
+        <div class="hero-btns">
+          <a href="#ecosystem" class="btn btn-grad">Explore Our Ecosystem</a>
+          <a href="#partner" class="btn btn-outline-line">Become a Partner</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8 reveal">
+        <span class="eyebrow">Our Ecosystem</span>
+        <h2 class="mt-3 mb-4" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">One Vision. Multiple Organizations. Shared Impact.</h2>
+        <p class="text-soft fs-5">Our ecosystem brings together specialized organizations working toward one common mission: empowering innovation that creates measurable social and economic impact worldwide. Each organization focuses on a unique area while collaborating to transform ideas into real-world solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM CARDS -->
+<section class="section section-mist" id="ecosystem">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Ecosystem Overview</span>
+      <h2 class="mt-2">Five Organizations. One Network.</h2>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="org-card" style="--accent:var(--blue); --accent-soft:rgba(27,99,214,.12); --accent-color:var(--blue);">
+          <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 16,10 8,10"/>
+  <rect x="8" y="10" width="8" height="8" rx="2"/>
+  <polyline points="8,18 5,22 8,16"/>
+  <polyline points="16,18 19,22 16,16"/>
+  <circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg></div>
+          <h3>YouthLabCo</h3>
+          <div class="org-tagline">Innovation begins with people.</div>
+          <div>
+            <span class="tag-pill">Entrepreneurship</span>
+            <span class="tag-pill">Leadership</span>
+            <span class="tag-pill">Youth Development</span>
+            <span class="tag-pill">Startup Education</span>
+            <span class="tag-pill">Innovation Programs</span>
+          </div>
+          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
+  <polyline points="12,6 18,12 12,18"/></svg></a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="org-card" style="--accent:var(--saffron); --accent-soft:rgba(224,138,44,.14); --accent-color:var(--saffron);">
+          <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/>
+  <ellipse cx="12" cy="12" rx="4" ry="9"/>
+  <line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+          <h3>Perception of India</h3>
+          <div class="org-tagline">Changing how the world experiences India.</div>
+          <div>
+            <span class="tag-pill">Culture</span>
+            <span class="tag-pill">Tourism</span>
+            <span class="tag-pill">Global Branding</span>
+            <span class="tag-pill">Storytelling</span>
+            <span class="tag-pill">International Relations</span>
+          </div>
+          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
+  <polyline points="12,6 18,12 12,18"/></svg></a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="org-card" style="--accent:var(--green); --accent-soft:rgba(20,167,108,.12); --accent-color:var(--green);">
+          <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/>
+  <circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/>
+  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg></div>
+          <h3>IGATT</h3>
+          <div class="org-tagline">Building sustainable agriculture for future generations.</div>
+          <div>
+            <span class="tag-pill">Agriculture</span>
+            <span class="tag-pill">Food Security</span>
+            <span class="tag-pill">Water</span>
+            <span class="tag-pill">Climate Innovation</span>
+            <span class="tag-pill">Technology Transfer</span>
+          </div>
+          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
+  <polyline points="12,6 18,12 12,18"/></svg></a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="org-card" style="--accent:var(--teal); --accent-soft:rgba(14,165,160,.12); --accent-color:var(--teal);">
+          <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,15 21,5"/>
+  <polyline points="15,5 21,5 21,11"/></svg></div>
+          <h3>InnoP Global</h3>
+          <div class="org-tagline">Helping startups scale globally.</div>
+          <div>
+            <span class="tag-pill">Startup Accelerator</span>
+            <span class="tag-pill">Mentorship</span>
+            <span class="tag-pill">Investment</span>
+            <span class="tag-pill">Incubation</span>
+            <span class="tag-pill">International Expansion</span>
+          </div>
+          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
+  <polyline points="12,6 18,12 12,18"/></svg></a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="org-card" style="--accent:var(--deep-blue); --accent-soft:rgba(10,46,92,.10); --accent-color:var(--deep-blue);">
+          <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/>
+  <rect x="9" y="9" width="6" height="6"/>
+  <line x1="9" y1="1.5" x2="9" y2="6"/><line x1="15" y1="1.5" x2="15" y2="6"/>
+  <line x1="9" y1="18" x2="9" y2="22.5"/><line x1="15" y1="18" x2="15" y2="22.5"/>
+  <line x1="1.5" y1="9" x2="6" y2="9"/><line x1="1.5" y1="15" x2="6" y2="15"/>
+  <line x1="18" y1="9" x2="22.5" y2="9"/><line x1="18" y1="15" x2="22.5" y2="15"/></svg></div>
+          <h3>DINNTEK</h3>
+          <div class="org-tagline">Commercializing technologies that solve global challenges.</div>
+          <div>
+            <span class="tag-pill">Research</span>
+            <span class="tag-pill">Technology</span>
+            <span class="tag-pill">Engineering</span>
+            <span class="tag-pill">Product Innovation</span>
+            <span class="tag-pill">Commercialization</span>
+          </div>
+          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
+  <polyline points="12,6 18,12 12,18"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">The Journey</span>
+      <h2 class="mt-2">How Our Ecosystem Works</h2>
+    </div>
+    <div class="flow-wrap reveal">
+      <div class="flow-track" id="flowTrack">
+        <div class="flow-step is-active"><div class="flow-node"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/>
+  <line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/>
+  <line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><small>01</small><div class="flow-label">Ideas</div></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,3 22,8 12,13 2,8"/>
+  <polyline points="5,9.5 5,15 12,18 19,15 19,9.5"/>
+  <line x1="22" y1="8" x2="22" y2="13"/></svg></div><small>02</small><div class="flow-label">Education &amp; Leadership</div></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/>
+  <line x1="21" y1="21" x2="16" y2="16"/></svg></div><small>03</small><div class="flow-label">Research &amp; Innovation</div></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 16,10 8,10"/>
+  <rect x="8" y="10" width="8" height="8" rx="2"/>
+  <polyline points="8,18 5,22 8,16"/>
+  <polyline points="16,18 19,22 16,16"/>
+  <circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg></div><small>04</small><div class="flow-label">Startup Acceleration</div></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node"><svg class="icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/>
+  <rect x="9" y="9" width="6" height="6"/>
+  <line x1="9" y1="1.5" x2="9" y2="6"/><line x1="15" y1="1.5" x2="15" y2="6"/>
+  <line x1="9" y1="18" x2="9" y2="22.5"/><line x1="15" y1="18" x2="15" y2="22.5"/>
+  <line x1="1.5" y1="9" x2="6" y2="9"/><line x1="1.5" y1="15" x2="6" y2="15"/>
+  <line x1="18" y1="9" x2="22.5" y2="9"/><line x1="18" y1="15" x2="22.5" y2="15"/></svg></div><small>05</small><div class="flow-label">Technology Commercialization</div></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/>
+  <circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/>
+  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg></div><small>06</small><div class="flow-label">Agriculture &amp; Sustainability</div></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/>
+  <ellipse cx="12" cy="12" rx="4" ry="9"/>
+  <line x1="3" y1="12" x2="21" y2="12"/></svg></div><small>07</small><div class="flow-label">Global Impact</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS AREAS -->
+<section class="section section-mist-green">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Focus Areas</span>
+      <h2 class="mt-2">Where We Concentrate Our Efforts</h2>
+    </div>
+    <div class="focus-grid reveal">
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/>
+  <rect x="9" y="9" width="6" height="6"/>
+  <line x1="9" y1="1.5" x2="9" y2="6"/><line x1="15" y1="1.5" x2="15" y2="6"/>
+  <line x1="9" y1="18" x2="9" y2="22.5"/><line x1="15" y1="18" x2="15" y2="22.5"/>
+  <line x1="1.5" y1="9" x2="6" y2="9"/><line x1="1.5" y1="15" x2="6" y2="15"/>
+  <line x1="18" y1="9" x2="22.5" y2="9"/><line x1="18" y1="15" x2="22.5" y2="15"/></svg><span>Artificial Intelligence</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/>
+  <circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/>
+  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg><span>Agriculture</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><path d="M4 10 A8 4 0 0 1 20 10"/>
+  <path d="M4 10 L6 21 H18 L20 10 Z"/>
+  <line x1="9" y1="13" x2="9.6" y2="18"/><line x1="15" y1="13" x2="14.4" y2="18"/></svg><span>Food Security</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><circle cx="8" cy="14" r="4"/><circle cx="13" cy="11" r="5"/><circle cx="17" cy="14" r="3.5"/>
+  <rect x="5" y="14" width="15" height="5" rx="2.5"/></svg><span>Climate Technology</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><circle cx="8.5" cy="8.5" r="4.5"/>
+  <circle cx="15.5" cy="8.5" r="4.5"/>
+  <polygon points="4,10 12,21 20,10"/></svg><span>Health Technology</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,3 22,8 12,13 2,8"/>
+  <polyline points="5,9.5 5,15 12,18 19,15 19,9.5"/>
+  <line x1="22" y1="8" x2="22" y2="13"/></svg><span>Education</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 18,14 12,22 6,14"/></svg><span>Water Management</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><polygon points="13,2 4,14 12,14 11,22 20,10 12,10"/></svg><span>Clean Energy</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/>
+  <line x1="21" y1="21" x2="16" y2="16"/></svg><span>Research</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg><span>Innovation</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/>
+  <rect x="8" y="3" width="8" height="4" rx="1"/></svg><span>Entrepreneurship</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/>
+  <text x="12" y="16.5" font-size="10" font-family="sans-serif" font-weight="700" text-anchor="middle">$</text></svg><span>Investment</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/>
+  <ellipse cx="9" cy="18" rx="6" ry="4"/><ellipse cx="18" cy="18.5" rx="4.5" ry="3.2"/></svg><span>Global Partnerships</span></div>
+      <div class="focus-chip"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/>
+  <polyline points="17,2 17,6 13,6"/>
+  <path d="M20 12 A8 8 0 0 1 7 18"/>
+  <polyline points="7,22 7,18 11,18"/></svg><span>Digital Transformation</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section" id="impact">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Our Impact</span>
+      <h2 class="mt-2">Measured in Real-World Outcomes</h2>
+    </div>
+    <div class="row g-4 reveal">
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" data-count="42">0</div><div class="stat-label">Countries Engaged</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" data-count="18500">0</div><div class="stat-label">Entrepreneurs Empowered</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" data-count="620">0</div><div class="stat-label">Startups Accelerated</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" data-count="95">0</div><div class="stat-label">Innovation Programs</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" data-count="310">0</div><div class="stat-label">Research Collaborations</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" data-count="150">0</div><div class="stat-label">Strategic Partners</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" data-count="47000">0</div><div class="stat-label">Students Trained</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num" data-count="230">0</div><div class="stat-label">Global Events Organized</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section section-mist" id="programs">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Featured Programs</span>
+      <h2 class="mt-2">Opportunities Across the Ecosystem</h2>
+    </div>
+    <div class="row g-4 reveal">
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 16,10 8,10"/>
+  <rect x="8" y="10" width="8" height="8" rx="2"/>
+  <polyline points="8,18 5,22 8,16"/>
+  <polyline points="16,18 19,22 16,16"/>
+  <circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg><h5>Startup Accelerator</h5><p class="text-soft small mb-0">Structured growth support for early-stage ventures.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><polygon points="13,2 4,14 12,14 11,22 20,10 12,10"/></svg><h5>Innovation Bootcamp</h5><p class="text-soft small mb-0">Intensive sprints turning ideas into prototypes.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/>
+  <polyline points="9,13.5 7,22 12,19 17,22 15,13.5"/></svg><h5>Global Fellowship</h5><p class="text-soft small mb-0">A cross-border cohort of emerging changemakers.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,3 22,8 12,13 2,8"/>
+  <polyline points="5,9.5 5,15 12,18 19,15 19,9.5"/>
+  <line x1="22" y1="8" x2="22" y2="13"/></svg><h5>Leadership Academy</h5><p class="text-soft small mb-0">Building the next generation of responsible leaders.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/>
+  <circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/>
+  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg><h5>AgTech Program</h5><p class="text-soft small mb-0">Technology-driven solutions for farmers and food systems.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/>
+  <line x1="21" y1="21" x2="16" y2="16"/></svg><h5>Research Collaboration</h5><p class="text-soft small mb-0">Joint research initiatives with universities worldwide.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/>
+  <path d="M5 11 A7 7 0 0 0 19 11"/>
+  <line x1="12" y1="18" x2="12" y2="22"/>
+  <line x1="8" y1="22" x2="16" y2="22"/></svg><h5>International Conference</h5><p class="text-soft small mb-0">Convening the ecosystem's global community annually.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/>
+  <text x="12" y="16.5" font-size="10" font-family="sans-serif" font-weight="700" text-anchor="middle">$</text></svg><h5>Investor Connect</h5><p class="text-soft small mb-0">Matching high-impact ventures with capital.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PARTNER -->
+<section class="section" id="partner">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Why Partner With Us</span>
+      <h2 class="mt-2">Collaborate With Purpose</h2>
+    </div>
+    <div class="row g-4 reveal">
+      <div class="col-md-6 col-lg-3"><div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><line x1="2" y1="22" x2="22" y2="22"/>
+  <polygon points="12,2 22,8 2,8"/>
+  <line x1="4.5" y1="8" x2="4.5" y2="19"/><line x1="9.5" y1="8" x2="9.5" y2="19"/>
+  <line x1="14.5" y1="8" x2="14.5" y2="19"/><line x1="19.5" y1="8" x2="19.5" y2="19"/></svg><h5>Governments</h5><p class="text-soft small mb-0">Collaborate on national innovation initiatives.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,3 22,8 12,13 2,8"/>
+  <polyline points="5,9.5 5,15 12,18 19,15 19,9.5"/>
+  <line x1="22" y1="8" x2="22" y2="13"/></svg><h5>Universities</h5><p class="text-soft small mb-0">Research partnerships and talent development.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="2" width="10" height="20"/>
+  <rect x="13" y="9" width="8" height="13"/>
+  <line x1="6" y1="6" x2="6" y2="6.01"/><line x1="10" y1="6" x2="10" y2="6.01"/>
+  <line x1="6" y1="11" x2="6" y2="11.01"/><line x1="10" y1="11" x2="10" y2="11.01"/>
+  <line x1="6" y1="16" x2="6" y2="16.01"/><line x1="10" y1="16" x2="10" y2="16.01"/>
+  <line x1="16.5" y1="13" x2="16.5" y2="13.01"/><line x1="17.5" y1="13" x2="17.5" y2="13.01"/></svg><h5>Corporations</h5><p class="text-soft small mb-0">Open innovation and technology commercialization.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,15 21,5"/>
+  <polyline points="15,5 21,5 21,11"/></svg><h5>Investors</h5><p class="text-soft small mb-0">Discover high-impact startups and breakthrough technologies.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="section section-mist-green" id="news">
+  <div class="container">
+    <div class="text-center mb-4 reveal">
+      <span class="eyebrow">Latest News &amp; Events</span>
+      <h2 class="mt-2">Stories From Across the Ecosystem</h2>
+    </div>
+    <div class="text-center mb-4 reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="conferences">Conferences</button>
+      <button class="filter-btn" data-filter="startup">Startup Stories</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+      <button class="filter-btn" data-filter="agriculture">Agriculture</button>
+      <button class="filter-btn" data-filter="technology">Technology</button>
+      <button class="filter-btn" data-filter="education">Education</button>
+    </div>
+    <div class="row g-4" id="newsGrid">
+      <div class="col-md-6 col-lg-4 news-item reveal" data-cat="conferences">
+        <div class="news-card"><div class="news-thumb"><svg class="icon" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/>
+  <path d="M5 11 A7 7 0 0 0 19 11"/>
+  <line x1="12" y1="18" x2="12" y2="22"/>
+  <line x1="8" y1="22" x2="16" y2="22"/></svg></div><div class="body"><span class="news-tag">Conferences</span><h5 class="mt-2">Global Innovation Summit convenes 40 nations</h5><p class="text-soft small mb-0">Leaders gathered to align on shared innovation priorities.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 news-item reveal" data-cat="startup">
+        <div class="news-card"><div class="news-thumb"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 16,10 8,10"/>
+  <rect x="8" y="10" width="8" height="8" rx="2"/>
+  <polyline points="8,18 5,22 8,16"/>
+  <polyline points="16,18 19,22 16,16"/>
+  <circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg></div><div class="body"><span class="news-tag">Startup Stories</span><h5 class="mt-2">InnoP Global cohort raises Series A funding</h5><p class="text-soft small mb-0">Three portfolio startups secure growth capital this quarter.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 news-item reveal" data-cat="research">
+        <div class="news-card"><div class="news-thumb"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/>
+  <line x1="21" y1="21" x2="16" y2="16"/></svg></div><div class="body"><span class="news-tag">Research</span><h5 class="mt-2">DINNTEK publishes new commercialization framework</h5><p class="text-soft small mb-0">A model for translating lab research into market-ready products.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 news-item reveal" data-cat="agriculture">
+        <div class="news-card"><div class="news-thumb"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/>
+  <circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/>
+  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg></div><div class="body"><span class="news-tag">Agriculture</span><h5 class="mt-2">IGATT expands smart-irrigation pilot</h5><p class="text-soft small mb-0">Water-efficient farming technology reaches new communities.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 news-item reveal" data-cat="technology">
+        <div class="news-card"><div class="news-thumb"><svg class="icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/>
+  <rect x="9" y="9" width="6" height="6"/>
+  <line x1="9" y1="1.5" x2="9" y2="6"/><line x1="15" y1="1.5" x2="15" y2="6"/>
+  <line x1="9" y1="18" x2="9" y2="22.5"/><line x1="15" y1="18" x2="15" y2="22.5"/>
+  <line x1="1.5" y1="9" x2="6" y2="9"/><line x1="1.5" y1="15" x2="6" y2="15"/>
+  <line x1="18" y1="9" x2="22.5" y2="9"/><line x1="18" y1="15" x2="22.5" y2="15"/></svg></div><div class="body"><span class="news-tag">Technology</span><h5 class="mt-2">Ecosystem launches shared innovation lab network</h5><p class="text-soft small mb-0">Members gain access to shared prototyping infrastructure.</p></div></div>
+      </div>
+      <div class="col-md-6 col-lg-4 news-item reveal" data-cat="education">
+        <div class="news-card"><div class="news-thumb"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,3 22,8 12,13 2,8"/>
+  <polyline points="5,9.5 5,15 12,18 19,15 19,9.5"/>
+  <line x1="22" y1="8" x2="22" y2="13"/></svg></div><div class="body"><span class="news-tag">Education</span><h5 class="mt-2">Leadership Academy welcomes its largest cohort</h5><p class="text-soft small mb-0">Youth leaders from 22 countries begin the year-long program.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="section" id="leadership">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Leadership</span>
+      <h2 class="mt-2">Guided by Experience</h2>
+    </div>
+    <div class="row g-4 reveal">
+      <div class="col-6 col-md-3 leader-card"><div class="avatar-ring"><div class="avatar">AR</div></div><h4>Aditi Rao</h4><div class="leader-role">Chair, Ecosystem Council</div><p class="leader-bio">20+ years driving cross-sector innovation policy.</p></div>
+      <div class="col-6 col-md-3 leader-card"><div class="avatar-ring"><div class="avatar">MK</div></div><h4>Marcus Kim</h4><div class="leader-role">Executive Director</div><p class="leader-bio">Former accelerator lead across three continents.</p></div>
+      <div class="col-6 col-md-3 leader-card"><div class="avatar-ring"><div class="avatar">SN</div></div><h4>Sofia Nkemi</h4><div class="leader-role">Head of Research Partnerships</div><p class="leader-bio">Builds university-industry collaboration models.</p></div>
+      <div class="col-6 col-md-3 leader-card"><div class="avatar-ring"><div class="avatar">RV</div></div><h4>Ravi Verma</h4><div class="leader-role">Director, Global Programs</div><p class="leader-bio">Scales flagship programs across 40+ countries.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL NETWORK -->
+<section class="section section-mist">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Global Network</span>
+      <h2 class="mt-2">A Presence Across the World</h2>
+    </div>
+    <div class="network-wrap reveal">
+      <canvas id="network-canvas"></canvas>
+      <div class="network-overlay">
+        <p class="text-white-50 mb-3" style="max-width:520px;">Partner countries, universities, innovation hubs, research institutions, accelerators, corporations, and government collaborations — all connected in one live network.</p>
+        <div>
+          <span class="hub-pill"><span class="dot"></span> India</span>
+          <span class="hub-pill"><span class="dot"></span> United States</span>
+          <span class="hub-pill"><span class="dot"></span> United Kingdom</span>
+          <span class="hub-pill"><span class="dot"></span> Germany</span>
+          <span class="hub-pill"><span class="dot"></span> Kenya</span>
+          <span class="hub-pill"><span class="dot"></span> Singapore</span>
+          <span class="hub-pill"><span class="dot"></span> Brazil</span>
+          <span class="hub-pill"><span class="dot"></span> UAE</span>
+          <span class="hub-pill"><span class="dot"></span> Australia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="mt-2">Voices From the Ecosystem</h2>
+    </div>
+    <div id="testiCarousel" class="carousel slide reveal" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testi-card"><svg class="icon" viewBox="0 0 24 24"><text x="12" y="19" font-size="22" font-family="Georgia, serif" font-weight="700" text-anchor="middle">&#8220;</text></svg><p class="testi-quote">Being part of this ecosystem gave our startup access to mentors, investors, and a global community we couldn't have found alone.</p><div class="mt-3 fw-semibold">Founder, InnoP Global cohort</div></div>
+        </div>
+        <div class="carousel-item">
+          <div class="testi-card"><svg class="icon" viewBox="0 0 24 24"><text x="12" y="19" font-size="22" font-family="Georgia, serif" font-weight="700" text-anchor="middle">&#8220;</text></svg><p class="testi-quote">The research collaboration model here moves faster than anything I've seen at a traditional university partnership.</p><div class="mt-3 fw-semibold">Research Lead, DINNTEK partner university</div></div>
+        </div>
+        <div class="carousel-item">
+          <div class="testi-card"><svg class="icon" viewBox="0 0 24 24"><text x="12" y="19" font-size="22" font-family="Georgia, serif" font-weight="700" text-anchor="middle">&#8220;</text></svg><p class="testi-quote">IGATT's field programs helped our cooperative adopt water-smart farming techniques within a single season.</p><div class="mt-3 fw-semibold">Farmer Cooperative Lead</div></div>
+        </div>
+        <div class="carousel-item">
+          <div class="testi-card"><svg class="icon" viewBox="0 0 24 24"><text x="12" y="19" font-size="22" font-family="Georgia, serif" font-weight="700" text-anchor="middle">&#8220;</text></svg><p class="testi-quote">As an investor, having one gateway into five vetted innovation pipelines saves us months of due diligence.</p><div class="mt-3 fw-semibold">Partner, Global Venture Fund</div></div>
+        </div>
+      </div>
+      <div class="carousel-indicators position-static mt-4">
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section reveal">
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Let's Build the Future Together</h2>
+      <p class="mt-3 mb-4" style="max-width:640px;margin-inline:auto;opacity:.92;">Whether you are an entrepreneur, researcher, investor, educator, policymaker, student, or corporate leader, our ecosystem provides opportunities to collaborate, innovate, and create lasting impact.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="#partner" class="btn btn-white">Become a Partner</a>
+        <a href="#programs" class="btn btn-outline-line">Join Our Programs</a>
+        <a href="#contact" class="btn btn-outline-line">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-md-2">
+        <h6>About</h6>
+        <a href="#about">Our Vision</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#impact">Impact</a>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Organizations</h6>
+        <a href="#">YouthLabCo</a>
+        <a href="#">Perception of India</a>
+        <a href="#">IGATT</a>
+        <a href="#">InnoP Global</a>
+        <a href="#">DINNTEK</a>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Programs</h6>
+        <a href="#programs">Accelerator</a>
+        <a href="#programs">Fellowship</a>
+        <a href="#programs">Leadership Academy</a>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Resources</h6>
+        <a href="#news">News</a>
+        <a href="#news">Events</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Company</h6>
+        <a href="#contact">Contact</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Use</a>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Follow Us</h6>
+        <div class="footer-social">
+          <a href="#"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/>
+  <circle cx="7" cy="8" r="1.4" fill="currentColor" stroke="none"/>
+  <line x1="7" y1="11" x2="7" y2="17"/>
+  <path d="M11 17v-6M11 11.5c0-1 1-1.7 2.2-1.7 1.6 0 2.8 1 2.8 3v4.2" fill="none"/></svg></a>
+          <a href="#"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/>
+  <line x1="7" y1="7" x2="17" y2="17"/>
+  <line x1="17" y1="7" x2="7" y2="17"/></svg></a>
+          <a href="#"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/>
+  <circle cx="12" cy="12" r="4.2"/>
+  <circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/>
+  <polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+      <div>&copy; 2026 The Ecosystem. All rights reserved.</div>
+      <div class="d-flex gap-3 flex-wrap">
+        <span>YouthLabCo</span><span>·</span><span>Perception of India</span><span>·</span><span>IGATT</span><span>·</span><span>InnoP Global</span><span>·</span><span>DINNTEK</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal fade" id="privacyModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Privacy Policy</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><p>This is placeholder privacy policy content for The Ecosystem. Replace with your organization's actual data handling, cookie usage, and privacy practices before publishing.</p></div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="termsModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Terms of Use</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><p>This is placeholder terms-of-use content for The Ecosystem. Replace with your organization's actual terms before publishing.</p></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ---------- Theme toggle ---------- */
+const themeBtn = document.getElementById('themeToggle');
+themeBtn.addEventListener('click', () => {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  themeBtn.innerHTML = isDark
+    ? '<svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="9.3" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg>'
+    : '<svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>';
+});
+
+/* ---------- Reveal on scroll ---------- */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+/* ---------- Counters ---------- */
+const counters = document.querySelectorAll('.stat-num');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.count, 10);
+    const duration = 1600;
+    const start = performance.now();
+    function tick(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toLocaleString();
+    }
+    requestAnimationFrame(tick);
+    counterObserver.unobserve(el);
+  });
+}, { threshold: 0.4 });
+counters.forEach(c => counterObserver.observe(c));
+
+/* ---------- News filter ---------- */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const newsItems = document.querySelectorAll('.news-item');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.filter;
+    newsItems.forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+    });
+  });
+});
+
+/* ---------- Flow step active-on-scroll (simple cycling highlight) ---------- */
+const flowSteps = document.querySelectorAll('.flow-step');
+let flowIndex = 0;
+setInterval(() => {
+  flowSteps.forEach(s => s.classList.remove('is-active'));
+  flowSteps[flowIndex].classList.add('is-active');
+  flowIndex = (flowIndex + 1) % flowSteps.length;
+}, 1400);
+
+/* ---------- Hero network canvas ---------- */
+function initNetworkCanvas(canvasId, opts){
+  const canvas = document.getElementById(canvasId);
+  const ctx = canvas.getContext('2d');
+  let w, h, nodes;
+  const nodeColor = opts.nodeColor || 'rgba(27,99,214,0.9)';
+  const lineColor = opts.lineColor || 'rgba(27,99,214,0.15)';
+  const count = opts.count || 60;
+
+  function resize(){
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+  function initNodes(){
+    nodes = Array.from({length: count}, () => ({
+      x: Math.random()*w, y: Math.random()*h,
+      vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35,
+      r: Math.random()*1.6+1
+    }));
+  }
+  function step(){
+    ctx.clearRect(0,0,w,h);
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > w) n.vx *= -1;
+      if (n.y < 0 || n.y > h) n.vy *= -1;
+    });
+    for (let i=0;i<nodes.length;i++){
+      for (let j=i+1;j<nodes.length;j++){
+        const dx = nodes[i].x-nodes[j].x, dy = nodes[i].y-nodes[j].y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        if (dist < opts.linkDist){
+          ctx.beginPath();
+          ctx.strokeStyle = lineColor;
+          ctx.globalAlpha = 1 - dist/opts.linkDist;
+          ctx.lineWidth = 1;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+      }
+    }
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.fillStyle = nodeColor;
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+      ctx.fill();
+    });
+    requestAnimationFrame(step);
+  }
+  window.addEventListener('resize', () => { resize(); initNodes(); });
+  resize(); initNodes(); step();
+}
+initNetworkCanvas('hero-canvas', { count:70, linkDist:130, nodeColor:'rgba(27,99,214,0.85)', lineColor:'rgba(27,99,214,0.14)' });
+initNetworkCanvas('network-canvas', { count:90, linkDist:110, nodeColor:'rgba(255,255,255,0.9)', lineColor:'rgba(255,255,255,0.12)' });
+</script>
+</body>
+</html>
