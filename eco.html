@@ -54,6 +54,96 @@
   display:inline-block;
 }
 .icon text{ stroke:none; fill:currentColor; }
+/* CARD BUTTON ROWS */
+.card-btn-row{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.2rem; }
+.card-btn-row .btn{ display:inline-flex; align-items:center; gap:.4rem; padding:.55rem 1.1rem; font-size:.85rem; }
+.btn-know-more{
+  display:inline-flex; align-items:center; gap:.4rem;
+  background:transparent; border:1.5px solid var(--line); color:var(--teal);
+  font-weight:600; font-size:.82rem; padding:.5rem 1rem; border-radius:100px;
+  transition:.25s ease;
+}
+.btn-know-more:hover{ background:var(--teal); color:#fff; border-color:var(--teal); }
+
+/* WHY / HOW / WHAT FLOW (used inside dialogs) */
+.whw-flow{ display:flex; align-items:flex-start; gap:0; flex-wrap:wrap; }
+.whw-step{ flex:1 1 0; min-width:180px; text-align:center; padding:0 .6rem; }
+.whw-icon{
+  width:56px; height:56px; border-radius:50%; margin:0 auto .8rem;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--grad-soft); color:var(--blue); font-size:1.5rem;
+}
+.whw-step h6{ font-family:'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:.1em; font-size:.78rem; color:var(--teal); margin-bottom:.5rem; }
+.whw-step p{ font-size:.9rem; color:var(--ink-soft); line-height:1.6; margin:0; }
+.whw-connector{
+  flex:0 0 auto; width:36px; align-self:center; height:2px; margin-top:-1.6rem;
+  background:repeating-linear-gradient(90deg, var(--teal) 0 5px, transparent 5px 10px);
+  display:none;
+}
+@media (min-width:768px){ .whw-connector{ display:block; } }
+
+/* ORG / PROGRAM MODALS */
+.org-modal{ border:none; border-radius:22px; overflow:hidden; }
+.org-modal-header{
+  background:linear-gradient(135deg, var(--accent, var(--blue)), rgba(0,0,0,0));
+  background-color:var(--accent, var(--blue));
+  color:#fff; border:none; padding:1.6rem 1.8rem;
+}
+.org-modal-header .modal-title{ color:#fff; font-family:'Space Grotesk', sans-serif; }
+.org-modal-header .btn-close{ filter:invert(1) grayscale(1) brightness(2); }
+.org-modal-icon{
+  width:52px; height:52px; border-radius:14px; flex:0 0 auto;
+  background:rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; color:#fff;
+}
+.org-modal-meta{ font-size:.78rem; color:rgba(255,255,255,.85); font-family:'IBM Plex Mono', monospace; }
+.org-modal .modal-body{ padding:1.8rem; }
+.org-modal .modal-footer{ border-top:1px solid var(--line); padding:1.1rem 1.8rem; }
+
+/* FLOATING QUICK-VISIT WIDGET */
+.fab-wrap{ position:fixed; right:1.25rem; bottom:1.25rem; z-index:1040; display:flex; flex-direction:column; align-items:flex-end; gap:.7rem; }
+.fab-menu{ display:flex; flex-direction:column; align-items:flex-end; gap:.6rem; margin-bottom:.2rem; }
+.fab-item{
+  display:flex; align-items:center; gap:.6rem;
+  opacity:0; transform:translateY(10px) scale(.9); pointer-events:none;
+  transition:opacity .25s ease, transform .25s ease;
+}
+.fab-wrap.open .fab-item{ opacity:1; transform:none; pointer-events:auto; }
+.fab-item-label{
+  background:var(--ink); color:#fff; font-size:.78rem; font-weight:600;
+  padding:.4rem .8rem; border-radius:100px; white-space:nowrap; box-shadow:var(--shadow-soft);
+}
+.fab-item-btn{
+  width:44px; height:44px; border-radius:50%; flex:0 0 auto;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; text-decoration:none; box-shadow:var(--shadow-soft);
+  font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:.95rem;
+  transition:transform .2s ease;
+}
+.fab-item-btn:hover{ transform:scale(1.08); color:#fff; }
+.fab-main{
+  width:58px; height:58px; border-radius:50%; border:none;
+  background:var(--grad); color:#fff; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 30px -8px rgba(27,99,214,.6); cursor:pointer; font-size:1.5rem;
+  transition:transform .3s ease;
+}
+.fab-main .icon{ transition:transform .3s ease; }
+.fab-wrap.open .fab-main .icon{ transform:rotate(135deg); }
+@media (max-width:576px){
+  .fab-wrap{ right:.9rem; bottom:.9rem; }
+  .fab-item-label{ display:none; }
+}
+/* CONTACT FORM */
+.contact-form{ padding:2.2rem; border-radius:var(--radius); }
+.contact-form .form-label{ font-size:.85rem; font-weight:600; color:var(--ink); margin-bottom:.4rem; }
+.contact-form .form-control, .contact-form .form-select{
+  border:1.5px solid var(--line); border-radius:12px; padding:.7rem 1rem;
+  background:var(--white); color:var(--ink); font-size:.95rem;
+}
+.contact-form .form-control:focus, .contact-form .form-select:focus{
+  border-color:var(--blue); box-shadow:0 0 0 .2rem rgba(27,99,214,.15);
+}
+@media (max-width:576px){ .contact-form{ padding:1.4rem; } }
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
@@ -120,6 +210,8 @@ h1,h2,h3,h4,.display-font{
   transition:background .3s ease;
 }
 [data-theme="dark"] .navbar{ background:rgba(11,20,32,.75); }
+[data-theme="dark"] .dropdown-menu{ background:var(--white); border-color:var(--line); }
+[data-theme="dark"] .dropdown-item{ color:var(--ink-soft); }
 .navbar-brand{
   font-family:'Space Grotesk', sans-serif;
   font-weight:700;
@@ -148,6 +240,13 @@ h1,h2,h3,h4,.display-font{
   transition:.25s ease;
 }
 .theme-toggle:hover{ border-color:var(--blue); color:var(--blue); }
+.dropdown-menu{
+  border:1px solid var(--line); border-radius:14px; padding:.5rem;
+  background:var(--white); box-shadow:var(--shadow-soft);
+}
+.dropdown-item{ color:var(--ink-soft); border-radius:8px; font-size:.9rem; padding:.5rem .8rem; }
+.dropdown-item:hover, .dropdown-item:focus{ background:var(--mist); color:var(--blue); }
+.nav-link.dropdown-toggle::after{ vertical-align:.15em; }
 
 /* HERO */
 .hero{
@@ -231,7 +330,8 @@ h1,h2,h3,h4,.display-font{
   color:var(--ink-soft);
   margin:0 .35rem .35rem 0;
 }
-.org-card .visit-link{
+.org-meta{ font-size:.78rem; color:var(--ink-soft); margin-top:.9rem; font-family:'IBM Plex Mono', monospace; }
+[id]{ scroll-margin-top: 90px; }
   font-weight:600; font-size:.9rem; color:var(--accent-color, var(--blue));
   display:inline-flex; align-items:center; gap:.4rem;
   text-decoration:none; margin-top:1rem;
@@ -408,6 +508,35 @@ footer a:hover{ color:#fff; }
 
 <!-- Every icon on this page is plain inline SVG (no external icon font/CDN dependency). -->
 
+<!-- FLOATING QUICK-VISIT WIDGET -->
+<div class="fab-wrap" id="fabWrap">
+  <div class="fab-menu">
+    <div class="fab-item">
+      <span class="fab-item-label">YouthLabCo</span>
+      <a class="fab-item-btn" style="background:var(--blue);" href="https://www.youthlabco.com" target="_blank" rel="noopener" title="Visit YouthLabCo">Y</a>
+    </div>
+    <div class="fab-item">
+      <span class="fab-item-label">Perception of India</span>
+      <a class="fab-item-btn" style="background:var(--saffron);" href="https://perceptionofindia.com" target="_blank" rel="noopener" title="Visit Perception of India">P</a>
+    </div>
+    <div class="fab-item">
+      <span class="fab-item-label">IGATT</span>
+      <a class="fab-item-btn" style="background:var(--green);" href="https://igatt.org" target="_blank" rel="noopener" title="Visit IGATT">I</a>
+    </div>
+    <div class="fab-item">
+      <span class="fab-item-label">InnoP Global</span>
+      <a class="fab-item-btn" style="background:var(--teal);" href="https://innopglobal.com" target="_blank" rel="noopener" title="Visit InnoP Global">N</a>
+    </div>
+    <div class="fab-item">
+      <span class="fab-item-label">DINNTEK</span>
+      <a class="fab-item-btn" style="background:var(--deep-blue);" href="https://dinntek.com" target="_blank" rel="noopener" title="Visit DINNTEK">D</a>
+    </div>
+  </div>
+  <button class="fab-main" id="fabToggle" title="Quick links to all 5 websites">
+    <svg class="icon" viewBox="0 0 24 24" style="width:1.6rem;height:1.6rem;"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="12" x2="20" y2="12" transform="rotate(90 12 12)"/></svg>
+  </button>
+</div>
+
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
@@ -419,7 +548,16 @@ footer a:hover{ color:#fff; }
     </button>
     <div class="collapse navbar-collapse" id="navMain">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" href="#ecosystem">Organizations</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#ecosystem" role="button" data-bs-toggle="dropdown" aria-expanded="false">Organizations</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#youthlabco">YouthLabCo</a></li>
+            <li><a class="dropdown-item" href="#perception-of-india">Perception of India</a></li>
+            <li><a class="dropdown-item" href="#igatt">IGATT</a></li>
+            <li><a class="dropdown-item" href="#innop-global">InnoP Global</a></li>
+            <li><a class="dropdown-item" href="#dinntek">DINNTEK</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
         <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
         <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
@@ -430,7 +568,7 @@ footer a:hover{ color:#fff; }
         <button class="theme-toggle" id="themeToggle" title="Toggle dark mode"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/>
   <circle cx="9.3" cy="10" r="1" fill="currentColor" stroke="none"/>
   <circle cx="14.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg></button>
-        <a href="#partner" class="btn btn-grad btn-sm">Become a Partner</a>
+        <a href="#contact" class="btn btn-grad btn-sm" data-purpose="Become a Partner">Become a Partner</a>
       </div>
     </div>
   </div>
@@ -447,7 +585,7 @@ footer a:hover{ color:#fff; }
         <p class="lead">We unite entrepreneurs, researchers, innovators, educators, investors, governments, industries, and changemakers to create solutions for humanity's greatest challenges — in technology, agriculture, sustainability, education, health, and economic development.</p>
         <div class="hero-btns">
           <a href="#ecosystem" class="btn btn-grad">Explore Our Ecosystem</a>
-          <a href="#partner" class="btn btn-outline-line">Become a Partner</a>
+          <a href="#contact" class="btn btn-outline-line" data-purpose="Become a Partner">Become a Partner</a>
         </div>
       </div>
     </div>
@@ -473,37 +611,38 @@ footer a:hover{ color:#fff; }
     <div class="text-center mb-5 reveal">
       <span class="eyebrow">Ecosystem Overview</span>
       <h2 class="mt-2">Five Organizations. One Network.</h2>
+      <p class="text-soft mt-2" style="max-width:640px;margin-inline:auto;">Four of these organizations are headquartered in the Fort Collins–Greeley corridor of Colorado, USA, with an active bridge to India — a real, working network rather than a hypothetical alliance.</p>
     </div>
     <div class="row g-4">
 
       <div class="col-md-6 col-lg-4 reveal">
-        <div class="org-card" style="--accent:var(--blue); --accent-soft:rgba(27,99,214,.12); --accent-color:var(--blue);">
+        <div class="org-card" id="youthlabco" style="--accent:var(--blue); --accent-soft:rgba(27,99,214,.12); --accent-color:var(--blue);">
           <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 16,10 8,10"/>
   <rect x="8" y="10" width="8" height="8" rx="2"/>
   <polyline points="8,18 5,22 8,16"/>
   <polyline points="16,18 19,22 16,16"/>
   <circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg></div>
           <h3>YouthLabCo</h3>
-          <div class="org-tagline">Innovation begins with people.</div>
+          <div class="org-tagline">Entrepreneurial education platform preparing youth for startups, higher education, and high-paying careers.</div>
           <div>
             <span class="tag-pill">Entrepreneurship</span>
-            <span class="tag-pill">Leadership</span>
-            <span class="tag-pill">Youth Development</span>
-            <span class="tag-pill">Startup Education</span>
-            <span class="tag-pill">Innovation Programs</span>
+            <span class="tag-pill">Career Mapping</span>
+            <span class="tag-pill">Startup Bootcamp</span>
+            <span class="tag-pill">STEM</span>
+            <span class="tag-pill">Mentorship</span>
           </div>
-          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
-  <polyline points="12,6 18,12 12,18"/></svg></a>
+          <div class="org-meta">Fort Collins, Colorado, USA &middot; Youth Lab India &middot; info@youthlabco.com</div>
+          <div class="card-btn-row"><a href="https://www.youthlabco.com" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a><button type="button" class="btn btn-outline-line btn-sm" data-bs-toggle="modal" data-bs-target="#modal-youthlabco">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4 reveal">
-        <div class="org-card" style="--accent:var(--saffron); --accent-soft:rgba(224,138,44,.14); --accent-color:var(--saffron);">
+        <div class="org-card" id="perception-of-india" style="--accent:var(--saffron); --accent-soft:rgba(224,138,44,.14); --accent-color:var(--saffron);">
           <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/>
   <ellipse cx="12" cy="12" rx="4" ry="9"/>
   <line x1="3" y1="12" x2="21" y2="12"/></svg></div>
           <h3>Perception of India</h3>
-          <div class="org-tagline">Changing how the world experiences India.</div>
+          <div class="org-tagline">Changing how the world experiences India — culture, tourism, and global branding.</div>
           <div>
             <span class="tag-pill">Culture</span>
             <span class="tag-pill">Tourism</span>
@@ -511,50 +650,50 @@ footer a:hover{ color:#fff; }
             <span class="tag-pill">Storytelling</span>
             <span class="tag-pill">International Relations</span>
           </div>
-          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
-  <polyline points="12,6 18,12 12,18"/></svg></a>
+          <div class="org-meta">perceptionofindia.com</div>
+          <div class="card-btn-row"><a href="https://perceptionofindia.com" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a><button type="button" class="btn btn-outline-line btn-sm" data-bs-toggle="modal" data-bs-target="#modal-perception-of-india">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4 reveal">
-        <div class="org-card" style="--accent:var(--green); --accent-soft:rgba(20,167,108,.12); --accent-color:var(--green);">
+        <div class="org-card" id="igatt" style="--accent:var(--green); --accent-soft:rgba(20,167,108,.12); --accent-color:var(--green);">
           <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/>
   <circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/>
   <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg></div>
           <h3>IGATT</h3>
-          <div class="org-tagline">Building sustainable agriculture for future generations.</div>
+          <div class="org-tagline">Institute for Global Agriculture &amp; Technology Transfer — AgTech education, food security, and climate-smart enterprise.</div>
           <div>
-            <span class="tag-pill">Agriculture</span>
             <span class="tag-pill">Food Security</span>
-            <span class="tag-pill">Water</span>
-            <span class="tag-pill">Climate Innovation</span>
             <span class="tag-pill">Technology Transfer</span>
+            <span class="tag-pill">Climate Adaptation</span>
+            <span class="tag-pill">Water &amp; Energy</span>
+            <span class="tag-pill">Ag Business Dev.</span>
           </div>
-          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
-  <polyline points="12,6 18,12 12,18"/></svg></a>
+          <div class="org-meta">Fort Collins, Colorado, USA &middot; info@igatt.org</div>
+          <div class="card-btn-row"><a href="https://igatt.org" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a><button type="button" class="btn btn-outline-line btn-sm" data-bs-toggle="modal" data-bs-target="#modal-igatt">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4 reveal">
-        <div class="org-card" style="--accent:var(--teal); --accent-soft:rgba(14,165,160,.12); --accent-color:var(--teal);">
+        <div class="org-card" id="innop-global" style="--accent:var(--teal); --accent-soft:rgba(14,165,160,.12); --accent-color:var(--teal);">
           <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,15 21,5"/>
   <polyline points="15,5 21,5 21,11"/></svg></div>
           <h3>InnoP Global</h3>
-          <div class="org-tagline">Helping startups scale globally.</div>
+          <div class="org-tagline">Innovative-Preneur accelerator helping AgTech, Biotech, CleanTech &amp; AI startups scale globally.</div>
           <div>
             <span class="tag-pill">Startup Accelerator</span>
             <span class="tag-pill">Mentorship</span>
-            <span class="tag-pill">Investment</span>
+            <span class="tag-pill">Investor Pitch</span>
             <span class="tag-pill">Incubation</span>
-            <span class="tag-pill">International Expansion</span>
+            <span class="tag-pill">Global Expansion</span>
           </div>
-          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
-  <polyline points="12,6 18,12 12,18"/></svg></a>
+          <div class="org-meta">Greeley, Colorado, USA &middot; info@innopglobal.com</div>
+          <div class="card-btn-row"><a href="https://innopglobal.com" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a><button type="button" class="btn btn-outline-line btn-sm" data-bs-toggle="modal" data-bs-target="#modal-innop-global">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4 reveal">
-        <div class="org-card" style="--accent:var(--deep-blue); --accent-soft:rgba(10,46,92,.10); --accent-color:var(--deep-blue);">
+        <div class="org-card" id="dinntek" style="--accent:var(--deep-blue); --accent-soft:rgba(10,46,92,.10); --accent-color:var(--deep-blue);">
           <div class="org-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/>
   <rect x="9" y="9" width="6" height="6"/>
   <line x1="9" y1="1.5" x2="9" y2="6"/><line x1="15" y1="1.5" x2="15" y2="6"/>
@@ -562,16 +701,16 @@ footer a:hover{ color:#fff; }
   <line x1="1.5" y1="9" x2="6" y2="9"/><line x1="1.5" y1="15" x2="6" y2="15"/>
   <line x1="18" y1="9" x2="22.5" y2="9"/><line x1="18" y1="15" x2="22.5" y2="15"/></svg></div>
           <h3>DINNTEK</h3>
-          <div class="org-tagline">Commercializing technologies that solve global challenges.</div>
+          <div class="org-tagline">Sustainable technology transfer for clean energy, water, food, and healthier communities.</div>
           <div>
-            <span class="tag-pill">Research</span>
-            <span class="tag-pill">Technology</span>
-            <span class="tag-pill">Engineering</span>
-            <span class="tag-pill">Product Innovation</span>
-            <span class="tag-pill">Commercialization</span>
+            <span class="tag-pill">Sustainability</span>
+            <span class="tag-pill">Tech Transfer</span>
+            <span class="tag-pill">Water &amp; Energy</span>
+            <span class="tag-pill">Consulting</span>
+            <span class="tag-pill">Community Health</span>
           </div>
-          <a href="#" class="visit-link">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/>
-  <polyline points="12,6 18,12 12,18"/></svg></a>
+          <div class="org-meta">dinntek.com</div>
+          <div class="card-btn-row"><a href="https://dinntek.com" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Website <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a><button type="button" class="btn btn-outline-line btn-sm" data-bs-toggle="modal" data-bs-target="#modal-dinntek">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div>
         </div>
       </div>
 
@@ -703,24 +842,24 @@ footer a:hover{ color:#fff; }
   <rect x="8" y="10" width="8" height="8" rx="2"/>
   <polyline points="8,18 5,22 8,16"/>
   <polyline points="16,18 19,22 16,16"/>
-  <circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg><h5>Startup Accelerator</h5><p class="text-soft small mb-0">Structured growth support for early-stage ventures.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><polygon points="13,2 4,14 12,14 11,22 20,10 12,10"/></svg><h5>Innovation Bootcamp</h5><p class="text-soft small mb-0">Intensive sprints turning ideas into prototypes.</p></div></div>
+  <circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg><h5>Startup Accelerator</h5><p class="text-soft small mb-0">Structured growth support for early-stage ventures.</p><button type="button" class="btn btn-know-more mt-3" data-bs-toggle="modal" data-bs-target="#prog-accelerator">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div></div>
+      <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><polygon points="13,2 4,14 12,14 11,22 20,10 12,10"/></svg><h5>Innovation Bootcamp</h5><p class="text-soft small mb-0">Intensive sprints turning ideas into prototypes.</p><button type="button" class="btn btn-know-more mt-3" data-bs-toggle="modal" data-bs-target="#prog-bootcamp">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div></div>
       <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/>
-  <polyline points="9,13.5 7,22 12,19 17,22 15,13.5"/></svg><h5>Global Fellowship</h5><p class="text-soft small mb-0">A cross-border cohort of emerging changemakers.</p></div></div>
+  <polyline points="9,13.5 7,22 12,19 17,22 15,13.5"/></svg><h5>Global Fellowship</h5><p class="text-soft small mb-0">A cross-border cohort of emerging changemakers.</p><button type="button" class="btn btn-know-more mt-3" data-bs-toggle="modal" data-bs-target="#prog-fellowship">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div></div>
       <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,3 22,8 12,13 2,8"/>
   <polyline points="5,9.5 5,15 12,18 19,15 19,9.5"/>
-  <line x1="22" y1="8" x2="22" y2="13"/></svg><h5>Leadership Academy</h5><p class="text-soft small mb-0">Building the next generation of responsible leaders.</p></div></div>
+  <line x1="22" y1="8" x2="22" y2="13"/></svg><h5>Leadership Academy</h5><p class="text-soft small mb-0">Building the next generation of responsible leaders.</p><button type="button" class="btn btn-know-more mt-3" data-bs-toggle="modal" data-bs-target="#prog-leadership">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div></div>
       <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/>
   <circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/>
-  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg><h5>AgTech Program</h5><p class="text-soft small mb-0">Technology-driven solutions for farmers and food systems.</p></div></div>
+  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg><h5>AgTech Program</h5><p class="text-soft small mb-0">Technology-driven solutions for farmers and food systems.</p><button type="button" class="btn btn-know-more mt-3" data-bs-toggle="modal" data-bs-target="#prog-agtech">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div></div>
       <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/>
-  <line x1="21" y1="21" x2="16" y2="16"/></svg><h5>Research Collaboration</h5><p class="text-soft small mb-0">Joint research initiatives with universities worldwide.</p></div></div>
+  <line x1="21" y1="21" x2="16" y2="16"/></svg><h5>Research Collaboration</h5><p class="text-soft small mb-0">Joint research initiatives with universities worldwide.</p><button type="button" class="btn btn-know-more mt-3" data-bs-toggle="modal" data-bs-target="#prog-research">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div></div>
       <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/>
   <path d="M5 11 A7 7 0 0 0 19 11"/>
   <line x1="12" y1="18" x2="12" y2="22"/>
-  <line x1="8" y1="22" x2="16" y2="22"/></svg><h5>International Conference</h5><p class="text-soft small mb-0">Convening the ecosystem's global community annually.</p></div></div>
+  <line x1="8" y1="22" x2="16" y2="22"/></svg><h5>International Conference</h5><p class="text-soft small mb-0">Convening the ecosystem's global community annually.</p><button type="button" class="btn btn-know-more mt-3" data-bs-toggle="modal" data-bs-target="#prog-conference">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div></div>
       <div class="col-md-6 col-lg-3"><div class="program-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/>
-  <text x="12" y="16.5" font-size="10" font-family="sans-serif" font-weight="700" text-anchor="middle">$</text></svg><h5>Investor Connect</h5><p class="text-soft small mb-0">Matching high-impact ventures with capital.</p></div></div>
+  <text x="12" y="16.5" font-size="10" font-family="sans-serif" font-weight="700" text-anchor="middle">$</text></svg><h5>Investor Connect</h5><p class="text-soft small mb-0">Matching high-impact ventures with capital.</p><button type="button" class="btn btn-know-more mt-3" data-bs-toggle="modal" data-bs-target="#prog-investor">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button></div></div>
     </div>
   </div>
 </section>
@@ -748,6 +887,9 @@ footer a:hover{ color:#fff; }
   <line x1="16.5" y1="13" x2="16.5" y2="13.01"/><line x1="17.5" y1="13" x2="17.5" y2="13.01"/></svg><h5>Corporations</h5><p class="text-soft small mb-0">Open innovation and technology commercialization.</p></div></div>
       <div class="col-md-6 col-lg-3"><div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,15 21,5"/>
   <polyline points="15,5 21,5 21,11"/></svg><h5>Investors</h5><p class="text-soft small mb-0">Discover high-impact startups and breakthrough technologies.</p></div></div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="#contact" class="btn btn-grad" data-purpose="Become a Partner">Become a Partner</a>
     </div>
   </div>
 </section>
@@ -890,16 +1032,69 @@ footer a:hover{ color:#fff; }
       <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Let's Build the Future Together</h2>
       <p class="mt-3 mb-4" style="max-width:640px;margin-inline:auto;opacity:.92;">Whether you are an entrepreneur, researcher, investor, educator, policymaker, student, or corporate leader, our ecosystem provides opportunities to collaborate, innovate, and create lasting impact.</p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a href="#partner" class="btn btn-white">Become a Partner</a>
-        <a href="#programs" class="btn btn-outline-line">Join Our Programs</a>
-        <a href="#contact" class="btn btn-outline-line">Contact Us</a>
+        <a href="#contact" class="btn btn-white" data-purpose="Become a Partner">Become a Partner</a>
+        <a href="#contact" class="btn btn-outline-line" data-purpose="Join a Program">Join Our Programs</a>
+        <a href="#contact" class="btn btn-outline-line" data-purpose="General Inquiry">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section section-mist" id="contact">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="mt-2">Contact Us, Join a Program, or Become a Partner</h2>
+      <p class="text-soft mt-2" style="max-width:600px;margin-inline:auto;">One simple form for every kind of conversation — tell us why you're reaching out and we'll route it to the right team.</p>
+    </div>
+    <div class="row justify-content-center reveal">
+      <div class="col-lg-8">
+        <form class="contact-form glass" id="contactForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="contactName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="contactName" required>
+            </div>
+            <div class="col-md-6">
+              <label for="contactEmail" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="contactEmail" required>
+            </div>
+            <div class="col-12">
+              <label for="contactPurpose" class="form-label">Purpose</label>
+              <select class="form-select" id="contactPurpose" required>
+                <option value="" disabled selected>Select a purpose</option>
+                <option>General Inquiry</option>
+                <option>Become a Partner</option>
+                <option>Join a Program</option>
+                <option>Media &amp; Press</option>
+                <option>Investor Inquiry</option>
+                <option>Volunteer</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="contactMessage" class="form-label">Message</label>
+              <textarea class="form-control" id="contactMessage" rows="5" required placeholder="Tell us a bit about what you're looking for..."></textarea>
+            </div>
+            <div class="col-12 d-flex flex-wrap align-items-center gap-3 mt-2">
+              <button type="submit" class="btn btn-grad">Send Message</button>
+              <span class="text-soft small" id="contactHint">We'll open your email app with this pre-filled — you can review it before sending.</span>
+            </div>
+            <div class="col-12">
+              <div class="alert alert-success d-none mt-2" id="contactSuccess" role="alert">
+                Your email app should now be open with this message ready to send. If nothing opened, email us directly instead.
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer id="contact">
+<footer id="site-footer">
   <div class="container">
     <div class="row g-4">
       <div class="col-6 col-md-2">
@@ -910,11 +1105,11 @@ footer a:hover{ color:#fff; }
       </div>
       <div class="col-6 col-md-2">
         <h6>Organizations</h6>
-        <a href="#">YouthLabCo</a>
-        <a href="#">Perception of India</a>
-        <a href="#">IGATT</a>
-        <a href="#">InnoP Global</a>
-        <a href="#">DINNTEK</a>
+        <a href="https://www.youthlabco.com" target="_blank" rel="noopener">YouthLabCo</a>
+        <a href="https://perceptionofindia.com" target="_blank" rel="noopener">Perception of India</a>
+        <a href="https://igatt.org" target="_blank" rel="noopener">IGATT</a>
+        <a href="https://innopglobal.com" target="_blank" rel="noopener">InnoP Global</a>
+        <a href="https://dinntek.com" target="_blank" rel="noopener">DINNTEK</a>
       </div>
       <div class="col-6 col-md-2">
         <h6>Programs</h6>
@@ -961,6 +1156,393 @@ footer a:hover{ color:#fff; }
   </div>
 </footer>
 
+
+<!-- ORGANIZATION DIALOGS -->
+<div class="modal fade" id="modal-youthlabco" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--blue);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 16,10 8,10"/><rect x="8" y="10" width="8" height="8" rx="2"/><polyline points="8,18 5,22 8,16"/><polyline points="16,18 19,22 16,16"/><circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">YouthLabCo</h5>
+            <div class="org-modal-meta">Fort Collins, Colorado, USA &middot; Youth Lab India &middot; info@youthlabco.com</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-soft mb-4">Entrepreneurial education platform preparing youth for startups, higher education, and high-paying careers.</p>
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Many young people never get early, hands-on exposure to entrepreneurship, career planning, or real-world problem solving before they have to choose a path.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Through startup bootcamps, mentorship, and career-mapping programs delivered directly in schools and communities across Colorado and India.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>Entrepreneurship and innovation programs, STEM and soft-skills classes, and career-mapping tools that connect students into the wider ecosystem's mentor and accelerator network.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="https://www.youthlabco.com" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Official Website <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="11" height="11" rx="2"/><polyline points="10,3 21,3 21,14"/><line x1="21" y1="3" x2="11" y2="13"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-perception-of-india" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--saffron);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">Perception of India</h5>
+            <div class="org-modal-meta">perceptionofindia.com</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-soft mb-4">Changing how the world experiences India — culture, tourism, and global branding.</p>
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>India's global image is often reduced to a handful of stereotypes that don't reflect its full economic, cultural, and diplomatic reality.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Through storytelling, cultural diplomacy, tourism campaigns, and media partnerships that reach international audiences directly.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>Culture and tourism content, nation-branding campaigns, and international-relations initiatives that connect global audiences with a fuller picture of India.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="https://perceptionofindia.com" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Official Website <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="11" height="11" rx="2"/><polyline points="10,3 21,3 21,14"/><line x1="21" y1="3" x2="11" y2="13"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-igatt" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--green);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/><circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">IGATT</h5>
+            <div class="org-modal-meta">Fort Collins, Colorado, USA &middot; info@igatt.org</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-soft mb-4">Institute for Global Agriculture &amp; Technology Transfer — AgTech education, food security, and climate-smart enterprise.</p>
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Smallholder farmers and food systems worldwide face growing pressure from climate change, water scarcity, and slow technology adoption.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Through applied research, technology-transfer partnerships, and climate-smart training delivered directly to farming communities.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>Food-security programs, agricultural technology transfer, water and energy management projects, and climate-adaptation research based out of Fort Collins, Colorado.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="https://igatt.org" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Official Website <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="11" height="11" rx="2"/><polyline points="10,3 21,3 21,14"/><line x1="21" y1="3" x2="11" y2="13"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-innop-global" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,15 21,5"/><polyline points="15,5 21,5 21,11"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">InnoP Global</h5>
+            <div class="org-modal-meta">Greeley, Colorado, USA &middot; info@innopglobal.com</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-soft mb-4">Innovative-Preneur accelerator helping AgTech, Biotech, CleanTech &amp; AI startups scale globally.</p>
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Early-stage founders, especially outside major hubs, often lack access to mentors, capital, and go-to-market expertise.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Through a structured accelerator model pairing founders with experienced mentors, boot camps, and a global investor network.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>Startup incubation and acceleration in AgTech, Biotech, CleanTech, IoT, AI and Big Data, based in Greeley, Colorado with global reach.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="https://innopglobal.com" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Official Website <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="11" height="11" rx="2"/><polyline points="10,3 21,3 21,14"/><line x1="21" y1="3" x2="11" y2="13"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-dinntek" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--deep-blue);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1.5" x2="9" y2="6"/><line x1="15" y1="1.5" x2="15" y2="6"/><line x1="9" y1="18" x2="9" y2="22.5"/><line x1="15" y1="18" x2="15" y2="22.5"/><line x1="1.5" y1="9" x2="6" y2="9"/><line x1="1.5" y1="15" x2="6" y2="15"/><line x1="18" y1="9" x2="22.5" y2="9"/><line x1="18" y1="15" x2="22.5" y2="15"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">DINNTEK</h5>
+            <div class="org-modal-meta">dinntek.com</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-soft mb-4">Sustainable technology transfer for clean energy, water, food, and healthier communities.</p>
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Sustainable technologies often stay stuck in the lab instead of reaching the communities and enterprises that need them most.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Through hands-on consulting and technology-transfer partnerships that translate research into practical, appropriate solutions.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>Water, food and energy sustainability projects, technology education, and enterprise consulting aimed at healthier, more resilient communities.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="https://dinntek.com" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit Official Website <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="11" height="11" rx="2"/><polyline points="10,3 21,3 21,14"/><line x1="21" y1="3" x2="11" y2="13"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAM DIALOGS -->
+<div class="modal fade" id="prog-accelerator" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 16,10 8,10"/><rect x="8" y="10" width="8" height="8" rx="2"/><polyline points="8,18 5,22 8,16"/><polyline points="16,18 19,22 16,16"/><circle cx="12" cy="13.5" r="1.3" fill="currentColor" stroke="none"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">Startup Accelerator</h5>
+            <div class="org-modal-meta">Structured growth support for early-stage ventures.</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Great ideas often stall without structured mentorship, capital access, and a clear go-to-market path.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>A cohort-based program pairing founders with mentors, structured milestones, and direct investor introductions.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>Business-model refinement, pitch coaching, and investor connects, delivered in partnership with InnoP Global.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="#contact" class="btn btn-grad btn-sm" data-bs-dismiss="modal" data-purpose="Join a Program" data-program="Startup Accelerator">Get in Touch <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="prog-bootcamp" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><polygon points="13,2 4,14 12,14 11,22 20,10 12,10"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">Innovation Bootcamp</h5>
+            <div class="org-modal-meta">Intensive sprints turning ideas into prototypes.</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Turning a raw idea into a testable prototype requires focused time, the right tools, and expert feedback.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Multi-day sprints combining design-thinking workshops, hands-on building, and mentor critique sessions.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>A fast-paced program taking participants from concept to working prototype, with continued support from ecosystem mentors.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="#contact" class="btn btn-grad btn-sm" data-bs-dismiss="modal" data-purpose="Join a Program" data-program="Innovation Bootcamp">Get in Touch <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="prog-fellowship" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><polyline points="9,13.5 7,22 12,19 17,22 15,13.5"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">Global Fellowship</h5>
+            <div class="org-modal-meta">A cross-border cohort of emerging changemakers.</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Emerging changemakers rarely get the chance to learn alongside peers from other countries and sectors.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>A year-long, cross-border cohort format combining virtual sessions, in-person summits, and paired mentorship.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>A fellowship connecting participants across all five organizations, with joint projects spanning entrepreneurship, agriculture, and technology.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="#contact" class="btn btn-grad btn-sm" data-bs-dismiss="modal" data-purpose="Join a Program" data-program="Global Fellowship">Get in Touch <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="prog-leadership" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><polygon points="12,3 22,8 12,13 2,8"/><polyline points="5,9.5 5,15 12,18 19,15 19,9.5"/><line x1="22" y1="8" x2="22" y2="13"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">Leadership Academy</h5>
+            <div class="org-modal-meta">Building the next generation of responsible leaders.</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Technical or entrepreneurial skill alone isn't enough — leaders also need to manage people, ambiguity, and growth.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Workshops, case studies, and mentorship from experienced founders and executives across the network.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>A structured leadership curriculum for youth and early-career professionals, delivered in partnership with YouthLabCo.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="#contact" class="btn btn-grad btn-sm" data-bs-dismiss="modal" data-purpose="Join a Program" data-program="Leadership Academy">Get in Touch <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="prog-agtech" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="18" cy="12" r="3"/><circle cx="12" cy="18" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">AgTech Program</h5>
+            <div class="org-modal-meta">Technology-driven solutions for farmers and food systems.</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Farmers and agri-entrepreneurs often can't access the latest tools for water, soil, and climate management.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Field demonstrations, technology-transfer partnerships, and hands-on training with local cooperatives.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>Practical AgTech adoption support, from smart irrigation to climate-adaptive practices, led by IGATT's research team.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="#contact" class="btn btn-grad btn-sm" data-bs-dismiss="modal" data-purpose="Join a Program" data-program="AgTech Program">Get in Touch <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="prog-research" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">Research Collaboration</h5>
+            <div class="org-modal-meta">Joint research initiatives with universities worldwide.</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Good research can sit unused in journals instead of reaching the people and businesses who could apply it.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Joint projects between universities, startups, and ecosystem partners with shared funding and clear commercialization goals.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>Structured research partnerships spanning agriculture, sustainable technology, and youth education, coordinated across all five organizations.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="#contact" class="btn btn-grad btn-sm" data-bs-dismiss="modal" data-purpose="Join a Program" data-program="Research Collaboration">Get in Touch <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="prog-conference" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 11 A7 7 0 0 0 19 11"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">International Conference</h5>
+            <div class="org-modal-meta">Convening the ecosystem's global community annually.</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>The ecosystem's community is spread across countries and rarely gets to meet, share progress, and forge new partnerships in person.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>An annual gathering combining keynote sessions, workshops, and structured networking across all five organizations.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>A yearly flagship event bringing together founders, researchers, investors, and policymakers from the entire network.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="#contact" class="btn btn-grad btn-sm" data-bs-dismiss="modal" data-purpose="Join a Program" data-program="International Conference">Get in Touch <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="prog-investor" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><text x="12" y="16.5" font-size="10" font-family="sans-serif" font-weight="700" text-anchor="middle">$</text></svg></div>
+          <div>
+            <h5 class="modal-title mb-1">Investor Connect</h5>
+            <div class="org-modal-meta">Matching high-impact ventures with capital.</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>High-impact startups and interested investors often simply never find each other.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Curated introductions, pitch sessions, and due-diligence support drawing on the ecosystem's accelerator and research pipeline.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>A matchmaking program connecting vetted, high-impact ventures with investors, sourced through InnoP Global and the wider ecosystem.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="#contact" class="btn btn-grad btn-sm" data-bs-dismiss="modal" data-purpose="Join a Program" data-program="Investor Connect">Get in Touch <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- MODALS -->
 <div class="modal fade" id="privacyModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-scrollable">
@@ -981,6 +1563,73 @@ footer a:hover{ color:#fff; }
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+/* ---------- Contact form: purpose auto-select + program prefill ---------- */
+const purposeSelect = document.getElementById('contactPurpose');
+const messageField = document.getElementById('contactMessage');
+document.querySelectorAll('[data-purpose]').forEach(el => {
+  el.addEventListener('click', () => {
+    if (!purposeSelect) return;
+    purposeSelect.value = el.dataset.purpose;
+    const program = el.dataset.program;
+    if (program && !messageField.value.trim()) {
+      messageField.value = `I'm interested in the "${program}" program. `;
+    }
+  });
+});
+
+/* ---------- Contact form: build a pre-filled email on submit ---------- */
+// Replace this with the ecosystem's real shared inbox before publishing.
+const CONTACT_EMAIL = 'hello@theecosystem.org';
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const purpose = purposeSelect.value;
+    const message = messageField.value.trim();
+    const subject = `${purpose} — message from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\nPurpose: ${purpose}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    try { window.location.href = mailtoLink; } catch (err) { /* ignore in sandboxed preview contexts */ }
+    document.getElementById('contactSuccess').classList.remove('d-none');
+  });
+}
+
+/* ---------- Robust in-page navigation ----------
+   Handled manually with scrollIntoView instead of relying on the browser's
+   native "#hash" jump, which some embedded/in-app preview browsers can
+   mishandle (e.g. Become a Partner / Join a Program / Contact Us buttons
+   appearing to "redirect" instead of scrolling to the form on this page). */
+document.querySelectorAll('a[href^="#"]:not([data-bs-toggle])').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href').slice(1);
+    if (!targetId) return;
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+    e.preventDefault();
+    // If this link also closes a modal (data-bs-dismiss="modal"), wait for the
+    // close transition to finish before scrolling, so the scroll isn't fought
+    // by the modal's own layout/scroll locking.
+    const delay = this.hasAttribute('data-bs-dismiss') ? 350 : 0;
+    setTimeout(() => {
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try { history.replaceState(null, '', '#' + targetId); } catch (err) { /* ignore in sandboxed preview contexts */ }
+    }, delay);
+  });
+});
+
+/* ---------- Floating quick-visit widget ---------- */
+const fabWrap = document.getElementById('fabWrap');
+const fabToggle = document.getElementById('fabToggle');
+if (fabWrap && fabToggle) {
+  fabToggle.addEventListener('click', () => fabWrap.classList.toggle('open'));
+  document.addEventListener('click', (e) => {
+    if (!fabWrap.contains(e.target)) fabWrap.classList.remove('open');
+  });
+}
+
 /* ---------- Theme toggle ---------- */
 const themeBtn = document.getElementById('themeToggle');
 themeBtn.addEventListener('click', () => {
@@ -1098,8 +1747,10 @@ function initNetworkCanvas(canvasId, opts){
   window.addEventListener('resize', () => { resize(); initNodes(); });
   resize(); initNodes(); step();
 }
-initNetworkCanvas('hero-canvas', { count:70, linkDist:130, nodeColor:'rgba(27,99,214,0.85)', lineColor:'rgba(27,99,214,0.14)' });
-initNetworkCanvas('network-canvas', { count:90, linkDist:110, nodeColor:'rgba(255,255,255,0.9)', lineColor:'rgba(255,255,255,0.12)' });
+try {
+  initNetworkCanvas('hero-canvas', { count:70, linkDist:130, nodeColor:'rgba(27,99,214,0.85)', lineColor:'rgba(27,99,214,0.14)' });
+  initNetworkCanvas('network-canvas', { count:90, linkDist:110, nodeColor:'rgba(255,255,255,0.9)', lineColor:'rgba(255,255,255,0.12)' });
+} catch (err) { /* background animation is decorative only; ignore failures */ }
 </script>
 </body>
 </html>
