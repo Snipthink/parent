@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Kaamwale — Dark Mode Overrides
+   Activated via [data-theme="dark"] on <html>. Values mirror the light
+   tokens in style.css so every component adapts automatically.
+   ========================================================================== */
+
+[data-theme="dark"] {
+  --bg: #0B0F19;
+  --bg-alt: #0F1424;
+  --surface: #141A2C;
+  --surface-2: #101526;
+  --ink: #E9EAF6;
+  --ink-soft: #9AA0BE;
+  --ink-faint: #6B7093;
+  --border: rgba(231, 233, 245, 0.08);
+  --border-strong: rgba(231, 233, 245, 0.16);
+
+  --primary-soft: rgba(79, 70, 229, 0.16);
+  --emerald-soft: rgba(16, 185, 129, 0.14);
+
+  --gradient-radial: radial-gradient(circle at 30% 20%, rgba(124, 108, 251, 0.28), transparent 60%);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 8px 26px -8px rgba(0,0,0,0.55);
+  --shadow-lg: 0 26px 60px -18px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 0 1px rgba(124,108,251,0.15), 0 22px 55px -14px rgba(124,108,251,0.4);
+}
+
+[data-theme="dark"] body { background: var(--bg); }
+
+[data-theme="dark"] .stats-strip { background: var(--surface); }
+
+[data-theme="dark"] .phone-screen { background: linear-gradient(160deg, #1B2138, #131829); }
+[data-theme="dark"] .ps-card { background: #1B2138; box-shadow: var(--shadow-sm); }
+[data-theme="dark"] .ps-card h6 { color: #fff; }
+[data-theme="dark"] .ps-map { background:
+  radial-gradient(circle at 30% 30%, rgba(79,70,229,0.35), transparent 60%),
+  radial-gradient(circle at 70% 70%, rgba(34,211,238,0.28), transparent 55%), #1B2138; }
+
+[data-theme="dark"] .map-placeholder {
+  background: repeating-linear-gradient(45deg, var(--surface), var(--surface) 10px, var(--bg-alt) 10px, var(--bg-alt) 20px);
+}
+
+[data-theme="dark"] .contact-form .form-control::placeholder { color: var(--ink-faint); }
+
+[data-theme="dark"] .loader-ring { border-color: var(--border); border-top-color: var(--primary); }
+
+[data-theme="dark"] .radar-center svg { color: #fff; }
+[data-theme="dark"] .navbar-swift.is-scrolled { box-shadow: 0 6px 24px rgba(0,0,0,0.35); }
+
+/* Slightly brighten brand gradient in dark mode for contrast against near-black */
+[data-theme="dark"] .gradient-brand-text,
+[data-theme="dark"] .hero-copy h1 .accent-word {
+  filter: brightness(1.12) saturate(1.1);
+}

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaamwale — Home Services in Minutes, Not Hours</title>
+<meta name="description" content="Kaamwale is an AI-powered on-demand home services platform that instantly connects customers with nearby verified professionals — electricians, plumbers, cleaners, and more.">
+<meta name="theme-color" content="#4F46E5">
+
+<!-- Avoid theme flash: apply saved theme before first paint -->
+<script>
+  (function () {
+    var t = localStorage.getItem('kaamwale-theme');
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<!-- App styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dark.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============================= PAGE LOADER ============================= -->
+<div class="page-loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-ring"></div>
+</div>
+
+<!-- ============================= NAVBAR ============================= -->
+<header class="navbar-swift" id="mainNav">
+  <div class="container-xl nav-inner">
+    <a href="#home" class="brand-mark">
+      <svg class="logo-node" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+        <rect width="40" height="40" rx="12" fill="url(#logoGrad)"/>
+        <path d="M13 22L19 12L21 18H27L21 28L19 22H13Z" fill="white"/>
+      </svg>
+      Kaamwale
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#why-kaamwale">Why Kaamwale</a>
+      <a href="#become-partner">Become a Partner</a>
+      <a href="#get-service">Get Service</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta-group">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a href="#become-partner" class="btn-swift btn-ghost-swift btn-sm-swift d-none d-lg-inline-flex">Become a Partner</a>
+      <a href="#get-service" class="btn-swift btn-primary-swift btn-sm-swift d-none d-lg-inline-flex">Get Service</a>
+      <button class="nav-toggler" id="navToggler" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= HERO ============================= -->
+<section class="hero" id="home">
+  <div class="container-xl">
+    <div class="hero-grid">
+      <div class="hero-copy" data-reveal>
+        <span class="eyebrow">AI Dispatch · Live in 90+ Cities</span>
+        <h1>Home Services in <span class="accent-word">Minutes</span>, Not Hours.</h1>
+        <p class="lead-sub">Kaamwale instantly connects you with nearby verified professionals for trusted, fast, and secure home services — from a leaking tap to a full home makeover.</p>
+        <div class="hero-actions">
+          <a href="#get-service" class="btn-swift btn-primary-swift"><i class="bi bi-phone"></i><span>Download Customer App</span></a>
+          <a href="#become-partner" class="btn-swift btn-ghost-swift"><i class="bi bi-briefcase"></i><span>Become a Partner</span></a>
+        </div>
+        <div class="hero-trust">
+          <div class="avatar-stack">
+            <span style="background:#4F46E5">RK</span>
+            <span style="background:#22D3EE">AS</span>
+            <span style="background:#10B981">MT</span>
+            <span style="background:#F59E0B">PJ</span>
+          </div>
+          <small><strong>25,000+</strong> customers already booked this month</small>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal data-reveal-delay="2">
+        <div class="radar-wrap">
+          <div class="radar-ring r1"></div>
+          <div class="radar-ring r2"></div>
+          <div class="radar-ring r3"></div>
+          <div class="radar-sweep"></div>
+          <div class="radar-pulse"></div>
+          <div class="radar-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-9.3-9.4C1 8.4 2.6 5 6 5c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 5 3.4 3.3 6.6C19 15.8 12 21 12 21z"/></svg>
+          </div>
+          <div class="radar-node" style="top:6%; left:50%; margin-left:-26px;"><i class="bi bi-lightning-charge-fill"></i></div>
+          <div class="radar-node" style="top:50%; left:2%; margin-top:-26px; animation-delay:.6s;"><i class="bi bi-wrench-adjustable"></i></div>
+          <div class="radar-node" style="top:50%; right:2%; margin-top:-26px; animation-delay:1.2s;"><i class="bi bi-brush"></i></div>
+          <div class="radar-node" style="bottom:6%; left:50%; margin-left:-26px; animation-delay:1.8s;"><i class="bi bi-snow"></i></div>
+        </div>
+
+        <div class="hero-float-card card-a">
+          <div class="fc-icon"><i class="bi bi-shield-check"></i></div>
+          <div><small>Professional</small><strong>Verified &amp; Background-Checked</strong></div>
+        </div>
+        <div class="hero-float-card card-b">
+          <div class="fc-icon"><i class="bi bi-clock-history"></i></div>
+          <div><small>Avg. Response</small><strong>Under 9 minutes</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= STATS ============================= -->
+<section class="stats-strip">
+  <div class="container-xl">
+    <div class="row g-4">
+      <div class="col-6 col-lg" data-reveal>
+        <div class="stat-item">
+          <div class="stat-num"><span data-counter="25000">0</span><span class="plus">+</span></div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg" data-reveal data-reveal-delay="1">
+        <div class="stat-item">
+          <div class="stat-num"><span data-counter="8000">0</span><span class="plus">+</span></div>
+          <div class="stat-label">Verified Professionals</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg" data-reveal data-reveal-delay="2">
+        <div class="stat-item">
+          <div class="stat-num"><span data-counter="50">0</span><span class="plus">+</span></div>
+          <div class="stat-label">Home Services</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg" data-reveal data-reveal-delay="3">
+        <div class="stat-item">
+          <div class="stat-num"><span data-counter="100000">0</span><span class="plus">+</span></div>
+          <div class="stat-label">Completed Jobs</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg" data-reveal data-reveal-delay="4">
+        <div class="stat-item">
+          <div class="stat-num"><span data-counter="4.9" data-decimals="1">0</span>★</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SERVICES ============================= -->
+<section class="section-pad" id="services">
+  <div class="container-xl">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">What we dispatch</span>
+      <h2 class="section-title">One app, every home service</h2>
+      <p class="section-sub">From urgent repairs to everyday help — book a verified professional for any job around your home.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Core 8 always visible -->
+      <div class="service-card" data-reveal><div class="service-icon"><i class="bi bi-lightning-charge-fill"></i></div><h3>Electrician</h3><p>Wiring, switchboards, fittings &amp; urgent electrical fixes.</p></div>
+      <div class="service-card" data-reveal data-reveal-delay="1"><div class="service-icon"><i class="bi bi-wrench-adjustable"></i></div><h3>Plumber</h3><p>Leaks, blockages, taps and full bathroom fittings.</p></div>
+      <div class="service-card" data-reveal data-reveal-delay="2"><div class="service-icon"><i class="bi bi-hammer"></i></div><h3>Carpenter</h3><p>Furniture repair, custom fittings &amp; woodwork.</p></div>
+      <div class="service-card" data-reveal data-reveal-delay="3"><div class="service-icon"><i class="bi bi-brush"></i></div><h3>House Cleaning</h3><p>Deep cleaning, sanitization &amp; move-in/out cleanup.</p></div>
+      <div class="service-card" data-reveal><div class="service-icon"><i class="bi bi-snow"></i></div><h3>AC Repair</h3><p>Servicing, gas refill &amp; installation for all brands.</p></div>
+      <div class="service-card" data-reveal data-reveal-delay="1"><div class="service-icon"><i class="bi bi-arrow-repeat"></i></div><h3>Washing Machine Repair</h3><p>Diagnostics, part replacement &amp; maintenance.</p></div>
+      <div class="service-card" data-reveal data-reveal-delay="2"><div class="service-icon"><i class="bi bi-thermometer-snow"></i></div><h3>Refrigerator Repair</h3><p>Cooling issues, gas top-up &amp; compressor repair.</p></div>
+      <div class="service-card" data-reveal data-reveal-delay="3"><div class="service-icon"><i class="bi bi-palette-fill"></i></div><h3>Painter</h3><p>Interior, exterior &amp; texture painting by pros.</p></div>
+
+      <!-- Extra 16, hidden by default -->
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-camera-video-fill"></i></div><h3>CCTV Installation</h3><p>Camera setup, wiring &amp; remote monitoring.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-bug-fill"></i></div><h3>Pest Control</h3><p>Safe, effective treatment for homes and offices.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-droplet-half"></i></div><h3>RO Service</h3><p>Water purifier installation, filter change &amp; repair.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-phone-fill"></i></div><h3>Mobile Repair</h3><p>Screen, battery &amp; hardware fixes on-site.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-laptop-fill"></i></div><h3>Laptop Repair</h3><p>Diagnostics, upgrades &amp; software support.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-tv-fill"></i></div><h3>TV Repair</h3><p>Panel, display &amp; smart-TV troubleshooting.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-magic"></i></div><h3>Beautician</h3><p>At-home salon, styling &amp; grooming services.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-heart-pulse-fill"></i></div><h3>Home Nurse</h3><p>Trained nursing care &amp; post-surgery support.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-person-heart"></i></div><h3>Elder Care</h3><p>Compassionate, verified caregivers for seniors.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-emoji-smile-fill"></i></div><h3>Baby Care</h3><p>Trusted, background-checked baby sitters.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-cup-hot-fill"></i></div><h3>Cook</h3><p>Daily meals or event cooking at home.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-car-front-fill"></i></div><h3>Driver</h3><p>On-demand or long-term personal drivers.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-mortarboard-fill"></i></div><h3>Tutor</h3><p>Subject experts for school &amp; competitive exams.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-bag-heart-fill"></i></div><h3>Pet Care</h3><p>Walking, grooming &amp; at-home pet sitting.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-flower1"></i></div><h3>Gardening</h3><p>Lawn care, landscaping &amp; plant maintenance.</p></div>
+      <div class="service-card is-extra" style="display:none;"><div class="service-icon"><i class="bi bi-tools"></i></div><h3>Appliance Repair</h3><p>Microwaves, geysers, mixers &amp; more.</p></div>
+    </div>
+
+    <div class="services-toggle-wrap" data-reveal>
+      <button class="btn-swift btn-ghost-swift" id="servicesShowMore" data-expanded="false">
+        <i class="bi bi-chevron-down"></i><span>View All 24 Services</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= HOW IT WORKS ============================= -->
+<section class="section-pad" id="how-it-works" style="background:var(--bg-alt);">
+  <div class="container-xl">
+    <div class="section-head text-center mx-auto" data-reveal>
+      <span class="eyebrow">The dispatch flow</span>
+      <h2 class="section-title">From tap to task, in one flow</h2>
+      <p class="section-sub mx-auto">A single request travels through Kaamwale's matching engine to the nearest available professional — here's the full journey, for both sides.</p>
+    </div>
+
+    <div class="text-center" data-reveal>
+      <div class="flow-tabs">
+        <button class="flow-tab-btn active" data-flow-target="customer">Customer Flow</button>
+        <button class="flow-tab-btn" data-flow-target="partner">Professional Flow</button>
+      </div>
+    </div>
+
+    <div style="max-width:640px; margin:0 auto;">
+      <div class="timeline" data-flow-panel="customer" data-reveal>
+        <div class="timeline-item"><div class="timeline-node">01</div><div class="timeline-content"><h4>Open the App</h4><p>Launch Kaamwale and tell us where you are.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">02</div><div class="timeline-content"><h4>Choose a Service</h4><p>Pick from 50+ categories, from electrician to elder care.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">03</div><div class="timeline-content"><h4>Describe the Problem</h4><p>Add photos and a short note so the pro arrives prepared.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">04</div><div class="timeline-content"><h4>We Find Nearby Pros</h4><p>Our AI dispatch scans verified professionals near you in real time.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">05</div><div class="timeline-content"><h4>First Professional Accepts</h4><p>The nearest available pro accepts your job instantly.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">06</div><div class="timeline-content"><h4>Professional Arrives</h4><p>Track their live location as they head to you.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">07</div><div class="timeline-content"><h4>OTP Verification</h4><p>Confirm identity with a one-time code before work begins.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">08</div><div class="timeline-content"><h4>Service Completed</h4><p>Your job is done to the standard you expect.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">09</div><div class="timeline-content"><h4>Secure Payment</h4><p>Pay in-app by card, wallet, or UPI — no cash needed.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">10</div><div class="timeline-content"><h4>Leave a Review</h4><p>Rate your professional to help the community.</p></div></div>
+      </div>
+
+      <div class="timeline" data-flow-panel="partner" style="display:none;">
+        <div class="timeline-item"><div class="timeline-node">01</div><div class="timeline-content"><h4>Go Online</h4><p>Toggle availability to start receiving job requests.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">02</div><div class="timeline-content"><h4>Receive a Mission</h4><p>Get notified the moment a nearby job matches your skill.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">03</div><div class="timeline-content"><h4>Accept</h4><p>Review the job details and accept in one tap.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">04</div><div class="timeline-content"><h4>Reach the Customer</h4><p>Navigate with in-app turn-by-turn directions.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">05</div><div class="timeline-content"><h4>Start with OTP</h4><p>Enter the customer's OTP to begin the job securely.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">06</div><div class="timeline-content"><h4>Complete the Service</h4><p>Mark the job done once work is finished.</p></div></div>
+        <div class="timeline-item"><div class="timeline-node">07</div><div class="timeline-content"><h4>Receive Payment</h4><p>Earnings land in your wallet instantly, every time.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= WHY KAAMWALE ============================= -->
+<section class="section-pad" id="why-kaamwale">
+  <div class="container-xl">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Built for trust</span>
+      <h2 class="section-title">Why people choose Kaamwale</h2>
+      <p class="section-sub">Every layer of the platform is designed to make a stranger walking into your home feel like a known, trusted professional.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card" data-reveal><div class="feature-icon"><i class="bi bi-cpu"></i></div><h4>Instant Matching</h4><p>AI dispatch finds the nearest pro in seconds.</p></div>
+      <div class="feature-card" data-reveal data-reveal-delay="1"><div class="feature-icon"><i class="bi bi-patch-check-fill"></i></div><h4>Verified Professionals</h4><p>ID, background &amp; skill checks before onboarding.</p></div>
+      <div class="feature-card" data-reveal data-reveal-delay="2"><div class="feature-icon"><i class="bi bi-shield-lock-fill"></i></div><h4>Secure Payments</h4><p>Encrypted, cashless transactions every time.</p></div>
+      <div class="feature-card" data-reveal data-reveal-delay="3"><div class="feature-icon"><i class="bi bi-key-fill"></i></div><h4>OTP Protected Service</h4><p>Jobs start only after identity confirmation.</p></div>
+      <div class="feature-card" data-reveal data-reveal-delay="4"><div class="feature-icon"><i class="bi bi-stopwatch-fill"></i></div><h4>Fast Response</h4><p>Average arrival time under nine minutes.</p></div>
+      <div class="feature-card" data-reveal><div class="feature-icon"><i class="bi bi-receipt"></i></div><h4>Transparent Pricing</h4><p>Upfront quotes — no surprise charges.</p></div>
+      <div class="feature-card" data-reveal data-reveal-delay="1"><div class="feature-icon"><i class="bi bi-star-fill"></i></div><h4>Customer Ratings</h4><p>Real reviews keep quality consistently high.</p></div>
+      <div class="feature-card" data-reveal data-reveal-delay="2"><div class="feature-icon"><i class="bi bi-wallet2"></i></div><h4>Wallet System</h4><p>Instant refunds, cashback &amp; easy top-ups.</p></div>
+      <div class="feature-card" data-reveal data-reveal-delay="3"><div class="feature-icon"><i class="bi bi-diagram-3-fill"></i></div><h4>AI Dispatch</h4><p>Smart routing balances speed and fairness.</p></div>
+      <div class="feature-card" data-reveal data-reveal-delay="4"><div class="feature-icon"><i class="bi bi-headset"></i></div><h4>24×7 Support</h4><p>Real humans, always one tap away.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= BECOME A PARTNER ============================= -->
+<section class="section-pad section-dark" id="become-partner">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-reveal>
+        <span class="eyebrow">For skilled professionals</span>
+        <h2 class="section-title">Turn your skill into a steady income</h2>
+        <p class="section-sub" style="max-width:520px;">Join 8,000+ verified professionals earning on their own schedule — with instant job matching and same-day payouts.</p>
+
+        <div class="row g-3 my-4">
+          <div class="col-6"><div class="earn-card"><small>Avg. Weekly Earning</small><div class="earn-num">₹9,400</div></div></div>
+          <div class="col-6"><div class="earn-card"><small>Payout Speed</small><div class="earn-num">Instant</div></div></div>
+        </div>
+
+        <div class="mb-4">
+          <div class="step-pill"><span class="num">01</span><div><strong>Sign up &amp; verify</strong><p class="mb-0">Submit ID and skill documents for a quick review.</p></div></div>
+          <div class="step-pill"><span class="num">02</span><div><strong>Complete onboarding</strong><p class="mb-0">Short training on the app, OTP flow, and safety standards.</p></div></div>
+          <div class="step-pill"><span class="num">03</span><div><strong>Go online &amp; earn</strong><p class="mb-0">Start receiving job requests near you immediately.</p></div></div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#" class="store-badge"><i class="bi bi-google-play fs-4"></i><span><small>Download for</small><strong>Android APK</strong></span></a>
+          <a href="#" class="store-badge"><i class="bi bi-play-circle fs-4"></i><span><small>Get it on</small><strong>Play Store</strong></span></a>
+          <a href="#" class="store-badge"><i class="bi bi-apple fs-4"></i><span><small>Download on the</small><strong>App Store</strong></span></a>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-reveal data-reveal-delay="2">
+        <div class="phone-cluster">
+          <div class="phone-mock back">
+            <div class="notch"></div>
+            <div class="phone-screen">
+              <div class="ps-bar"><span>9:41</span><span>●●● Kaamwale</span></div>
+              <div class="phone-screen-inner">
+                <div class="ps-card"><h6>Wallet Balance</h6><div class="ps-earn">₹4,280</div><small>Updated just now</small></div>
+                <div class="ps-card"><h6>This Week</h6><small>18 jobs · 4.9★ rating</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-mock front">
+            <div class="notch"></div>
+            <div class="phone-screen">
+              <div class="ps-bar"><span>9:41</span><span>●●● Kaamwale</span></div>
+              <div class="phone-screen-inner">
+                <div class="ps-card">
+                  <span class="ps-pill"><i class="bi bi-broadcast"></i> New Mission</span>
+                  <h6 class="mt-2">AC Repair · 1.2 km away</h6>
+                  <small>Sector 21, near City Mall</small>
+                </div>
+                <div class="ps-map"><div class="ping"></div></div>
+                <div class="ps-card d-flex justify-content-between align-items-center">
+                  <div><h6 class="mb-0">Est. Earning</h6><small>₹650</small></div>
+                  <span class="ps-pill">Accept</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= GET SERVICE ============================= -->
+<section class="section-pad" id="get-service">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 order-lg-2" data-reveal>
+        <span class="eyebrow">For customers</span>
+        <h2 class="section-title">Everything you need, in one app</h2>
+        <p class="section-sub">Book, track, and pay for any home service — with your history, favorites, and receipts always on hand.</p>
+
+        <div class="get-feature-list my-4">
+          <div class="get-feature-item"><div class="gi-icon"><i class="bi bi-lightning-fill"></i></div><span>Easy Booking</span></div>
+          <div class="get-feature-item"><div class="gi-icon"><i class="bi bi-stopwatch"></i></div><span>Instant Service</span></div>
+          <div class="get-feature-item"><div class="gi-icon"><i class="bi bi-shield-lock"></i></div><span>Secure Payment</span></div>
+          <div class="get-feature-item"><div class="gi-icon"><i class="bi bi-clock-history"></i></div><span>Booking History</span></div>
+          <div class="get-feature-item"><div class="gi-icon"><i class="bi bi-heart"></i></div><span>Favorite Professionals</span></div>
+          <div class="get-feature-item"><div class="gi-icon"><i class="bi bi-wallet2"></i></div><span>Wallet</span></div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#" class="btn-swift btn-primary-swift"><i class="bi bi-android2"></i><span>Download Android App</span></a>
+          <a href="#" class="btn-swift btn-ghost-swift"><i class="bi bi-apple"></i><span>App Store</span></a>
+        </div>
+
+        <div class="mini-service-grid">
+          <div class="mini-service-chip"><i class="bi bi-lightning-charge-fill"></i><span>Electrician</span></div>
+          <div class="mini-service-chip"><i class="bi bi-wrench-adjustable"></i><span>Plumber</span></div>
+          <div class="mini-service-chip"><i class="bi bi-brush"></i><span>Cleaning</span></div>
+          <div class="mini-service-chip"><i class="bi bi-snow"></i><span>AC Repair</span></div>
+          <div class="mini-service-chip"><i class="bi bi-palette-fill"></i><span>Painter</span></div>
+          <div class="mini-service-chip"><i class="bi bi-bug-fill"></i><span>Pest Control</span></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 order-lg-1" data-reveal data-reveal-delay="2">
+        <div class="phone-cluster">
+          <div class="phone-mock back">
+            <div class="notch"></div>
+            <div class="phone-screen">
+              <div class="ps-bar"><span>9:41</span><span>●●● Kaamwale</span></div>
+              <div class="phone-screen-inner">
+                <div class="ps-card"><h6>Booking Confirmed</h6><small>Rohit K. is on the way · ETA 8 min</small></div>
+                <div class="ps-card"><span class="ps-pill"><i class="bi bi-star-fill"></i> 4.9 Rated Pro</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-mock front">
+            <div class="notch"></div>
+            <div class="phone-screen">
+              <div class="ps-bar"><span>9:41</span><span>●●● Kaamwale</span></div>
+              <div class="phone-screen-inner">
+                <div class="ps-card">
+                  <h6>What do you need help with?</h6>
+                  <small>Tap a service to book instantly</small>
+                </div>
+                <div class="ps-map"><div class="ping"></div></div>
+                <div class="ps-card d-flex justify-content-between align-items-center">
+                  <div><h6 class="mb-0">Plumber</h6><small>Available now</small></div>
+                  <span class="ps-pill">Book</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TESTIMONIALS ============================= -->
+<section class="section-pad" style="background:var(--bg-alt);" id="reviews">
+  <div class="container-xl">
+    <div class="section-head text-center mx-auto" data-reveal>
+      <span class="eyebrow">Customer stories</span>
+      <h2 class="section-title">Loved by thousands of homes</h2>
+    </div>
+
+    <div data-reveal>
+      <div class="testi-track-wrap">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">"I booked an electrician at 11pm during a power fault. Someone was at my door in under ten minutes — I still can't believe how fast that was."</p>
+              <div class="testi-person">
+                <div class="testi-avatar">AS</div>
+                <div class="text-start"><div class="testi-name">Ananya Sharma <i class="bi bi-patch-check-fill verified-tag"></i></div><div class="testi-role">Verified Customer, Pune</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">"The OTP step made me feel so much safer letting a stranger into my apartment. Small detail, huge difference."</p>
+              <div class="testi-person">
+                <div class="testi-avatar">RK</div>
+                <div class="text-start"><div class="testi-name">Rohit Kapoor <i class="bi bi-patch-check-fill verified-tag"></i></div><div class="testi-role">Verified Customer, Bengaluru</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">"As a professional, the instant payouts changed everything for me. I get paid the second a job is marked complete."</p>
+              <div class="testi-person">
+                <div class="testi-avatar">MT</div>
+                <div class="text-start"><div class="testi-name">Manoj Tiwari <i class="bi bi-patch-check-fill verified-tag"></i></div><div class="testi-role">Partner Electrician, Delhi</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-center gap-3 mt-4">
+        <button class="testi-arrow" id="testiPrev" aria-label="Previous review"><i class="bi bi-arrow-left"></i></button>
+        <div class="testi-dots" id="testiDots"></div>
+        <button class="testi-arrow" id="testiNext" aria-label="Next review"><i class="bi bi-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FAQ ============================= -->
+<section class="section-pad" id="faq">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-4" data-reveal>
+        <span class="eyebrow">Good to know</span>
+        <h2 class="section-title">Frequently asked questions</h2>
+        <p class="section-sub">Can't find what you're looking for? Our support team is available 24×7.</p>
+        <a href="#contact" class="btn-swift btn-ghost-swift mt-2"><i class="bi bi-chat-dots"></i><span>Contact Support</span></a>
+      </div>
+      <div class="col-lg-8" data-reveal data-reveal-delay="1">
+        <div class="faq-item open">
+          <button class="faq-question"><span>How fast will a professional arrive?</span><span class="faq-plus"><i class="bi bi-plus"></i></span></button>
+          <div class="faq-answer" style="max-height:200px;"><p>Our AI dispatch matches you with the nearest available verified professional. Average arrival time is under nine minutes in serviceable areas.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>Are Kaamwale professionals verified?</span><span class="faq-plus"><i class="bi bi-plus"></i></span></button>
+          <div class="faq-answer"><p>Yes. Every professional completes an identity check, background verification, and a skills assessment before joining the platform.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>What is the OTP step for?</span><span class="faq-plus"><i class="bi bi-plus"></i></span></button>
+          <div class="faq-answer"><p>The OTP confirms that the professional at your door is the one assigned to your job, and that work only begins once you've verified it.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>How do I pay for a service?</span><span class="faq-plus"><i class="bi bi-plus"></i></span></button>
+          <div class="faq-answer"><p>All payments are made securely in-app via card, UPI, net banking, or your Kaamwale wallet — no cash handling required.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>How do I become a Kaamwale partner?</span><span class="faq-plus"><i class="bi bi-plus"></i></span></button>
+          <div class="faq-answer"><p>Download the Partner app, submit your documents, complete a short onboarding, and start receiving job requests near you.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>What if I'm not satisfied with a job?</span><span class="faq-plus"><i class="bi bi-plus"></i></span></button>
+          <div class="faq-answer"><p>Every booking is covered by our satisfaction guarantee — report an issue in-app within 24 hours and our support team will make it right.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CONTACT ============================= -->
+<section class="section-pad" style="background:var(--bg-alt);" id="contact">
+  <div class="container-xl">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">We're here to help</span>
+      <h2 class="section-title">Get in touch</h2>
+      <p class="section-sub">Questions about booking, partnering, or anything else — send us a message.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-7" data-reveal>
+        <form class="contact-form needs-validation" id="contactForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="cf-name">Full Name</label>
+              <input type="text" class="form-control" id="cf-name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="cf-email">Email Address</label>
+              <input type="email" class="form-control" id="cf-email" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="cf-phone">Phone Number</label>
+              <input type="tel" class="form-control" id="cf-phone" required>
+              <div class="invalid-feedback">Please enter your phone number.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="cf-subject">Subject</label>
+              <input type="text" class="form-control" id="cf-subject" required>
+              <div class="invalid-feedback">Please add a subject.</div>
+            </div>
+            <div class="col-12">
+              <label for="cf-message">Message</label>
+              <textarea class="form-control" id="cf-message" rows="5" required></textarea>
+              <div class="invalid-feedback">Please write your message.</div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn-swift btn-primary-swift"><i class="bi bi-send"></i><span>Send Message</span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-lg-5" data-reveal data-reveal-delay="1">
+        <div class="contact-info-card">
+          <div class="info-row"><div class="ii"><i class="bi bi-envelope"></i></div><div><strong>Email</strong><span>support@kaamwale.app</span></div></div>
+          <div class="info-row"><div class="ii"><i class="bi bi-telephone"></i></div><div><strong>Phone</strong><span>+91 98765 43210</span></div></div>
+          <div class="info-row"><div class="ii"><i class="bi bi-geo-alt"></i></div><div><strong>Address</strong><span>Kaamwale HQ, Cyber Hub, Gurugram, India</span></div></div>
+          <div class="info-row"><div class="ii"><i class="bi bi-clock"></i></div><div><strong>Working Hours</strong><span>24×7 Customer Support</span></div></div>
+
+          <div class="social-icons mb-3">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+
+          <div class="map-placeholder"><i class="bi bi-geo-alt-fill map-pin"></i>Map preview — Cyber Hub, Gurugram</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="footer-swift">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-4 footer-brand">
+        <a href="#home" class="brand-mark mb-3 d-inline-flex">
+          <svg class="logo-node" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="12" fill="url(#logoGrad)"/>
+            <path d="M13 22L19 12L21 18H27L21 28L19 22H13Z" fill="white"/>
+          </svg>
+          Kaamwale
+        </a>
+        <p>AI-powered on-demand home services, connecting you with verified professionals in minutes.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-2 footer-col">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#why-kaamwale">Why Kaamwale</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2 footer-col">
+        <h6>Services</h6>
+        <ul>
+          <li><a href="#services">Electrician</a></li>
+          <li><a href="#services">Plumber</a></li>
+          <li><a href="#services">House Cleaning</a></li>
+          <li><a href="#services">AC Repair</a></li>
+          <li><a href="#services">View All →</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2 footer-col">
+        <h6>Company</h6>
+        <ul>
+          <li><a href="#become-partner">Become a Partner</a></li>
+          <li><a href="#get-service">Download Apps</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#contact">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2 footer-col">
+        <h6>Newsletter</h6>
+        <p style="font-size:0.85rem;">Get service tips &amp; offers.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email" required aria-label="Email for newsletter">
+          <button type="submit" class="btn-swift btn-primary-swift btn-sm-swift" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>© 2026 Kaamwale Technologies Pvt. Ltd. All rights reserved.</small>
+      <small>Made for homes that don't like waiting.</small>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- App scripts -->
+<script src="js/theme.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
