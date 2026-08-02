@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinic</title>
+<meta name="description" content="General physician clinic offering trusted, compassionate healthcare.">
+<meta name="theme-color" content="#0F766E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Clinic">
+<meta property="og:description" content="General physician clinic offering trusted, compassionate healthcare.">
+
+<link rel="icon" id="faviconLink" href="images/favicon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#mainContent" class="skip-link">Skip to main content</a>
+
+<!-- ============ HEADER / NAVBAR ============ -->
+<header class="site-header">
+    <nav class="navbar" aria-label="Primary">
+        <a href="#home" class="brand">
+            <img data-field="logo" src="" alt="Clinic logo">
+            <span class="brand-name" data-field="clinic_name">Clinic</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#doctor">Doctor</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#appointment">Appointment</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Switch to dark theme">🌙</button>
+            <a href="#appointment" class="btn btn-primary btn-sm">Book Appointment</a>
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main id="mainContent">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+        <div class="container-narrow hero-grid">
+            <div class="hero-copy">
+                <span class="eyebrow" data-field="tagline">Tagline</span>
+                <h1 data-field="clinic_name">Clinic Name</h1>
+                <p class="hero-description" data-field="description">Clinic description.</p>
+
+                <div class="hero-doctor-line">
+                    <span><strong data-field="doctor_name">Doctor Name</strong></span>
+                    <span data-field="doctor_designation">Designation</span>
+                    <span data-field="doctor_specialty">Specialty</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#appointment" class="btn btn-primary">Book Appointment</a>
+                    <a href="#" class="btn btn-secondary" data-field="phone_link" data-contact-item>Call Clinic</a>
+                </div>
+            </div>
+
+            <div class="hero-media">
+                <div class="hero-photo-frame">
+                    <img data-field="doctor_image" src="" alt="Doctor photo">
+                </div>
+                <div class="hero-badge" data-field="doctor_experience_wrap">
+                    <div class="badge-num"><span data-field="doctor_experience_number">0</span>+</div>
+                    <div class="badge-label">Years of Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MEDICAL DISCLAIMER STRIP ============ -->
+    <div class="disclaimer-strip">
+        <div class="container-narrow">
+            This website provides general information and appointment-request functionality. It is not a substitute for professional medical advice. In a medical emergency, contact your local emergency service or visit the nearest emergency facility.
+        </div>
+    </div>
+
+    <!-- ============ DOCTOR ============ -->
+    <section id="doctor">
+        <div class="container-narrow">
+            <div class="section-heading">
+                <span class="eyebrow">Meet Your Doctor</span>
+                <h2>About the Doctor</h2>
+            </div>
+            <div class="doctor-grid">
+                <div class="doctor-photo">
+                    <img data-field="doctor_image" src="" alt="Doctor photo">
+                </div>
+                <div class="doctor-info">
+                    <h3 data-field="doctor_name">Doctor Name</h3>
+                    <p data-field="doctor_designation" style="color:var(--primary); font-weight:600; margin-bottom:2px;">Designation</p>
+                    <div class="doctor-meta">
+                        <span class="pill" data-field="doctor_qualification">Qualification</span>
+                        <span class="pill" data-field="doctor_specialty">Specialty</span>
+                        <span class="pill" data-field="doctor_experience">Experience</span>
+                    </div>
+                    <p class="doctor-bio" data-field="doctor_bio">Doctor biography.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section-alt">
+        <div class="container-narrow">
+            <div class="section-heading">
+                <span class="eyebrow">What We Offer</span>
+                <h2>Our Services</h2>
+                <p>Common areas of care available at this clinic.</p>
+            </div>
+            <div class="services-grid" id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section id="reviews">
+        <div class="container-narrow">
+            <div class="section-heading">
+                <span class="eyebrow">Patient Feedback</span>
+                <h2>What Patients Say</h2>
+            </div>
+            <div class="reviews-grid" id="reviewsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============ APPOINTMENT ============ -->
+    <section id="appointment" class="section-alt">
+        <div class="container-narrow appointment-layout">
+
+            <div class="appointment-side">
+                <span class="eyebrow">Get In Touch</span>
+                <h2>Request an Appointment</h2>
+                <p>Fill in the form and send your request directly to the clinic on WhatsApp. Our team will confirm your appointment as soon as possible.</p>
+
+                <ul class="contact-quicklist">
+                    <li data-contact-item>
+                        <span class="icon">📞</span>
+                        <a href="#" data-field="phone_link">
+                            <span data-field="phone"></span>
+                        </a>
+                    </li>
+                    <li data-contact-item>
+                        <span class="icon">✉️</span>
+                        <a href="#" data-field="email_link">
+                            <span data-field="email"></span>
+                        </a>
+                    </li>
+                    <li data-contact-item>
+                        <span class="icon">📍</span>
+                        <span data-field="address"></span>
+                    </li>
+                </ul>
+            </div>
+
+            <form class="card form-card" id="appointmentForm" data-appointment-form novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name_main">Patient Name <span class="required-mark">*</span></label>
+                        <input class="form-control" type="text" id="name_main" name="patient_name" placeholder="Enter full name" required>
+                        <div class="error-message" data-error-for="patient_name"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age_main">Age <span class="required-mark">*</span></label>
+                        <input class="form-control" type="number" id="age_main" name="patient_age" placeholder="e.g. 35" min="0" max="120" required>
+                        <div class="error-message" data-error-for="patient_age"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gender_main">Gender <span class="required-mark">*</span></label>
+                        <select class="form-control" id="gender_main" name="patient_gender" required>
+                            <option value="" selected disabled>Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="error-message" data-error-for="patient_gender"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason_main">Reason for Visit <span class="required-mark">*</span></label>
+                        <select class="form-control" id="reason_main" name="reason" data-field="reason_select" required>
+                            <option value="" selected disabled>Select a reason</option>
+                        </select>
+                        <div class="error-message" data-error-for="reason"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="details_main">Problem Details</label>
+                    <textarea class="form-control" id="details_main" name="problem_details" placeholder="Briefly describe the problem (optional)"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" data-field="whatsapp_cta">Send Appointment to WhatsApp</button>
+                <a href="#" class="btn btn-secondary btn-block hidden" style="margin-top:10px;" data-field="call_fallback">Call Clinic Instead</a>
+
+                <div class="form-status" data-form-status role="status" aria-live="polite"></div>
+                <p class="form-note">Your details are sent directly to the clinic's WhatsApp number. This is a request only and does not guarantee a confirmed appointment until the clinic responds.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+        <div class="container-narrow">
+            <div class="section-heading">
+                <span class="eyebrow">Reach Us</span>
+                <h2>Contact Information</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="card contact-card" data-contact-item>
+                    <div class="icon-lg">📞</div>
+                    <h3>Call Us</h3>
+                    <p data-field="phone"></p>
+                    <a href="#" class="btn btn-secondary btn-sm" data-field="phone_link">Call Now</a>
+                </div>
+                <div class="card contact-card" data-contact-item>
+                    <div class="icon-lg">✉️</div>
+                    <h3>Email Us</h3>
+                    <p data-field="email"></p>
+                    <a href="#" class="btn btn-secondary btn-sm" data-field="email_link">Send Email</a>
+                </div>
+                <div class="card contact-card" data-contact-item>
+                    <div class="icon-lg">📍</div>
+                    <h3>Visit Us</h3>
+                    <p data-field="address"></p>
+                    <a href="#" class="btn btn-secondary btn-sm" data-field="maps_link" target="_blank" rel="noopener">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+    <div class="container-narrow">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <img data-field="logo" src="" alt="Clinic logo">
+                    <span data-field="clinic_name">Clinic</span>
+                </div>
+                <p class="footer-desc" data-field="description">Clinic description.</p>
+                <div class="footer-social" data-social-section>
+                    <a href="#" data-social="facebook" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+                    <a href="#" data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener">◎</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="footer-heading">Navigate</div>
+                <ul class="footer-links">
+                    <li><a href="#doctor">Doctor</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#appointment">Appointment</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-heading">Contact</div>
+                <ul class="footer-links">
+                    <li data-contact-item><a href="#" data-field="phone_link"><span data-field="phone"></span></a></li>
+                    <li data-contact-item><a href="#" data-field="email_link"><span data-field="email"></span></a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; <span data-field="current_year">2026</span> <span data-field="clinic_name">Clinic</span>. All rights reserved.</span>
+            <ul class="footer-bottom-links">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP BUTTON ============ -->
+<button type="button" class="whatsapp-float" id="whatsappFloat" aria-label="Book appointment on WhatsApp" aria-haspopup="dialog">
+    💬
+</button>
+
+<!-- ============ APPOINTMENT MODAL ============ -->
+<div class="modal-overlay" id="appointmentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3 id="modalTitle" style="margin:0;">Request an Appointment</h3>
+            <button type="button" class="modal-close" data-modal-close aria-label="Close">✕</button>
+        </div>
+
+        <form data-appointment-form novalidate>
+            <div class="form-group">
+                <label for="name_modal">Patient Name <span class="required-mark">*</span></label>
+                <input class="form-control" type="text" id="name_modal" name="patient_name" placeholder="Enter full name" required>
+                <div class="error-message" data-error-for="patient_name"></div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="age_modal">Age <span class="required-mark">*</span></label>
+                    <input class="form-control" type="number" id="age_modal" name="patient_age" placeholder="e.g. 35" min="0" max="120" required>
+                    <div class="error-message" data-error-for="patient_age"></div>
+                </div>
+                <div class="form-group">
+                    <label for="gender_modal">Gender <span class="required-mark">*</span></label>
+                    <select class="form-control" id="gender_modal" name="patient_gender" required>
+                        <option value="" selected disabled>Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="error-message" data-error-for="patient_gender"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="reason_modal">Reason for Visit <span class="required-mark">*</span></label>
+                <select class="form-control" id="reason_modal" name="reason" data-field="reason_select" required>
+                    <option value="" selected disabled>Select a reason</option>
+                </select>
+                <div class="error-message" data-error-for="reason"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="details_modal">Problem Details</label>
+                <textarea class="form-control" id="details_modal" name="problem_details" placeholder="Briefly describe the problem (optional)"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" data-field="whatsapp_cta">Send Appointment to WhatsApp</button>
+            <a href="#" class="btn btn-secondary btn-block hidden" style="margin-top:10px;" data-field="call_fallback">Call Clinic Instead</a>
+
+            <div class="form-status" data-form-status role="status" aria-live="polite"></div>
+        </form>
+    </div>
+</div>
+
+<!-- ============ DATA FILES (loaded directly, no fetch, works via file://) ============ -->
+<script src="data/clinic-profile.js"></script>
+<script src="data/doctor-details.js"></script>
+<script src="data/services.js"></script>
+<script src="data/patient-reviews.js"></script>
+<script src="data/contact-details.js"></script>
+<script src="data/social-media.js"></script>
+<script src="data/appointment.js"></script>
+<script src="data/appointment-categories.js"></script>
+<script src="data/theme-colors.js"></script>
+<script src="data/image-settings.js"></script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
