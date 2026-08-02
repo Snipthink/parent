@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prokote FutureTrack App</title>
+    <meta
+      name="description"
+      content="Prokote FutureTrack helps students practice more questions with Smart Focus Mode, rewards learning with Power Coins, and gives teachers live progress insight."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0c1020;
+        --text: #1d2033;
+        --muted: #5a607a;
+        --accent: #ff7a1a;
+        --accent-2: #00bfa6;
+        --card: #ffffff;
+        --bg: #f7f4ef;
+        --glow: #ffe3c9;
+        --shadow: 0 20px 60px rgba(12, 16, 32, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        color: var(--text);
+        background: radial-gradient(circle at 10% 10%, #ffffff, var(--bg) 70%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(247, 244, 239, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(12, 16, 32, 0.08);
+      }
+
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+      }
+
+      .logo {
+        font-family: "Fraunces", serif;
+        font-size: 20px;
+        letter-spacing: 0.4px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .hero {
+        padding: 72px 0 48px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 36px;
+        align-items: center;
+      }
+
+      .hero-title {
+        font-family: "Fraunces", serif;
+        font-size: clamp(32px, 5vw, 56px);
+        margin: 0 0 12px;
+        color: var(--ink);
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        color: var(--muted);
+        line-height: 1.6;
+        margin: 0 0 24px;
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 10px 24px rgba(255, 122, 26, 0.35);
+      }
+
+      .btn-secondary {
+        background: #fff;
+        border-color: rgba(12, 16, 32, 0.15);
+        color: var(--ink);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-card {
+        background: var(--card);
+        padding: 24px;
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+
+      .hero-card::after {
+        content: "";
+        position: absolute;
+        inset: -20% -10% auto auto;
+        width: 180px;
+        height: 180px;
+        background: radial-gradient(circle, var(--glow), transparent 70%);
+        z-index: -1;
+      }
+
+      .phone-shot {
+        width: 100%;
+        border-radius: 18px;
+        border: 1px solid rgba(12, 16, 32, 0.08);
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .pill {
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #f2f2f2;
+        font-size: 13px;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-size: clamp(26px, 3.5vw, 40px);
+        margin-bottom: 12px;
+        color: var(--ink);
+      }
+
+      .section-subtitle {
+        color: var(--muted);
+        max-width: 720px;
+        line-height: 1.6;
+      }
+
+      .grid-3 {
+        margin-top: 32px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 12px 30px rgba(12, 16, 32, 0.08);
+      }
+
+      .card h4 {
+        margin: 0 0 10px;
+      }
+
+      .coins {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin-top: 24px;
+      }
+
+      .coin {
+        border: 1px dashed rgba(12, 16, 32, 0.18);
+        padding: 16px;
+        border-radius: 16px;
+        background: #fffaf4;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        margin-top: 28px;
+      }
+
+      .highlight {
+        background: linear-gradient(120deg, #fff1e4, #ecfff9);
+        border-radius: 24px;
+        padding: 28px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .highlight::before {
+        content: "";
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: rgba(0, 191, 166, 0.15);
+        right: -40px;
+        top: -40px;
+      }
+
+      .form {
+        display: grid;
+        gap: 12px;
+      }
+
+      input,
+      textarea {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(12, 16, 32, 0.2);
+        font-size: 14px;
+        font-family: inherit;
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .footer {
+        padding: 36px 0 48px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(0, 191, 166, 0.15);
+        color: var(--ink);
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      .pulse {
+        animation: pulse 2.8s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.03);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+        .hero {
+          padding-top: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container nav-wrap">
+        <div class="logo">Prokote FutureTrack</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#coins">Power Coins</a>
+          <a href="#product">Product</a>
+          <a href="#waitlist">Join Waitlist</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="tag">Future-ready learning</span>
+          <h1 class="hero-title">Prokote FutureTrack App</h1>
+          <p class="hero-subtitle">
+            An ed-tech platform with a teacher ERP system to create question sets, prepare
+            question papers, and keep content private. Students can learn, practice, and track
+            progress with clear goals and rewards.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary pulse" href="#playstore">Download Now</a>
+            <a class="btn btn-secondary" href="#waitlist">Join Waitlist</a>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Smart Focus Mode</span>
+            <span class="pill">Power Coin Rewards</span>
+            <span class="pill">Teacher Insights</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img
+            class="phone-shot"
+            src="79.png"
+            alt="Phone screenshot of Prokote FutureTrack app"
+          />
+          <p class="section-subtitle" style="margin-top: 16px;">
+            See FutureTrack in action. Track streaks, power coins, and daily goals right from the
+            dashboard.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="benefits">
+      <div class="container">
+        <h2 class="section-title">Benefits for Students and Teachers</h2>
+        <p class="section-subtitle">
+          FutureTrack balances independent practice with guided support. Students build strong
+          habits, while teachers manage preparation and privacy in one ERP workflow.
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <h4>For Students</h4>
+            <p>
+              Learn, practice more questions, and track progress with clear daily targets and
+              streaks.
+            </p>
+          </div>
+          <div class="card">
+            <h4>For Teachers</h4>
+            <p>
+              Use the ERP system to create question sets, build question papers, keep content
+              private, and track class readiness.
+            </p>
+          </div>
+          <div class="card">
+            <h4>For Both</h4>
+            <p>
+              A shared learning rhythm: students stay accountable and teachers can guide prep with
+              measurable outcomes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="coins">
+      <div class="container">
+        <h2 class="section-title">Power Coins & Learning Rewards</h2>
+        <p class="section-subtitle">
+          Every smart action in the app builds Power Coins. More practice equals more rewards.
+          Compete, level up, and get ready for prize wins.
+        </p>
+        <div class="coins">
+          <div class="coin">
+            <h4>Power Coin</h4>
+            <p>
+              Earned for solving questions, maintaining daily goals, and completing challenges.
+            </p>
+          </div>
+          <div class="coin">
+            <h4>Time Stone Coin</h4>
+            <p>
+              Rewards focused study sessions with no distractions and perfect time management.
+            </p>
+          </div>
+          <div class="coin">
+            <h4>Streak Coin</h4>
+            <p>
+              Keep your practice streak alive and collect streak bonuses every week.
+            </p>
+          </div>
+          <div class="coin">
+            <h4>Mentor Coin</h4>
+            <p>
+              Earned when teachers validate progress or share a mentor badge with students.
+            </p>
+          </div>
+          <div class="coin">
+            <h4>Energy Coin</h4>
+            <p>
+              For completing more questions after class hours and showing extra effort.
+            </p>
+          </div>
+        </div>
+        <p class="section-subtitle" style="margin-top: 18px;">
+          Win prizes by scoring more Power Coins. Big rewards and seasonal challenges are coming
+          soon.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="product">
+      <div class="container">
+        <h2 class="section-title">Product Details</h2>
+        <div class="split">
+          <div class="highlight">
+            <h3>Smart Focus Mode</h3>
+            <p>
+              FutureTrack keeps students focused on their phone. Smart Focus Mode reminds them to
+              solve questions at set intervals while using the phone, so practice happens even on
+              busy days.
+            </p>
+            <p>
+              It blends gentle reminders, timed sessions, and progress nudges so learners stay
+              consistent without feeling pressured.
+            </p>
+          </div>
+          <div class="card">
+            <h3>What Makes It Better</h3>
+            <p>
+              FutureTrack is built for exam-style preparation, not just content watching. It
+              connects teacher ERP workflows with student practice and measurable progress.
+            </p>
+            <ul>
+              <li>Teacher ERP for question set creation</li>
+              <li>Question paper preparation with privacy controls</li>
+              <li>Student practice + progress tracking in one flow</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-subtitle">
+          Prokote builds learning tools that make students future-ready. We combine structured
+          practice, motivation, and teacher mentorship to turn everyday study into long-term
+          success.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h4>Teacher ERP</h4>
+            <p>Create question sets, manage papers, and keep preparation private.</p>
+          </div>
+          <div class="card">
+            <h4>Student Learning</h4>
+            <p>Learn concepts, practice questions, and track progress with clarity.</p>
+          </div>
+          <div class="card">
+            <h4>Progress Insights</h4>
+            <p>Class analytics, activity trends, and mentoring-ready reports.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="waitlist">
+      <div class="container split">
+        <div>
+          <h2 class="section-title">Join the Waitlist</h2>
+          <p class="section-subtitle">
+            New features are coming soon. Join the waitlist to get early access, updates, and
+            launch surprises.
+          </p>
+        </div>
+        <form class="card form">
+          <input type="text" name="name" placeholder="Full name" />
+          <input type="email" name="email" placeholder="Email address" />
+          <input type="text" name="role" placeholder="Student or Teacher" />
+          <button class="btn btn-primary" type="submit">Join Waitlist</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container split">
+        <div>
+          <h2 class="section-title">Contact Us</h2>
+          <p class="section-subtitle">
+            Have questions or want a school demo? Tell us about your goals and we will reach out.
+          </p>
+          <div id="playstore" style="margin-top: 16px;">
+            <h4>Download Now for a Better Tomorrow</h4>
+            <p class="section-subtitle">
+              Play Store link: update this section when ready.
+            </p>
+            <a class="btn btn-secondary" href="#">Play Store Link</a>
+          </div>
+        </div>
+        <form class="card form">
+          <input type="text" name="contact-name" placeholder="Name" />
+          <input type="email" name="contact-email" placeholder="Email" />
+          <textarea name="message" placeholder="Message"></textarea>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <strong>Prokote FutureTrack</strong> · Rewards-powered practice for students and teachers.
+      </div>
+    </footer>
+  </body>
+</html>

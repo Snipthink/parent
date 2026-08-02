@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crinit - Smart Agriculture by SnipThinK</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+<div class="nav-inner">
+<a href="#" class="logo">
+<span class="logo-icon">&#127793;</span>
+<span class="logo-text">CRINIT</span>
+<span class="logo-sub">by SnipThinK</span>
+</a>
+<button class="hamburger" onclick="toggleMenu()" id="ham">&#9776;</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home" onclick="closeMenu()">Home</a></li>
+<li><a href="#products" onclick="closeMenu()">Products</a></li>
+<li><a href="#iot" onclick="closeMenu()">IoT Kits</a></li>
+<li><a href="#smartfarm" onclick="closeMenu()">Smart Farm</a></li>
+<li><a href="#fresh" onclick="closeMenu()">Crinit Fresh</a></li>
+<li><a href="#cloud" onclick="closeMenu()">Cloud</a></li>
+<li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="hero-badge">&#127758; AgriTech Division of SnipThinK</div>
+<h1>Agriculture<br>Reimagined with<br><span class="gradient-text">Intelligence</span></h1>
+<p class="hero-desc">From soil sensors to smart farms, from fresh produce to cloud analytics &mdash; Crinit is the complete agricultural technology ecosystem for modern farming.</p>
+<div class="hero-btns">
+<a href="#products" class="btn btn-primary">Explore Products</a>
+<a href="#contact" class="btn btn-outline">Get in Touch</a>
+</div>
+<div class="hero-stats">
+<div class="stat"><span class="stat-num" data-target="4">0</span><span class="stat-label">Product Lines</span></div>
+<div class="stat"><span class="stat-num" data-target="21">0</span><span class="stat-label">Sensor Types</span></div>
+<div class="stat"><span class="stat-num" data-target="100">0</span>+<span class="stat-label">Parameters</span></div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="float-card fc1">
+<div class="fc-icon">&#127777;&#65039;</div>
+<div class="fc-text">Soil pH<br><strong class="green">6.8</strong></div>
+</div>
+<div class="float-card fc2">
+<div class="fc-icon">&#128167;</div>
+<div class="fc-text">Moisture<br><strong class="blue">72%</strong></div>
+</div>
+<div class="float-card fc3">
+<div class="fc-icon">&#127793;</div>
+<div class="fc-text">Growth<br><strong class="green">+12%</strong></div>
+</div>
+<div class="float-card fc4">
+<div class="fc-icon">&#9728;&#65039;</div>
+<div class="fc-text">UV Index<br><strong class="orange">4.2</strong></div>
+</div>
+</div>
+</section>
+
+<!-- Products Overview -->
+<section class="section" id="products">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Our Ecosystem</span>
+<h2>Four Pillars of<br><span class="gradient-text">Smart Agriculture</span></h2>
+<p>A complete end-to-end agricultural technology platform</p>
+</div>
+<div class="products-grid">
+
+<div class="product-card" data-aos="up">
+<div class="pc-glow green-glow"></div>
+<div class="pc-icon">&#128225;</div>
+<h3>Crinit IoT</h3>
+<p class="pc-tag">Monitoring Kits</p>
+<p>Hardware sensor kits from manual input to fully automatic &mdash; pH, EC, temperature, humidity, soil moisture, NPK, and 21+ parameters.</p>
+<div class="pc-features">
+<span>&#128204; Nano</span><span>&#128204; Micro</span><span>&#128204; Mini</span><span>&#128204; Small v2</span>
+</div>
+<a href="#iot" class="btn-link">View IoT Kits &rarr;</a>
+</div>
+
+<div class="product-card" data-aos="up" style="--delay:0.1s">
+<div class="pc-glow blue-glow"></div>
+<div class="pc-icon">&#9729;&#65039;</div>
+<h3>Crinit Cloud</h3>
+<p class="pc-tag">Data Platform</p>
+<p>Real-time agricultural data dashboard hosted on ESP8266. Weather, soil analysis, crop health monitoring, disease diagnosis, and farm lifecycle tracking.</p>
+<div class="pc-features">
+<span>&#128202; Analytics</span><span>&#128202; Forecasting</span><span>&#128202; Alerts</span><span>&#128202; Multi-lang</span>
+</div>
+<a href="#cloud" class="btn-link">Explore Cloud &rarr;</a>
+</div>
+
+<div class="product-card" data-aos="up" style="--delay:0.2s">
+<div class="pc-glow orange-glow"></div>
+<div class="pc-icon">&#127821;</div>
+<h3>Crinit Fresh</h3>
+<p class="pc-tag">Farm to Table</p>
+<p>Direct supply of fresh, chemical-free fruits and vegetables from our monitored farms. Quality tracked from seed to delivery with full traceability.</p>
+<div class="pc-features">
+<span>&#127813; Fruits</span><span>&#127813; Vegetables</span><span>&#127813; Organic</span><span>&#127813; Traceable</span>
+</div>
+<a href="#fresh" class="btn-link">View Fresh &rarr;</a>
+</div>
+
+<div class="product-card" data-aos="up" style="--delay:0.3s">
+<div class="pc-glow purple-glow"></div>
+<div class="pc-icon">&#127981;</div>
+<h3>Crinit Smart Farm</h3>
+<p class="pc-tag">Full Automation</p>
+<p>Complete farm automation based on land size and crop type. Aeroponic, hydroponic, drip irrigation &mdash; all managed by AI with zero manual intervention.</p>
+<div class="pc-features">
+<span>&#9881; Aeroponic</span><span>&#9881; Hydroponic</span><span>&#9881; Drip</span><span>&#9881; AI Control</span>
+</div>
+<a href="#smartfarm" class="btn-link">View Smart Farm &rarr;</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- IoT Kits Section -->
+<section class="section section-dark" id="iot">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Hardware</span>
+<h2>Crinit IoT<br><span class="gradient-text">Sensor Kits</span></h2>
+<p>From basic manual monitoring to professional-grade automatic sensors</p>
+</div>
+
+<div class="iot-timeline">
+
+<div class="iot-kit" data-aos="left">
+<div class="kit-badge nano">NANO</div>
+<div class="kit-content">
+<h3>Crinit IoT Nano</h3>
+<p class="kit-price">Entry Level</p>
+<p>Manual input farm data monitoring. Upload soil test reports, water tank analysis, and weather data through the Crinit Cloud dashboard.</p>
+<div class="kit-specs">
+<div class="spec">
+<span class="spec-icon">&#128221;</span>
+<span>Manual Data Input</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#127758;</span>
+<span>Cloud Dashboard</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128202;</span>
+<span>Soil, Water, Weather Reports</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128241;</span>
+<span>Mobile Responsive</span>
+</div>
+</div>
+<div class="kit-params">
+<span class="param">Soil Test</span>
+<span class="param">Tank Test</span>
+<span class="param">Weather</span>
+<span class="param">Crop DB</span>
+<span class="param">Disease DB</span>
+</div>
+</div>
+</div>
+
+<div class="iot-kit" data-aos="right">
+<div class="kit-badge micro">MICRO</div>
+<div class="kit-content">
+<h3>Crinit IoT Micro</h3>
+<p class="kit-price">Auto Sensors</p>
+<p>Automatic EC and pH sensing with real-time data logging. IR sensor-based detection system with configurable pin mapping D0-D8.</p>
+<div class="kit-specs">
+<div class="spec">
+<span class="spec-icon">&#128300;</span>
+<span>Auto pH Sensor</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128300;</span>
+<span>Auto EC Sensor</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128225;</span>
+<span>IR Detection System</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128268;</span>
+<span>9-Pin Configurable (D0-D8)</span>
+</div>
+</div>
+<div class="kit-params">
+<span class="param">pH 0-14</span>
+<span class="param">EC 0-10 mS/cm</span>
+<span class="param">IR 0-100%</span>
+<span class="param">Auto Log</span>
+</div>
+</div>
+</div>
+
+<div class="iot-kit" data-aos="left">
+<div class="kit-badge mini">MINI</div>
+<div class="kit-content">
+<h3>Crinit IoT Mini</h3>
+<p class="kit-price">Enhanced</p>
+<p>Everything in Micro plus temperature sensing. Three critical parameters monitored simultaneously with graph analytics and historical data.</p>
+<div class="kit-specs">
+<div class="spec">
+<span class="spec-icon">&#127777;&#65039;</span>
+<span>Temperature -10 to 60&deg;C</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128300;</span>
+<span>pH 0-14</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128300;</span>
+<span>EC 0-10 mS/cm</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128200;</span>
+<span>Graph Analytics</span>
+</div>
+</div>
+<div class="kit-params">
+<span class="param">Temperature</span>
+<span class="param">pH</span>
+<span class="param">EC</span>
+<span class="param">Graphing</span>
+<span class="param">Alerts</span>
+</div>
+</div>
+</div>
+
+<div class="iot-kit" data-aos="right">
+<div class="kit-badge small">SMALL v2</div>
+<div class="kit-content">
+<h3>Crinit IoT Small v2</h3>
+<p class="kit-price">Professional</p>
+<p>Full environmental monitoring suite. pH, EC, temperature, and humidity with advanced warning engine, crop health scoring, and farm lifecycle tracking.</p>
+<div class="kit-specs">
+<div class="spec">
+<span class="spec-icon">&#127777;&#65039;</span>
+<span>Temperature -10 to 60&deg;C</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128167;</span>
+<span>Humidity 0-100%</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#128300;</span>
+<span>pH 0-14 + EC 0-10</span>
+</div>
+<div class="spec">
+<span class="spec-icon">&#129302;</span>
+<span>AI Health Scoring</span>
+</div>
+</div>
+<div class="kit-params">
+<span class="param">pH</span>
+<span class="param">EC</span>
+<span class="param">Temperature</span>
+<span class="param">Humidity</span>
+<span class="param">AI Scoring</span>
+<span class="param">Farm Life</span>
+<span class="param">Warnings</span>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Comparison Table -->
+<div class="compare-table">
+<h3 style="text-align:center;color:#27ae60;margin-bottom:20px">Kit Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Nano</th>
+<th>Micro</th>
+<th>Mini</th>
+<th>Small v2</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Data Input</td><td>Manual</td><td>Auto</td><td>Auto</td><td>Auto</td></tr>
+<tr><td>pH Sensor</td><td>&#10060;</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+<tr><td>EC Sensor</td><td>&#10060;</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+<tr><td>Temperature</td><td>&#10060;</td><td>&#10060;</td><td>&#9989;</td><td>&#9989;</td></tr>
+<tr><td>Humidity</td><td>&#10060;</td><td>&#10060;</td><td>&#10060;</td><td>&#9989;</td></tr>
+<tr><td>IR Detection</td><td>&#10060;</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+<tr><td>Cloud Dashboard</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+<tr><td>Graph Analytics</td><td>&#10060;</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+<tr><td>AI Health Score</td><td>&#10060;</td><td>&#10060;</td><td>&#10060;</td><td>&#9989;</td></tr>
+<tr><td>Farm Lifecycle</td><td>&#10060;</td><td>&#10060;</td><td>&#10060;</td><td>&#9989;</td></tr>
+<tr><td>Warning Engine</td><td>Basic</td><td>Standard</td><td>Advanced</td><td>AI-Powered</td></tr>
+<tr><td>Pin Configurable</td><td>&#10060;</td><td>D0-D8</td><td>D0-D8</td><td>D0-D8</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</section>
+
+<!-- Smart Farm -->
+<section class="section" id="smartfarm">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Automation</span>
+<h2>Crinit<br><span class="gradient-text">Smart Farm</span></h2>
+<p>Complete farm automation customized to your land, crop, and scale</p>
+</div>
+
+<div class="sf-grid">
+<div class="sf-card">
+<div class="sf-icon">&#128168;</div>
+<h3>Aeroponic System</h3>
+<p>Soil-less growing with nutrient mist. 90% less water usage, 3x faster growth. Perfect for leafy greens, herbs, and strawberries.</p>
+<ul class="sf-list">
+<li>Mist chamber with timer control</li>
+<li>Nutrient pH/EC auto-dosing</li>
+<li>Root zone temperature control</li>
+<li>Growth cycle monitoring</li>
+</ul>
+</div>
+<div class="sf-card">
+<div class="sf-icon">&#128167;</div>
+<h3>Hydroponic System</h3>
+<p>Water-based nutrient delivery. NFT, DWC, and Ebb &amp; Flow systems. Ideal for tomatoes, peppers, lettuce, and herbs.</p>
+<ul class="sf-list">
+<li>Automated nutrient mixing</li>
+<li>Water circulation pump control</li>
+<li>pH/EC continuous monitoring</li>
+<li>Reservoir management</li>
+</ul>
+</div>
+<div class="sf-card">
+<div class="sf-icon">&#127806;</div>
+<h3>Drip Irrigation</h3>
+<p>Precision water delivery for field crops. Soil moisture-triggered irrigation with zone-based control for maximum water efficiency.</p>
+<ul class="sf-list">
+<li>Soil moisture triggered valves</li>
+<li>Multi-zone scheduling</li>
+<li>Fertigation integration</li>
+<li>Weather-adaptive watering</li>
+</ul>
+</div>
+<div class="sf-card">
+<div class="sf-icon">&#129302;</div>
+<h3>AI Farm Manager</h3>
+<p>Central brain that connects everything. Crop planning, disease prediction, yield forecasting, and automated decision making.</p>
+<ul class="sf-list">
+<li>Crop lifecycle management</li>
+<li>Disease early warning</li>
+<li>Yield prediction models</li>
+<li>Automated controls</li>
+</ul>
+</div>
+</div>
+
+<div class="sf-process">
+<h3 style="text-align:center;margin-bottom:30px">How It Works</h3>
+<div class="process-steps">
+<div class="step">
+<div class="step-num">01</div>
+<h4>Survey</h4>
+<p>We analyze your land size, soil type, climate, water source, and crop preferences</p>
+</div>
+<div class="step-arrow">&rarr;</div>
+<div class="step">
+<div class="step-num">02</div>
+<h4>Design</h4>
+<p>Custom farm layout with irrigation zones, sensor placement, and automation routing</p>
+</div>
+<div class="step-arrow">&rarr;</div>
+<div class="step">
+<div class="step-num">03</div>
+<h4>Install</h4>
+<p>Full hardware setup &mdash; sensors, pumps, valves, controllers, and cloud connectivity</p>
+</div>
+<div class="step-arrow">&rarr;</div>
+<div class="step">
+<div class="step-num">04</div>
+<h4>Automate</h4>
+<p>AI takes over &mdash; monitoring, watering, dosing, alerting, and optimizing 24/7</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Crinit Fresh -->
+<section class="section section-dark" id="fresh">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Farm to Table</span>
+<h2>Crinit<br><span class="gradient-text">Fresh</span></h2>
+<p>Traceable, chemical-free fresh produce from smart-monitored farms</p>
+</div>
+
+<div class="fresh-grid">
+<div class="fresh-category">
+<div class="fc-header">
+<span class="fc-big-icon">&#127815;</span>
+<h3>Fresh Fruits</h3>
+</div>
+<div class="fresh-items">
+<div class="fi"><span>&#127824;</span> Papaya</div>
+<div class="fi"><span>&#127820;</span> Banana</div>
+<div class="fi"><span>&#129389;</span> Mango</div>
+<div class="fi"><span>&#127815;</span> Orange</div>
+<div class="fi"><span>&#127816;</span> Watermelon</div>
+<div class="fi"><span>&#127826;</span> Guava</div>
+</div>
+</div>
+<div class="fresh-category">
+<div class="fc-header">
+<span class="fc-big-icon">&#129382;</span>
+<h3>Fresh Vegetables</h3>
+</div>
+<div class="fresh-items">
+<div class="fi"><span>&#127813;</span> Tomato</div>
+<div class="fi"><span>&#129365;</span> Carrot</div>
+<div class="fi"><span>&#129364;</span> Potato</div>
+<div class="fi"><span>&#127798;</span> Chilli</div>
+<div class="fi"><span>&#129477;</span> Onion</div>
+<div class="fi"><span>&#129388;</span> Leafy Greens</div>
+</div>
+</div>
+</div>
+
+<div class="fresh-features">
+<div class="ff">
+<div class="ff-icon">&#128269;</div>
+<h4>Full Traceability</h4>
+<p>Know exactly which farm, which soil, which batch. Every produce tagged with sensor data history.</p>
+</div>
+<div class="ff">
+<div class="ff-icon">&#127793;</div>
+<h4>Sensor Monitored</h4>
+<p>Crops grown under IoT monitoring. pH, nutrients, and water quality tracked throughout growth.</p>
+</div>
+<div class="ff">
+<div class="ff-icon">&#128666;</div>
+<h4>Direct Supply</h4>
+<p>Farm to your doorstep. No middlemen, no warehouse storage. Harvested and delivered fresh.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Cloud -->
+<section class="section" id="cloud">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Software</span>
+<h2>Crinit<br><span class="gradient-text">Cloud</span></h2>
+<p>Agricultural intelligence platform running on ESP8266 &mdash; no internet required</p>
+</div>
+
+<div class="cloud-features">
+<div class="cf-card">
+<div class="cf-icon">&#128202;</div>
+<h4>Live Dashboard</h4>
+<p>Real-time weather, soil, tank data with graph analytics and performance charts</p>
+</div>
+<div class="cf-card">
+<div class="cf-icon">&#127777;&#65039;</div>
+<h4>21+ Sensor Tags</h4>
+<p>pH, EC, temperature, moisture, NPK, UV, CO2, TDS, turbidity, dissolved oxygen and more</p>
+</div>
+<div class="cf-card">
+<div class="cf-icon">&#127793;</div>
+<h4>Crop Database</h4>
+<p>12+ crops with optimal pH, EC, moisture ranges. Disease database with organic &amp; chemical treatments</p>
+</div>
+<div class="cf-card">
+<div class="cf-icon">&#128225;</div>
+<h4>Pin Manager</h4>
+<p>Configure D0-D8 pins with any sensor tag. Assign custom names and SI unit ranges</p>
+</div>
+<div class="cf-card">
+<div class="cf-icon">&#127981;</div>
+<h4>Farm Manager</h4>
+<p>Track plantation age, breed, seed source. Lifecycle stages and health scoring per crop</p>
+</div>
+<div class="cf-card">
+<div class="cf-icon">&#128268;</div>
+<h4>WiFi NAT Bridge</h4>
+<p>Shares internet from source WiFi to connected devices. AP + Station dual mode</p>
+</div>
+<div class="cf-card">
+<div class="cf-icon">&#128227;</div>
+<h4>Warning Engine</h4>
+<p>Automatic alerts for temperature, humidity, rain, UV, air quality thresholds</p>
+</div>
+<div class="cf-card">
+<div class="cf-icon">&#127757;</div>
+<h4>Hindi + English</h4>
+<p>Full bilingual interface. Switch between English and Hindi with one tap</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section section-dark" id="tech">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Under the Hood</span>
+<h2>Built with<br><span class="gradient-text">Proven Technology</span></h2>
+</div>
+<div class="tech-grid">
+<div class="tech-item"><div class="ti-icon">&#128187;</div><h4>ESP8266</h4><p>WiFi Microcontroller</p></div>
+<div class="tech-item"><div class="ti-icon">&#128190;</div><h4>LittleFS</h4><p>Flash Filesystem</p></div>
+<div class="tech-item"><div class="ti-icon">&#128268;</div><h4>Arduino</h4><p>C++ Firmware</p></div>
+<div class="tech-item"><div class="ti-icon">&#127760;</div><h4>WeatherAPI</h4><p>Live Weather Data</p></div>
+<div class="tech-item"><div class="ti-icon">&#128202;</div><h4>JSON/CSV</h4><p>Data Storage</p></div>
+<div class="tech-item"><div class="ti-icon">&#128241;</div><h4>Responsive</h4><p>Mobile-First UI</p></div>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">Get Started</span>
+<h2>Ready to<br><span class="gradient-text">Transform Your Farm?</span></h2>
+<p>Contact us for IoT kits, Smart Farm projects, or Crinit Fresh supply</p>
+</div>
+<div class="contact-grid">
+<div class="contact-card">
+<div class="cc-icon">&#128231;</div>
+<h4>Email</h4>
+<p>snipthink@gmail.com</p>
+</div>
+<div class="contact-card">
+<div class="cc-icon">&#127760;</div>
+<h4>Web</h4>
+<p>snipthink.org</p>
+</div>
+<div class="contact-card">
+<div class="cc-icon">&#128205;</div>
+<h4>Location</h4>
+<p>Bihar, India</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4><span>&#127793;</span> CRINIT</h4>
+<p>AgriTech Division of SnipThinK. Building the future of farming with sensors, data, and intelligence.</p>
+</div>
+<div class="footer-col">
+<h4>Products</h4>
+<ul>
+<li><a href="#iot">Crinit IoT</a></li>
+<li><a href="#cloud">Crinit Cloud</a></li>
+<li><a href="#fresh">Crinit Fresh</a></li>
+<li><a href="#smartfarm">Crinit Smart Farm</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>IoT Kits</h4>
+<ul>
+<li><a href="#iot">Nano - Manual</a></li>
+<li><a href="#iot">Micro - pH/EC</a></li>
+<li><a href="#iot">Mini - +Temp</a></li>
+<li><a href="#iot">Small v2 - Full</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Smart Farm</h4>
+<ul>
+<li><a href="#smartfarm">Aeroponic</a></li>
+<li><a href="#smartfarm">Hydroponic</a></li>
+<li><a href="#smartfarm">Drip Irrigation</a></li>
+<li><a href="#smartfarm">AI Manager</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Crinit by SnipThinK. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
