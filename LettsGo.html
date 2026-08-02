@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LettsGo — Gorakhpur की प्रीमियम कैब सर्विस</title>
+<meta name="description" content="LettsGo: Gorakhpur airport ya ghar se, premium cab booking. Mini, Medium, Large cabs available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;500;700;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0B;
+    --bg-elevate:#141315;
+    --surface:#1C1B1E;
+    --ivory:#F7F3EA;
+    --ivory-dim:#E7E1D3;
+    --gold:#C7A05C;
+    --gold-soft:#E4C68A;
+    --maroon:#7C2434;
+    --whatsapp:#25D366;
+    --muted:#9A968C;
+    --ink:#0A0A0B;
+    --line: rgba(199,160,92,0.22);
+    --radius: 20px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ivory-dim);
+    font-family:'Manrope', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.display{
+    font-family:'Yantramanav', sans-serif;
+    color:var(--ivory);
+    line-height:1.15;
+    font-weight:700;
+  }
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+  /* ===== icon system ===== */
+  .icon{display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; color:currentColor;}
+  .icon svg{width:100%; height:100%; display:block;}
+  .icon-xs{width:15px; height:15px;}
+  .icon-sm{width:18px; height:18px;}
+  .icon-md{width:22px; height:22px;}
+  .icon-lg{width:28px; height:28px;}
+  .icon-badge{
+    width:52px; height:52px; border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(199,160,92,0.12);
+    color:var(--gold);
+    margin-bottom:16px;
+  }
+  .icon-badge .icon{width:26px; height:26px;}
+  .icon-badge.dark{background:rgba(36,26,8,0.06); color:var(--maroon);}
+  .fleet-icon-wrap{
+    width:64px; height:44px; color:var(--gold); margin-bottom:16px;
+  }
+  .fleet-icon-wrap svg{width:100%; height:100%;}
+  .chip-icon{width:20px; height:20px; margin:0 auto 4px;}
+
+  /* ===== Nav ===== */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,10,11,0.85);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .logo{display:flex; align-items:center; gap:12px;}
+  .crest{
+    width:42px; height:42px; border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Yantramanav',sans-serif; font-weight:900; font-size:1rem;
+    color:var(--gold); letter-spacing:0.02em;
+  }
+  .logo-text{font-family:'Yantramanav',sans-serif; font-weight:700; font-size:1.35rem; color:var(--ivory); letter-spacing:0.01em;}
+  .logo-text small{display:block; font-family:'Manrope',sans-serif; font-weight:500; font-size:0.62rem; letter-spacing:0.14em; color:var(--gold); text-transform:uppercase; margin-top:2px;}
+  .nav-cta{display:flex; gap:10px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    padding:11px 20px; border-radius:100px;
+    font-weight:600; font-size:0.88rem;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space:nowrap; border:1px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  .btn-gold{background:linear-gradient(135deg, var(--gold-soft), var(--gold)); color:#241A08; box-shadow:0 6px 20px rgba(199,160,92,0.25);}
+  .btn-wa{background:var(--whatsapp); color:#fff; box-shadow:0 6px 20px rgba(37,211,102,0.25);}
+  .btn-line{border-color:var(--line); color:var(--ivory);}
+  @media(max-width:640px){ .nav-cta .btn-label{display:none;} .nav-cta .btn{padding:11px 14px;} }
+
+  /* ===== Hero ===== */
+  .hero{padding:88px 0 60px; position:relative;}
+  .hero::before{
+    content:""; position:absolute; top:-120px; right:-120px; width:520px; height:520px;
+    background:radial-gradient(circle, rgba(199,160,92,0.18), transparent 65%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; position:relative;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--line); padding:7px 16px; border-radius:100px;
+    font-size:0.76rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold-soft); margin-bottom:22px;
+  }
+  .eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--whatsapp); animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.25;}}
+  .hero h1{font-size:clamp(2.2rem,4.6vw,3.4rem); margin-bottom:18px; letter-spacing:-0.01em;}
+  .hero h1 .gold-txt{color:var(--gold);}
+  .hero .sub{font-size:1.08rem; max-width:48ch; color:var(--muted); margin-bottom:32px;}
+  .hero .sub strong{color:var(--ivory); font-weight:700;}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:30px;}
+  .hero-actions .btn{padding:16px 28px; font-size:0.98rem;}
+  .trust-row{display:flex; flex-wrap:wrap; gap:22px; font-size:0.84rem; color:var(--muted);}
+  .trust-row li{display:flex; align-items:center; gap:7px;}
+  .trust-row .icon{color:var(--gold);}
+
+  /* boarding-pass card */
+  .pass-card{
+    background:linear-gradient(160deg, var(--surface), var(--bg-elevate));
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:34px;
+    position:relative;
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  }
+  .pass-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:22px;}
+  .pass-top .p-label{font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-soft);}
+  .pass-route{display:flex; align-items:center; justify-content:space-between; margin-bottom:26px;}
+  .pass-route .place{font-family:'Yantramanav',sans-serif; font-weight:700; font-size:1.25rem; color:var(--ivory);}
+  .pass-route .subplace{font-size:0.72rem; color:var(--muted); margin-top:2px;}
+  .pass-route-icon{display:flex; align-items:center; gap:6px; color:var(--gold);}
+  .pass-mid{flex:1; display:flex; align-items:center; justify-content:center; position:relative;}
+  .pass-line{height:1px; width:100%; background:repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 16px);}
+  .pass-car-icon{position:absolute; color:var(--gold); background:var(--surface); padding:0 8px; width:34px; height:22px;}
+  .pass-perf{border-top:1.5px dashed var(--line); margin:22px 0; position:relative;}
+  .pass-perf::before, .pass-perf::after{
+    content:""; position:absolute; top:-11px; width:22px; height:22px; border-radius:50%; background:var(--bg);
+  }
+  .pass-perf::before{left:-46px;}
+  .pass-perf::after{right:-46px;}
+  .pass-meta{display:flex; justify-content:space-between; font-size:0.78rem; color:var(--muted);}
+  .pass-meta strong{display:block; color:var(--ivory); font-family:'Yantramanav',sans-serif; font-size:0.95rem; margin-bottom:2px;}
+
+  /* ===== marquee ===== */
+  .marquee-strip{background:var(--bg-elevate); border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; padding:14px 0;}
+  .marquee-strip span{
+    display:inline-block; padding-left:100%; white-space:nowrap;
+    font-family:'Yantramanav',sans-serif; font-weight:700; font-size:0.82rem;
+    letter-spacing:0.22em; text-transform:uppercase; color:var(--gold);
+    animation:marquee 32s linear infinite;
+  }
+  @keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+  @media(prefers-reduced-motion:reduce){ .marquee-strip span{animation:none;} }
+
+  /* ===== sections ===== */
+  section{padding:84px 0;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 48px;}
+  .section-tag{display:inline-block; font-size:0.74rem; font-weight:700; text-transform:uppercase; letter-spacing:0.16em; color:var(--gold); margin-bottom:12px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .section-head p{color:var(--muted); margin-top:12px;}
+
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.why-grid{grid-template-columns:1fr;}}
+  .why-card{background:var(--bg-elevate); border:1px solid var(--line); border-radius:var(--radius); padding:28px 22px; transition:border-color .2s, transform .2s;}
+  .why-card:hover{border-color:var(--gold); transform:translateY(-5px);}
+  .why-card h3{font-size:1.05rem; margin-bottom:8px; color:var(--ivory);}
+  .why-card p{font-size:0.88rem; color:var(--muted);}
+
+  /* fleet */
+  .fleet-section{background:var(--bg-elevate);}
+  .fleet-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media(max-width:860px){.fleet-grid{grid-template-columns:1fr;}}
+  .fleet-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:30px 26px; position:relative; transition:border-color .2s, transform .2s;}
+  .fleet-card:hover{border-color:var(--gold); transform:translateY(-6px);}
+  .fleet-badge{position:absolute; top:-14px; right:24px; background:var(--gold); color:#241A08; font-family:'Yantramanav',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; padding:5px 14px; border-radius:100px;}
+  .fleet-card h3{font-size:1.25rem; margin-bottom:4px; color:var(--ivory);}
+  .fleet-seats{font-size:0.85rem; color:var(--gold-soft); font-weight:600; margin-bottom:16px;}
+  .fleet-card ul li{padding:5px 0; font-size:0.88rem; color:var(--muted); display:flex; gap:9px; align-items:flex-start;}
+  .fleet-card ul li .icon{color:var(--gold); margin-top:3px;}
+
+  /* how it works */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  @media(max-width:860px){.steps{grid-template-columns:1fr;}}
+  .step{padding:32px 24px; background:var(--bg-elevate); border:1px solid var(--line); border-radius:var(--radius); position:relative;}
+  .step .step-num{font-family:'Yantramanav',sans-serif; font-size:2.4rem; font-weight:900; color:transparent; -webkit-text-stroke:1.5px var(--gold); display:block; margin-bottom:14px;}
+  .step h3{font-size:1.05rem; margin-bottom:8px; color:var(--ivory);}
+  .step p{font-size:0.88rem; color:var(--muted);}
+
+  /* CTA booking section */
+  .cta-section{
+    background:linear-gradient(160deg, var(--surface), var(--bg));
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    text-align:center;
+  }
+  .cta-section h2{font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:16px;}
+  .cta-section p{color:var(--muted); max-width:52ch; margin:0 auto 34px;}
+  .cta-section .btn{padding:19px 40px; font-size:1.05rem;}
+  .cta-stats{display:flex; justify-content:center; gap:44px; margin-top:44px; flex-wrap:wrap;}
+  .cta-stats .stat-num{font-family:'Yantramanav',sans-serif; font-weight:900; font-size:2.1rem; color:var(--gold);}
+  .cta-stats .stat-label{font-size:0.76rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;}
+
+  /* service area */
+  .area-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  @media(max-width:860px){.area-grid{grid-template-columns:1fr;}}
+  .area-map{background:var(--bg-elevate); border:1px solid var(--line); border-radius:var(--radius); padding:34px; min-height:290px; position:relative;}
+  .area-pin{position:absolute; display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--gold); color:var(--ivory); font-size:0.72rem; font-weight:600; padding:7px 12px; border-radius:100px; transform:translate(-50%,-50%); white-space:nowrap;}
+  .area-pin .icon{width:13px; height:13px; color:var(--gold);}
+  .area-pin.main{background:var(--gold); color:#241A08; border-color:var(--gold);}
+  .area-pin.main .icon{color:#241A08;}
+  .area-list li{padding:10px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; font-size:0.92rem; gap:10px;}
+  .area-list li .place-name{display:flex; align-items:center; gap:9px;}
+  .area-list li .icon{color:var(--gold);}
+  .area-list li span.status{color:var(--gold-soft); font-size:0.8rem; white-space:nowrap;}
+
+  /* about */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p{margin-bottom:16px; color:var(--muted);}
+
+  /* footer */
+  footer{background:var(--bg-elevate); border-top:1px solid var(--line); padding:64px 0 30px;}
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:44px; margin-bottom:44px;}
+  @media(max-width:760px){.footer-grid{grid-template-columns:1fr;}}
+  footer h4{color:var(--gold); font-size:0.95rem; margin-bottom:16px; letter-spacing:0.04em;}
+  footer p, footer li{color:var(--muted); font-size:0.9rem;}
+  footer li{padding:6px 0; display:flex; align-items:center; gap:10px;}
+  footer li .icon{color:var(--gold);}
+  .footer-cta{display:flex; flex-direction:column; gap:12px; margin-top:16px; align-items:flex-start;}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:22px; text-align:center; font-size:0.8rem; color:var(--muted);}
+
+  /* floating */
+  .float-stack{position:fixed; right:22px; bottom:22px; z-index:60; display:flex; flex-direction:column; gap:12px;}
+  .float-btn{width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(0,0,0,0.45); border:1px solid var(--line);}
+  .float-btn.wa{background:var(--whatsapp); color:#fff;}
+  .float-btn.call{background:linear-gradient(135deg, var(--gold-soft), var(--gold)); color:#241A08;}
+  .float-btn .icon{width:24px; height:24px;}
+
+  /* ===== MODAL ===== */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(6,6,7,0.72);
+    backdrop-filter:blur(6px);
+    display:none; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-card{
+    width:100%; max-width:460px;
+    background:var(--ivory);
+    color:#241A08;
+    border-radius:24px;
+    padding:32px 28px 26px;
+    position:relative;
+    max-height:88vh; overflow-y:auto;
+    animation:modalIn .25s ease;
+    box-shadow:0 40px 90px rgba(0,0,0,0.5);
+  }
+  @keyframes modalIn{from{opacity:0; transform:translateY(16px) scale(0.97);} to{opacity:1; transform:translateY(0) scale(1);}}
+  @media(prefers-reduced-motion:reduce){.modal-card{animation:none;}}
+  .modal-close{position:absolute; top:18px; right:18px; width:34px; height:34px; border-radius:50%; background:rgba(36,26,8,0.08); display:flex; align-items:center; justify-content:center; color:#241A08;}
+  .modal-close .icon{width:15px; height:15px;}
+  .modal-eyebrow{display:flex; align-items:center; gap:8px; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--maroon); font-weight:700; margin-bottom:6px;}
+  .modal-eyebrow .icon{width:14px; height:14px;}
+  .modal-card h3{font-family:'Yantramanav',sans-serif; font-size:1.4rem; color:#241A08; margin-bottom:22px;}
+
+  .m-field{margin-bottom:18px;}
+  .m-field label{display:flex; align-items:center; gap:7px; font-size:0.8rem; font-weight:700; color:#241A08; margin-bottom:8px;}
+  .m-field label .icon{width:15px; height:15px; color:var(--maroon);}
+  .m-field input{
+    width:100%; padding:13px 14px; border-radius:12px;
+    border:1.5px solid rgba(36,26,8,0.18); background:#fff;
+    font-family:'Manrope',sans-serif; font-size:0.95rem; color:#241A08;
+  }
+  .m-field input:focus{outline:none; border-color:var(--maroon);}
+
+  .chip-group{display:flex; gap:8px; flex-wrap:wrap;}
+  .chip{
+    flex:1; min-width:100px; text-align:center;
+    border:1.5px solid rgba(36,26,8,0.18); border-radius:12px;
+    padding:12px 10px; font-size:0.82rem; font-weight:600; color:#241A08;
+    background:#fff; transition:all .15s ease;
+  }
+  .chip input{position:absolute; opacity:0; pointer-events:none;}
+  .chip .chip-icon{color:#241A08;}
+  .chip.active{background:var(--maroon); border-color:var(--maroon); color:#fff;}
+  .chip.active .chip-icon{color:#fff;}
+
+  .toggle-row{display:flex; gap:8px; margin-bottom:14px;}
+  .toggle-btn{
+    flex:1; display:flex; align-items:center; justify-content:center; gap:7px;
+    padding:11px 10px; border-radius:12px;
+    border:1.5px solid rgba(36,26,8,0.18); background:#fff; font-weight:700; font-size:0.86rem; color:#241A08;
+  }
+  .toggle-btn .icon{width:15px; height:15px;}
+  .toggle-btn.active{background:#241A08; border-color:#241A08; color:var(--gold-soft);}
+  .m-field.date-field{display:none;}
+  .m-field.date-field.show{display:block;}
+
+  .budget-wrap{position:relative;}
+  .budget-wrap .rupee-ic{position:absolute; left:13px; top:50%; transform:translateY(-50%); color:#241A08;}
+  .budget-wrap .rupee-ic svg{width:16px; height:16px;}
+  .budget-wrap input{padding-left:36px;}
+
+  .modal-send{
+    width:100%; margin-top:6px; padding:16px; border-radius:14px;
+    background:var(--whatsapp); color:#fff; font-weight:700; font-size:1rem;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    box-shadow:0 12px 26px rgba(37,211,102,0.3);
+  }
+  .modal-send .icon{width:19px; height:19px;}
+  .modal-note{font-size:0.76rem; color:rgba(36,26,8,0.6); text-align:center; margin-top:12px;}
+
+  ::selection{background:var(--gold); color:#241A08;}
+</style>
+</head>
+<body>
+
+<!-- ===== ICON DEFINITIONS (inline, reused via markup) ===== -->
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="crest">LG</div>
+      <div class="logo-text">LettsGo<small>Premium Gorakhpur Cabs</small></div>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+918090003519" class="btn btn-line">
+        <span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg></span>
+        <span class="btn-label">Call</span>
+      </a>
+      <button class="btn btn-wa" data-open-modal>
+        <span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6Z"/><path d="M8 10l2.5 2.5L16 7.5"/></svg></span>
+        <span class="btn-label">Book Now</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> अभी उपलब्ध · Gorakhpur</div>
+      <h1>एयरपोर्ट हो या घर,<br><span class="gold-txt">LettsGo</span> हर सफ़र में साथ</h1>
+      <p class="sub">
+        No app, no login, no wait. <strong>एक कॉल या एक टैप</strong> — और आपकी प्रीमियम कैब तय है।
+        Gorakhpur airport, railway station या शहर के किसी भी कोने से, अपने बजट में सही कैब बुक करें।
+      </p>
+      <div class="hero-actions">
+        <a href="tel:+918090003519" class="btn btn-line">
+          <span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg></span>
+          अभी कॉल करें
+        </a>
+        <button class="btn btn-wa" data-open-modal>
+          <span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6Z"/><path d="M8 10l2.5 2.5L16 7.5"/></svg></span>
+          WhatsApp पर बुक करें
+        </button>
+      </div>
+      <ul class="trust-row">
+        <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>No app download</li>
+        <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Budget-friendly</li>
+        <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>24×7 उपलब्ध</li>
+        <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Local drivers</li>
+      </ul>
+    </div>
+
+    <div class="pass-card" aria-hidden="true">
+      <div class="pass-top">
+        <span class="p-label">Boarding · LettsGo</span>
+        <span class="p-label">UP 53</span>
+      </div>
+      <div class="pass-route">
+        <div>
+          <div class="place">GKP Airport</div>
+          <div class="subplace">Pickup Point</div>
+        </div>
+        <div class="pass-route-icon">
+          <span class="icon icon-md"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2.5 1.5V22l4-1 4 1v-1.5L13 19v-5.5l8 2.5Z"/></svg></span>
+          <span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
+        </div>
+        <div style="text-align:right;">
+          <div class="place">आपका घर</div>
+          <div class="subplace">Drop Point</div>
+        </div>
+      </div>
+      <div class="pass-mid">
+        <div class="pass-line"></div>
+        <div class="pass-car-icon">
+          <svg viewBox="0 0 48 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2a2 2 0 0 0 2-2v-1.6c0-.9-.6-1.7-1.4-2l-4-1.4-2.4-3A3 3 0 0 0 25 4h-8a3 3 0 0 0-2.3 1.1L11.5 8.4 6.3 9.9A2 2 0 0 0 5 11.8V13a2 2 0 0 0 0 2Z"/><path d="M11.5 8.4h21"/><circle cx="13" cy="15" r="2.6"/><circle cx="31" cy="15" r="2.6"/></svg>
+        </div>
+      </div>
+      <div class="pass-perf"></div>
+      <div class="pass-meta">
+        <div><strong>Mini · Medium · Large</strong>Cab Type</div>
+        <div><strong>24×7</strong>Availability</div>
+        <div style="text-align:right;"><strong>Gorakhpur</strong>Service Area</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-strip">
+  <span>GORAKHPUR · हवाई अड्डा से घर तक · रेलवे स्टेशन से शहर तक · MINI · MEDIUM · LARGE CABS · PREMIUM LOCAL SERVICE · GORAKHPUR ·</span>
+</div>
+
+<!-- ===== WHY ===== -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">क्यों LettsGo</span>
+      <h2>Why Gorakhpur trusts LettsGo</h2>
+      <p>No confusing app, no surge pricing games — बस अपनी ज़रूरत बताइए, हम कैब भेजते हैं।</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon-badge">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M3 3l18 18"/></svg></span>
+        </div>
+        <h3>App की ज़रूरत नहीं</h3>
+        <p>सीधे कॉल करें या WhatsApp पर बुक करें — install, signup कुछ नहीं चाहिए।</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10M7 8h10M9 4c3 0 5 1.6 5 4s-2 4-5 4h-1l6 6"/></svg></span>
+        </div>
+        <h3>आपका बजट, आपकी पसंद</h3>
+        <p>अपना बजट बताइए, हम उसी हिसाब से सही कैब और किराया मैच करते हैं।</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        </div>
+        <h3>Verified Local Drivers</h3>
+        <p>Gorakhpur के अनुभवी ड्राइवर, जो शहर का हर रास्ता जानते हैं।</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-badge">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.3 2"/></svg></span>
+        </div>
+        <h3>24×7 उपलब्ध</h3>
+        <p>सुबह की फ्लाइट हो या रात की ट्रेन — LettsGo हमेशा एक कॉल दूर है।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLEET ===== -->
+<section class="fleet-section" id="fleet">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">हमारी कैब्स</span>
+      <h2>अपनी सीट, अपनी कैब चुनें</h2>
+      <p>यात्रियों की संख्या और ज़रूरत के हिसाब से Mini, Medium या Large कैब बुक करें।</p>
+    </div>
+    <div class="fleet-grid">
+      <div class="fleet-card">
+        <div class="fleet-badge">MINI</div>
+        <div class="fleet-icon-wrap">
+          <svg viewBox="0 0 48 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2a2 2 0 0 0 2-2v-1.6c0-.9-.6-1.7-1.4-2l-4-1.4-2.4-3A3 3 0 0 0 25 4h-8a3 3 0 0 0-2.3 1.1L11.5 8.4 6.3 9.9A2 2 0 0 0 5 11.8V13a2 2 0 0 0 0 2Z"/><path d="M11.5 8.4h21"/><circle cx="13" cy="15" r="2.6"/><circle cx="31" cy="15" r="2.6"/></svg>
+        </div>
+        <h3>Mini Cab</h3>
+        <div class="fleet-seats">4 Seater</div>
+        <ul>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>Solo या छोटे परिवार के लिए</li>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>Hatchback / Sedan</li>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>सबसे किफ़ायती किराया</li>
+        </ul>
+      </div>
+      <div class="fleet-card">
+        <div class="fleet-badge">MEDIUM</div>
+        <div class="fleet-icon-wrap">
+          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2a2 2 0 0 0 2-2v-2.4c0-1-.6-1.9-1.6-2.3l-3.6-1.4-1-3A3 3 0 0 0 30 3h-14a3 3 0 0 0-2.6 1.5l-2 3.4-5 1.8A2 2 0 0 0 5 11.6V14a2 2 0 0 0 0 2Z"/><path d="M11 8.7h24M9 5.5h28"/><circle cx="13" cy="16" r="2.6"/><circle cx="33" cy="16" r="2.6"/></svg>
+        </div>
+        <h3>Medium Cab</h3>
+        <div class="fleet-seats">6 Seater</div>
+        <ul>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>Family trips के लिए ideal</li>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>SUV / Ertiga type</li>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>Airport pickup के लिए popular</li>
+        </ul>
+      </div>
+      <div class="fleet-card">
+        <div class="fleet-badge">LARGE</div>
+        <div class="fleet-icon-wrap">
+          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V8a2 2 0 0 1 2-2h30l6 6v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M4 11h38M16 6v10M28 6v10"/><circle cx="12" cy="18" r="2.6"/><circle cx="34" cy="18" r="2.6"/></svg>
+        </div>
+        <h3>Large Cab</h3>
+        <div class="fleet-seats">10 Seater</div>
+        <ul>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>ग्रुप, शादी-फंक्शन के लिए</li>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>Tempo Traveller / Innova type</li>
+          <li><span class="icon icon-xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>लंबी दूरी के लिए बेहतर</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">प्रोसेस</span>
+      <h2>बुकिंग सिर्फ़ 3 स्टेप में</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h3>Book Now दबाएं</h3>
+        <p>ऊपर दिए किसी भी WhatsApp बटन पर टैप करें — एक सुंदर बुकिंग विंडो खुलेगी।</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h3>Trip details भरें</h3>
+        <p>Cab type, From, To, समय और अपना बजट भरें।</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h3>WhatsApp पर भेजें</h3>
+        <p>एक टैप में मैसेज हमारे नंबर पर पहुंच जाएगा और हम कैब कन्फर्म करेंगे।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / BOOK ===== -->
+<section class="cta-section" id="booking">
+  <div class="wrap">
+    <span class="section-tag">अभी बुक करें</span>
+    <h2>तैयार हैं अपने सफ़र के लिए?</h2>
+    <p>नीचे बटन दबाएं — Cab type, From, To, समय और बजट भरें, बाकी हम संभाल लेंगे।</p>
+    <button class="btn btn-wa" data-open-modal>
+      <span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6Z"/><path d="M8 10l2.5 2.5L16 7.5"/></svg></span>
+      WhatsApp पर बुक करें
+    </button>
+    <div class="cta-stats">
+      <div><div class="stat-num">3</div><div class="stat-label">Cab Types</div></div>
+      <div><div class="stat-num">24×7</div><div class="stat-label">Availability</div></div>
+      <div><div class="stat-num">1</div><div class="stat-label">City — Gorakhpur</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE AREA ===== -->
+<section id="area">
+  <div class="wrap area-grid">
+    <div>
+      <span class="section-tag">सेवा क्षेत्र</span>
+      <h2>अभी सिर्फ़ Gorakhpur में</h2>
+      <p style="margin-top:14px; color:var(--muted);">
+        LettsGo फ़िलहाल पूरे Gorakhpur शहर और आसपास के इलाकों में सेवा दे रहा है। जल्द ही और शहरों में विस्तार होगा।
+      </p>
+      <ul class="area-list">
+        <li><span class="place-name"><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Gorakhpur Airport</span><span class="status">Serviceable</span></li>
+        <li><span class="place-name"><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Gorakhpur Railway Station</span><span class="status">Serviceable</span></li>
+        <li><span class="place-name"><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Civil Lines</span><span class="status">Serviceable</span></li>
+        <li><span class="place-name"><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Taramandal</span><span class="status">Serviceable</span></li>
+        <li><span class="place-name"><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Medical College Road</span><span class="status">Serviceable</span></li>
+        <li><span class="place-name"><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Paadri Bazar</span><span class="status">Serviceable</span></li>
+      </ul>
+    </div>
+    <div class="area-map" aria-hidden="true">
+      <div class="area-pin main" style="top:50%; left:50%;"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Gorakhpur City</div>
+      <div class="area-pin" style="top:20%; left:28%;"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Airport</div>
+      <div class="area-pin" style="top:72%; left:24%;"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Railway Station</div>
+      <div class="area-pin" style="top:28%; left:74%;"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Civil Lines</div>
+      <div class="area-pin" style="top:76%; left:70%;"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Taramandal</div>
+      <div class="area-pin" style="top:56%; left:12%;"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Medical College</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" style="background:var(--bg-elevate); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap about-grid">
+    <div>
+      <span class="section-tag">हमारे बारे में</span>
+      <h2>LettsGo — Gorakhpur की अपनी कैब सर्विस</h2>
+      <p>LettsGo की शुरुआत एक सीधी सोच से हुई: Gorakhpur के लोगों को कैब बुक करने के लिए भारी-भरकम ऐप और सर्ज प्राइसिंग से जूझना नहीं चाहिए। बस एक कॉल या एक टैप से आपकी कैब तय हो जानी चाहिए।</p>
+      <p>हम local drivers के साथ काम करते हैं जो शहर की हर गली और रूट पहचानते हैं, ताकि आपकी यात्रा सुरक्षित और समय पर हो।</p>
+    </div>
+    <div class="pass-card" style="min-height:180px;" aria-hidden="true">
+      <div class="pass-top">
+        <span class="p-label">Service</span>
+        <span class="p-label">LettsGo</span>
+      </div>
+      <div class="pass-route">
+        <div>
+          <div class="place">Call / WhatsApp</div>
+          <div class="subplace">Booking Method</div>
+        </div>
+      </div>
+      <div class="pass-route" style="margin-bottom:0;">
+        <div>
+          <div class="place">Gorakhpur City Only</div>
+          <div class="subplace">Coverage Area</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER / CONTACT ===== -->
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="logo" style="margin-bottom:16px;">
+        <div class="crest">LG</div>
+        <div class="logo-text">LettsGo<small>आपकी मंज़िल, हमारी ज़िम्मेदारी</small></div>
+      </div>
+      <p>Gorakhpur airport और शहर के किसी भी कोने से, अपने बजट में सही कैब — एक कॉल या WhatsApp दूर।</p>
+      <div class="footer-cta">
+        <a href="tel:+918090003519" class="btn btn-line">
+          <span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg></span>
+          +91 80900 03519
+        </a>
+        <button class="btn btn-wa" data-open-modal>
+          <span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6Z"/><path d="M8 10l2.5 2.5L16 7.5"/></svg></span>
+          WhatsApp पर बुक करें
+        </button>
+      </div>
+    </div>
+    <div>
+      <h4>सेवाएं</h4>
+      <ul>
+        <li><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2.5 1.5V22l4-1 4 1v-1.5L13 19v-5.5l8 2.5Z" fill="currentColor" stroke="none"/></svg></span>Airport Pickup / Drop</li>
+        <li><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M8 21l1.5-4M16 21l-1.5-4M4 13h16"/></svg></span>Railway Station Transfer</li>
+        <li><span class="icon icon-sm"><svg viewBox="0 0 48 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2a2 2 0 0 0 2-2v-1.6c0-.9-.6-1.7-1.4-2l-4-1.4-2.4-3A3 3 0 0 0 25 4h-8a3 3 0 0 0-2.3 1.1L11.5 8.4 6.3 9.9A2 2 0 0 0 5 11.8V13a2 2 0 0 0 0 2Z"/></svg></span>Mini · Medium · Large Cabs</li>
+        <li><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Local City Rides</li>
+      </ul>
+    </div>
+    <div>
+      <h4>संपर्क करें</h4>
+      <ul>
+        <li><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg></span>+91 80900 03519</li>
+        <li><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6Z"/><path d="M8 10l2.5 2.5L16 7.5"/></svg></span>+91 80900 03519</li>
+        <li><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>Gorakhpur, UP</li>
+        <li><span class="icon icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.3 2"/></svg></span>24×7 Available</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    © 2026 LettsGo · Gorakhpur की अपनी प्रीमियम कैब सर्विस · यह एक स्थानीय, स्वतंत्र सेवा है
+  </div>
+</footer>
+
+<div class="float-stack">
+  <button class="float-btn wa" data-open-modal title="WhatsApp पर बुक करें">
+    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6Z"/><path d="M8 10l2.5 2.5L16 7.5"/></svg></span>
+  </button>
+  <a href="tel:+918090003519" class="float-btn call" title="अभी कॉल करें">
+    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg></span>
+  </a>
+</div>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l14 14M19 5L5 19"/></svg></span>
+    </button>
+    <div class="modal-eyebrow">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6Z"/><path d="M8 10l2.5 2.5L16 7.5"/></svg></span>
+      Book via WhatsApp
+    </div>
+    <h3 id="modalTitle">अपनी ट्रिप की जानकारी भरें</h3>
+
+    <form id="bookingForm">
+      <div class="m-field">
+        <label>
+          <span class="icon"><svg viewBox="0 0 48 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2a2 2 0 0 0 2-2v-1.6c0-.9-.6-1.7-1.4-2l-4-1.4-2.4-3A3 3 0 0 0 25 4h-8a3 3 0 0 0-2.3 1.1L11.5 8.4 6.3 9.9A2 2 0 0 0 5 11.8V13a2 2 0 0 0 0 2Z"/></svg></span>
+          Type of Cab
+        </label>
+        <div class="chip-group" id="cabTypeGroup">
+          <label class="chip active">
+            <input type="radio" name="cabType" value="Mini (4 Seater)" checked>
+            <span class="chip-icon icon"><svg viewBox="0 0 48 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2a2 2 0 0 0 2-2v-1.6c0-.9-.6-1.7-1.4-2l-4-1.4-2.4-3A3 3 0 0 0 25 4h-8a3 3 0 0 0-2.3 1.1L11.5 8.4 6.3 9.9A2 2 0 0 0 5 11.8V13a2 2 0 0 0 0 2Z"/></svg></span>
+            <div>Mini · 4</div>
+          </label>
+          <label class="chip">
+            <input type="radio" name="cabType" value="Medium (6 Seater)">
+            <span class="chip-icon icon"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2a2 2 0 0 0 2-2v-2.4c0-1-.6-1.9-1.6-2.3l-3.6-1.4-1-3A3 3 0 0 0 30 3h-14a3 3 0 0 0-2.6 1.5l-2 3.4-5 1.8A2 2 0 0 0 5 11.6V14a2 2 0 0 0 0 2Z"/></svg></span>
+            <div>Medium · 6</div>
+          </label>
+          <label class="chip">
+            <input type="radio" name="cabType" value="Large (10 Seater)">
+            <span class="chip-icon icon"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V8a2 2 0 0 1 2-2h30l6 6v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M4 11h38M16 6v10M28 6v10"/></svg></span>
+            <div>Large · 10</div>
+          </label>
+        </div>
+      </div>
+
+      <div class="m-field">
+        <label for="pickup">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
+          From
+        </label>
+        <input type="text" id="pickup" required placeholder="जैसे: Gorakhpur Airport">
+      </div>
+
+      <div class="m-field">
+        <label for="drop">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
+          To
+        </label>
+        <input type="text" id="drop" required placeholder="जैसे: Civil Lines, Gorakhpur">
+      </div>
+
+      <div class="m-field">
+        <label>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.3 2"/></svg></span>
+          कब चाहिए?
+        </label>
+        <div class="toggle-row" id="whenToggle">
+          <button type="button" class="toggle-btn active" data-when="now">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.3 2"/></svg></span>
+            अभी (Now)
+          </button>
+          <button type="button" class="toggle-btn" data-when="later">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+            तारीख़ चुनें
+          </button>
+        </div>
+      </div>
+
+      <div class="m-field date-field" id="dateField">
+        <label for="datetime">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+          तारीख़ और समय
+        </label>
+        <input type="datetime-local" id="datetime">
+      </div>
+
+      <div class="m-field">
+        <label for="budget">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10M7 8h10M9 4c3 0 5 1.6 5 4s-2 4-5 4h-1l6 6"/></svg></span>
+          आपका बजट
+        </label>
+        <div class="budget-wrap">
+          <span class="rupee-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10M7 8h10M9 4c3 0 5 1.6 5 4s-2 4-5 4h-1l6 6"/></svg></span>
+          <input type="number" id="budget" min="0" placeholder="जैसे: 500">
+        </div>
+      </div>
+
+      <button type="submit" class="modal-send">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6Z"/><path d="M8 10l2.5 2.5L16 7.5"/></svg></span>
+        WhatsApp पर भेजें
+      </button>
+      <p class="modal-note">बटन दबाते ही WhatsApp खुलेगा, मैसेज पहले से तैयार होगा — बस भेजना है।</p>
+    </form>
+  </div>
+</div>
+
+<script>
+  const WHATSAPP_NUMBER = "918090003519";
+
+  const overlay = document.getElementById('modalOverlay');
+  const openBtns = document.querySelectorAll('[data-open-modal]');
+  const closeBtn = document.getElementById('modalClose');
+  const form = document.getElementById('bookingForm');
+  const whenToggle = document.getElementById('whenToggle');
+  const dateField = document.getElementById('dateField');
+
+  function openModal(){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  openBtns.forEach(btn => btn.addEventListener('click', openModal));
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if(e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+  whenToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('.toggle-btn');
+    if(!btn) return;
+    whenToggle.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if(btn.dataset.when === 'later'){
+      dateField.classList.add('show');
+    } else {
+      dateField.classList.remove('show');
+    }
+  });
+
+  document.querySelectorAll('.chip-group').forEach(group => {
+    group.addEventListener('click', () => {
+      group.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      const checked = group.querySelector('input:checked');
+      if(checked) checked.closest('.chip').classList.add('active');
+    });
+  });
+
+  function selectedRadioValue(name, fallback){
+    const el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : fallback;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.reportValidity()) return;
+
+    const cabType = selectedRadioValue('cabType', 'Mini (4 Seater)');
+    const pickup = document.getElementById('pickup').value.trim();
+    const drop = document.getElementById('drop').value.trim();
+    const budget = document.getElementById('budget').value.trim();
+    const isLater = whenToggle.querySelector('.toggle-btn.active').dataset.when === 'later';
+    const datetime = document.getElementById('datetime').value;
+
+    let whenText = "अभी (Now / ASAP)";
+    if(isLater && datetime){
+      whenText = new Date(datetime).toLocaleString('en-IN');
+    }
+
+    let msg = "नमस्ते LettsGo! मुझे एक कैब बुक करनी है।\n\n";
+    msg += "Cab Type: " + cabType + "\n";
+    msg += "From: " + (pickup || "—") + "\n";
+    msg += "To: " + (drop || "—") + "\n";
+    msg += "कब: " + whenText + "\n";
+    msg += "बजट: " + (budget ? "₹" + budget : "—") + "\n";
+    msg += "\nकृपया उपलब्ध कैब और किराया बताएं। धन्यवाद!";
+
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+    window.open(url, '_blank');
+    closeModal();
+  });
+</script>
+
+</body>
+</html>
