@@ -815,12 +815,16 @@ textarea.form-control {
     border: none;
     cursor: pointer;
     z-index: 900;
-    font-size: 1.6rem;
+    padding: 0;
     transition: transform 0.15s ease;
+}
+.whatsapp-float svg {
+    display: block;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.06);
+
 }
 
 /* ------------------------------------------------------------
@@ -1072,7 +1076,8 @@ textarea.form-control {
     .footer-grid { grid-template-columns: 1fr; gap: 30px; }
     .form-row { grid-template-columns: 1fr; }
     .hero-doctor-line { flex-direction: column; gap: 6px; }
-    .whatsapp-float { right: 16px; bottom: 16px; width: 54px; height: 54px; font-size: 1.4rem; }
+    .whatsapp-float { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+    .whatsapp-float svg { width: 26px; height: 26px; }
     .form-card { padding: 22px; }
 }
 
