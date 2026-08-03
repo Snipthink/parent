@@ -1,9 +1,0 @@
-{
-  "online_consultancy": {
-    "enabled": false,
-    "title": "Book Online Consultancy",
-    "description": "Submit your request through the clinic's secure online consultation form.",
-    "button_text": "Book Online Consultancy",
-    "google_form_url": "https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM_ID/viewform"
-  }
-}
