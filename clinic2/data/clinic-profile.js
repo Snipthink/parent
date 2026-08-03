@@ -4,13 +4,13 @@
    clinic. Do not rename the variable "clinicProfile".
    ============================================================ */
 const clinicProfile = {
-    clinic_name: "APNA HEALTH CARE CLINIC",
+    clinic_name: "DEVIN HEALTH CARE CLINIC",
     tagline: "Trusted Healthcare for Your Family",
     description: "Professional and compassionate healthcare for your everyday needs.",
 
     logo: {
         filename: "logo.png",
-        alt: "Apna Health Care Clinic Logo"
+        alt: "Devin Health Care Clinic Logo"
     },
 
     favicon: {

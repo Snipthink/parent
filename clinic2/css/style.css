@@ -818,13 +818,13 @@ textarea.form-control {
     padding: 0;
     transition: transform 0.15s ease;
 }
+
 .whatsapp-float svg {
     display: block;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.06);
-
 }
 
 /* ------------------------------------------------------------
@@ -943,14 +943,21 @@ textarea.form-control {
     height: 40px;
     border-radius: 50%;
     background: rgba(255,255,255,0.1);
+    color: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.05rem;
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.footer-social a svg {
+    display: block;
 }
 
 .footer-social a:hover {
-    background: rgba(255,255,255,0.2);
+    color: var(--button-text);
+    background: var(--accent);
+    transform: translateY(-2px);
     text-decoration: none;
 }
 

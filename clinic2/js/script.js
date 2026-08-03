@@ -422,30 +422,28 @@
 
     function renderSocialMedia() {
         const sm = (typeof socialMedia !== "undefined") ? socialMedia : {};
-        const facebook = safe(sm.facebook);
-        const instagram = safe(sm.instagram);
-        const anySocial = facebook || instagram;
+        const platforms = ["facebook", "instagram", "x", "youtube"];
+        const values = {};
+        let anySocial = false;
+
+        platforms.forEach(function (key) {
+            values[key] = safe(sm[key]);
+            if (values[key]) anySocial = true;
+        });
 
         document.querySelectorAll("[data-social-section]").forEach(function (n) {
             n.classList.toggle("hidden", !anySocial);
         });
 
-        document.querySelectorAll("a[data-social='facebook']").forEach(function (n) {
-            if (facebook) {
-                n.href = facebook;
-                n.classList.remove("hidden");
-            } else {
-                n.classList.add("hidden");
-            }
-        });
-
-        document.querySelectorAll("a[data-social='instagram']").forEach(function (n) {
-            if (instagram) {
-                n.href = instagram;
-                n.classList.remove("hidden");
-            } else {
-                n.classList.add("hidden");
-            }
+        platforms.forEach(function (key) {
+            document.querySelectorAll("a[data-social='" + key + "']").forEach(function (n) {
+                if (values[key]) {
+                    n.href = values[key];
+                    n.classList.remove("hidden");
+                } else {
+                    n.classList.add("hidden");
+                }
+            });
         });
     }
 

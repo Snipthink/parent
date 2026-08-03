@@ -6,7 +6,7 @@
 const contactDetails = {
     phone: "+91 98765 43210",
     whatsapp: "919876543210",
-    email: "care@apnahealthclinic.com",
+    email: "care@devinhealthclinic.example",
 
     address: {
         line1: "12 Wellness Avenue",

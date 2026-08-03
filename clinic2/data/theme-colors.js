@@ -1,27 +1,22 @@
-/* ============================================================
-   THEME COLORS
-   Controls both the Light and Dark color palettes used across
-   the entire website. Values are standard hex colors.
-   ============================================================ */
 const themeColors = {
 
     light: {
         background: "#FFFFFF",
-        section_background: "#F5F9F9",
+        section_background: "#F4F8FC",
         card_background: "#FFFFFF",
 
-        primary: "#0F766E",
-        secondary: "#115E59",
-        accent: "#45C7BB",
+        primary: "#1769AA",
+        secondary: "#0D4F80",
+        accent: "#4DA3D9",
 
-        heading_text: "#132326",
-        body_text: "#304448",
-        muted_text: "#55686B",
+        heading_text: "#12212F",
+        body_text: "#34495A",
+        muted_text: "#687B8C",
 
-        button_background: "#0F766E",
+        button_background: "#1769AA",
         button_text: "#FFFFFF",
 
-        border: "#D9E6E5",
+        border: "#D7E3EC",
 
         success: "#16845C",
         warning: "#946200",
@@ -29,22 +24,22 @@ const themeColors = {
     },
 
     dark: {
-        background: "#091416",
-        section_background: "#0E1D1F",
-        card_background: "#132426",
+        background: "#07121F",
+        section_background: "#0B1B2D",
+        card_background: "#10263D",
 
-        primary: "#8BE7DF",
-        secondary: "#132326",
-        accent: "#8BE7DF",
+        primary: "#42A5F5",
+        secondary: "#0B1B2D",
+        accent: "#90CAF9",
 
-        heading_text: "#F1FAF9",
-        body_text: "#D5E5E4",
-        muted_text: "#A9BCBC",
+        heading_text: "#F3F8FC",
+        body_text: "#D5E3EF",
+        muted_text: "#94A9BC",
 
-        button_background: "#5FD4C8",
-        button_text: "#071313",
+        button_background: "#42A5F5",
+        button_text: "#07121F",
 
-        border: "#294143",
+        border: "#28435D",
 
         success: "#4FD19A",
         warning: "#F0B85A",
