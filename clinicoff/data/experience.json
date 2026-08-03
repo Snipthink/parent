@@ -1,0 +1,23 @@
+{
+  "experience": {
+    "years": "15+",
+    "label": "Years of Clinical Experience",
+    "timeline": [
+      {
+        "year": "2011",
+        "title": "Medical Training",
+        "description": "Completed advanced medical education and clinical training."
+      },
+      {
+        "year": "2015",
+        "title": "Internal Medicine Practice",
+        "description": "Focused on adult primary and internal medicine care."
+      },
+      {
+        "year": "2020",
+        "title": "Preventive Care Leadership",
+        "description": "Expanded physician-led preventive and chronic care programs."
+      }
+    ]
+  }
+}

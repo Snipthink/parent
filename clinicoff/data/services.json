@@ -1,0 +1,40 @@
+{
+  "services": [
+    {
+      "id": "srv-1",
+      "name": "Primary Care Consultation",
+      "description": "Thorough clinical evaluations, diagnostic physicals, and ongoing primary health management.",
+      "icon": "fa-stethoscope"
+    },
+    {
+      "id": "srv-2",
+      "name": "Preventive Health Screening",
+      "description": "Proactive risk assessments and early detection protocols.",
+      "icon": "fa-shield-halved"
+    },
+    {
+      "id": "srv-3",
+      "name": "Chronic Disease Management",
+      "description": "Long-term monitoring for hypertension, diabetes, cholesterol and thyroid conditions.",
+      "icon": "fa-heart-pulse"
+    },
+    {
+      "id": "srv-4",
+      "name": "Cardiovascular Risk Check",
+      "description": "Cardiovascular risk review and individualized lifestyle guidance.",
+      "icon": "fa-wave-square"
+    },
+    {
+      "id": "srv-5",
+      "name": "Annual Executive Wellness",
+      "description": "Extensive health audits including vital tracking and stress evaluation.",
+      "icon": "fa-clipboard-check"
+    },
+    {
+      "id": "srv-6",
+      "name": "Prescription & Follow-up Care",
+      "description": "Medication reviews and post-treatment monitoring.",
+      "icon": "fa-capsules"
+    }
+  ]
+}

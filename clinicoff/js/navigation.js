@@ -1,0 +1,1 @@
+export function initNavigation(){const b=document.getElementById('mobileMenuBtn'),m=document.getElementById('mobileMenu');b?.addEventListener('click',()=>m?.classList.toggle('hidden'));document.querySelectorAll('.mobile-nav-link').forEach(x=>x.addEventListener('click',()=>m?.classList.add('hidden')));}

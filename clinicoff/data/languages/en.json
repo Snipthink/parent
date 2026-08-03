@@ -1,0 +1,137 @@
+{
+  "ui": {
+    "meta": {
+      "title": "{doctor} | {clinic}"
+    },
+    "nav": {
+      "doctor": "Doctor",
+      "services": "Services",
+      "care_process": "Care Process",
+      "reviews": "Reviews",
+      "contact": "Contact",
+      "contact_clinic": "Contact Clinic",
+      "appointment": "Book Appointment",
+      "videos": "Doctor Videos"
+    },
+    "hero": {
+      "eyebrow": "Physician-Led Primary Care",
+      "primary_cta": "Schedule Consultation",
+      "secondary_cta": "Call Clinic"
+    },
+    "about": {
+      "label": "About the Doctor",
+      "heading": "Meet Your Doctor",
+      "profile_button": "View Doctor Profile & Credentials",
+      "meet_prefix": "Meet"
+    },
+    "services": {
+      "label": "Clinical Expertise",
+      "heading": "Comprehensive Medical Services",
+      "description": "Thorough, modern diagnostic and preventive medical care designed to safeguard your overall health at every stage of life."
+    },
+    "consultation": {
+      "label": "Patient-Centered Philosophy",
+      "title": "Personalized Care, Every Visit",
+      "description": "We believe medicine is most effective when physicians take time to listen, explain, and guide. Consultations are structured to never feel rushed, giving you full clarity regarding your health diagnostics and wellness plans.",
+      "routine_title": "Routine Evaluations Performed as Appropriate:",
+      "checks": {
+        "blood_pressure": "Blood Pressure",
+        "routine_vitals": "Routine Vitals",
+        "heart_lung": "Heart & Lung Check",
+        "symptom": "Symptom Assessment",
+        "history": "Medical History",
+        "preventive": "Preventive Screening"
+      }
+    },
+    "process": {
+      "label": "Clear Medical Process",
+      "heading": "Your 4-Step Consultation Journey",
+      "description": "A structured approach guaranteeing thorough attention, accuracy, and actionable health guidance.",
+      "steps": {
+        "listen": {
+          "title": "Listen"
+        },
+        "assess": {
+          "title": "Assess"
+        },
+        "examine": {
+          "title": "Examine"
+        },
+        "guide": {
+          "title": "Guide"
+        }
+      }
+    },
+    "why": {
+      "heading": "Why Patients Choose {clinic}",
+      "description": "We prioritize direct patient-doctor communication, evidence-driven clinical decisions, and continuous care continuity."
+    },
+    "reviews": {
+      "label": "Patient Testimonials",
+      "heading": "What Our Patients Say",
+      "patient_photo_alt": "Patient testimonial photo"
+    },
+    "appointment": {
+      "heading": "Request an Appointment",
+      "description": "Fill out the details below. Requests generate a pre-formatted message for instant confirmation via WhatsApp or phone call.",
+      "modal_label": "Appointment",
+      "modal_title": "Book an Appointment",
+      "full_name": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email",
+      "reason": "Reason for Visit",
+      "date": "Preferred Date",
+      "time": "Preferred Time",
+      "additional": "Additional Information",
+      "send": "Send Appointment Request",
+      "select_category": "Select category",
+      "modal_description": "Fill in your details and the clinic can confirm your preferred appointment.",
+      "age": "Age",
+      "gender": "Gender"
+    },
+    "contact": {
+      "heading": "Contact Our Clinic",
+      "phone_label": "Phone Number",
+      "whatsapp_label": "WhatsApp Instant Chat",
+      "email_label": "Email Address",
+      "address_label": "Clinic Address",
+      "hours_heading": "Clinic Working Hours",
+      "phone_hours": "Mon–Fri: 8:30 AM – 5:30 PM",
+      "whatsapp_help": "Instant booking & general inquiries",
+      "email_help": "Responses within 24 business hours",
+      "walkin_notice": "Walk-in consultations depend on daily slot availability. Prior booking is strongly recommended."
+    },
+    "cta": {
+      "heading": "Your Health Deserves Personal Attention.",
+      "description": "Schedule your comprehensive primary care consultation with {doctor} today."
+    },
+    "footer": {
+      "quick_navigation": "Quick Navigation",
+      "connect": "Connect With Us",
+      "about_doctor": "About the Doctor",
+      "services": "Medical Services",
+      "consultation": "Consultation Process",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions"
+    },
+    "buttons": {
+      "close": "Close",
+      "directions": "Get Directions on Google Maps",
+      "call": "Call Clinic",
+      "whatsapp": "WhatsApp"
+    },
+    "theme": {
+      "customizer": "Theme Customizer",
+      "color_palette": "Color Palette",
+      "appearance": "Appearance",
+      "dark_mode": "Dark Mode"
+    },
+    "trust": {
+      "years": "15+ Years Clinical Practice",
+      "patients": "Trusted by over 12,000+ patients and families"
+    },
+    "videos": {
+      "label": "Doctor's Video Messages"
+    }
+  }
+}

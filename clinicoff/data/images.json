@@ -1,0 +1,10 @@
+{
+  "images": {
+    "logo": "assets/images/logo.png",
+    "doctor": {
+      "hero": "assets/images/doctor-hero.png",
+      "about": "assets/images/doctor-about.png",
+      "consultation": "assets/images/doctor-consultation.png"
+    }
+  }
+}

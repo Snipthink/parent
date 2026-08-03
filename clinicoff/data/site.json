@@ -1,0 +1,15 @@
+{
+  "site": {
+    "default_language": "en",
+    "default_theme": "sapphire",
+    "features": {
+      "appointment": true,
+      "doctor_profile": true,
+      "reviews": true,
+      "experience": true,
+      "language_switcher": true,
+      "theme_switcher": true
+    },
+    "patient_image": true
+  }
+}
