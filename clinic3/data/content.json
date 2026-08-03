@@ -1,0 +1,39 @@
+{
+  "content": {
+    "nav": {
+      "doctor": "Doctor",
+      "services": "Services",
+      "reviews": "Reviews",
+      "contact": "Contact",
+      "appointment": "Book Appointment"
+    },
+    "hero": {
+      "eyebrow": "Physician-Led Primary Care",
+      "primary_cta": "Schedule Consultation",
+      "secondary_cta": "Call Clinic"
+    },
+    "about": {
+      "label": "About the Doctor",
+      "heading": "Meet Your Doctor",
+      "profile_button": "View Doctor Profile"
+    },
+    "services": {
+      "label": "Our Services",
+      "heading": "Healthcare Designed Around You"
+    },
+    "reviews": {
+      "label": "Patient Reviews",
+      "heading": "Trusted by Patients"
+    },
+    "contact": {
+      "label": "Contact",
+      "heading": "Let's Take Care of Your Health"
+    },
+    "buttons": {
+      "close": "Close",
+      "directions": "Get Directions",
+      "call": "Call Clinic",
+      "whatsapp": "WhatsApp"
+    }
+  }
+}

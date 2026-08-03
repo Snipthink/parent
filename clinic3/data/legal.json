@@ -1,0 +1,28 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "effective_date": "January 1, 2026",
+      "sections": [
+        {"title":"1. Information We Receive","content":"We may receive information you voluntarily provide when you contact the clinic, request an appointment, or submit an online form. This can include your name, contact details and appointment-related information."},
+        {"title":"2. How Information Is Used","content":"Information is used to respond to inquiries, coordinate appointments, communicate with patients and provide the services requested from the clinic."},
+        {"title":"3. WhatsApp and Third-Party Services","content":"If you choose to use WhatsApp, Google Forms, maps, social media or other third-party services, those services may process information according to their own privacy policies and terms."},
+        {"title":"4. Medical Information","content":"This website is not intended to replace direct medical evaluation. Do not submit sensitive medical information through a public form unless the clinic specifically instructs you to do so."},
+        {"title":"5. Data Retention","content":"The clinic should define its own retention period and record-handling practices here. Replace this section with the clinic's actual policy before publication."},
+        {"title":"6. Contact","content":"For privacy questions, contact the clinic using the contact details published on this website."}
+      ]
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "effective_date": "January 1, 2026",
+      "sections": [
+        {"title":"1. Website Purpose","content":"This website provides general clinic information, patient education and appointment-request options for a private medical practice."},
+        {"title":"2. No Emergency Care","content":"This website and its forms are not an emergency medical service. If you have a medical emergency, seek appropriate emergency care immediately."},
+        {"title":"3. Appointment Requests","content":"Submitting an appointment request does not by itself guarantee an appointment. The clinic must confirm availability and the appointment time."},
+        {"title":"4. Patient Education","content":"Educational articles, videos and messages are provided for general information and should not be treated as individualized diagnosis or treatment instructions."},
+        {"title":"5. Third-Party Links","content":"Links to WhatsApp, Google Forms, Google Maps, YouTube and social networks are provided for convenience. Third-party services operate under their own terms and policies."},
+        {"title":"6. Changes","content":"The clinic may update website content, services, hours and these terms when necessary. The clinic should replace this template language with its final legal text before publication."}
+      ]
+    }
+  }
+}
