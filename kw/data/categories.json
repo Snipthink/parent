@@ -1,0 +1,82 @@
+[
+  {
+    "id": "electrician",
+    "name": { "en": "Electrician", "hi": "इलेक्ट्रीशियन", "bn": "ইলেকট্রিশিয়ান" },
+    "icon": "bi-lightning-charge-fill",
+    "startingPrice": 150,
+    "priceRange": "₹150 – ₹800",
+    "estimatedTime": "15–40 min",
+    "description": { "en": "Wiring, switches, fans, and short-circuit fixes.", "hi": "वायरिंग, स्विच, पंखे और शॉर्ट-सर्किट की मरम्मत।", "bn": "ওয়্যারিং, সুইচ, ফ্যান এবং শর্ট-সার্কিট মেরামত।" },
+    "themeColor": "#E11D2E"
+  },
+  {
+    "id": "plumber",
+    "name": { "en": "Plumber", "hi": "प्लंबर", "bn": "প্লাম্বার" },
+    "icon": "bi-wrench-adjustable-circle-fill",
+    "startingPrice": 150,
+    "priceRange": "₹150 – ₹900",
+    "estimatedTime": "20–45 min",
+    "description": { "en": "Leak repairs, tap fitting, and blockage clearing.", "hi": "लीक मरम्मत, नल फिटिंग और अवरोध हटाना।", "bn": "লিক মেরামত, ট্যাপ ফিটিং এবং ব্লকেজ পরিষ্কার।" },
+    "themeColor": "#0EA5E9"
+  },
+  {
+    "id": "ac-repair",
+    "name": { "en": "AC Repair", "hi": "एसी रिपेयर", "bn": "এসি মেরামত" },
+    "icon": "bi-snow2",
+    "startingPrice": 300,
+    "priceRange": "₹300 – ₹1000",
+    "estimatedTime": "30–60 min",
+    "description": { "en": "Gas refill, servicing, and cooling issues.", "hi": "गैस रिफिल, सर्विसिंग और कूलिंग समस्याएं।", "bn": "গ্যাস রিফিল, সার্ভিসিং এবং কুলিং সমস্যা।" },
+    "themeColor": "#22C55E"
+  },
+  {
+    "id": "carpenter",
+    "name": { "en": "Carpenter", "hi": "बढ़ई", "bn": "কাঠমিস্ত্রি" },
+    "icon": "bi-hammer",
+    "startingPrice": 200,
+    "priceRange": "₹200 – ₹900",
+    "estimatedTime": "30–60 min",
+    "description": { "en": "Furniture repair, hinges, locks, and fittings.", "hi": "फर्नीचर मरम्मत, कब्जे, ताले और फिटिंग।", "bn": "আসবাবপত্র মেরামত, কব্জা, তালা এবং ফিটিং।" },
+    "themeColor": "#A16207"
+  },
+  {
+    "id": "cleaning",
+    "name": { "en": "Home Cleaning", "hi": "होम क्लीनिंग", "bn": "হোম ক্লিনিং" },
+    "icon": "bi-stars",
+    "startingPrice": 250,
+    "priceRange": "₹250 – ₹1000",
+    "estimatedTime": "45–90 min",
+    "description": { "en": "Deep cleaning for kitchen, bathroom, and living areas.", "hi": "रसोई, बाथरूम और लिविंग एरिया की डीप क्लीनिंग।", "bn": "রান্নাঘর, বাথরুম এবং লিভিং এরিয়ার ডিপ ক্লিনিং।" },
+    "themeColor": "#EC4899"
+  },
+  {
+    "id": "painter",
+    "name": { "en": "Painter", "hi": "पेंटर", "bn": "রংমিস্ত্রি" },
+    "icon": "bi-palette-fill",
+    "startingPrice": 400,
+    "priceRange": "₹400 – ₹1000",
+    "estimatedTime": "60+ min",
+    "description": { "en": "Touch-ups, wall patches, and small paint jobs.", "hi": "टच-अप, दीवार पैच और छोटे पेंट कार्य।", "bn": "টাচ-আপ, দেয়াল প্যাচ এবং ছোট রঙের কাজ।" },
+    "themeColor": "#8B5CF6"
+  },
+  {
+    "id": "appliance",
+    "name": { "en": "Appliance Repair", "hi": "उपकरण मरम्मत", "bn": "যন্ত্রপাতি মেরামত" },
+    "icon": "bi-tools",
+    "startingPrice": 200,
+    "priceRange": "₹200 – ₹900",
+    "estimatedTime": "30–60 min",
+    "description": { "en": "Washing machine, fridge, and microwave fixes.", "hi": "वॉशिंग मशीन, फ्रिज और माइक्रोवेव की मरम्मत।", "bn": "ওয়াশিং মেশিন, ফ্রিজ এবং মাইক্রোওয়েভ মেরামত।" },
+    "themeColor": "#F97316"
+  },
+  {
+    "id": "pest-control",
+    "name": { "en": "Pest Control", "hi": "पेस्ट कंट्रोल", "bn": "পেস্ট কন্ট্রোল" },
+    "icon": "bi-bug-fill",
+    "startingPrice": 350,
+    "priceRange": "₹350 – ₹1000",
+    "estimatedTime": "40–70 min",
+    "description": { "en": "Cockroach, termite, and rodent treatment.", "hi": "कॉकरोच, दीमक और कृंतक उपचार।", "bn": "তেলাপোকা, উইপোকা এবং ইঁদুর নিয়ন্ত্রণ।" },
+    "themeColor": "#14B8A6"
+  }
+]

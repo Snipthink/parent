@@ -1,0 +1,140 @@
+{
+  "code": "en",
+  "dir": "ltr",
+  "chooseLanguage": "Choose your language",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "rulebook": "Rulebook",
+    "how": "How it works",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "partner": "Become a Partner"
+  },
+  "hero": {
+    "eyebrow": "24×7 On-Demand Help",
+    "badgeSecondary": "Verified & Instant",
+    "title": "Help arrives before the kettle boils.",
+    "subtitle": "Book a verified local professional in under a minute — no calls, no waiting on hold.",
+    "searchPlaceholder": "Search for a service (e.g. plumber, AC repair)",
+    "cta": "Book a service"
+  },
+  "categories": {
+    "title": "What do you need help with?",
+    "popular": "Popular services",
+    "all": "All services"
+  },
+  "how": {
+    "title": "How it works",
+    "steps": [
+      { "title": "Pick a service", "text": "Tap the category that matches your problem." },
+      { "title": "Set your timing & budget", "text": "Tell us how urgent it is and what you'd like to pay." },
+      { "title": "Share your location & address", "text": "One tap shares your GPS pin and full home address." },
+      { "title": "Confirm on WhatsApp", "text": "Your request opens in WhatsApp, ready to send." }
+    ]
+  },
+  "why": {
+    "title": "Why choose us",
+    "points": [
+      { "title": "Verified professionals", "text": "Every provider is background-checked." },
+      { "title": "No hidden charges", "text": "You agree on the budget before work begins." },
+      { "title": "Fast response", "text": "Most requests are picked up within minutes." }
+    ]
+  },
+  "booking": {
+    "title": "Book Service",
+    "category": "Category",
+    "requiredWithin": "Required within",
+    "budget": "Your budget",
+    "location": "Your location",
+    "getLocation": "Share GPS location",
+    "locationGranted": "GPS Pin Captured",
+    "locationDenied": "GPS permission denied — please enter your address manually below.",
+    "locationUnavailable": "Couldn't get GPS. Please type your manual address below.",
+    "manualAddressLabel": "Manual Address / House No. / Landmark",
+    "manualAddressPlaceholder": "Enter flat/house no, building, street, landmark...",
+    "message": "What problem are you facing, or what service are you looking for?",
+    "messagePlaceholder": "Describe your issue or the service you need in a few sentences...",
+    "submit": "Book on WhatsApp",
+    "customTimeLabel": "Pick a time"
+  },
+  "rulebook": {
+    "title": "Service Rulebook & Guidelines",
+    "subtitle": "Clear transparency on what's covered, what's not covered, and best safety practices for every home service.",
+    "includedTab": "What's Covered",
+    "excludedTab": "What's NOT Covered",
+    "dosTab": "Do's",
+    "dontsTab": "Don'ts",
+    "selectCategory": "Select Category",
+    "searchPlaceholder": "Filter rulebook by service..."
+  },
+  "partner": {
+    "navLabel": "Become a Partner",
+    "title": "Become a Partner",
+    "subtitle": "Fill out the registration form below to join Kaamwale as a service partner.",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "e.g. Rahul Sharma",
+    "phoneLabel": "Phone / WhatsApp Number",
+    "phonePlaceholder": "e.g. +91 89528 72163",
+    "categoryLabel": "Service Category / Skill",
+    "selectCategory": "Select your service...",
+    "expLabel": "Experience (Years)",
+    "expPlaceholder": "e.g. 3",
+    "locationLabel": "City / Operating Area",
+    "locationPlaceholder": "e.g. Purnia, Bihar",
+    "detailsLabel": "Additional Details / Skill Description",
+    "detailsPlaceholder": "Tell us about your work experience, tools, or services...",
+    "submitBtn": "Submit Application on WhatsApp",
+    "directChatBtn": "Or Chat Directly on WhatsApp",
+    "successMsg": "Thank you! Your partner application has been generated and is ready to send via WhatsApp."
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated: August 2026",
+    "intro": "Welcome to Kaamwale. By booking or offering services on our platform, you agree to these Terms and Conditions.",
+    "sec1Title": "1. Service Booking & Acceptance",
+    "sec1Body": "Kaamwale connects customers directly with independent verified local service professionals. Booking confirmations are completed via WhatsApp or direct communication. All service agreements and final quotes are agreed upon before work commences.",
+    "sec2Title": "2. Pricing & Payments",
+    "sec2Body": "Initial budget estimates are provided during booking. The final cost may vary depending on spare parts required or extra labor requested by the customer. Payments are settled directly between the customer and service partner upon job completion.",
+    "sec3Title": "3. Cancellation & Rescheduling",
+    "sec3Body": "Customers can cancel or reschedule bookings free of charge before the service partner departs for the location. Excessive last-minute cancellations may limit platform access.",
+    "sec4Title": "4. Liability & Safety",
+    "sec4Body": "All service professionals undergo background verification. However, customers are advised to secure personal valuables. Kaamwale assists in resolving disputes between parties in good faith."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: August 2026",
+    "intro": "At Kaamwale, we prioritize your privacy and data security. This policy outlines how we collect, use, and protect your information.",
+    "sec1Title": "1. Information We Collect",
+    "sec1Body": "We collect information provided by you during service booking, such as your selected category, timing preferences, budget, GPS coordinates, manual address, and issue description.",
+    "sec2Title": "2. How We Use Your Data",
+    "sec2Body": "Your details are used solely to match you with a nearby verified service professional and generate your WhatsApp booking message. We do not sell or trade your personal data to third-party marketers.",
+    "sec3Title": "3. Location Data",
+    "sec3Body": "GPS location is captured only when you explicitly click the 'Share GPS location' button to help technicians reach your destination accurately.",
+    "sec4Title": "4. Data Protection & Contact",
+    "sec4Body": "We employ strict security measures to protect your data. If you have privacy inquiries, contact us at privacy@kaamwale.example."
+  },
+  "theme": {
+    "colorLabel": "Color theme",
+    "modeLight": "Light",
+    "modeDark": "Dark"
+  },
+  "testimonials": { "title": "What people are saying" },
+  "faq": { "title": "Frequently asked questions" },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "address": "Address",
+    "contact": "Contact",
+    "follow": "Follow us"
+  },
+  "whatsapp": {
+    "bookingMessage": "🛠️ *KAAMWALE SERVICE BOOKING*\n──────────────────────────\n📌 *Service Category:* {category}\n⏰ *Required Within:* {time}\n💰 *Estimated Budget:* {budget}\n📍 *GPS Pin:* {location}\n🏠 *Address:* {address}\n📝 *Problem Details:* {message}\n──────────────────────────\n⚡ *Please assign a verified professional immediately!*",
+    "partnerMessage": "💼 *KAAMWALE PARTNER APPLICATION*\n──────────────────────────\n👤 *Full Name:* {name}\n📞 *Phone Number:* {phone}\n🛠️ *Service Category:* {category}\n⭐ *Experience:* {experience} Years\n📍 *Operating City:* {location}\n📝 *Skills & Details:* {details}\n──────────────────────────\n🚀 *I am ready to join as a Service Partner!*"
+  },
+  "whatsappModal": {
+    "title": "Browse Service Categories",
+    "subtitle": "Select any category below to view details, transparent pricing, and instant WhatsApp booking."
+  }
+}

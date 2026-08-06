@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaamwale Home Services — Book Verified Help Fast</title>
+<meta name="description" content="Book a verified local service professional in under a minute. Electricians, plumbers, cleaners, and more — no calls, no waiting.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Kaamwale Home Services">
+<meta property="og:description" content="Book verified local help in under a minute.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Preconnects -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 + Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- App CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div id="appRoot">
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg navbar-glass fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold display-font" href="#"><strong class="js-company-name">Kaamwale</strong></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+        <li class="nav-item"><a class="nav-link" id="navHome" href="#top">Home</a></li>
+        <li class="nav-item"><a class="nav-link" id="navServices" href="#categories">Services</a></li>
+        <li class="nav-item"><a class="nav-link" id="navRulebook" href="#rulebook">Rulebook</a></li>
+        <li class="nav-item"><a class="nav-link" id="navHow" href="#how">How it works</a></li>
+        <li class="nav-item"><a class="nav-link" id="navFaq" href="#faq">FAQ</a></li>
+        <li class="nav-item my-2 my-lg-0">
+          <button class="mode-toggle" id="modeToggle" type="button" aria-label="Toggle dark mode">
+            <span class="knob"><i class="bi bi-sun-fill" id="modeIcon"></i></span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary-brand btn-sm" id="navPartnerBtn" type="button">
+            <i class="bi bi-briefcase-fill me-1"></i><span id="navPartner">Become a Partner</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-badge-container d-inline-flex flex-wrap align-items-center gap-2 mb-3">
+          <span class="hero-badge">
+            <i class="bi bi-clock-history me-1"></i> <span id="heroEyebrow">24×7 On-Demand Help</span>
+          </span>
+          <span class="hero-badge-secondary">
+            <i class="bi bi-shield-check me-1"></i> <span id="heroBadgeSecondary">Verified & Instant</span>
+          </span>
+        </div>
+        <h1 id="heroTitle" class="mb-3">Help arrives before the kettle boils.</h1>
+        <p class="lead mb-4" id="heroSubtitle">Book a verified local professional in under a minute.</p>
+        <div class="d-flex flex-wrap align-items-center gap-3">
+          <button id="heroCta" type="button" class="btn-primary-brand">
+            <span id="heroCtaText">Browse services</span> <i class="bi bi-arrow-down ms-1"></i>
+          </button>
+          <button type="button" class="btn btn-outline-brand" id="heroRulebookBtn">
+            <i class="bi bi-book-half me-1"></i> View Rulebook
+          </button>
+        </div>
+        
+        <div class="d-flex flex-wrap gap-4 mt-4 pt-2 hero-stats">
+          <div><strong class="d-block h5 mb-0 text-primary">⚡ 15-40 min</strong><span class="small text-muted">Avg. Arrival Time</span></div>
+          <div><strong class="d-block h5 mb-0 text-primary">⭐ 4.9 / 5</strong><span class="small text-muted">Customer Rating</span></div>
+          <div><strong class="d-block h5 mb-0 text-primary">🛡️ 100%</strong><span class="small text-muted">Verified Pros</span></div>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block text-center position-relative">
+        <div class="hero-graphic-circle"></div>
+        <i class="bi bi-house-heart-fill hero-graphic-icon"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="section" id="categories">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-end justify-content-between mb-3 gap-2">
+      <div>
+        <h2 class="section-title mb-1" id="categoriesTitle">What do you need help with?</h2>
+        <p class="text-muted small mb-0">Select a category to view prices, arrival time & book instantly.</p>
+      </div>
+      <button class="btn btn-sm btn-outline-brand" id="openWaGuideBtn" type="button">
+        <i class="bi bi-whatsapp me-1"></i> Quick WhatsApp Booking
+      </button>
+    </div>
+    <div class="row g-3 mt-1" id="categoryGrid">
+      <!-- skeleton while loading -->
+      <div class="col-6 col-md-4 col-lg-3"><div class="skeleton"></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="skeleton"></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="skeleton"></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="skeleton"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RULEBOOK SECTION ============ -->
+<section class="section bg-soft" id="rulebook">
+  <div class="container">
+    <div class="text-center max-width-700 mx-auto mb-4">
+      <span class="section-eyebrow"><i class="bi bi-journal-check me-1"></i> Service Standards</span>
+      <h2 class="section-title" id="rulebookTitle">Service Rulebook & Guidelines</h2>
+      <p class="text-muted" id="rulebookSubtitle">Know exactly what is covered, what is not covered, and essential do's & don'ts for every service.</p>
+    </div>
+
+    <!-- Rulebook category selector pills -->
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="rulebookCategoryPills"></div>
+
+    <!-- Rulebook Content Card -->
+    <div class="card glass-card p-4 border-0 shadow-lift" id="rulebookCard">
+      <div class="d-flex flex-wrap align-items-center justify-content-between border-bottom pb-3 mb-4 gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <div class="category-icon" id="rulebookCatIcon" style="width:48px;height:48px;font-size:1.25rem;"></div>
+          <div>
+            <h4 class="mb-0 fw-bold" id="rulebookCatName">Select a category</h4>
+            <span class="badge bg-primary-subtle text-primary fw-semibold" id="rulebookBadge">Standard Guidelines</span>
+          </div>
+        </div>
+        <!-- Rulebook search -->
+        <div class="input-group" style="max-width:280px;">
+          <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" class="form-control border-start-0" id="rulebookSearch" placeholder="Filter rules...">
+        </div>
+      </div>
+
+      <!-- Rulebook 4 Grid Blocks -->
+      <div class="row g-4" id="rulebookGrid">
+        <!-- 1. What's Covered -->
+        <div class="col-md-6 col-lg-3">
+          <div class="rule-block rule-covered p-3 h-100">
+            <h5 class="rule-header text-success mb-3">
+              <i class="bi bi-check-circle-fill me-2"></i><span id="ruleTabCovered">What's Covered</span>
+            </h5>
+            <ul class="rule-list list-unstyled mb-0" id="ruleListCovered"></ul>
+          </div>
+        </div>
+        <!-- 2. What's NOT Covered -->
+        <div class="col-md-6 col-lg-3">
+          <div class="rule-block rule-excluded p-3 h-100">
+            <h5 class="rule-header text-danger mb-3">
+              <i class="bi bi-x-circle-fill me-2"></i><span id="ruleTabExcluded">What's NOT Covered</span>
+            </h5>
+            <ul class="rule-list list-unstyled mb-0" id="ruleListExcluded"></ul>
+          </div>
+        </div>
+        <!-- 3. Do's -->
+        <div class="col-md-6 col-lg-3">
+          <div class="rule-block rule-dos p-3 h-100">
+            <h5 class="rule-header text-primary mb-3">
+              <i class="bi bi-hand-thumbs-up-fill me-2"></i><span id="ruleTabDos">Do's</span>
+            </h5>
+            <ul class="rule-list list-unstyled mb-0" id="ruleListDos"></ul>
+          </div>
+        </div>
+        <!-- 4. Don'ts -->
+        <div class="col-md-6 col-lg-3">
+          <div class="rule-block rule-donts p-3 h-100">
+            <h5 class="rule-header text-warning mb-3">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i><span id="ruleTabDonts">Don'ts</span>
+            </h5>
+            <ul class="rule-list list-unstyled mb-0" id="ruleListDonts"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="container">
+    <h2 class="section-title text-center" id="howTitle">How it works</h2>
+    <div class="row mt-4">
+      <div class="col-6 col-md-3 step-card">
+        <div class="step-num">1</div>
+        <h4 class="h6">Pick a service</h4>
+        <p class="text-muted small">Tap the category that matches your problem.</p>
+      </div>
+      <div class="col-6 col-md-3 step-card">
+        <div class="step-num">2</div>
+        <h4 class="h6">Set timing & budget</h4>
+        <p class="text-muted small">Tell us how urgent it is and your budget.</p>
+      </div>
+      <div class="col-6 col-md-3 step-card">
+        <div class="step-num">3</div>
+        <h4 class="h6">Share location & address</h4>
+        <p class="text-muted small">One tap GPS pin & manual address input.</p>
+      </div>
+      <div class="col-6 col-md-3 step-card">
+        <div class="step-num">4</div>
+        <h4 class="h6">Confirm on WhatsApp</h4>
+        <p class="text-muted small">Your request opens ready to send.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section bg-soft">
+  <div class="container">
+    <h2 class="section-title text-center" id="whyTitle">Why choose us</h2>
+    <div class="row mt-4 g-4">
+      <div class="col-md-4 text-center">
+        <i class="bi bi-patch-check-fill fs-1" style="color:var(--primary)"></i>
+        <h4 class="h6 mt-3">Verified professionals</h4>
+        <p class="text-muted small">Every provider is background-checked.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <i class="bi bi-cash-coin fs-1" style="color:var(--primary)"></i>
+        <h4 class="h6 mt-3">No hidden charges</h4>
+        <p class="text-muted small">Budget agreed before work begins.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <i class="bi bi-lightning-fill fs-1" style="color:var(--primary)"></i>
+        <h4 class="h6 mt-3">Fast response</h4>
+        <p class="text-muted small">Most requests picked up within minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title text-center" id="testimonialsTitle">What people are saying</h2>
+    <div class="row g-3 mt-3" id="testimonialsWrap"></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section bg-soft" id="faq">
+  <div class="container" style="max-width:760px;">
+    <h2 class="section-title text-center" id="faqTitle">Frequently asked questions</h2>
+    <div class="accordion mt-4" id="faqAccordion"></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="js-company-name">Kaamwale</h5>
+        <p class="small opacity-75 mt-2">Verified home-service professionals, on demand 24×7.</p>
+      </div>
+      <div class="col-md-4">
+        <h6 id="footerContactHeading">Contact</h6>
+        <p class="small mb-1"><i class="bi bi-envelope me-1"></i> hello@kaamwale.example</p>
+        <p class="small"><i class="bi bi-geo-alt me-1"></i> <span id="footerAddress">Purnia, Bihar, India</span></p>
+      </div>
+      <div class="col-md-4">
+        <h6 id="footerFollow">Follow us</h6>
+        <a href="#" class="me-3" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+        <div class="mt-3 small">
+          <a href="#" id="footerPrivacy">Privacy Policy</a> &middot;
+          <a href="#" id="footerTerms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-light opacity-25 my-4">
+    <p class="small text-center opacity-75 mb-0" id="footerRights">All rights reserved.</p>
+  </div>
+</footer>
+
+</div><!-- /appRoot -->
+
+<!-- ============ LANGUAGE MODAL (first visit) ============ -->
+<div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content glass-modal">
+      <div class="modal-body p-4 text-center">
+        <h4 class="mb-4" id="chooseLangHeading">Choose your language</h4>
+        <div class="row g-3">
+          <div class="col-4"><div class="lang-card" data-lang="en"><div class="fs-3">🇬🇧</div><div class="mt-1 fw-semibold">English</div></div></div>
+          <div class="col-4"><div class="lang-card" data-lang="hi"><div class="fs-3">🇮🇳</div><div class="mt-1 fw-semibold">हिन्दी</div></div></div>
+          <div class="col-4"><div class="lang-card" data-lang="bn"><div class="fs-3">🇧🇩</div><div class="mt-1 fw-semibold">বাংলা</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BOOKING MODAL ============ -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalTitle">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content glass-modal">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold" id="bookingModalTitle">Book Service</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="bookingForm">
+        <div class="modal-body pt-0">
+          <div class="d-flex align-items-center gap-3 mb-1 pb-3" style="border-bottom:1px solid var(--card-border);">
+            <div class="category-icon" id="bookingCategoryIcon" style="width:48px;height:48px;font-size:1.2rem;"></div>
+            <div>
+              <h5 class="mb-1" id="bookingCategoryName"></h5>
+              <p class="text-muted small mb-0" id="bookingCategoryDesc"></p>
+            </div>
+          </div>
+
+          <div class="form-step">
+            <div class="form-step-label"><span class="step-icon"><i class="bi bi-stopwatch"></i></span><span id="labelRequiredWithin">Required within</span></div>
+            <div class="time-pill-group" id="timeSlotWrap"></div>
+            <div class="mt-2 d-none" id="customTimeWrap">
+              <input type="time" class="form-control" id="customTimeInput" style="max-width:200px;">
+            </div>
+          </div>
+
+          <div class="form-step">
+            <div class="form-step-label"><span class="step-icon"><i class="bi bi-cash-coin"></i></span><span id="labelBudget">Your budget</span></div>
+            <div class="budget-display mb-2">
+              <input type="range" class="form-range me-3" id="budgetRange">
+              <span class="value" id="budgetValue">₹300</span>
+            </div>
+          </div>
+
+          <!-- Location Step with GPS + Manual Address Text Input -->
+          <div class="form-step">
+            <div class="form-step-label"><span class="step-icon"><i class="bi bi-geo-alt"></i></span><span id="labelLocation">Your location</span></div>
+            <div class="gps-card">
+              <button type="button" class="btn btn-outline-brand btn-sm" id="getLocationBtn">
+                <i class="bi bi-crosshair me-1"></i> <span id="getLocationBtnText">Share GPS location</span>
+              </button>
+              <span class="text-muted small">Helps the professional find you faster</span>
+            </div>
+            <div id="gpsStatus" data-link=""></div>
+            
+            <!-- Manual Address Input Right After GPS -->
+            <div class="mt-3">
+              <label for="manualAddressInput" class="form-label small fw-bold mb-1" id="labelManualAddress">Address / House No. / Landmark</label>
+              <div class="input-group">
+                <span class="input-group-text bg-transparent"><i class="bi bi-building-gear text-primary"></i></span>
+                <input type="text" class="form-control" id="manualAddressInput" placeholder="Enter flat/house no, building, street, landmark...">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-step">
+            <div class="form-step-label"><span class="step-icon"><i class="bi bi-chat-square-text"></i></span><span id="labelMessage">What problem are you facing, or what service are you looking for?</span></div>
+            <textarea class="form-control" id="bookingMessage" rows="3" placeholder="Describe your issue or the service you need..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="submit" class="btn btn-primary-brand w-100" id="bookingSubmit">
+            <i class="bi bi-whatsapp me-2"></i>Book on WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BECOME A PARTNER MODAL ============ -->
+<div class="modal fade" id="partnerModal" tabindex="-1" aria-labelledby="partnerModalTitle">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content glass-modal">
+      <div class="modal-header border-0 pb-2">
+        <h5 class="modal-title fw-bold" id="partnerModalTitle">Become a Partner</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <p class="text-muted small mb-3" id="partnerSubtitle">Fill out the registration form below to join Kaamwale as a service partner.</p>
+        <div id="partnerAlertWrap"></div>
+        <form id="partnerForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="partnerName" class="form-label small fw-bold mb-1" id="partnerNameLabel">Full Name</label>
+              <input type="text" class="form-control" id="partnerName" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="col-md-6">
+              <label for="partnerPhone" class="form-label small fw-bold mb-1" id="partnerPhoneLabel">Phone / WhatsApp Number</label>
+              <input type="tel" class="form-control" id="partnerPhone" placeholder="e.g. +91 89528 72163" required>
+            </div>
+            <div class="col-md-6">
+              <label for="partnerCategory" class="form-label small fw-bold mb-1" id="partnerCategoryLabel">Service Category / Skill</label>
+              <div class="input-group">
+                <span class="input-group-text bg-transparent" id="partnerCatIconBox">
+                  <i class="bi bi-tools text-primary" id="partnerCategoryIcon"></i>
+                </span>
+                <select class="form-select border-start-0" id="partnerCategory" required>
+                  <option value="" disabled selected id="partnerSelectCategory">Select your service...</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="partnerExp" class="form-label small fw-bold mb-1" id="partnerExpLabel">Experience (Years)</label>
+              <input type="number" class="form-control" id="partnerExp" min="0" max="50" placeholder="e.g. 3" required>
+            </div>
+            <div class="col-12">
+              <label for="partnerLocation" class="form-label small fw-bold mb-1" id="partnerLocationLabel">City / Operating Area</label>
+              <input type="text" class="form-control" id="partnerLocation" placeholder="e.g. Purnia, Bihar" required>
+            </div>
+            <div class="col-12">
+              <label for="partnerMessage" class="form-label small fw-bold mb-1" id="partnerDetailsLabel">Additional Details / Skill Description</label>
+              <textarea class="form-control" id="partnerMessage" rows="2" placeholder="Tell us about your work experience, tools, or services..."></textarea>
+            </div>
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="btn btn-primary-brand w-100 py-2" id="partnerSubmitBtn">
+              <i class="bi bi-whatsapp me-2"></i><span id="partnerSubmitText">Submit Application on WhatsApp</span>
+            </button>
+          </div>
+        </form>
+        <div class="text-center mt-3 pt-2 border-top border-secondary-subtle">
+          <button type="button" class="btn btn-link text-decoration-none small p-0" id="partnerWhatsappBtn">
+            <i class="bi bi-chat-dots-fill me-1" style="color:#25D366;"></i><span id="partnerDirectChatText">Or Chat Directly on WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WHATSAPP CATEGORY SELECTOR MODAL (ENHANCED SCROLLABLE GRID GUIDE) ============ -->
+<div class="modal fade" id="whatsappCategoryModal" tabindex="-1" aria-labelledby="waModalTitle">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content glass-modal">
+      <div class="modal-header border-0 pb-1">
+        <h5 class="modal-title fw-bold" id="waModalTitle"><i class="bi bi-whatsapp text-success me-2"></i>Select Service Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <p class="text-muted small mb-3" id="waModalSubtitle">Choose the service you need to connect with a verified professional on WhatsApp.</p>
+        
+        <!-- Search inside WhatsApp guide dialog -->
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-transparent"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" class="form-control" id="waGuideSearchInput" placeholder="Search service (e.g. Electrician, Plumber, AC Repair)...">
+        </div>
+
+        <!-- Scrollable Category Grid View -->
+        <div class="category-guide-grid-container" id="waCategoryGridContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TERMS & CONDITIONS MODAL ============ -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalTitle">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content glass-modal">
+      <div class="modal-header border-0 pb-2">
+        <h5 class="modal-title fw-bold" id="termsModalTitle"><i class="bi bi-file-earmark-text text-primary me-2"></i>Terms & Conditions</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <p class="text-muted small mb-3" id="termsLastUpdated">Last updated: August 2026</p>
+        <div class="legal-content">
+          <p id="termsIntro">Welcome to Kaamwale. By booking or offering services on our platform, you agree to these Terms and Conditions.</p>
+          <h6 class="fw-bold mt-3" id="termsSec1Title">1. Service Booking & Acceptance</h6>
+          <p id="termsSec1Body">Kaamwale connects customers directly with independent verified local service professionals. Booking confirmations are completed via WhatsApp or direct communication.</p>
+          <h6 class="fw-bold mt-3" id="termsSec2Title">2. Pricing & Payments</h6>
+          <p id="termsSec2Body">Initial budget estimates are provided during booking. Final costs are agreed upon before work commences.</p>
+          <h6 class="fw-bold mt-3" id="termsSec3Title">3. Cancellation & Rescheduling</h6>
+          <p id="termsSec3Body">Customers can cancel or reschedule bookings free of charge before the service partner departs for the location.</p>
+          <h6 class="fw-bold mt-3" id="termsSec4Title">4. Liability & Safety</h6>
+          <p id="termsSec4Body">All service professionals undergo background verification. Customers are advised to secure personal valuables.</p>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRIVACY POLICY MODAL ============ -->
+<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalTitle">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content glass-modal">
+      <div class="modal-header border-0 pb-2">
+        <h5 class="modal-title fw-bold" id="privacyModalTitle"><i class="bi bi-shield-lock text-success me-2"></i>Privacy Policy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <p class="text-muted small mb-3" id="privacyLastUpdated">Last updated: August 2026</p>
+        <div class="legal-content">
+          <p id="privacyIntro">At Kaamwale, we prioritize your privacy and data security. This policy outlines how we collect, use, and protect your information.</p>
+          <h6 class="fw-bold mt-3" id="privacySec1Title">1. Information We Collect</h6>
+          <p id="privacySec1Body">We collect information provided by you during service booking, such as your selected category, timing preferences, budget, GPS coordinates, manual address, and issue description.</p>
+          <h6 class="fw-bold mt-3" id="privacySec2Title">2. How We Use Your Data</h6>
+          <p id="privacySec2Body">Your details are used solely to match you with a nearby verified service professional and generate your WhatsApp booking message.</p>
+          <h6 class="fw-bold mt-3" id="privacySec3Title">3. Location Data</h6>
+          <p id="privacySec3Body">GPS location is captured only when you explicitly click the 'Share GPS location' button to help technicians reach your destination accurately.</p>
+          <h6 class="fw-bold mt-3" id="privacySec4Title">4. Data Protection & Contact</h6>
+          <p id="privacySec4Body">We employ strict security measures to protect your data. If you have privacy inquiries, contact us at privacy@kaamwale.example.</p>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ THEME MODAL ============ -->
+<div class="modal fade" id="themeModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content glass-modal">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">Choose a theme</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <div class="d-flex flex-wrap gap-3" id="themeSwatches"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<div class="fab-stack" id="fabStack">
+  <div class="d-none" id="fabMenu">
+    <div class="fab-menu mb-2">
+      <div class="fab-row"><span class="fab-label" id="partnerFabLabel">Become a Partner</span>
+        <button class="fab fab-worker" id="fabPartner" aria-label="Become a partner"><i class="bi bi-briefcase-fill"></i></button></div>
+      <div class="fab-row position-relative"><span class="fab-label">Theme</span>
+        <button class="fab fab-theme" id="fabTheme" aria-label="Change theme"><i class="bi bi-palette"></i></button></div>
+      <div class="fab-row position-relative"><span class="fab-label">Language</span>
+        <button class="fab fab-lang" id="fabLang" aria-label="Change language"><i class="bi bi-translate"></i></button>
+        <div class="d-none position-absolute end-100 me-2 fab-lang-panel" id="langFabPanel" style="bottom:0; min-width:130px;">
+          <div class="lang-card mb-1 py-1" data-lang="en">English</div>
+          <div class="lang-card mb-1 py-1" data-lang="hi">हिन्दी</div>
+          <div class="lang-card py-1" data-lang="bn">বাংলা</div>
+        </div>
+      </div>
+      <div class="fab-row"><span class="fab-label">WhatsApp</span>
+        <button class="fab fab-whatsapp" id="fabWhatsapp" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></button></div>
+    </div>
+  </div>
+  <button class="fab fab-main" id="fabMain" aria-label="Open quick actions"><i class="bi bi-plus-lg"></i></button>
+  <button class="fab fab-top" id="fabTop" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

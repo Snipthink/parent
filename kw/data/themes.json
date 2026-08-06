@@ -1,0 +1,13 @@
+{
+  "default": "red",
+  "presets": {
+    "red": { "name": "Red & White", "primary": "#E11D2E", "secondary": "#7A0C18", "accent": "#FFB100", "radius": "18px" },
+    "blue": { "name": "Ocean Blue", "primary": "#0EA5E9", "secondary": "#0369A1", "accent": "#FACC15", "radius": "18px" },
+    "green": { "name": "Fresh Green", "primary": "#16A34A", "secondary": "#14532D", "accent": "#FDE047", "radius": "18px" },
+    "purple": { "name": "Royal Purple", "primary": "#7C3AED", "secondary": "#4C1D95", "accent": "#F472B6", "radius": "18px" },
+    "orange": { "name": "Sunset Orange", "primary": "#F97316", "secondary": "#9A3412", "accent": "#FDE047", "radius": "18px" },
+    "pink": { "name": "Blossom Pink", "primary": "#EC4899", "secondary": "#9D174D", "accent": "#FBBF24", "radius": "18px" },
+    "ocean": { "name": "Deep Ocean", "primary": "#0891B2", "secondary": "#164E63", "accent": "#67E8F9", "radius": "18px" },
+    "blackgold": { "name": "Black & Gold", "primary": "#D4AF37", "secondary": "#1A1A1A", "accent": "#F5D488", "radius": "14px" }
+  }
+}

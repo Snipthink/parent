@@ -1,0 +1,639 @@
+[
+  {
+    "id": "electrician",
+    "name": { "en": "Electrician", "hi": "इलेक्ट्रीशियन", "bn": "ইলেকট্রিশিয়ান" },
+    "icon": "bi-lightning-charge-fill",
+    "themeColor": "#E11D2E",
+    "included": {
+      "en": [
+        "Switchboard, socket, and plug point repair or replacement",
+        "Ceiling fan installation, repair, and regulator fixing",
+        "MCB, fuse box, and trip breaker diagnostics & fixing",
+        "Light fixture, chandelier, LED panel installation",
+        "Wiring fault detection & minor rewiring"
+      ],
+      "hi": [
+        "स्विचबोर्ड, सॉकेट और प्लग पॉइंट की मरम्मत या प्रतिस्थापन",
+        "सीलिंग फैन स्थापना, मरम्मत और रेगुलेटर ठीक करना",
+        "एमसीबी, फ्यूज बॉक्स और ट्रिप ब्रेकर की जांच व मरम्मत",
+        "लाइट फिटिंग, झूमर, एलईडी पैनल स्थापना",
+        "वायरिंग फॉल्ट का पता लगाना और छोटी रीवायरिंग"
+      ],
+      "bn": [
+        "সুইচবোর্ড, সকেট এবং প্লাগ পয়েন্ট মেরামত বা প্রতিস্থাপন",
+        "সিলিং ফ্যান ইনস্টলেশন, মেরামত এবং রেগুলেটর মেরামত",
+        "এমসিবি, ফিউজ বক্স এবং ট্রিপ ব্রেকার পরীক্ষা ও মেরামত",
+        "লাইট ফিটিং, ঝাড়বাতি, এলইডি প্যানেল ইনস্টলেশন",
+        "ওয়্যারিং ত্রুটি চিহ্নিতকরণ এবং ছোটখাটো রিওয়্যারিং"
+      ]
+    },
+    "excluded": {
+      "en": [
+        "Complete building high-voltage main meter connection",
+        "Concealed wall chiseled heavy rewiring without prior quote",
+        "Supply of raw electrical materials (unless requested in budget)",
+        "Appliance internal motherboard repairing (requires appliance specialist)"
+      ],
+      "hi": [
+        "पूरे भवन का हाई-वोल्टेज मुख्य मीटर कनेक्शन",
+        "बिना पूर्व कोटेशन के दीवारों की गहरी छिलाई वाली भारी रीवायरिंग",
+        "कच्चे बिजली के सामान की आपूर्ति (जब तक बजट में अनुरोध न हो)",
+        "उपकरणों के आंतरिक मदरबोर्ड की मरम्मत (विशेषज्ञ आवश्यक)"
+      ],
+      "bn": [
+        "সম্পূর্ণ ভবনের হাই-ভোল্টেজ মেইন মিটার সংযোগ",
+        "পূর্বমূল্য নির্ধারণ ছাড়া দেয়াল কেটে ভারী রিওয়্যারিং",
+        "কাঁচা বৈদ্যুতিক উপাদান সরবরাহ (বাজেটে উল্লেখ না থাকলে)",
+        "যন্ত্রপাতির অভ্যন্তরীণ মাদারবোর্ড মেরামত (বিশেষজ্ঞ প্রয়োজন)"
+      ]
+    },
+    "dos": {
+      "en": [
+        "Do switch off main power supply before technician begins work",
+        "Do provide clear access to switchboards and main DB box",
+        "Do test switches and appliances in technician presence after repair",
+        "Do request a trial run before technician leaves"
+      ],
+      "hi": [
+        "तकनीशियन के काम शुरू करने से पहले मुख्य बिजली बंद कर दें",
+        "स्विचबोर्ड और मुख्य डीबी बॉक्स तक स्पष्ट पहुंच प्रदान करें",
+        "मरम्मत के बाद तकनीशियन की उपस्थिति में स्विच का परीक्षण करें",
+        "तकनीशियन के जाने से पहले ट्रायल रन का अनुरोध करें"
+      ],
+      "bn": [
+        "টেকনিশিয়ান কাজ শুরু করার আগে প্রধান বিদ্যুৎ সংযোগ বন্ধ করুন",
+        "সুইচবোর্ড এবং মেইন ডিবি বক্সে পরিষ্কার অ্যাক্সেস দিন",
+        "মেরামতের পর টেকনিশিয়ানের উপস্থিতিতে সুইচ পরীক্ষা করুন",
+        "টেকনিশিয়ান যাওয়ার আগে একটি ট্রায়াল রান দেখে নিন"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Don't touch exposed wires or wet switchboards during repair",
+        "Don't force high-load appliances on thin capacity wiring",
+        "Don't perform DIY wiring fixes while power supply is active",
+        "Don't bypass MCB safety breakers"
+      ],
+      "hi": [
+        "मरम्मत के दौरान खुले तारों या गीले स्विचबोर्ड को न छुएं",
+        "पतली तारों पर उच्च क्षमता वाले उपकरणों का दबाव न डालें",
+        "बिजली चालू होने पर स्वयं तार ठीक करने का प्रयास न करें",
+        "एमसीबी सुरक्षा ब्रेकर को बायपास न करें"
+      ],
+      "bn": [
+        "মেরামতের সময় খোলা তার বা ভেজা সুইচবোর্ড স্পর্শ করবেন না",
+        "পাতলা ওয়্যারিংয়ে উচ্চ ক্ষমতার যন্ত্র ব্যবহার করবেন না",
+        "বিদ্যুৎ চালু অবস্থায় নিজে তার মেরামতের চেষ্টা করবেন না",
+        "এমসিবি সেফটি ব্রেকার বাইপাস করবেন না"
+      ]
+    }
+  },
+  {
+    "id": "plumber",
+    "name": { "en": "Plumber", "hi": "प्लंबर", "bn": "প্লাম্বার" },
+    "icon": "bi-wrench-adjustable-circle-fill",
+    "themeColor": "#0EA5E9",
+    "included": {
+      "en": [
+        "Water tap, flush tank, shower head repair & replacement",
+        "Drainage pipe blockage clearing and sink trap cleaning",
+        "Pipeline leakage detection and minor pipe soldering/PVC jointing",
+        "Geyser inlet/outlet valve and water heater fitting",
+        "Overhead tank float valve replacement & leak fixing"
+      ],
+      "hi": [
+        "पानी का नल, फ्लश टैंक, शॉवर हेड की मरम्मत व बदलाव",
+        "ड्रेनेज पाइप ब्लॉक खोलना और सिंक ट्रैप की सफाई",
+        "पाइपलाइन लीक का पता लगाना और पीवीसी जॉइंट ठीक करना",
+        "गीजर इनलेट/आउटलेट वाल्व और वॉटर हीटर फिटिंग",
+        "ओवरहेड टैंक फ्लोट वाल्व प्रतिस्थापन व लीक ठीक करना"
+      ],
+      "bn": [
+        "পানির ট্যাপ, ফ্লাশ ট্যাংক, শাওয়ার হেড মেরামত ও প্রতিস্থাপন",
+        "ড্রেনেজ পাইপের ব্লকেজ পরিষ্কার এবং সিংক ট্র্যাপ সাফাই",
+        "পাইপলাইন লিক নির্ণয় এবং পিভিসি জয়েন্ট মেরামত",
+        "গিজার ইনলেট/আউটলেট ভালভ এবং ওয়াটার হিটার ফিটিং",
+        "ওভারহেড ট্যাংক ফ্লোট ভালভ মেরামত ও লিক ঠিক করা"
+      ]
+    },
+    "excluded": {
+      "en": [
+        "Major underground sewage excavation work",
+        "Deep borewell pump drilling or motor winding overhaul",
+        "New bathroom civil construction and tiling work",
+        "Supply of costly branded sanitary fixtures (unless included in budget)"
+      ],
+      "hi": [
+        "बड़ी भूमिगत सीवरेज खुदाई का काम",
+        "गहरे बोरवेल पंप ड्रिलिंग या मोटर वाइंडिंग मरम्मत",
+        "नया बाथरूम सिविल निर्माण और टाइलिंग कार्य",
+        "महंगे ब्रांडेड सेनेटरी सामान की आपूर्ति (जब तक बजट में न हो)"
+      ],
+      "bn": [
+        "বড় ধরনের ভূগর্ভস্থ পয়ঃনিষ্কাশন খনন কাজ",
+        "গভীর বোরওয়েল পাম্প ড্রিলিং বা মোটর মেরামত",
+        "নতুন বাথরুম সিভিল নির্মাণ এবং টাইলস বসানো",
+        "দামি স্যানিটারি ফিটিংস সরবরাহ (বাজেটে উল্লেখ না থাকলে)"
+      ]
+    },
+    "dos": {
+      "en": [
+        "Do shut off the main water valve if experiencing heavy leaking",
+        "Do clear space under sinks or around target plumbing pipes",
+        "Do test water pressure and check joints before signing off"
+      ],
+      "hi": [
+        "भारी रिसाव होने पर मुख्य पानी का वाल्व बंद कर दें",
+        "सिंक के नीचे या प्लंबिंग पाइप के आसपास की जगह साफ रखें",
+        "स्वीकृति देने से पहले पानी के दबाव और जोड़ों की जांच करें"
+      ],
+      "bn": [
+        "প্রবল লিক হলে মেইন পানির ভালভ বন্ধ করুন",
+        "সিংক বা পাইপের চারপাশের স্থান খালি রাখুন",
+        "কাজ শেষে পানির চাপ এবং জয়েন্ট পরীক্ষা করে নিন"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Don't pour harsh acid down PVC pipes which melts plastic joints",
+        "Don't overtighten plastic threads with heavy metal wrenches",
+        "Don't flush non-degradable wipes down toilets"
+      ],
+      "hi": [
+        "पीवीसी पाइपों में तेज एसिड न डालें जो प्लास्टिक जोड़ों को पिघला दे",
+        "धातु रिंच से प्लास्टिक की चूड़ियों को अत्यधिक न कसें",
+        "शौचालय में गैर-अपघटन योग्य वाइप्स न बहाएं"
+      ],
+      "bn": [
+        "পিভিসি পাইপে অতিরিক্ত এসিড ঢালবেন না যা প্লাস্টিক গলিয়ে ফেলে",
+        "মেটাল রেঞ্চ দিয়ে প্লাস্টিক থ্রেড অতিরিক্ত শক্ত করবেন না",
+        "টয়লেটে নন-বায়োডিগ্রেডেবল ওয়াইপস ফেলবেন না"
+      ]
+    }
+  },
+  {
+    "id": "ac-repair",
+    "name": { "en": "AC Repair & Service", "hi": "एसी रिपेयर एवं सर्विस", "bn": "এসি মেরামত ও সার্ভিস" },
+    "icon": "bi-snow2",
+    "themeColor": "#22C55E",
+    "included": {
+      "en": [
+        "Foam jet deep filter and indoor/outdoor unit cleaning",
+        "Gas top-up / refilling and pressure leakage test",
+        "Compressor capacitor replacement and electrical check",
+        "Drain pipe unclogging and water leakage resolution",
+        "Split & Window AC installation and uninstallation"
+      ],
+      "hi": [
+        "फोम जेट डीप फिल्टर और इनडोर/आउटडोर यूनिट सफाई",
+        "गैस टॉप-अप / रिफिलिंग और प्रेशर लीक टेस्ट",
+        "कंप्रेशर कैपेसिटर बदलाव और इलेक्ट्रिकल जांच",
+        "ड्रेन पाइप सफाई और पानी रिसाव समाधान",
+        "स्प्लिट और विंडो एसी इंस्टालेशन व अनइंस्टालेशन"
+      ],
+      "bn": [
+        "ফোম জেট ফিল্টার এবং ইনডোর/আউটডোর ইউনিট ডিপ ক্লিনিং",
+        "গ্যাস রিফিল এবং প্রেশার লিক টেস্ট",
+        "কম্প্রেসর ক্যাপাসিটর প্রতিস্থাপন ও ইলেকট্রিক্যাল চেক",
+        "ড্রেন পাইপ পরিষ্কার এবং পানি পড়ার সমাধান",
+        "স্প্লিট ও উইন্ডো এসি ইনস্টলেশন ও আনইনস্টলেশন"
+      ]
+    },
+    "excluded": {
+      "en": [
+        "Copper pipe extension beyond standard kit lengths",
+        "Compressor replacement unit cost (quoted separately)",
+        "Scaffolding for exterior high-rise outdoor units above 3rd floor"
+      ],
+      "hi": [
+        "मानक किट लंबाई से अधिक कॉपर पाइप एक्सटेंशन",
+        "कंप्रेशर रिप्लेसमेंट यूनिट लागत (अलग से उद्धृत)",
+        "तीसरी मंजिल से ऊपर बाहरी आउटडोर यूनिट के लिए मचान"
+      ],
+      "bn": [
+        "স্ট্যান্ডার্ড দৈর্ঘ্য অতিরিক্ত কপার পাইপ এক্সটেনশন",
+        "কম্প্রেসর প্রতিস্থাপন ইউনিট খরচ (আলাদা মূল্য নির্ধারণ)",
+        "৩য় তলার উপরে আউটডোর ইউনিটের জন্য ভারা (স্ক্যাফোল্ডিং)"
+      ]
+    },
+    "dos": {
+      "en": [
+        "Do clean AC dust filters every 15 days during peak summer",
+        "Do keep doors & windows closed while operating AC",
+        "Do run AC in fan mode for 5 mins before turning off"
+      ],
+      "hi": [
+        "गर्मी के दिनों में हर 15 दिनों में एसी डस्ट फिल्टर साफ करें",
+        "एसी चलाते समय दरवाजे और खिड़कियां बंद रखें",
+        "बंद करने से पहले 5 मिनट के लिए एसी को फैन मोड पर चलाएं"
+      ],
+      "bn": [
+        "গ্রীষ্মের সময় প্রতি ১৫ দিনে এসি ডাস্ট ফিল্টার পরিষ্কার করুন",
+        "এসি চালু রাখার সময় দরজা-জানালা বন্ধ রাখুন",
+        "এসি বন্ধ করার আগে ৫ মিনিট ফ্যান মোডে চালান"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Don't set temperature below 24°C unnecessarily to save power",
+        "Don't block air intake or outdoor unit fan ventilation",
+        "Don't turn AC on immediately after sudden power fluctuations"
+      ],
+      "hi": [
+        "बिजली बचाने के लिए अनावश्यक रूप से तापमान 24°C से नीचे न सेट करें",
+        "एयर इनटेक या आउटडोर यूनिट फैन वेंटिलेशन को न ढकें",
+        "अचानक बिजली के उतार-चढ़ाव के तुरंत बाद एसी न चालू करें"
+      ],
+      "bn": [
+        "বিদ্যুৎ সাশ্রয়ে তাপমাত্রা বিনাকারণে ২৪ ডিগ্রি সেলসিয়াসের নিচে সেট করবেন না",
+        "এয়ার ইনটেক বা আউটডোর ইউনিটের ফ্যান বাতাস চলাচলে বাধা সৃষ্টি করবেন না",
+        "বিদ্যুৎ চঞ্চলতার পর পরই হুট করে এসি অন করবেন না"
+      ]
+    }
+  },
+  {
+    "id": "carpenter",
+    "name": { "en": "Carpenter", "hi": "बढ़ई", "bn": "কাঠমিস্ত্রি" },
+    "icon": "bi-hammer",
+    "themeColor": "#A16207",
+    "included": {
+      "en": [
+        "Door alignment, latch, lock, and hinge fitting",
+        "Furniture repair (table, chair, bed, drawer sliding tracks)",
+        "Modular kitchen cabinet handle and hydraulic hinge fixing",
+        "Curtain rod, wall shelf, and TV unit mounting"
+      ],
+      "hi": [
+        "दरवाजा संरेखण, कुंडी, ताला और कब्जा फिटिंग",
+        "फर्नीचर मरम्मत (मेज, कुर्सी, बिस्तर, दराज की चैनल)",
+        "मॉड्यूलर किचन कैबिनेट हैंडल और हाइड्रोलिक हिंग ठीक करना",
+        "पर्दे की रॉड, वॉल शेल्फ और टीवी यूनिट माउंटिंग"
+      ],
+      "bn": [
+        "দরজা অ্যালাইনমেন্ট, ল্যাচ, লক এবং কব্জা ফিটিং",
+        "আসবাবপত্র মেরামত (টেবিল, চেয়ার, বেড, ড্রয়ার চ্যানেল)",
+        "মডুলার কিচেন ক্যাবিনেট হ্যান্ডেল এবং হাইড্রোলিক হিং মেরামত",
+        "পর্দার রড, ওয়াল শেলফ এবং টিভি ইউনিট মাউন্টিং"
+      ]
+    },
+    "excluded": {
+      "en": [
+        "Complete custom wood furniture fabrication from raw timber",
+        "French wood polishing or high-gloss PU spray painting",
+        "Plywood material costs (unless included in budget quote)"
+      ],
+      "hi": [
+        "कच्ची लकड़ी से संपूर्ण कस्टम लकड़ी के फर्नीचर का निर्माण",
+        "फ़्रेंच वुड पॉलिशिंग या हाई-ग्लोस पीयू स्प्रे पेंटिंग",
+        "प्लाईवुड सामग्री लागत (जब तक बजट कोट में न शामिल हो)"
+      ],
+      "bn": [
+        "কাঁচা কাঠ থেকে সম্পূর্ণ কাস্টম কাঠের আসবাবপত্র তৈরি",
+        "ফ্রেঞ্চ উড পলিশিং বা হাই-গ্লস পিইউ স্প্রে পেইন্টিং",
+        "প্লাইউড উপাদান খরচ (বাজেটে উল্লেখ না থাকলে)"
+      ]
+    },
+    "dos": {
+      "en": [
+        "Do measure door and cabinet spaces before buying hardware locks",
+        "Do keep children away from sharp saws and power drills",
+        "Do inspect wood hinges for smooth operation after repair"
+      ],
+      "hi": [
+        "हार्डवेयर ताले खरीदने से पहले दरवाजे और कैबिनेट की माप लें",
+        "बच्चों को तेज आरी और पॉवर ड्रिल से दूर रखें",
+        "मरम्मत के बाद सुचारू संचालन के लिए लकड़ी के कब्जों की जांच करें"
+      ],
+      "bn": [
+        "লক কেনার আগে দরজা এবং ক্যাবিনেটের মাপ নিয়ে নিন",
+        "ধারালো করাত এবং ড্রিল মেশিন থেকে বাচ্চাদের দূরে রাখুন",
+        "মেরামতের পর কব্জাগুলোর মসৃণতা পরীক্ষা করুন"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Don't drag heavy wooden wardrobes without lifting",
+        "Don't expose untreated wood to standing water or dampness",
+        "Don't hammer directly on delicate veneer/laminate surfaces"
+      ],
+      "hi": [
+        "भारी लकड़ी की अलमारी को बिना उठाए न घसीटें",
+        "बिना उपचारित लकड़ी को खड़े पानी या नमी के संपर्क में न लाएं",
+        "नाजुक विनियर/लेमिनेट सतहों पर सीधे हथौड़ा न मारें"
+      ],
+      "bn": [
+        "ভারী কাঠের আলমারি না তুলে মেঝেতে ঘষবেন না",
+        "অপ্রক্রিয়াজাত কাঠ জমে থাকা পানি বা স্যাঁতসেঁতে জায়গায় রাখবেন না",
+        "লেছমিনেট বা ভিনিয়ার সারফেসে সরাসরি হাতুড়ি পেটা করবেন না"
+      ]
+    }
+  },
+  {
+    "id": "cleaning",
+    "name": { "en": "Home Cleaning", "hi": "होम क्लीनिंग", "bn": "হোম ক্লিনিং" },
+    "icon": "bi-stars",
+    "themeColor": "#EC4899",
+    "included": {
+      "en": [
+        "Deep kitchen cleaning (degreasing stove, tiles, cabinets exterior)",
+        "Bathroom sanitization, hard water stain removal, toilet scrub",
+        "Sofa, mattress vacuuming & upholstery spot treatment",
+        "Floor mopping, balcony cleaning, window glass wiping"
+      ],
+      "hi": [
+        "डीप किचन क्लीनिंग (स्टोव, टाइल्स, अलमारी की ग्रीस सफाई)",
+        "बाथरूम सैनिटाइजेशन, कठोर पानी के दाग हटाना, टॉयलेट स्क्रब",
+        "सोफा, गद्दे का वैक्यूम और कपड़ों के धब्बे ठीक करना",
+        "पोछा लगाना, बालकनी की सफाई, खिड़की के शीशे पोंछना"
+      ],
+      "bn": [
+        "ডিপ কিচেন ক্লিনিং (স্টোভ, টাইলস, ক্যাবিনেটের দাগ পরিষ্কার)",
+        "বাথরুম স্যানিটাইজেশন, শক্ত পানির দাগ দূরীকরণ, টয়লেট স্ক্রাব",
+        "সোফা, জাজিম ভ্যাকিউম এবং কাপড়ের দাগ পরিষ্কার",
+        "মেঝে মোছা, ব্যালকনি পরিষ্কার, জানালার কাচ মোছা"
+      ]
+    },
+    "excluded": {
+      "en": [
+        "Chandelier dismantling and dangerous tall building exterior glass wiping",
+        "Washing of individual clothes, laundry, or dishwashing",
+        "Removal of heavy permanent construction cement stains"
+      ],
+      "hi": [
+        "झूमर खोलना और ऊंची इमारत के बाहरी शीशों की खतरनाक सफाई",
+        "कपड़े धोना, लॉन्ड्री या बर्तन धोना",
+        "भारी स्थायी निर्माण सीमेंट के दाग हटाना"
+      ],
+      "bn": [
+        "ঝাড়বাতি খোলা এবং বিপজ্জনক বহুতল ভবনের বাইরের কাচ মোছা",
+        "ব্যক্তিগত কাপড় ধোয়া, লন্ড্রি বা বাসনাপত্র মাজা",
+        "ভারী স্থায়ী নির্মাণ সিমেন্টের দাগ তোলা"
+      ]
+    },
+    "dos": {
+      "en": [
+        "Do secure personal valuables, cash, and jewelry before cleaning",
+        "Do inform team of fragile antique items or electronic gear",
+        "Do inspect all rooms before cleaning team departs"
+      ],
+      "hi": [
+        "सफाई से पहले कीमती सामान, नकदी और गहने सुरक्षित कर लें",
+        "नाज़ुक प्राचीन वस्तुओं या इलेक्ट्रॉनिक सामान की जानकारी दें",
+        "सफाई टीम के जाने से पहले सभी कमरों का निरीक्षण करें"
+      ],
+      "bn": [
+        "ক্লিনিং শুরুর আগে মূল্যবান সামগ্রী ও গহনা নিরাপদ স্থানে রাখুন",
+        "ভঙ্গুর বা দামি জিনিসপত্র সম্পর্কে টিমকে আগেই জানান",
+        "টিম চলে যাওয়ার আগে সব কক্ষ ভালো করে দেখে নিন"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Don't walk on freshly mopped or polished wet hardwood floors",
+        "Don't spray liquids directly inside active electrical sockets",
+        "Don't leave pet animals unleashed during deep spray cleaning"
+      ],
+      "hi": [
+        "ताजा पोछा लगाए या पॉलिश किए गीले लकड़ी के फर्श पर न चलें",
+        "सक्रिय इलेक्ट्रिकल सॉकेट्स के अंदर सीधे तरल न स्प्रे करें",
+        "डीप स्प्रे सफाई के दौरान पालतू जानवरों को खुला न छोड़ें"
+      ],
+      "bn": [
+        "সদ্য মোছা বা পলিশ করা ভেজা মেঝেতে হাঁটবেন না",
+        "সরাসরি বৈদ্যুতিক সকেটের ভেতর তরল স্প্রে করবেন না",
+        "স্প্রে ক্লিনিং চলাকালীন পোষা প্রাণী খোলা রাখবেন না"
+      ]
+    }
+  },
+  {
+    "id": "painter",
+    "name": { "en": "Painter", "hi": "पेंटर", "bn": "রংমিস্ত্রি" },
+    "icon": "bi-palette-fill",
+    "themeColor": "#8B5CF6",
+    "included": {
+      "en": [
+        "Wall crack filling, putty touch-ups, and sanding",
+        "Single & double coat interior wall painting",
+        "Door/window enamel painting or varnish touch-up",
+        "Furniture masking with plastic sheets before painting"
+      ],
+      "hi": [
+        "दीवार की दरारें भरना, पुट्टी टच-अप और सैंडिंग",
+        "सिंगल और डबल कोट इंटीरियर वॉल पेंटिंग",
+        "दरवाजे/खिड़की की इनेमल पेंटिंग या वार्निश टच-अप",
+        "पेंटिंग से पहले प्लास्टिक शीट से फर्नीचर ढकना"
+      ],
+      "bn": [
+        "দেয়ালের ফাটল ভরাট, পুটি টাচ-আপ এবং স্যান্ডিং",
+        "সিঙ্গেল ও ডাবল কোট অভ্যন্তরীণ দেয়াল পেইন্টিং",
+        "দরজা/জানালার এনামেল পেইন্টিং বা বার্নিশ টাচ-আপ",
+        "রং করার আগে প্লাস্টিক শিট দিয়ে আসবাবপত্র ঢেকে রাখা"
+      ]
+    },
+    "excluded": {
+      "en": [
+        "Exterior facade painting requiring multi-tier bamboo scaffolding",
+        "Major wall dampness civil waterproofing treatment",
+        "Cost of paint cans (unless explicitly included in total quote)"
+      ],
+      "hi": [
+        "बांस की मचान की आवश्यकता वाली बाहरी दीवार पेंटिंग",
+        "बड़ी दीवार नमी सिविल वाटरप्रूफिंग उपचार",
+        "पेंट के डिब्बों की लागत (जब तक कोट में स्पष्ट रूप से शामिल न हो)"
+      ],
+      "bn": [
+        "বাঁশের স্ক্যাফোল্ডিং প্রয়োজন এমন বহিরাগত দেয়াল রং",
+        "দেয়ালের অতিরিক্ত সোঁতসেঁতে সিভিল ওয়াটারপ্রুফিং ট্রিটমেন্ট",
+        "রঙের কৌটার দাম (কোটেশনে উল্লেখ না থাকলে)"
+      ]
+    },
+    "dos": {
+      "en": [
+        "Do choose moisture-resistant washable paint for kitchens & hall",
+        "Do allow 4-6 hours drying time between paint coats",
+        "Do keep rooms well ventilated during and after painting"
+      ],
+      "hi": [
+        "रसोई और हॉल के लिए नमी-प्रतिरोधी वाशेबल पेंट चुनें",
+        "पेंट कोट के बीच 4-6 घंटे का सुखाने का समय दें",
+        "पेंटिंग के दौरान और बाद में कमरों को हवादार रखें"
+      ],
+      "bn": [
+        "রান্নাঘর ও হলের জন্য পানি-সহনীয় ওয়াশবল রং নির্বাচন করুন",
+        "রঙের কোর্টের মাঝে ৪-৬ ঘণ্টা শুকানোর সময় দিন",
+        "রং করার সময় ঘরে পর্যাপ্ত বাতাস চলাচলের সুযোগ দিন"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Don't apply paint over wet or active water-leaking walls",
+        "Don't touch freshly painted surfaces for at least 12 hours",
+        "Don't wash freshly painted acrylic wall for 14 days"
+      ],
+      "hi": [
+        "गीली या सीपेज वाली दीवारों पर पेंट न लगाएं",
+        "कम से कम 12 घंटे तक ताजा पेंट की गई सतहों को न छुएं",
+        "14 दिनों तक ताजा पेंट की गई ऐक्रेलिक दीवार को न धोएं"
+      ],
+      "bn": [
+        "ভেজা বা পানি লিক হওয়া দেয়ালে রং করবেন না",
+        "কমপক্ষে ১২ ঘণ্টা নতুন রং করা সারফেস স্পর্শ করবেন না",
+        "১৪ দিনের মধ্যে নতুন এক্রিলিক দেয়াল পানি দিয়ে ধোবেন না"
+      ]
+    }
+  },
+  {
+    "id": "appliance",
+    "name": { "en": "Appliance Repair", "hi": "उपकरण मरम्मत", "bn": "যন্ত্রপাতি মেরামত" },
+    "icon": "bi-tools",
+    "themeColor": "#F97316",
+    "included": {
+      "en": [
+        "Washing machine drum issue, noise fix, drain pump repair",
+        "Refrigerator cooling check, thermostat & defrost timer fix",
+        "Microwave magnetron, diode, touch panel diagnosis",
+        "Water purifier (RO) filter replacement & TDS calibration"
+      ],
+      "hi": [
+        "वॉशिंग मशीन ड्रम समस्या, शोर ठीक करना, ड्रेन पंप मरम्मत",
+        "रेफ्रिजरेटर कूलिंग जांच, थर्मोस्टेट व डिफ्रॉस्ट टाइमर ठीक करना",
+        "माइक्रोवेव मैग्नेट्रॉन, डायोड, टच पैनल की जांच",
+        "वाटर प्यूरीफायर (आरओ) फिल्टर बदलाव और टीडीएस कैलिब्रेशन"
+      ],
+      "bn": [
+        "ওয়াশিং মেশিন ড্রাম সমস্যা, শব্দ দূরীকরণ, ড্রেন পাম্প মেরামত",
+        "রেফ্রিজারেটর কুলিং চেক, থার্মোস্ট্যাট এবং ডিফ্রস্ট টাইমার ঠিক করা",
+        "মাইক্রোওয়েভ ম্যাগনেট্রন, ডায়োড, টাচ প্যানেল ডায়াগনোসিস",
+        "ওয়াটার পিউরিফায়ার (আরও) ফিল্টার পরিবর্তন ও টিডিএস ক্যালিব্রেশন"
+      ]
+    },
+    "excluded": {
+      "en": [
+        "Replacement of major motherboard (PCB) without spare cost",
+        "Gas refilling for commercial cold storage freezers",
+        "Physical plastic body damage or glass door replacement"
+      ],
+      "hi": [
+        "बिना स्पेयर लागत के मुख्य मदरबोर्ड (पीसीबी) का प्रतिस्थापन",
+        "व्यावसायिक कोल्ड स्टोरेज फ्रीजर के लिए गैस रिफिलिंग",
+        "शारीरिक प्लास्टिक बॉडी क्षति या ग्लास दरवाजे का बदलाव"
+      ],
+      "bn": [
+        "পার্টস খরচ ছাড়া প্রধান মাদারবোর্ড (পিসিবি) প্রতিস্থাপন",
+        "কমার্শিয়াল কোল্ড স্টোরেজ ফ্রিজারের গ্যাস রিফিলিং",
+        "বডির প্লাস্টিকের ক্ষয়ক্ষতি বা কাচের দরজা বদলানো"
+      ]
+    },
+    "dos": {
+      "en": [
+        "Do use voltage stabilizer for high value refrigerators/washing machines",
+        "Do unplug appliances before inspecting electrical cords",
+        "Do run RO discharge pipe into a bucket to reuse water"
+      ],
+      "hi": [
+        "कीमती रेफ्रिजरेटर/वॉशिंग मशीन के लिए वोल्टेज स्टेबलाइजर का उपयोग करें",
+        "इलेक्ट्रिकल कॉर्ड की जांच करने से पहले उपकरणों को अनप्लग करें",
+        "पानी का पुन: उपयोग करने के लिए आरओ डिस्चार्ज पाइप को बाल्टी में रखें"
+      ],
+      "bn": [
+        "দামি ফ্রিজ বা ওয়াশিং মেশিনের সাথে ভোল্টেজ স্ট্যাবিলাইজার ব্যবহার করুন",
+        "কর্ড পরীক্ষার আগে যন্ত্রপাতির প্লাগ খুলে দিন",
+        "পানি পুনরায় ব্যবহারের জন্য আরও বর্জ্য পাইপ বালতিতে রাখুন"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Don't overload washing machine drum beyond rated kg capacity",
+        "Don't put metal utensils inside operating microwave oven",
+        "Don't operate refrigerator immediately after moving/tilting"
+      ],
+      "hi": [
+        "वॉशिंग मशीन ड्रम को निर्धारित क्षमता से अधिक ओवरलोड न करें",
+        "चालू माइक्रोवेव ओवन में धातु के बर्तन न रखें",
+        "हिलाने/झुकाने के तुरंत बाद रेफ्रिजरेटर न चलाएं"
+      ],
+      "bn": [
+        "ওয়াশিং মেশিনের ড্রামে অনুমোদিত ওজনের বেশি জামাকাপড় দেবেন না",
+        "মাইক্রোওয়েভ ওভেনে ধাতব পাত্র ব্যবহার করবেন না",
+        "ফ্রিজ সরানোর পর সাথে সাথে কারেন্ট কানেকশন দেবেন না"
+      ]
+    }
+  },
+  {
+    "id": "pest-control",
+    "name": { "en": "Pest Control", "hi": "पेस्ट कंट्रोल", "bn": "পেস্ট কন্ট্রোল" },
+    "icon": "bi-bug-fill",
+    "themeColor": "#14B8A6",
+    "included": {
+      "en": [
+        "Cockroach gel application in kitchen cabinets & drawers",
+        "Termite chemical injection and wood barrier protection",
+        "Bed bug spray treatment (2-session coverage)",
+        "General spray for mosquitoes, ants, and spiders"
+      ],
+      "hi": [
+        "रसोई अलमारियों और दराजों में कॉकरोच जेल लगाना",
+        "दीमक रासायनिक इंजेक्शन और लकड़ी बाधा सुरक्षा",
+        "खटमल स्प्रे उपचार (2-सत्र कवरेज)",
+        "मच्छरों, चींटियों और मकड़ियों के लिए सामान्य स्प्रे"
+      ],
+      "bn": [
+        "রান্নাঘরের ক্যাবিনেটে তেলাপোকা মারার জেল প্রয়োগ",
+        "উইপোকা প্রতিরোধী কেমিক্যাল ইনজেকশন ও উড ব্যারিফায়ার",
+        "ছাড়পোকা স্প্রে ট্রিটমেন্ট (২ সেশন কাভারেজ)",
+        "মশা, পিঁপড়া ও মাকড়সার জন্য সাধারণ স্প্রে"
+      ]
+    },
+    "excluded": {
+      "en": [
+        "Rodent proofing involving major civil wall mesh sealing",
+        "Replacement of damaged wooden furniture eaten by termites",
+        "Outdoor agricultural farm pest treatment"
+      ],
+      "hi": [
+        "बड़ी सिविल दीवार जाली सीलिंग शामिल कुतरने वाले कीट सुरक्षा",
+        "दीमक द्वारा खाई गई क्षतिग्रस्त लकड़ी के फर्नीचर का बदलाव",
+        "बाहरी कृषि फार्म कीट उपचार"
+      ],
+      "bn": [
+        "মেজর সিভিল নেট সিটিং সহ ইঁদুর প্রতিরোধ ব্যবস্থা",
+        "উইপোকা খাওয়া ক্ষতিগ্রস্ত আসবাবপত্র প্রতিস্থাপন",
+        "খামার বা কৃষি জমির কীটনাশক স্প্রে"
+      ]
+    },
+    "dos": {
+      "en": [
+        "Do keep kitchen counters clean and dry overnight",
+        "Do store open food items in airtight glass/plastic containers",
+        "Do vacate premises for 2-3 hours during deep chemical spray"
+      ],
+      "hi": [
+        "रसोई के काउंटर को रात भर साफ और सूखा रखें",
+        "खुली खाद्य वस्तुओं को एयरटाइट कंटेनर में रखें",
+        "डीप केमिकल स्प्रे के दौरान 2-3 घंटे के लिए घर खाली रखें"
+      ],
+      "bn": [
+        "রাতে রান্নাঘরের কাউন্টার পরিষ্কার ও শুকনো রাখুন",
+        "খোলা খাবার এয়ারটাইট কনটেইনারে সংরক্ষণ করুন",
+        "স্প্রে চলাকালীন ২-৩ ঘণ্টার জন্য ঘর খালি রাখুন"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Don't wipe applied gel spots in kitchen drawers for 3 weeks",
+        "Don't allow infants or pets inside room during spraying",
+        "Don't touch treated chemical zones with bare hands"
+      ],
+      "hi": [
+        "रसोई के दराजों में लगाए गए जेल स्पॉट को 3 सप्ताह तक न पोंछें",
+        "स्प्रे के दौरान शिशुओं या पालतू जानवरों को कमरे में न जाने दें",
+        "उपचारित रासायनिक क्षेत्रों को नंगे हाथों से न छुएं"
+      ],
+      "bn": [
+        "ক্যাবিনেটে লাগানো জেল ৩ সপ্তাহের মধ্যে মুছে ফেলবেন না",
+        "স্প্রে চলাকালে শিশু বা পোষা প্রাণীকে ঘরে রাখবেন না",
+        "স্প্রে করা কেমিক্যাল খালি হাতে স্পর্শ করবেন না"
+      ]
+    }
+  }
+]

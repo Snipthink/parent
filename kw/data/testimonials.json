@@ -1,0 +1,5 @@
+[
+  { "name": "Priya S.", "category": { "en": "Electrician", "hi": "इलेक्ट्रीशियन", "bn": "ইলেকট্রিশিয়ান" }, "rating": 5, "text": { "en": "Booked in a minute, technician arrived in 18 minutes. Genuinely fast.", "hi": "एक मिनट में बुक किया, तकनीशियन 18 मिनट में पहुंच गया। वास्तव में तेज़।", "bn": "এক মিনিটে বুক করেছি, টেকনিশিয়ান ১৮ মিনিটে পৌঁছেছেন। সত্যিই দ্রুত।" } },
+  { "name": "Arjun M.", "category": { "en": "Plumber", "hi": "प्लंबर", "bn": "প্লাম্বার" }, "rating": 5, "text": { "en": "No back-and-forth calls, everything happened over WhatsApp.", "hi": "कोई बार-बार कॉल नहीं, सब कुछ व्हाट्सएप पर हुआ।", "bn": "বারবার কল করতে হয়নি, সব কিছু হোয়াটসঅ্যাপে হয়েছে।" } },
+  { "name": "Fatima R.", "category": { "en": "Home Cleaning", "hi": "होम क्लीनिंग", "bn": "হোম ক্লিনিং" }, "rating": 4, "text": { "en": "Budget was clear upfront, no surprise charges at the end.", "hi": "बजट पहले से स्पष्ट था, अंत में कोई आश्चर्यजनक शुल्क नहीं।", "bn": "বাজেট আগে থেকেই স্পষ্ট ছিল, শেষে কোনো চার্জ চমকে দেয়নি।" } }
+]

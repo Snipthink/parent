@@ -1,0 +1,28 @@
+{
+  "companyName": "Kaamwale",
+  "tagline": "Verified help, at your door — fast.",
+  "logo": "assets/images/logo.svg",
+  "whatsappNumber": "918952872163",
+  "currency": "₹",
+  "budget": { "min": 50, "max": 1000, "step": 50, "default": 300 },
+  "timeSlots": [
+    { "id": "10min", "label": { "en": "10 Minutes", "hi": "10 मिनट", "bn": "১০ মিনিট" }, "urgent": true },
+    { "id": "20min", "label": { "en": "20 Minutes", "hi": "20 मिनट", "bn": "২০ মিনিট" }, "urgent": true },
+    { "id": "30min", "label": { "en": "30 Minutes", "hi": "30 मिनट", "bn": "৩০ মিনিট" }, "urgent": false },
+    { "id": "1hour", "label": { "en": "1 Hour", "hi": "1 घंटा", "bn": "১ ঘণ্টা" }, "urgent": false },
+    { "id": "custom", "label": { "en": "Choose a time", "hi": "समय चुनें", "bn": "সময় নির্বাচন করুন" }, "urgent": false }
+  ],
+  "businessHours": "24x7",
+  "emergencyBooking": true,
+  "socialLinks": {
+    "instagram": "https://instagram.com/kaamwale",
+    "facebook": "https://facebook.com/kaamwale"
+  },
+  "contactEmail": "hello@kaamwale.example",
+  "address": "Purnia, Bihar, India",
+  "serviceRadius": "12 km",
+  "partner": {
+    "whatsappNumber": "918952872163",
+    "whatsappMessage": "Hi! I'm interested in becoming a service partner with Kaamwale. Please share the onboarding details."
+  }
+}
