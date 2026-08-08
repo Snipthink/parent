@@ -738,5 +738,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
   .hero { padding: 7.5rem 0 2.5rem; }
   .hero-badge-container { margin-top: 1.2rem; }
   .hero-badge, .hero-badge-secondary { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
-  .category-guide-grid-container { grid-template-columns: 1fr; }
+  /* Compact 2-up grid on phones: logo + name + price + WhatsApp button,
+     description hidden so the whole catalogue is selectable in one screen. */
+  .category-guide-grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+    max-height: 62vh;
+  }
+  .wa-guide-card { padding: 0.75rem 0.6rem; text-align: center; }
+  .wa-guide-card .guide-icon-wrap {
+    width: 40px; height: 40px; font-size: 1.1rem;
+    border-radius: 12px; margin: 0 auto 0.5rem;
+  }
+  .wa-guide-card h5 { font-size: 0.85rem; margin-bottom: 0.35rem; }
+  .wa-guide-card p { display: none; }
+  .wa-guide-card .price-tag { font-size: 0.72rem; padding: 0.2rem 0.5rem; }
+  .wa-guide-card .btn-wa-quick { padding: 0.4rem 0.5rem; font-size: 0.75rem; margin-top: 0.5rem; }
 }

@@ -295,15 +295,18 @@
 
 <!-- ============ LANGUAGE MODAL (first visit) ============ -->
 <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
     <div class="modal-content glass-modal">
-      <div class="modal-body p-4 text-center">
-        <h4 class="mb-4" id="chooseLangHeading">Choose your language</h4>
-        <div class="row g-3">
-          <div class="col-4"><div class="lang-card" data-lang="en"><div class="fs-3">🇬🇧</div><div class="mt-1 fw-semibold">English</div></div></div>
-          <div class="col-4"><div class="lang-card" data-lang="hi"><div class="fs-3">🇮🇳</div><div class="mt-1 fw-semibold">हिन्दी</div></div></div>
-          <div class="col-4"><div class="lang-card" data-lang="bn"><div class="fs-3">🇧🇩</div><div class="mt-1 fw-semibold">বাংলা</div></div></div>
+      <div class="modal-header border-0 pb-1">
+        <h5 class="modal-title fw-bold" id="chooseLangHeading"><i class="bi bi-translate me-2"></i>Choose your language</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-transparent"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" class="form-control" id="languageSearchInput" placeholder="Search language (e.g. Tamil, मराठी)...">
         </div>
+        <div class="row g-2" id="languageGrid"></div>
       </div>
     </div>
   </div>
@@ -548,9 +551,6 @@
       <div class="fab-row position-relative"><span class="fab-label">Language</span>
         <button class="fab fab-lang" id="fabLang" aria-label="Change language"><i class="bi bi-translate"></i></button>
         <div class="d-none position-absolute end-100 me-2 fab-lang-panel" id="langFabPanel" style="bottom:0; min-width:130px;">
-          <div class="lang-card mb-1 py-1" data-lang="en">English</div>
-          <div class="lang-card mb-1 py-1" data-lang="hi">हिन्दी</div>
-          <div class="lang-card py-1" data-lang="bn">বাংলা</div>
         </div>
       </div>
       <div class="fab-row"><span class="fab-label">WhatsApp</span>

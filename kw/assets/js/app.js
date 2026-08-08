@@ -67,12 +67,12 @@ async function init() {
     applyStoredMode();
     renderThemePanel();
 
+    buildLanguageRegistry();
+    renderLanguagePickers();
+
     const savedLang = localStorage.getItem('lang');
-    if (savedLang) {
-      await setLanguage(savedLang, false);
-    } else {
-      showLanguageModal();
-    }
+    const startLang = LANG_FILES[savedLang] ? savedLang : (s_defaultLang());
+    await setLanguage(startLang, false);
 
     bindGlobalEvents();
     renderFAQ();
@@ -98,19 +98,67 @@ function applySettingsToDOM() {
 }
 
 /* ============ Language ============ */
-const LANG_FILES = { en: 'languages/english.json', hi: 'languages/hindi.json', bn: 'languages/bengali.json' };
+// Fallback registry, replaced by data/settings.json → languages at boot.
+let LANG_FILES = { en: 'languages/english.json', hi: 'languages/hindi.json', bn: 'languages/bengali.json' };
+let LANG_META = {};
+
+function s_defaultLang() {
+  return state.settings?.defaultLanguage || 'en';
+}
+
+function buildLanguageRegistry() {
+  const list = state.settings?.languages;
+  if (!Array.isArray(list) || !list.length) return;
+  LANG_FILES = {};
+  LANG_META = {};
+  list.forEach(l => {
+    LANG_FILES[l.code] = l.file;
+    LANG_META[l.code] = l;
+  });
+}
+
+function renderLanguagePickers() {
+  const list = state.settings?.languages || [];
+  if (!list.length) return;
+
+  const grid = $('#languageGrid');
+  if (grid) {
+    grid.innerHTML = list.map(l => `
+      <div class="col-6 col-sm-4 col-md-3" data-lang-name="${(l.english + ' ' + l.native).toLowerCase()}">
+        <div class="lang-card h-100" data-lang="${l.code}">
+          <div class="fw-semibold lang-native">${l.native}</div>
+          <div class="small text-muted">${l.english}</div>
+        </div>
+      </div>`).join('');
+  }
+
+  const panel = $('#langFabPanel');
+  if (panel) {
+    panel.innerHTML = `<div class="lang-card py-1 fw-semibold" id="langFabMore">
+      <i class="bi bi-translate me-1"></i>${list.length} languages</div>`;
+  }
+}
+
+function filterLanguageGrid(query) {
+  const q = (query || '').toLowerCase().trim();
+  $$('#languageGrid [data-lang-name]').forEach(col => {
+    col.classList.toggle('d-none', q !== '' && !col.dataset.langName.includes(q));
+  });
+}
 
 function showLanguageModal() {
-  const modal = new bootstrap.Modal('#languageModal', { backdrop: 'static', keyboard: false });
-  modal.show();
+  bootstrap.Modal.getOrCreateInstance('#languageModal').show();
 }
 
 async function setLanguage(code, closeModal = true) {
+  if (!LANG_FILES[code]) code = s_defaultLang();
   const data = await loadJSON(LANG_FILES[code]);
   state.lang = data;
   state.langCode = code;
   localStorage.setItem('lang', code);
   document.documentElement.lang = code;
+  document.documentElement.dir = LANG_META[code]?.dir || data.dir || 'ltr';
+  $$('.lang-card').forEach(c => c.classList.toggle('active', c.dataset.lang === code));
   renderStaticText();
   renderCategories();
   renderRulebook();
@@ -546,6 +594,25 @@ function openWhatsAppCategoryModal() {
   new bootstrap.Modal('#whatsappCategoryModal').show();
 }
 
+// One-tap booking: name the category (and its price) in the message so the
+// user doesn't have to fill the booking form first.
+function sendQuickWhatsApp(categoryId) {
+  const cat = state.categories.find(c => c.id === categoryId);
+  const s = state.settings;
+  if (!cat || !s) return;
+
+  const name = cat.name[state.langCode] || cat.name.en;
+  const price = cat.priceRange || `${s.currency || '₹'}${cat.startingPrice}`;
+  const tpl = state.lang?.whatsapp?.quickMessage
+    || '🛠️ *{company}*\n📌 *Service Needed:* {category}\n💰 *Indicative Price:* {price}\n\nPlease send a verified professional.';
+  const text = tpl
+    .replace('{company}', s.companyName)
+    .replace('{category}', name)
+    .replace('{price}', price);
+
+  window.open(`https://wa.me/${cleanPhone(s.whatsappNumber)}?text=${encodeURIComponent(text)}`, '_blank');
+}
+
 function renderWhatsAppCategoryModal(filter = '') {
   const container = $('#waCategoryGridContainer');
   if (!container) return;
@@ -578,8 +645,8 @@ function renderWhatsAppCategoryModal(filter = '') {
         </div>
         <div>
           <span class="price-tag mb-2"><i class="bi bi-tag-fill me-1"></i>${priceText}</span>
-          <button type="button" class="btn-wa-quick">
-            <i class="bi bi-whatsapp"></i> Book Service
+          <button type="button" class="btn-wa-quick" data-quick="${cat.id}">
+            <i class="bi bi-whatsapp"></i> ${state.lang?.whatsappModal?.quickBook || 'WhatsApp'}
           </button>
         </div>
       </div>
@@ -587,10 +654,12 @@ function renderWhatsAppCategoryModal(filter = '') {
   }).join('');
 
   $$('.wa-guide-card', container).forEach(card => {
-    card.addEventListener('click', () => {
-      const modalEl = $('#whatsappCategoryModal');
-      bootstrap.Modal.getInstance(modalEl)?.hide();
-      openBookingModal(card.dataset.id);
+    card.addEventListener('click', e => {
+      bootstrap.Modal.getInstance($('#whatsappCategoryModal'))?.hide();
+      // The green button is the one-tap path: straight to WhatsApp with the
+      // category already named. Tapping anywhere else opens the full form.
+      if (e.target.closest('[data-quick]')) sendQuickWhatsApp(card.dataset.id);
+      else openBookingModal(card.dataset.id);
     });
   });
 }
@@ -681,13 +750,20 @@ function renderTestimonials() {
 
 /* ============ Global events ============ */
 function bindGlobalEvents() {
-  // Language selection cards
-  $$('.lang-card').forEach(card => {
-    card.addEventListener('click', () => setLanguage(card.dataset.lang));
+  // Language selection cards (delegated — the grid is rendered from settings.json)
+  $('#languageGrid')?.addEventListener('click', e => {
+    const card = e.target.closest('[data-lang]');
+    if (!card) return;
+    setLanguage(card.dataset.lang);
   });
+  $('#languageSearchInput')?.addEventListener('input', e => filterLanguageGrid(e.target.value));
   $('#langFabPanel')?.addEventListener('click', e => {
     const card = e.target.closest('[data-lang]');
-    if (card) setLanguage(card.dataset.lang);
+    if (card) { setLanguage(card.dataset.lang); return; }
+    if (e.target.closest('#langFabMore')) {
+      $('#langFabPanel').classList.add('d-none');
+      showLanguageModal();
+    }
   });
 
   // Budget slider
