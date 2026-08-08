@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — SnipThinK</title>
+  <link rel="icon" href="/assets/img/logo.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Manrope', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0f1115;
+      color: #f5f5f7;
+      text-align: center;
+      padding: 24px;
+    }
+    .wrap { max-width: 520px; }
+    .logo { width: 64px; height: 64px; margin-bottom: 24px; object-fit: contain; }
+    h1 {
+      font-size: clamp(48px, 10vw, 96px);
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, #46d5f9, #1ab8d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 12px;
+    }
+    p.msg { font-size: 18px; color: #b7bcc7; margin-bottom: 32px; }
+    a.home-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #46d5f9, #1ab8d4);
+      color: #06222a;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity .2s ease;
+    }
+    a.home-btn:hover { opacity: .85; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="/assets/img/logo.png" alt="SnipThinK logo">
+    <h1>404</h1>
+    <p class="msg">The page you're looking for doesn't exist or has been moved.</p>
+    <a class="home-btn" href="/">Back to Home</a>
+  </div>
+</body>
+</html>
