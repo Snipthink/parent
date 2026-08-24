@@ -1,0 +1,271 @@
+{
+  "_readme": "Edit this file to update the whole site — no coding needed. Prices are plain numbers (no currency symbol). Set 'mrp' equal to 'price' to hide the strikethrough/offer badge for that product. Image paths are relative to the site root (the images/ folder next to index.html) — drop your real photos in with these exact filenames, or change the paths to match your own files.",
+
+  "site": {
+    "whatsappNumber": "91XXXXXXXXXX",
+    "_whatsappNumber_note": "TODO — replace with the real Organicabelle WhatsApp Business number: country code + number, digits only, no + or spaces.",
+
+    "images": {
+      "hero": "images/brand/hero.webp",
+      "doctor": "images/doctor/doctor.webp",
+      "models": {
+        "woman": "images/models/woman-soap.webp",
+        "womanNatural": "images/models/woman-natural-skincare.webp",
+        "man": "images/models/man-soap.webp",
+        "family": "images/models/family.webp"
+      },
+      "story": {
+        "women": "images/story/women-artisans.webp",
+        "making": "images/story/soap-making.webp",
+        "village": "images/story/village.webp"
+      }
+    },
+
+    "sections": {
+      "_note": "Set any of these to false to hide that section/feature from the page entirely.",
+      "featuredProduct": true,
+      "ourStory": true,
+      "womenArtisans": true,
+      "modelCampaign": true,
+      "skinExpert": true,
+      "customerReviews": true,
+      "reviewVideos": true,
+      "productDetailReviews": true,
+      "mission": true,
+      "social": true,
+      "footerVideo": true,
+      "forestExplorer": true,
+      "productJourney": true,
+      "leafParticles": true
+    },
+
+    "featuredProductId": "rose",
+
+    "skinExpert": {
+      "enabled": true,
+      "name": "[Doctor Name]",
+      "qualification": "[Dermatologist / Skin Care Specialist — qualification to be supplied]",
+      "statement": "Choosing a cleansing product according to your individual skin type can help make your daily skincare routine more comfortable and enjoyable. Skin suitability varies between individuals, so it's worth paying attention to how your own skin responds.",
+      "doctorVideoUrl": "",
+      "_doctorVideoUrl_note": "Leave empty to show the doctor image instead of a video. Paste a full YouTube URL to enable the video."
+    },
+
+    "customerReviewVideos": [
+      { "title": "Demo video — replace with a real customer story", "category": "Sample", "youtubeUrl": "https://www.youtube.com/watch?v=lBc-dWQmFIM" },
+      { "title": "Demo video — replace with your own footage", "category": "Sample", "youtubeUrl": "https://www.youtube.com/watch?v=1KkCLRsOcLg" }
+    ],
+    "_customerReviewVideos_note": "These two are stand-in soap-making videos from public YouTube channels, only so the section isn't empty while you're testing — swap in your own customers' or brand's videos before launch. Entries with an empty youtubeUrl are skipped.",
+
+    "footerVideo": {
+      "title": "A glimpse into Organicabelle",
+      "description": "A short look at the hands, ingredients, and care behind every Organicabelle bar. (Sample video shown below — replace with your own brand footage.)",
+      "youtubeUrl": "https://www.youtube.com/watch?v=lBc-dWQmFIM"
+    },
+
+    "social": [
+      { "name": "Instagram", "url": "https://instagram.com/organicabelle", "icon": "instagram" },
+      { "name": "Facebook", "url": "https://facebook.com/organicabelle", "icon": "facebook" },
+      { "name": "YouTube", "url": "https://youtube.com/@organicabelle", "icon": "youtube" },
+      { "name": "WhatsApp", "url": "#", "icon": "whatsapp", "isWhatsApp": true }
+    ]
+  },
+
+  "products": [
+    {
+      "id": "neem",
+      "name": "Neem Botanical Soap",
+      "category": "Neem",
+      "mood": "Fresh · Earthy · Botanical",
+      "accent": "#4E5E3A",
+      "icon": "neem",
+      "mrp": 299,
+      "price": 249,
+      "image": "images/products/neem.webp",
+      "ingredientImage": "images/ingredients/neem.webp",
+      "desc": "A grounding, earthy bar built around neem — the classic botanical of an everyday ritual.",
+      "about": "Our Neem bar is cut and cured slowly, then wrapped by hand the same day it's cut, so the botanical character stays close to its source.",
+      "benefits": ["Fresh, herbaceous character", "Gentle daily-use lather", "Traditionally valued in natural skincare"],
+      "ingredients": ["Neem leaf extract", "Saponified plant oils", "Glycerin"],
+      "skinFeel": "Clean, fresh, matte — never tight or stripped.",
+      "suitableFor": "Everyday use; those who enjoy an earthy, herbal scent.",
+      "origin": "Neem leaves are gathered from village trees near our workshop, then dried in the shade before use.",
+      "howToUse": "Lather between wet hands or a washcloth, cleanse, then rinse well. Store on a draining dish between uses to help the bar last longer.",
+      "production": "Leaves are washed, dried, and infused into the base before it's poured, cut into bars, and cured for several weeks.",
+      "journey": [
+        { "title": "Into the forest", "text": "Our journey begins at a neem tree at the edge of the village, its leaves catching the morning light." },
+        { "title": "Gathering leaves", "text": "Only what's needed is gathered by hand, leaf by leaf, leaving the tree undisturbed for next season." },
+        { "title": "Washing & drying", "text": "The leaves are washed, sorted, and laid out to dry slowly in the shade." },
+        { "title": "Into the mixture", "text": "Dried neem is infused into the soap base, then poured into simple wooden molds." },
+        { "title": "A finished bar", "text": "Days later, the mixture has become a firm bar — cut, cured, and wrapped in kraft paper and jute." }
+      ]
+    },
+    {
+      "id": "aloe",
+      "name": "Aloe Vera Botanical Soap",
+      "category": "Aloe Vera",
+      "mood": "Fresh · Clean · Gentle",
+      "accent": "#6F8E52",
+      "icon": "aloe",
+      "mrp": 299,
+      "price": 249,
+      "image": "images/products/aloe-vera.webp",
+      "ingredientImage": "images/ingredients/aloe-vera.webp",
+      "desc": "A soft, clean bar built around aloe — light, gentle, and easy to fold into a daily ritual.",
+      "about": "Aloe's cooling, soft character comes through in a bar that's gentle enough for daily use, wrapped the traditional Organicabelle way.",
+      "benefits": ["Soft, gentle daily lather", "Light, clean character", "A calm start or end to the day"],
+      "ingredients": ["Aloe vera extract", "Saponified plant oils", "Glycerin"],
+      "skinFeel": "Soft, smooth, lightly cushioned.",
+      "suitableFor": "Daily use; those who prefer a lighter, gentler bar.",
+      "origin": "Aloe is cut from low, sun-hardy plants grown along the workshop's garden edge.",
+      "howToUse": "Work into a light lather with warm water. Gentle enough for both morning and evening use.",
+      "production": "Fresh aloe gel is separated from the leaf, blended into the base, poured, cut, and cured.",
+      "journey": [
+        { "title": "Into the forest", "text": "The path leads past a row of aloe plants, their thick leaves standing in the sun." },
+        { "title": "Gathering aloe", "text": "A few outer leaves are cut carefully, leaving the plant to keep growing." },
+        { "title": "Extracting the gel", "text": "The leaves are rinsed and the cooling gel is drawn out by hand." },
+        { "title": "Into the mixture", "text": "The gel is blended into the soap base and poured into molds." },
+        { "title": "A finished bar", "text": "Once cured, the bar is cut, wrapped in kraft paper, and tied with jute thread." }
+      ]
+    },
+    {
+      "id": "rose",
+      "name": "Rose Botanical Soap",
+      "category": "Rose",
+      "mood": "Elegant · Floral · Premium",
+      "accent": "#A85268",
+      "icon": "rose",
+      "mrp": 329,
+      "price": 279,
+      "image": "images/products/rose.webp",
+      "ingredientImage": "images/ingredients/rose.webp",
+      "desc": "An elegant, romantic bar carrying rose's soft floral character — the most premium bar in the collection.",
+      "about": "Rose petals inform both the scent and the soft rose-muted tone of this bar, wrapped with an extra fold of care.",
+      "benefits": ["Delicate floral character", "A quietly indulgent daily ritual", "Elegant, premium presentation"],
+      "ingredients": ["Rose extract", "Saponified plant oils", "Glycerin"],
+      "skinFeel": "Silky, soft, subtly fragrant.",
+      "suitableFor": "Those who enjoy a romantic, floral daily ritual.",
+      "origin": "Roses are picked at first light from a small garden plot, while the petals are still cool.",
+      "howToUse": "Lather generously for a lightly fragrant wash; pat dry rather than rubbing to help the scent linger.",
+      "production": "Petals are gently pressed for their extract, blended into the base, poured, cut, and cured.",
+      "journey": [
+        { "title": "Into the forest", "text": "The trail opens onto a small clearing where roses grow along a wooden fence." },
+        { "title": "Gathering petals", "text": "Petals are picked one by one, choosing only the fullest blooms." },
+        { "title": "Pressing the petals", "text": "The petals are gently pressed to draw out their soft floral extract." },
+        { "title": "Into the mixture", "text": "The rose extract is folded into the base and poured into molds." },
+        { "title": "A finished bar", "text": "The cured bar is cut, its muted rose tone visible, then wrapped by hand." }
+      ]
+    },
+    {
+      "id": "charcoal",
+      "name": "Charcoal Botanical Soap",
+      "category": "Charcoal",
+      "mood": "Modern · Deep · Refined",
+      "accent": "#2E2C29",
+      "icon": "charcoal",
+      "mrp": 299,
+      "price": 269,
+      "image": "images/products/charcoal.webp",
+      "ingredientImage": "images/ingredients/charcoal.webp",
+      "desc": "A modern, minimal bar with a deep matte tone — refined and understated, for a focused evening ritual.",
+      "about": "Charcoal lends this bar its deep, minimal look, balanced with the same botanical base as the rest of the collection.",
+      "benefits": ["Deep, modern character", "A focused evening cleanse", "Refined, minimal presentation"],
+      "ingredients": ["Activated charcoal", "Saponified plant oils", "Glycerin"],
+      "skinFeel": "Smooth with a clean, refreshed finish.",
+      "suitableFor": "An evening ritual; those drawn to a modern, minimal bar.",
+      "origin": "Activated charcoal is sourced from slow-burned coconut shell, ground fine before use.",
+      "howToUse": "Lather well for an evening cleanse; a slightly longer lather helps lift the day's grime.",
+      "production": "Charcoal is sifted and blended into the base, poured, cut, and cured to a deep matte finish.",
+      "journey": [
+        { "title": "Into the forest", "text": "Past the garden, a quiet clearing holds baskets of dark, sifted charcoal." },
+        { "title": "Gathering charcoal", "text": "Fine activated charcoal is measured out by hand from slow-burned coconut shell." },
+        { "title": "Sifting", "text": "It's sifted twice more, so only the finest powder makes it into the mix." },
+        { "title": "Into the mixture", "text": "The charcoal is folded into the base until it turns a deep, even black." },
+        { "title": "A finished bar", "text": "The cured bar is cut to its matte charcoal finish, then wrapped by hand." }
+      ]
+    },
+    {
+      "id": "lavender",
+      "name": "Lavender Botanical Soap",
+      "category": "Lavender",
+      "mood": "Calm · Botanical · Refined",
+      "accent": "#8073A6",
+      "icon": "lavender",
+      "mrp": 299,
+      "price": 259,
+      "image": "images/products/lavender.webp",
+      "ingredientImage": "images/ingredients/lavender.webp",
+      "desc": "A calm, refined bar carrying lavender's familiar, quieting character — well suited to an evening ritual.",
+      "about": "Lavender stems inspire both the muted lavender tone and the calm, unhurried feel of this bar.",
+      "benefits": ["Calming, familiar character", "A quiet, unhurried ritual", "Refined botanical presentation"],
+      "ingredients": ["Lavender extract", "Saponified plant oils", "Glycerin"],
+      "skinFeel": "Soft, calm, gently soothing to the senses.",
+      "suitableFor": "Evening rituals; those who enjoy a calming botanical scent.",
+      "origin": "Lavender stems are cut from a small raised bed that catches the last of the afternoon sun.",
+      "howToUse": "Best worked into a slow, unhurried lather as part of a wind-down evening routine.",
+      "production": "Stems are dried, their extract drawn out and blended into the base, poured, cut, and cured.",
+      "journey": [
+        { "title": "Into the forest", "text": "A narrow path leads to a raised bed of lavender, swaying gently in the breeze." },
+        { "title": "Gathering stems", "text": "Stems are cut just above the woody base, chosen at their most fragrant." },
+        { "title": "Drying slowly", "text": "Bundled and hung to dry, the lavender's calming scent begins to concentrate." },
+        { "title": "Into the mixture", "text": "The dried extract is blended into the base and poured into molds." },
+        { "title": "A finished bar", "text": "The cured bar is cut, its soft lavender tone visible, then wrapped by hand." }
+      ]
+    },
+    {
+      "id": "redwine",
+      "name": "Red Wine Botanical Soap",
+      "category": "Red Wine",
+      "mood": "Rich · Royal · Sophisticated",
+      "accent": "#6E2430",
+      "icon": "redwine",
+      "mrp": 349,
+      "price": 289,
+      "image": "images/products/red-wine.webp",
+      "ingredientImage": "images/ingredients/red-wine.webp",
+      "desc": "A rich, sophisticated bar in deep burgundy — the most indulgent expression in the Organicabelle collection.",
+      "about": "Grape-derived botanical extract gives this bar its rich burgundy tone and its place as the collection's most indulgent bar.",
+      "benefits": ["Rich, sophisticated character", "An indulgent, considered ritual", "Deep, royal presentation"],
+      "ingredients": ["Grape-derived extract", "Saponified plant oils", "Glycerin"],
+      "skinFeel": "Rich lather with a smooth, cushioned finish.",
+      "suitableFor": "Those who enjoy a bold, indulgent daily ritual.",
+      "origin": "Grape skins are sourced from a nearby small orchard, saved after the season's pressing.",
+      "howToUse": "Lather generously for a rich, cushioned wash — ideal as an indulgent weekend ritual.",
+      "production": "Grape-derived extract is blended into the base for its deep burgundy tone, then poured, cut, and cured.",
+      "journey": [
+        { "title": "Into the forest", "text": "The path opens onto a small orchard, heavy with grapes at the edge of harvest." },
+        { "title": "Gathering grapes", "text": "Grape skins, saved from the season's pressing, are collected in a woven basket." },
+        { "title": "Preparing the extract", "text": "The skins are gently processed to draw out their rich burgundy color." },
+        { "title": "Into the mixture", "text": "The extract is folded into the base, deepening it to a royal burgundy." },
+        { "title": "A finished bar", "text": "The cured bar is cut to reveal its rich tone, then wrapped by hand." }
+      ]
+    }
+  ],
+
+  "reviews": [
+    { "name": "Ananya Sharma (sample)", "product": "neem", "rating": 5, "verified": true,
+      "text": "The neem soap feels very natural and has a mild herbal fragrance. I've been using it regularly and really like the texture — doesn't leave my skin feeling tight afterward.",
+      "placeholder": true, "social": { "platform": "instagram", "url": "#" } },
+    { "name": "Rahul Deshmukh (sample)", "product": "neem", "rating": 4, "verified": true,
+      "text": "Good everyday bar. The scent is quite mild compared to what I expected from neem, but it lathers well and lasts a long time.",
+      "placeholder": true, "social": { "platform": "", "url": "" } },
+    { "name": "Priya Nair (sample)", "product": "rose", "rating": 5, "verified": true,
+      "text": "Bought this as a gift and ended up keeping one for myself! The wrapping alone feels premium — kraft paper and jute thread, no plastic anywhere. The rose scent is subtle, not overpowering.",
+      "placeholder": true, "social": { "platform": "instagram", "url": "#" } },
+    { "name": "Meera Kulkarni (sample)", "product": "rose", "rating": 5, "verified": false,
+      "text": "Lovely soap, smells beautiful without being too strong. Ordered on WhatsApp and it arrived well packed.",
+      "placeholder": true, "social": { "platform": "", "url": "" } },
+    { "name": "Rohan Mehta (sample)", "product": "redwine", "rating": 4, "verified": true,
+      "text": "Rich lather and a nice, deep colour. A bit pricier than the others in the range but feels worth it for how it looks and feels.",
+      "placeholder": true, "social": { "platform": "facebook", "url": "" } },
+    { "name": "Kavita Iyer (sample)", "product": "aloe", "rating": 5, "verified": true,
+      "text": "Very gentle — I have sensitive skin and this is one of the few soaps that doesn't leave it feeling dry. Will reorder.",
+      "placeholder": true, "social": { "platform": "instagram", "url": "#" } },
+    { "name": "Sameer Joshi (sample)", "product": "charcoal", "rating": 4, "verified": true,
+      "text": "Nice minimal look on the shelf. Cleans well without stripping my skin, though I wish the bar was a touch bigger for the price.",
+      "placeholder": true, "social": { "platform": "", "url": "" } },
+    { "name": "Divya Rao (sample)", "product": "lavender", "rating": 5, "verified": true,
+      "text": "This has become part of my night routine — the lavender scent is calming and not artificial-smelling at all. Packaging is beautiful too, I keep the jute thread!",
+      "placeholder": true, "social": { "platform": "instagram", "url": "#" } }
+  ],
+  "_reviews_note": "'product' must match a product id above (neem, aloe, rose, charcoal, lavender, redwine). 'social.url' is optional — leave empty to hide the social icon on that review, or set it to '#' as a demo stand-in like above. Set 'placeholder' to false once it's a real review, and remove the '(sample)' tag from the name."
+}
