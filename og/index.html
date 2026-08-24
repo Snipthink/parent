@@ -8,11 +8,12 @@
 <meta property="og:title" content="Organicabelle | Handmade Organic Soap & Natural Skincare">
 <meta property="og:description" content="Handmade botanical soaps created by women artisans with care for natural ingredients, families, and everyday skincare rituals.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/brand/hero.webp">
+<meta property="og:image" content="images/brand/hero.png">
 <meta name="theme-color" content="#2b2418">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,560;9..144,650&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
 
 <!-- ================= 01 · HEADER ================= -->
 <header class="site" id="siteHeader">
-  <div class="wrap header-row">
+  <div class="wrap container header-row">
     <a href="#home" class="logo" aria-label="Organicabelle home">
       <svg class="mark" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="none" stroke="var(--wine)" stroke-width="1.3"/><path d="M13 4C8 6 6.5 12 13 20C19.5 12 18 6 13 4Z" fill="var(--moss)"/></svg>
       Organicabelle
@@ -70,8 +71,8 @@
 <main id="main">
 <!-- ================= 02 · HERO ================= -->
 <section class="hero forest-texture" id="home">
-  <div class="wrap hero-grid">
-    <div class="reveal-stagger in">
+  <div class="wrap container hero-grid row align-items-center g-4 g-lg-5">
+    <div class="col-lg-6 reveal-stagger in">
       <span class="eyebrow green">Forest · Ingredients · Craft · Product</span>
       <h1>Nature, handcrafted <em>into luxury.</em></h1>
       <p class="lede">Every Organicabelle bar begins as a leaf, a petal, or a handful of stems — gathered, prepared, and shaped by hand into a botanical soap made by women artisans for your everyday ritual.</p>
@@ -80,7 +81,7 @@
         <button class="btn btn-outline" id="heroDiscoverBtn">Discover How It's Made</button>
       </div>
     </div>
-    <div class="hero-art reveal-stagger in">
+    <div class="col-lg-6 hero-art reveal-stagger in">
       <svg class="leaf-decor" style="top:-10px; right:-10px;" width="90" height="90" viewBox="0 0 90 90"><path d="M45 6C18 16 12 46 45 84C78 46 72 16 45 6Z" fill="var(--moss-bright)"/></svg>
       <svg class="leaf-decor" style="bottom:0; left:-20px;" width="60" height="60" viewBox="0 0 60 60"><path d="M30 4C12 10 8 30 30 56C52 30 48 10 30 4Z" fill="var(--moss-soft)"/></svg>
       <div id="heroSoap"></div>
@@ -90,7 +91,7 @@
       </div>
     </div>
   </div>
-  <div class="wrap promise-strip reveal">
+  <div class="wrap container promise-strip reveal">
     <div class="promise-chip"><svg viewBox="0 0 24 24"><path d="M4 20c8-1 13-6 14-14-8 1-13 6-14 14z"/></svg>Handmade</div>
     <div class="promise-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>Women-Crafted</div>
     <div class="promise-chip"><svg viewBox="0 0 24 24"><path d="M12 3c-4 3-6 7-6 11a6 6 0 0012 0c0-4-2-8-6-11z"/></svg>Botanical Inspired</div>
@@ -100,44 +101,45 @@
 
 <!-- ================= 04 · SOAP COLLECTION ================= -->
 <section id="collection">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="section-head center reveal">
       <span class="eyebrow">The Collection</span>
       <h2>The Organicabelle Collection</h2>
       <p>Six handcrafted expressions of nature.</p>
     </div>
-    <div class="collection-grid" id="collectionGrid"></div>
+    <div class="collection-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="collectionGrid"></div>
   </div>
 </section>
 
-<!-- ================= 05 · NATURAL INGREDIENTS ================= -->
+<!-- ================= 05 · NATURAL INGREDIENTS (hidden — commented out) =================
 <section id="ingredients" class="alt-bg forest-texture">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="section-head center reveal">
       <span class="eyebrow green">Explore the Forest</span>
       <h2>From forest to product.</h2>
       <p>Every bar starts with a plant. Tap one to see where it comes from, why we use it, and how it becomes a soap.</p>
     </div>
-    <div class="ingredient-grid" id="ingredientGrid"></div>
+    <div class="ingredient-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="ingredientGrid"></div>
   </div>
 </section>
+================================================================================= -->
 
 <!-- ================= 06 · FEATURED PRODUCT ================= -->
 <section id="featured">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="section-head reveal">
       <span class="eyebrow">Featured Bar</span>
       <h2>This week's ritual companion.</h2>
     </div>
-    <div class="featured reveal" id="featuredProduct"></div>
+    <div class="featured reveal row align-items-center g-4 g-lg-5" id="featuredProduct"></div>
   </div>
 </section>
 
 <!-- ================= 07 · OUR STORY ================= -->
 <section id="story" class="alt-bg">
-  <div class="wrap story-grid">
-    <div class="story-art reveal" id="storyArt"></div>
-    <div class="story-copy reveal">
+  <div class="wrap container story-grid row align-items-center g-4 g-lg-5">
+    <div class="col-lg-5 story-art reveal" id="storyArt"></div>
+    <div class="col-lg-7 story-copy reveal">
       <span class="eyebrow green">Our Story</span>
       <h2>Made by women. Made with care.</h2>
       <p>Organicabelle is built around the belief that beautiful products can create meaningful opportunities. Our soaps are handcrafted by women from small villages, giving them the opportunity to build skills, earn with dignity, and contribute to their families.</p>
@@ -153,7 +155,7 @@
 
 <!-- ================= 08 · WOMEN ARTISANS ================= -->
 <section id="artisans">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="women-banner reveal">
       <span class="eyebrow" style="color:inherit; opacity:.8;">Women For Women</span>
       <h2>Handmade by women. Created for women &amp; their families.</h2>
@@ -164,7 +166,7 @@
 
 <!-- ================= 09 · WHY ORGANICABELLE ================= -->
 <section id="why" class="alt-bg">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="section-head center reveal">
       <span class="eyebrow">Why Organicabelle</span>
       <h2>A ritual, not a routine.</h2>
@@ -182,13 +184,13 @@
 
 <!-- ================= 10 · MODEL / LIFESTYLE CAMPAIGN ================= -->
 <section id="campaign">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="section-head center reveal">
       <span class="eyebrow">Daily Ritual</span>
       <h2>A little more nature. A little more you.</h2>
       <p>One bar, one quiet moment — a natural skincare ritual for every member of the family.</p>
     </div>
-    <div class="campaign-grid reveal" id="campaignGrid"></div>
+    <div class="campaign-grid reveal row row-cols-2 row-cols-md-4 g-3" id="campaignGrid"></div>
   </div>
 </section>
 
@@ -197,7 +199,7 @@
 
 <!-- ================= 12+13 · CUSTOMER REVIEWS + VIDEO STORIES ================= -->
 <section id="reviews" class="alt-bg">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="section-head center reveal">
       <span class="eyebrow">Community</span>
       <h2>Loved by our customers</h2>
@@ -208,17 +210,17 @@
       <button class="tab-btn" data-tab="video-reviews">Video Stories</button>
     </div>
     <div class="tab-panel active reveal" id="text-reviews">
-      <div class="review-grid" id="reviewGrid"></div>
+      <div class="review-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="reviewGrid"></div>
     </div>
     <div class="tab-panel reveal" id="video-reviews">
-      <div class="video-grid" id="reviewVideoGrid"></div>
+      <div class="video-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="reviewVideoGrid"></div>
     </div>
   </div>
 </section>
 
 <!-- ================= 14 · MISSION ================= -->
 <section id="mission">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="section-head center reveal">
       <span class="eyebrow green">Our Mission</span>
       <h2>From our village to every Indian bathroom.</h2>
@@ -241,18 +243,18 @@
 
 <!-- ================= 15 · SOCIAL MEDIA ================= -->
 <section id="social" class="alt-bg">
-  <div class="wrap">
+  <div class="wrap container">
     <div class="section-head center reveal">
       <span class="eyebrow">Follow Along</span>
       <h2>Follow the Organicabelle ritual</h2>
     </div>
-    <div class="social-grid reveal" id="socialGrid"></div>
+    <div class="social-grid reveal row row-cols-2 row-cols-md-4 g-3" id="socialGrid"></div>
   </div>
 </section>
 
 <!-- ================= 16 · FINAL ORDER CTA ================= -->
 <section id="contact">
-  <div class="wrap contact-cta reveal">
+  <div class="wrap container contact-cta reveal">
     <span class="eyebrow">Get in Touch</span>
     <h2>Ready for your first Organicabelle ritual?</h2>
     <p>Explore the collection, add your favourites to cart, and place your order directly on WhatsApp.</p>
@@ -266,22 +268,22 @@
 
 <!-- ================= 17 · FOOTER ================= -->
 <footer>
-  <div class="wrap">
-    <div class="footer-video" id="footerVideoBlock"></div>
-    <div class="footer-grid">
-      <div>
+  <div class="wrap container">
+    <div class="footer-video row align-items-center g-4" id="footerVideoBlock"></div>
+    <div class="footer-grid row g-4 g-md-5">
+      <div class="col-md-6 col-lg-5">
         <span class="logo">Organicabelle</span>
         <p class="footer-tag">Handmade organic soap, wrapped by hand in kraft paper and jute thread — crafted by women artisans.</p>
       </div>
-      <div class="footer-col">
+      <div class="col-6 col-md-3 col-lg-2 footer-col">
         <h5>Explore</h5>
         <ul><li><a href="#home">Home</a></li><li><a href="#collection">Collection</a></li><li><a href="#story">Story</a></li><li><a href="#ingredients">Ingredients</a></li></ul>
       </div>
-      <div class="footer-col">
+      <div class="col-6 col-md-3 col-lg-2 footer-col">
         <h5>Support</h5>
         <ul><li><a href="#expert">Skin Expert</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li><li><a href="refund-policy.html">Refund Policy</a></li><li><a href="shipping-policy.html">Shipping Policy</a></li></ul>
       </div>
-      <div class="footer-col">
+      <div class="col-md-12 col-lg-3 footer-col">
         <h5>Stay Close</h5>
         <div class="footer-social">
           <a href="https://instagram.com/organicabelle" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="#EFE7D3" stroke="none"/></svg></a>
@@ -304,7 +306,7 @@
 </button>
 
 <!-- ================= TOAST ================= -->
-<div class="toast" id="toast">
+<div class="oa-toast" id="toast">
   <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
   <span id="toastMsg">Added to your Organicabelle ritual</span>
 </div>
@@ -367,6 +369,7 @@
   <div class="journey-stage" id="journeyStage"></div>
 </div>
 
+<script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js" defer></script>
 </body>
 </html>

@@ -19,14 +19,14 @@ const FALLBACK_DATA = {
     whatsappNumber: "91XXXXXXXXXX",
     images: { hero: "images/brand/hero.webp", doctor: "images/doctor/doctor.webp",
       models: { woman:"images/models/woman-soap.webp", womanNatural:"images/models/woman-natural-skincare.webp", man:"images/models/man-soap.webp", family:"images/models/family.webp" },
-      story: { women:"images/story/women-artisans.webp", making:"images/story/soap-making.webp", village:"images/story/village.webp" } },
+      story: { women:"images/story/women-artisans.png", making:"images/story/soap-making.webp", village:"images/story/village.webp" } },
     sections: { featuredProduct:true, ourStory:true, womenArtisans:true, modelCampaign:true, skinExpert:true, customerReviews:true, reviewVideos:true, productDetailReviews:true, mission:true, social:true, footerVideo:true },
     featuredProductId: "rose",
     skinExpert: { enabled:true, name:"[Doctor Name]", qualification:"[Qualification]", statement:"Skin suitability varies between individuals.", doctorVideoUrl:"" },
     customerReviewVideos: [], footerVideo: { title:"A glimpse into Organicabelle", description:"", youtubeUrl:"" },
     social: [{ name:"Instagram", url:"#", icon:"instagram" }, { name:"WhatsApp", url:"#", icon:"whatsapp", isWhatsApp:true }]
   },
-  products: [{ id:"neem", name:"Neem Botanical Soap", category:"Neem", mood:"Fresh", accent:"#4E5E3A", icon:"neem", mrp:249, price:249, image:"images/products/neem.webp", ingredientImage:"images/ingredients/neem.webp", desc:"", about:"", benefits:[], ingredients:[], skinFeel:"", suitableFor:"" }],
+  products: [{ id:"neem", name:"Neem Botanical Soap", category:"Neem", mood:"Fresh", accent:"#4E5E3A", icon:"neem", mrp:249, price:249, image:"images/products/neem.png", ingredientImage:"images/ingredients/neem.webp", desc:"", about:"", benefits:[], ingredients:[], skinFeel:"", suitableFor:"" }],
   reviews: []
 };
 
@@ -189,7 +189,8 @@ function init(){
 
   /* ---- COLLECTION ---- */
   document.getElementById("collectionGrid").innerHTML = products.map(p => `
-    <article class="product-card reveal">
+    <div class="col d-flex">
+    <article class="product-card reveal h-100">
       <div class="product-media" data-open="${p.id}" tabindex="0" role="button" aria-label="View ${p.name} details">
         <span class="product-badge" style="color:${p.accent};">${p.category}</span>
         ${assetImage(p.image, soapArt(p.accent, iconFor(p), "front"), p.name+" — Organicabelle handmade soap")}
@@ -205,16 +206,22 @@ function init(){
           <button class="btn btn-primary btn-sm" data-add="${p.id}">Add to Cart</button>
         </div>
       </div>
-    </article>`).join("");
+    </article>
+    </div>`).join("");
 
   /* ---- INGREDIENTS / FOREST EXPLORER ---- */
-  if(sec.forestExplorer === false){ document.getElementById("ingredients").remove(); }
-  else document.getElementById("ingredientGrid").innerHTML = products.map(p => `
-    <div class="ingredient-card reveal" data-plant="${p.id}" tabindex="0" role="button" aria-label="Explore ${p.category}">
-      <span class="ing-explore-tag">Explore</span>
-      ${assetImage(p.ingredientImage, leafCluster(), p.category+" natural ingredient")}
-      <div class="ing-body"><h4>${p.category}</h4><p>${p.about}</p></div>
-    </div>`).join("");
+  const ingredientsSection = document.getElementById("ingredients");
+  if(ingredientsSection){
+    if(sec.forestExplorer === false){ ingredientsSection.remove(); }
+    else document.getElementById("ingredientGrid").innerHTML = products.map(p => `
+      <div class="col d-flex">
+      <div class="ingredient-card reveal h-100" data-plant="${p.id}" tabindex="0" role="button" aria-label="Explore ${p.category}">
+        <span class="ing-explore-tag">Explore</span>
+        ${assetImage(p.ingredientImage, leafCluster(), p.category+" natural ingredient")}
+        <div class="ing-body"><h4>${p.category}</h4><p>${p.about}</p></div>
+      </div>
+      </div>`).join("");
+  }
 
   /* ---- FEATURED PRODUCT ---- */
   const featuredSection = document.getElementById("featured");
@@ -222,8 +229,8 @@ function init(){
   else {
     const p = findProduct(site.featuredProductId) || products[0];
     document.getElementById("featuredProduct").innerHTML = `
-      ${assetImage(p.image, soapArt(p.accent, iconFor(p), "closeup"), p.name)}
-      <div class="featured-copy">
+      <div class="col-lg-6">${assetImage(p.image, soapArt(p.accent, iconFor(p), "closeup"), p.name)}</div>
+      <div class="col-lg-6 featured-copy">
         <span class="eyebrow" style="color:${p.accent};">Featured · ${p.category}</span>
         <h3 style="font-size:clamp(24px,3.4vw,34px); margin:10px 0;">${p.name}</h3>
         <p class="desc">${p.about}</p>
@@ -252,15 +259,19 @@ function init(){
       { img: site.images.models.family, label:"A family skincare ritual", fallback: personArt("#8073A6") }
     ];
     document.getElementById("campaignGrid").innerHTML = cards.map(c => `
-      <div class="campaign-card">${assetImage(c.img, c.fallback, c.label)}<span class="cc-label">${c.label}</span></div>`).join("");
+      <div class="col">
+      <div class="campaign-card">${assetImage(c.img, c.fallback, c.label)}<span class="cc-label">${c.label}</span></div>
+      </div>`).join("");
   }
 
   /* ---- SOCIAL ---- */
   if(sec.social === false){ document.getElementById("social").remove(); }
   else document.getElementById("socialGrid").innerHTML = site.social.map(s => `
+    <div class="col">
     <a class="social-card" href="${s.isWhatsApp ? '#' : s.url}" ${s.isWhatsApp ? 'onclick="openWhatsApp(); return false;"' : 'target="_blank" rel="noopener"'}>
       <svg viewBox="0 0 24 24">${socialIcons[s.icon]}</svg><span>Follow ${s.name}</span>
-    </a>`).join("");
+    </a>
+    </div>`).join("");
 
   /* ---- SKIN EXPERT ---- */
   const expertWrap = document.getElementById("expert");
@@ -272,9 +283,9 @@ function init(){
       ? `<div class="expert-media">${assetImage(site.images.doctor, avatarArt(), e.name)}<button class="play-btn" id="playExpertVideo" aria-label="Play skin expert video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></div>`
       : `<div class="expert-media">${assetImage(site.images.doctor, avatarArt(), e.name)}</div>`;
     expertWrap.innerHTML = `
-      <div class="wrap expert-grid">
-        <div class="reveal">${mediaBlock}</div>
-        <div class="expert-copy reveal">
+      <div class="wrap container expert-grid row align-items-center g-4 g-lg-5">
+        <div class="col-lg-5 reveal">${mediaBlock}</div>
+        <div class="col-lg-7 expert-copy reveal">
           <span class="eyebrow">The Skin Expert's Note</span>
           <h2>${e.name}</h2>
           <p class="cred">${e.qualification}</p>
@@ -294,7 +305,8 @@ function init(){
     document.getElementById("reviewGrid").innerHTML = (DATA.reviews||[]).map(r => {
       const rp = findProduct(r.product) || {};
       return `
-      <div class="review-card">
+      <div class="col d-flex">
+      <div class="review-card h-100">
         <div class="review-stars" aria-hidden="true">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div>
         <p class="review-text">"${r.text}"</p>
         <div class="review-who">
@@ -305,6 +317,7 @@ function init(){
           </div>
           ${r.social && r.social.url ? `<a class="review-social-link" href="${r.social.url}" target="_blank" rel="noopener" aria-label="${r.name} on ${r.social.platform}"><svg viewBox="0 0 24 24">${socialIcons[r.social.platform]||socialIcons.instagram}</svg></a>` : ''}
         </div>
+      </div>
       </div>`;
     }).join("");
 
@@ -314,15 +327,17 @@ function init(){
       const grid = document.getElementById("reviewVideoGrid");
       const vids = (site.customerReviewVideos||[]).filter(v=>ytId(v.youtubeUrl));
       if(!vids.length){
-        grid.innerHTML = `<div class="video-empty" style="grid-column:1/-1;">No customer video stories configured yet. Add YouTube links to <code>site.customerReviewVideos</code> in data/data.json to feature them here.</div>`;
+        grid.innerHTML = `<div class="video-empty col-12">No customer video stories configured yet. Add YouTube links to <code>site.customerReviewVideos</code> in data/data.json to feature them here.</div>`;
       } else {
         grid.innerHTML = vids.map(v => `
-          <div class="video-card" data-video="${v.youtubeUrl}">
+          <div class="col d-flex">
+          <div class="video-card h-100" data-video="${v.youtubeUrl}">
             <div class="video-thumb">
               <img src="https://img.youtube.com/vi/${ytId(v.youtubeUrl)}/hqdefault.jpg" alt="${v.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
               <button class="play-btn" aria-label="Play ${v.title}"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
             </div>
             <div class="video-body"><h4>${v.title}</h4><span>${v.category||''}</span></div>
+          </div>
           </div>`).join("");
         grid.querySelectorAll("[data-video]").forEach(card=> card.addEventListener("click", ()=> openVideoModal(card.dataset.video)));
       }
@@ -338,8 +353,8 @@ function init(){
   else{
     const fv = site.footerVideo; const id = ytId(fv.youtubeUrl);
     footerVideoBlock.innerHTML = `
-      <div><h3>${fv.title}</h3><p>${fv.description}</p></div>
-      <div class="video-thumb" id="footerVideoThumb" style="${id ? 'cursor:pointer;' : 'opacity:.5;'}">
+      <div class="col-md-5"><h3>${fv.title}</h3><p>${fv.description}</p></div>
+      <div class="col-md-7 video-thumb" id="footerVideoThumb" style="${id ? 'cursor:pointer;' : 'opacity:.5;'}">
         ${id ? `<img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="${fv.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">` : `<span style="color:rgba(239,231,211,.6); font-size:13px; padding:0 20px; text-align:center;">Add a YouTube URL to <code>site.footerVideo.youtubeUrl</code> in data/data.json to feature a video here.</span>`}
         ${id ? `<button class="play-btn" aria-label="Play ${fv.title}"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>` : ''}
       </div>`;
@@ -357,6 +372,7 @@ function init(){
 const themeToggle = document.getElementById("themeToggle");
 function applyTheme(t){
   document.documentElement.setAttribute("data-theme", t);
+  document.documentElement.setAttribute("data-bs-theme", t);
   themeToggle.setAttribute("aria-pressed", t === "dark");
   localStorage.setItem("organicabelle_theme", t);
 }
