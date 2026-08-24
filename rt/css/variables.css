@@ -1,0 +1,82 @@
+/* ==========================================================================
+   AURA RESTAURANT ENGINE - DESIGN TOKENS & CSS VARIABLES
+   ========================================================================== */
+
+:root {
+  /* Default Theme Tokens: Midnight Gold (Dark Mode Default) */
+  --primary: #D4AF37;
+  --primary-hover: #F3E5AB;
+  --primary-rgb: 212, 175, 55;
+  --secondary: #1E1E24;
+  --accent: #E6C200;
+  --background: #0B0C10;
+  --surface: #12141C;
+  --surface-elevated: #1A1D27;
+  --surface-glass: rgba(18, 20, 28, 0.75);
+  
+  --text-primary: #F4F4F6;
+  --text-secondary: #A0A5B5;
+  --text-muted: #6B7280;
+  
+  --border: rgba(212, 175, 55, 0.2);
+  --border-hover: rgba(212, 175, 55, 0.5);
+  
+  --badge-bg: rgba(212, 175, 55, 0.15);
+  --badge-text: #F5D061;
+  
+  --success: #10B981;
+  --success-bg: rgba(16, 185, 129, 0.15);
+  --danger: #EF4444;
+  --danger-bg: rgba(239, 68, 68, 0.15);
+  
+  /* Spatial System */
+  --space-3xs: 0.25rem;  /* 4px */
+  --space-2xs: 0.5rem;   /* 8px */
+  --space-xs: 0.75rem;   /* 12px */
+  --space-sm: 1rem;      /* 16px */
+  --space-md: 1.5rem;    /* 24px */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 3rem;      /* 48px */
+  --space-2xl: 4.5rem;   /* 72px */
+  --space-3xl: 6rem;     /* 96px */
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 25px rgba(var(--primary-rgb), 0.35);
+
+  /* Elevation Z-Index */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-floating: 500;
+  --z-drawer: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+
+  /* Layout Max Widths */
+  --container-max: 1280px;
+  --header-height: 84px;
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Light Mode Baseline Fallbacks */
+[data-mode="light"] {
+  --surface-glass: rgba(255, 255, 255, 0.85);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(var(--primary-rgb), 0.25);
+}

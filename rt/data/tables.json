@@ -1,0 +1,60 @@
+{
+  "tables": [
+    {
+      "id": "T01",
+      "name": "Table 01 — Main Dining Salon",
+      "capacity": 2,
+      "location": "Main Salon (Window View)",
+      "available": true
+    },
+    {
+      "id": "T02",
+      "name": "Table 02 — Main Dining Salon",
+      "capacity": 4,
+      "location": "Main Salon (Central Booth)",
+      "available": true
+    },
+    {
+      "id": "T03",
+      "name": "Table 03 — Chef's Kitchen Counter",
+      "capacity": 2,
+      "location": "Kitchen Counter (Front Row)",
+      "available": true
+    },
+    {
+      "id": "T04",
+      "name": "Table 04 — Glass Terrace",
+      "capacity": 4,
+      "location": "Outdoor Glasshouse Terrace",
+      "available": true
+    },
+    {
+      "id": "T05",
+      "name": "Table 05 — Glass Terrace",
+      "capacity": 6,
+      "location": "Terrace Garden Lounge",
+      "available": false
+    },
+    {
+      "id": "T06",
+      "name": "Table 06 — Wine Cellar Suite",
+      "capacity": 8,
+      "location": "Private Sommelier Cellar",
+      "available": true
+    },
+    {
+      "id": "T07",
+      "name": "Table 07 — Fireplace Alcove",
+      "capacity": 2,
+      "location": "Fireplace Mezzanine",
+      "available": true
+    },
+    {
+      "id": "TAKEAWAY",
+      "name": "📦 Express Takeaway / Delivery",
+      "capacity": 0,
+      "location": "Direct Pickup & Courier",
+      "available": true
+    }
+  ]
+}

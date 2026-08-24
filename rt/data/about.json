@@ -1,0 +1,59 @@
+{
+  "heading": "Our Culinary Heritage",
+  "subheading": "Where Tradition Meets Avant-Garde Expression",
+  "storyParagraph1": "Founded in 2018 in the heart of the city's cultural quarter, AURA was born from a singular passion: to elevate regional fine dining through bold, uninhibited flavor pairings and ancient wood-fire techniques.",
+  "storyParagraph2": "Under the guidance of Executive Chef Alexander Vance, every dish is an ode to micro-seasonal agriculture, sustainable seafood harvesting, and rare heirloom botanicals sourced directly from our network of artisanal smallholders.",
+  "philosophyTitle": "The Aura Philosophy",
+  "philosophy": "We believe dining is a sensory ritual. From the crackle of open white-oak fires to the delicate balance of acidity and texture on your plate, every detail is engineered to evoke emotion, memory, and lingering delight.",
+  "images": {
+    "main": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=80",
+    "mainAlt": "Aura interior ambient wood-fire kitchen",
+    "secondary": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80",
+    "secondaryAlt": "Sommelier pouring reserve wine",
+    "badgeText": "Est. 2018"
+  },
+  "stats": [
+    {
+      "value": " Michelin ",
+      "highlight": "⭐ Star",
+      "label": "Culinary Excellence 2024"
+    },
+    {
+      "value": "100%",
+      "highlight": "Organic",
+      "label": "Farm-to-Table Sourcing"
+    },
+    {
+      "value": "450+",
+      "highlight": "Labels",
+      "label": "Curated Wine Cellar"
+    },
+    {
+      "value": "4.9 / 5",
+      "highlight": "Rating",
+      "label": "Over 2,500+ Guest Reviews"
+    }
+  ],
+  "highlights": [
+    {
+      "icon": "fire",
+      "title": "Ancestral Wood-Fire Cooking",
+      "description": "Slow-seared over aged white oak, hickory, and fruitwood coals for deep, natural smoky character."
+    },
+    {
+      "icon": "leaf",
+      "title": "Hyper-Seasonal Sourcing",
+      "description": "Daily harvests from local biodynamic farms within 50 miles of our kitchen doors."
+    },
+    {
+      "icon": "wine-glass",
+      "title": "Sommelier Pairings",
+      "description": "A cellar featuring iconic vintages alongside biodynamic, natural micro-cuvées from boutique vineyards."
+    },
+    {
+      "icon": "sparkles",
+      "title": "Bespoke Chef's Table",
+      "description": "An intimate multi-course tasting experience overlooking our open theatre kitchen."
+    }
+  ]
+}

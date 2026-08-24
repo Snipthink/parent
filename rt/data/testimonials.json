@@ -1,0 +1,42 @@
+{
+  "heading": "Guest Experiences",
+  "subheading": "Words from Critics and Valued Patrons",
+  "testimonials": [
+    {
+      "id": "test01",
+      "name": "Eleanor Sterling",
+      "role": "Culinary Critic, Metropolis Gazette",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      "rating": 5,
+      "review": "AURA is without question the most compelling dining destination to emerge in recent years. The A5 Wagyu paired with the black truffle reduction was pure alchemy on a plate.",
+      "date": "2 weeks ago"
+    },
+    {
+      "id": "test02",
+      "name": "Marcus & Sophia Vance",
+      "role": "Anniversary Dinner Patrons",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      "rating": 5,
+      "review": "We celebrated our 10th anniversary in the Wine Cellar Suite. The attention to detail from the sommelier to Chef Alexander Vance himself made us feel like royalty.",
+      "date": "1 month ago"
+    },
+    {
+      "id": "test03",
+      "name": "Dr. Julian Thorne",
+      "role": "Food & Wine Enthusiast",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+      "rating": 5,
+      "review": "The wood-fired flavor profiles are extraordinary. Every course of the 7-course tasting menu surprised and delighted our palate. Seamless WhatsApp table order service as well!",
+      "date": "3 weeks ago"
+    },
+    {
+      "id": "test04",
+      "name": "Claire Dupont",
+      "role": "Lifestyle Journalist",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+      "rating": 5,
+      "review": "From the ambient lighting to the decadent Valrhona chocolate dessert dome, AURA achieves total sensory harmony. A masterpiece in fine dining architecture.",
+      "date": "2 months ago"
+    }
+  ]
+}

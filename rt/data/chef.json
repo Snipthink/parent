@@ -1,0 +1,23 @@
+{
+  "name": "Chef Alexander Vance",
+  "position": "Executive Chef & Founder",
+  "experience": "18+ Years Haute Cuisine",
+  "portrait": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80",
+  "portraitAlt": "Executive Chef Alexander Vance portrait",
+  "cookingImage": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80",
+  "cookingImageAlt": "Chef Alexander Vance plating dish over fire grill",
+  "quote": "Cooking is not merely technical precision; it is an emotional conversation between nature, flame, and the diner's memory.",
+  "biography": "Trained at L'École Lenôtre in Paris and having led kitchen brigades across 3-star Michelin establishments in Lyon, London, and Tokyo, Chef Vance brings a global, boundary-defying vision to AURA. His signature philosophy marries classical French rigor with Nordic wood-fire simplicity and Asian umami nuances.",
+  "philosophy": "Every ingredient is respected from root to blossom. We harvest with reverence, cook with passion, and present with quiet elegance.",
+  "specialties": [
+    "Wood-Fire Charcoal Alchemy",
+    "A5 Japanese Wagyu Butchery",
+    "Zero-Waste Culinary Fermentation",
+    "Micro-Seasonal Foraging"
+  ],
+  "accolades": [
+    "Michelin Guide Star Recipient (2022, 2023, 2024)",
+    "World's 50 Best Discovery Chef",
+    "James Beard Foundation Award Nominee"
+  ]
+}

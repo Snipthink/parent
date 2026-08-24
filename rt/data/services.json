@@ -1,0 +1,42 @@
+{
+  "heading": "Exquisite Experiences",
+  "subheading": "Tailored Culinary Services for Every Occasion",
+  "services": [
+    {
+      "id": "srv01",
+      "icon": "utensils",
+      "title": "A la Carte Dine-In",
+      "subtitle": "Intimate Dining & Terrace",
+      "description": "Immerse yourself in our architectural dining room with dim lighting, acoustic comfort, and attentive table service.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+      "badge": "Popular"
+    },
+    {
+      "id": "srv02",
+      "icon": "sparkles",
+      "title": "Chef's Tasting Menu",
+      "subtitle": "7-Course Gastronomic Journey",
+      "description": "An unforgettable tasting experience featuring off-menu seasonal innovations, rare ingredients, and optional wine pairings.",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      "badge": "Exclusive"
+    },
+    {
+      "id": "srv03",
+      "icon": "users",
+      "title": "Private Dining & Events",
+      "subtitle": "Up to 40 Guests",
+      "description": "Host corporate galas, rehearsal dinners, or anniversary celebrations in our secluded glass-walled Private Cellar.",
+      "image": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
+      "badge": "Bespoke"
+    },
+    {
+      "id": "srv04",
+      "icon": "shopping-bag",
+      "title": "Artisanal Gourmet Takeaway",
+      "subtitle": "Eco-Luxury Packaging",
+      "description": "Enjoy the Aura experience in the comfort of your home with our temperature-controlled heat-seal delivery packaging.",
+      "image": "https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=800&q=80",
+      "badge": "Express"
+    }
+  ]
+}

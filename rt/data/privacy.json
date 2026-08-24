@@ -1,0 +1,22 @@
+{
+  "title": "Privacy Policy",
+  "effectiveDate": "January 1, 2026",
+  "sections": [
+    {
+      "heading": "1. Information We Collect",
+      "content": "When placing an order or table reservation through our white-label website engine, we collect basic details you voluntarily provide: your name, phone number, guest count, table preference, and custom notes. We do not store credit card details or Sensitive Personal Information on our static server."
+    },
+    {
+      "heading": "2. How We Use Your Details",
+      "content": "Your contact information is used strictly to fulfill your order, communicate table reservation updates, and transmit your formatted receipt via WhatsApp. We never sell, rent, or trade your personal data with third-party advertising networks."
+    },
+    {
+      "heading": "3. Local Preferences & Cookies",
+      "content": "Our engine uses standard browser local storage (`localStorage`) to remember your preferred visual color theme (e.g., Midnight Gold) and light/dark mode choices across browser sessions. No tracking cookies are used."
+    },
+    {
+      "heading": "4. Contacting Us",
+      "content": "If you have any questions regarding your data privacy, you may contact our concierge team directly at privacy@auradining.com or via our restaurant hotline."
+    }
+  ]
+}

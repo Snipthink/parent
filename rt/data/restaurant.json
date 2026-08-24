@@ -1,0 +1,66 @@
+{
+  "name": "AURA",
+  "tagline": "Culinary Atelier & Artisanal Dining",
+  "shortDescription": "An immersive gastronomic journey bringing together seasonal organic ingredients, ancestral wood-fire cooking, and avant-garde culinary artistry.",
+  "establishedYear": "2018",
+  "cuisine": "Modern European & Fine Fusion",
+  "logo": {
+    "default": "./assets/logo/logo-dark.svg",
+    "light": "./assets/logo/logo-light.svg",
+    "dark": "./assets/logo/logo-dark.svg",
+    "favicon": "./assets/logo/favicon.svg"
+  },
+  "contact": {
+    "phone": "+1 (555) 234-5678",
+    "formattedPhone": "+1 555 234 5678",
+    "whatsappNumber": "15552345678",
+    "email": "reservations@auradining.com",
+    "address": {
+      "street": "742 Grand Promenade, Suite 100",
+      "city": "Metropolis",
+      "state": "NY",
+      "zip": "10021",
+      "country": "United States",
+      "formatted": "742 Grand Promenade, Suite 100, New York, NY 10021"
+    },
+    "mapEmbedUrl": "https://maps.google.com/maps?q=Central+Park+New+York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+  },
+  "hours": [
+    {
+      "days": "Monday - Thursday",
+      "time": "5:00 PM - 10:30 PM",
+      "type": "Dinner"
+    },
+    {
+      "days": "Friday - Saturday",
+      "time": "5:00 PM - 11:30 PM",
+      "type": "Dinner & Late Lounge"
+    },
+    {
+      "days": "Sunday",
+      "time": "11:00 AM - 3:30 PM & 5:00 PM - 10:00 PM",
+      "type": "Brunch & Dinner"
+    }
+  ],
+  "hero": {
+    "badge": "Michelin Star Awarded 2024",
+    "heading": "Artisanal Taste Beyond Boundaries",
+    "subheading": "Experience extraordinary flavor harmonies curated by Executive Chef Alexander Vance in an atmosphere of refined luxury.",
+    "primaryCta": "Explore Full Menu",
+    "secondaryCta": "Book a Table",
+    "heroImage": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=85",
+    "heroImageAlt": "Aura signature plated wagyu steak with micro-herbs",
+    "floatingDish": {
+      "title": "Truffle Wagyu Ribeye",
+      "rating": "4.9 ★",
+      "badge": "Signature",
+      "prepTime": "25 mins"
+    }
+  },
+  "seo": {
+    "metaTitle": "AURA | Premium Culinary Atelier & Fine Dining Restaurant",
+    "metaDescription": "AURA is a premier fine-dining restaurant offering modern European fusion, artisanal wood-fired specialties, curated wine pairings, and luxury ambience.",
+    "keywords": "fine dining, restaurant, wagyu steak, Michelin chef, organic food, wine lounge, table booking",
+    "ogImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+  }
+}

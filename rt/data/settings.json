@@ -1,0 +1,55 @@
+{
+  "website": {
+    "showAbout": true,
+    "showHighlights": true,
+    "showServices": true,
+    "showFeaturedDishes": true,
+    "showMenu": true,
+    "showChef": true,
+    "showExperience": true,
+    "showRestaurantHeroImage": true,
+    "showGallery": true,
+    "showTestimonials": true,
+    "showFAQ": true,
+    "showContact": true,
+    "showSocialMedia": true
+  },
+  "menu": {
+    "enabled": true,
+    "showSearch": true,
+    "showCategoryFilter": true,
+    "foodCard": {
+      "showImage": true,
+      "showTitle": true,
+      "showDescription": true,
+      "showRegularPrice": true,
+      "showDiscountPrice": true,
+      "showDiscountBadge": true,
+      "showPreparationTime": true,
+      "showTags": true,
+      "showDietaryIndicator": true,
+      "showAddButton": true
+    },
+    "pricing": {
+      "showPrice": true,
+      "enableCalculation": true,
+      "currency": "USD",
+      "currencySymbol": "$"
+    }
+  },
+  "ordering": {
+    "enabled": true,
+    "showTableSelection": true,
+    "showGuestCount": true,
+    "showSpecialRequest": true,
+    "whatsappEnabled": true,
+    "whatsappNumber": "15552345678"
+  },
+  "theme": {
+    "allowThemeSelector": true,
+    "allowDarkMode": true,
+    "allowLightMode": true,
+    "defaultTheme": "midnight-gold",
+    "defaultMode": "dark"
+  }
+}

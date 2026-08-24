@@ -445,6 +445,31 @@ function getWhatsAppTimeLabel() {
   return slot ? (slot.label[state.langCode] || slot.label.en) : '';
 }
 
+/* Distance in km between two lat/lng points (haversine). */
+function distanceKm(lat1, lng1, lat2, lng2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+/* Picks the WhatsApp number for the nearest configured zone that contains
+   the given coordinates; falls back to the default number otherwise. */
+function whatsappNumberForCoords(lat, lng) {
+  const s = state.settings;
+  const zones = s.zones || [];
+  if (lat == null || lng == null || !zones.length) return s.whatsappNumber;
+
+  let best = null;
+  for (const zone of zones) {
+    const d = distanceKm(lat, lng, zone.lat, zone.lng);
+    if (d <= zone.radiusKm && (!best || d < best.d)) best = { zone, d };
+  }
+  return best ? best.zone.whatsappNumber : s.whatsappNumber;
+}
+
 function submitBooking(e) {
   e.preventDefault();
   const L = state.lang;
@@ -458,7 +483,10 @@ function submitBooking(e) {
   }
 
   const budget = `${s.currency}${$('#budgetRange').value}`;
-  const gpsLocation = $('#gpsStatus')?.dataset?.link || '';
+  const gpsBox = $('#gpsStatus');
+  const gpsLocation = gpsBox?.dataset?.link || '';
+  const gpsLat = gpsBox?.dataset?.lat ? parseFloat(gpsBox.dataset.lat) : null;
+  const gpsLng = gpsBox?.dataset?.lng ? parseFloat(gpsBox.dataset.lng) : null;
   const manualAddr = $('#manualAddressInput')?.value?.trim() || '';
 
   let combinedAddress = '—';
@@ -485,7 +513,8 @@ function submitBooking(e) {
     message: message
   });
 
-  const url = `https://wa.me/${cleanPhone(s.whatsappNumber)}?text=${encodeURIComponent(text)}`;
+  const targetNumber = whatsappNumberForCoords(gpsLat, gpsLng);
+  const url = `https://wa.me/${cleanPhone(targetNumber)}?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank');
 }
 
@@ -506,6 +535,8 @@ function requestLocation() {
       const { latitude, longitude } = pos.coords;
       const link = `https://maps.google.com/?q=${latitude},${longitude}`;
       box.dataset.link = link;
+      box.dataset.lat = latitude;
+      box.dataset.lng = longitude;
       box.innerHTML = `<i class="bi bi-geo-alt-fill text-success me-1"></i> ${L.booking?.locationGranted || 'Location captured'} — <a href="${link}" target="_blank" class="fw-bold">View Pin</a>`;
       sessionStorage.setItem('lastLocationLink', link);
     },
@@ -631,35 +662,21 @@ function renderWhatsAppCategoryModal(filter = '') {
 
   container.innerHTML = filteredCategories.map(cat => {
     const name = cat.name[state.langCode] || cat.name.en;
-    const desc = cat.description[state.langCode] || cat.description.en;
-    const priceText = cat.priceRange ? `Price: ${cat.priceRange}` : `Starts at ${state.settings?.currency || '₹'}${cat.startingPrice}`;
-    
+
     return `
       <div class="wa-guide-card" data-id="${cat.id}">
-        <div>
-          <div class="guide-icon-wrap" style="background:${cat.themeColor}">
-            <i class="bi ${cat.icon}"></i>
-          </div>
-          <h5>${name}</h5>
-          <p>${desc}</p>
+        <div class="guide-icon-wrap" style="background:${cat.themeColor}">
+          <i class="bi ${cat.icon}"></i>
         </div>
-        <div>
-          <span class="price-tag mb-2"><i class="bi bi-tag-fill me-1"></i>${priceText}</span>
-          <button type="button" class="btn-wa-quick" data-quick="${cat.id}">
-            <i class="bi bi-whatsapp"></i> ${state.lang?.whatsappModal?.quickBook || 'WhatsApp'}
-          </button>
-        </div>
+        <h5>${name}</h5>
       </div>
     `;
   }).join('');
 
   $$('.wa-guide-card', container).forEach(card => {
-    card.addEventListener('click', e => {
+    card.addEventListener('click', () => {
       bootstrap.Modal.getInstance($('#whatsappCategoryModal'))?.hide();
-      // The green button is the one-tap path: straight to WhatsApp with the
-      // category already named. Tapping anywhere else opens the full form.
-      if (e.target.closest('[data-quick]')) sendQuickWhatsApp(card.dataset.id);
-      else openBookingModal(card.dataset.id);
+      openBookingModal(card.dataset.id);
     });
   });
 }

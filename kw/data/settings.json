@@ -47,6 +47,25 @@
   "contactEmail": "hello@kaamwale.example",
   "address": "Purnia, Bihar, India",
   "serviceRadius": "12 km",
+  "zones": [
+    { "name": "Delhi NCR", "lat": 28.6139, "lng": 77.2090, "radiusKm": 12, "whatsappNumber": "919959059984" },
+    { "name": "Mumbai", "lat": 19.0760, "lng": 72.8777, "radiusKm": 12, "whatsappNumber": "919959059984" },
+    { "name": "Bengaluru", "lat": 12.9716, "lng": 77.5946, "radiusKm": 12, "whatsappNumber": "919959059984" },
+    { "name": "Hyderabad", "lat": 17.3850, "lng": 78.4867, "radiusKm": 12, "whatsappNumber": "919959059984" },
+    { "name": "Chennai", "lat": 13.0827, "lng": 80.2707, "radiusKm": 12, "whatsappNumber": "919959059984" },
+    { "name": "Kolkata", "lat": 22.5726, "lng": 88.3639, "radiusKm": 12, "whatsappNumber": "919959059984" },
+    { "name": "Ahmedabad", "lat": 23.0225, "lng": 72.5714, "radiusKm": 12, "whatsappNumber": "919959059984" },
+    { "name": "Pune", "lat": 18.5204, "lng": 73.8567, "radiusKm": 12, "whatsappNumber": "919959059984" },
+
+    { "name": "Patna", "lat": 25.5941, "lng": 85.1376, "radiusKm": 12, "whatsappNumber": "918952872173" },
+    { "name": "Gaya", "lat": 24.7955, "lng": 84.9994, "radiusKm": 12, "whatsappNumber": "918952872173" },
+    { "name": "Bhagalpur", "lat": 25.2445, "lng": 86.9718, "radiusKm": 12, "whatsappNumber": "918952872173" },
+    { "name": "Muzaffarpur", "lat": 26.1225, "lng": 85.3906, "radiusKm": 12, "whatsappNumber": "918952872173" },
+    { "name": "Purnia", "lat": 25.7771, "lng": 87.4753, "radiusKm": 12, "whatsappNumber": "918952872173" },
+    { "name": "Darbhanga", "lat": 26.1542, "lng": 85.8918, "radiusKm": 12, "whatsappNumber": "918952872173" },
+    { "name": "Katihar", "lat": 25.5388, "lng": 87.5827, "radiusKm": 12, "whatsappNumber": "918952872173" },
+    { "name": "Begusarai", "lat": 25.4182, "lng": 86.1272, "radiusKm": 12, "whatsappNumber": "918952872173" }
+  ],
   "partner": {
     "whatsappNumber": "918952872163",
     "whatsappMessage": "Hi! I'm interested in becoming a service partner with Kaamwale. Please share the onboarding details."

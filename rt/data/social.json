@@ -1,0 +1,46 @@
+{
+  "heading": "Connect With Aura",
+  "subheading": "Follow Our Culinary Journey & Behind-the-Scenes Secrets",
+  "links": [
+    {
+      "id": "instagram",
+      "platform": "Instagram",
+      "handle": "@aura.culinary",
+      "url": "https://instagram.com",
+      "icon": "instagram",
+      "enabled": true
+    },
+    {
+      "id": "facebook",
+      "platform": "Facebook",
+      "handle": "Aura Culinary Atelier",
+      "url": "https://facebook.com",
+      "icon": "facebook",
+      "enabled": true
+    },
+    {
+      "id": "youtube",
+      "platform": "YouTube",
+      "handle": "Aura Kitchen Stories",
+      "url": "https://youtube.com",
+      "icon": "youtube",
+      "enabled": true
+    },
+    {
+      "id": "tiktok",
+      "platform": "TikTok",
+      "handle": "@auradining",
+      "url": "https://tiktok.com",
+      "icon": "tiktok",
+      "enabled": true
+    },
+    {
+      "id": "whatsapp",
+      "platform": "WhatsApp Concierge",
+      "handle": "+1 (555) 234-5678",
+      "url": "https://wa.me/15552345678",
+      "icon": "message-circle",
+      "enabled": true
+    }
+  ]
+}

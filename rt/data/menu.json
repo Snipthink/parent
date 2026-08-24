@@ -1,0 +1,221 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Creations",
+      "icon": "grid"
+    },
+    {
+      "id": "starters",
+      "name": "First Courses",
+      "icon": "cookie"
+    },
+    {
+      "id": "mains",
+      "name": "Land & Sea",
+      "icon": "drumstick"
+    },
+    {
+      "id": "steaks",
+      "name": "Wood-Fired Steaks",
+      "icon": "flame"
+    },
+    {
+      "id": "pasta",
+      "name": "Artisanal Pasta",
+      "icon": "bowl-food"
+    },
+    {
+      "id": "desserts",
+      "name": "Sweet Endings",
+      "icon": "ice-cream"
+    },
+    {
+      "id": "beverages",
+      "name": "Cellar & Cocktails",
+      "icon": "wine-glass"
+    }
+  ],
+  "items": [
+    {
+      "id": "food001",
+      "categoryId": "steaks",
+      "title": "A5 Japanese Wagyu Tenderloin",
+      "description": "Seared over white oak coals, bone marrow emulsion, smoked fleur de sel, charred king oyster mushroom.",
+      "regularPrice": 95.00,
+      "discountPrice": 85.00,
+      "preparationTime": "25 min",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": true,
+      "isChefSpecial": true,
+      "dietary": ["GF"],
+      "tags": ["Signature", "A5 Wagyu"],
+      "available": true
+    },
+    {
+      "id": "food002",
+      "categoryId": "starters",
+      "title": "Black Truffle & Burrata Tartine",
+      "description": "Pugliese creamy burrata, shaved Italian winter truffle, wildflower honey drop, toasted sourdough.",
+      "regularPrice": 28.00,
+      "discountPrice": 24.00,
+      "preparationTime": "12 min",
+      "image": "https://images.unsplash.com/photo-1592417817098-8f3d6eb19655?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": true,
+      "isChefSpecial": false,
+      "dietary": ["V"],
+      "tags": ["Vegetarian", "Truffle"],
+      "available": true
+    },
+    {
+      "id": "food003",
+      "categoryId": "mains",
+      "title": "Pan-Roasted Chilean Sea Bass",
+      "description": "Wild-caught sea bass, saffron lemongrass beurre blanc, braised fennel bulb, salmon caviar garnish.",
+      "regularPrice": 48.00,
+      "discountPrice": 42.00,
+      "preparationTime": "20 min",
+      "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": true,
+      "isChefSpecial": true,
+      "dietary": ["GF"],
+      "tags": ["Seafood", "Wild Caught"],
+      "available": true
+    },
+    {
+      "id": "food004",
+      "categoryId": "pasta",
+      "title": "Handmade Wild Boar Ragù Pappardelle",
+      "description": "Slow-braised Tuscan wild boar, 24-month aged Parmigiano Reggiano, fresh thyme, hand-rolled egg pasta.",
+      "regularPrice": 36.00,
+      "discountPrice": null,
+      "preparationTime": "18 min",
+      "image": "https://images.unsplash.com/photo-1621996346565-e3d5d6281292?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": false,
+      "isChefSpecial": false,
+      "dietary": [],
+      "tags": ["Handmade Pasta"],
+      "available": true
+    },
+    {
+      "id": "food005",
+      "categoryId": "starters",
+      "title": "Pacific Bluefin Tuna Tartare",
+      "description": "Sustainably caught bluefin, avocado mousse, ponzu pearls, crispy lotus root chip, sesame oil drop.",
+      "regularPrice": 32.00,
+      "discountPrice": 29.00,
+      "preparationTime": "15 min",
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": true,
+      "isChefSpecial": false,
+      "dietary": ["GF"],
+      "tags": ["Raw Bar", "Fresh"],
+      "available": true
+    },
+    {
+      "id": "food006",
+      "categoryId": "steaks",
+      "title": "45-Day Dry Aged Tomahawk Ribeye (32oz)",
+      "description": "Prime Black Angus, roasted garlic confit head, smoked herb butter rub, served with truffle jus (For 2 Guests).",
+      "regularPrice": 140.00,
+      "discountPrice": 125.00,
+      "preparationTime": "35 min",
+      "image": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": true,
+      "isChefSpecial": true,
+      "dietary": ["GF"],
+      "tags": ["Dry Aged", "Shareable"],
+      "available": true
+    },
+    {
+      "id": "food007",
+      "categoryId": "mains",
+      "title": "Duck Breast à l'Orange Flambé",
+      "description": "Pan-seared Moulard duck breast, blood orange reduction, roasted heirloom carrots, parsnip purée.",
+      "regularPrice": 42.00,
+      "discountPrice": null,
+      "preparationTime": "22 min",
+      "image": "https://images.unsplash.com/photo-1514944288352-fffac99f0bdf?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": false,
+      "isChefSpecial": false,
+      "dietary": ["GF"],
+      "tags": ["Classic French"],
+      "available": true
+    },
+    {
+      "id": "food008",
+      "categoryId": "pasta",
+      "title": "Morel & Black Truffle Agnolotti",
+      "description": "House-stuffed pasta pillows with ricotta & spinach, chanterelle butter glaze, crispy sage, parmesan crisp.",
+      "regularPrice": 38.00,
+      "discountPrice": 34.00,
+      "preparationTime": "16 min",
+      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": false,
+      "isChefSpecial": true,
+      "dietary": ["V"],
+      "tags": ["Vegetarian", "Handcrafted"],
+      "available": true
+    },
+    {
+      "id": "food009",
+      "categoryId": "desserts",
+      "title": "Valrhona Dark Chocolate Sphere",
+      "description": "70% Guanaja chocolate dome, hazelnut praline crunch, warm salted caramel pour-over, vanilla bean gelato.",
+      "regularPrice": 22.00,
+      "discountPrice": 18.00,
+      "preparationTime": "10 min",
+      "image": "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": true,
+      "isChefSpecial": true,
+      "dietary": ["V"],
+      "tags": ["Decadent", "Showstopper"],
+      "available": true
+    },
+    {
+      "id": "food010",
+      "categoryId": "desserts",
+      "title": "Deconstructed Pistachio Tiramisù",
+      "description": "Bronte pistachio cream, espresso soaked savoiardi, mascarpone quenelle, edible gold leaf.",
+      "regularPrice": 19.00,
+      "discountPrice": null,
+      "preparationTime": "8 min",
+      "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": false,
+      "isChefSpecial": false,
+      "dietary": ["V"],
+      "tags": ["Artisanal Dessert"],
+      "available": true
+    },
+    {
+      "id": "food011",
+      "categoryId": "beverages",
+      "title": "Smoked Old Fashioned N° 5",
+      "description": "WhistlePig Rye Whisky, Demerara sugar syrup, Angostura & orange bitters, smoked with cherrywood in cloche.",
+      "regularPrice": 24.00,
+      "discountPrice": 21.00,
+      "preparationTime": "6 min",
+      "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": true,
+      "isChefSpecial": false,
+      "dietary": ["VG"],
+      "tags": ["Craft Cocktail"],
+      "available": true
+    },
+    {
+      "id": "food012",
+      "categoryId": "beverages",
+      "title": "Dom Pérignon Vintage 2013 Champagne",
+      "description": "Épernay, France. Crisp brioche, white peach notes, silky fine bubbles. Served chilled in crystal flutes.",
+      "regularPrice": 390.00,
+      "discountPrice": null,
+      "preparationTime": "3 min",
+      "image": "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=800&q=80",
+      "isFeatured": false,
+      "isChefSpecial": false,
+      "dietary": ["VG"],
+      "tags": ["Reserve Cellar"],
+      "available": true
+    }
+  ]
+}

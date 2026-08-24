@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight-gold" data-mode="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA | Premium Culinary Atelier & Artisanal Dining</title>
+  <meta name="description" content="AURA is a premier fine-dining restaurant offering modern European fusion, artisanal wood-fired specialties, curated wine pairings, and luxury ambience.">
+  <link rel="icon" type="image/svg+xml" href="./assets/logo/favicon.svg">
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/animations.css">
+</head>
+<body>
+
+  <!-- Loading Screen Overlay -->
+  <div id="loading-screen">
+    <div class="loading-spinner"></div>
+    <h3 style="font-family: 'Cormorant Garamond', serif; letter-spacing: 0.15em; font-size: 1.5rem; color: var(--primary);">AURA CULINARY ATELIER</h3>
+  </div>
+
+  <!-- 1. Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div id="header-brand"></div>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#hero-section" class="nav-link active">Home</a></li>
+          <li><a href="#about-section" class="nav-link">About</a></li>
+          <li><a href="#services-section" class="nav-link">Experiences</a></li>
+          <li><a href="#featured-section" class="nav-link">Signature</a></li>
+          <li><a href="#chef-section" class="nav-link">Chef</a></li>
+          <li><a href="#gallery-section" class="nav-link">Gallery</a></li>
+          <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+          <li><a href="#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div id="header-actions" class="header-actions">
+        <!-- Theme toggle injected by app.js -->
+        <button id="mobile-nav-btn" class="mobile-nav-toggle" aria-label="Toggle Mobile Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section id="hero-section" class="hero-section">
+    <!-- Rendered dynamically by app.js from restaurant.json & settings.json -->
+  </section>
+
+  <!-- 3. About Restaurant Section -->
+  <section id="about-section" class="section-padding">
+    <div class="container" id="about-container"></div>
+  </section>
+
+  <!-- 4. Services Section -->
+  <section id="services-section" class="section-padding" style="background: var(--surface-elevated);">
+    <div class="container" id="services-container"></div>
+  </section>
+
+  <!-- 5. Featured / Signature Dishes Section -->
+  <section id="featured-section" class="section-padding">
+    <div class="container" id="featured-container"></div>
+  </section>
+
+  <!-- 6. Chef Section -->
+  <section id="chef-section" class="section-padding" style="background: var(--surface-elevated);">
+    <div class="container" id="chef-container"></div>
+  </section>
+
+  <!-- 7. Restaurant Experience Section -->
+  <section id="experience-section" class="section-padding">
+    <div class="container" id="experience-container"></div>
+  </section>
+
+  <!-- 8. Gallery Section -->
+  <section id="gallery-section" class="section-padding" style="background: var(--surface-elevated);">
+    <div class="container">
+      <div class="section-header text-center" data-reveal>
+        <span class="section-subtitle">VISUAL GALLERY</span>
+        <h2 class="section-title">Culinary Artistry & Interior Design</h2>
+        <p class="section-description">A glimpse into our open wood-fire kitchen, ambient dining hall, and signature dishes.</p>
+      </div>
+      <div id="gallery-container"></div>
+    </div>
+  </section>
+
+  <!-- 9. Testimonials Section -->
+  <section id="testimonials-section" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center" data-reveal>
+        <span class="section-subtitle">PATRON REVIEWS</span>
+        <h2 class="section-title">Words From Valued Guests</h2>
+        <p class="section-description">Read unvarnished feedback from international critics and local food enthusiasts.</p>
+      </div>
+      <div id="testimonials-container"></div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ Accordion Section -->
+  <section id="faq-section" class="section-padding" style="background: var(--surface-elevated);">
+    <div class="container">
+      <div class="section-header text-center" data-reveal>
+        <span class="section-subtitle">QUESTIONS & ANSWERS</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">Everything you need to know about dress code, WhatsApp ordering, and table bookings.</p>
+      </div>
+      <div id="faq-container" class="faq-container"></div>
+    </div>
+  </section>
+
+  <!-- 11. Contact & Map Section -->
+  <section id="contact-section" class="section-padding">
+    <div class="container" id="contact-container"></div>
+  </section>
+
+  <!-- 12. Social Media Bar Section -->
+  <section id="social-section" class="section-padding" style="padding-top: var(--space-md); padding-bottom: var(--space-md); background: var(--surface-elevated);">
+    <div class="container" id="social-container"></div>
+  </section>
+
+  <!-- 13. Footer Section -->
+  <footer id="footer-section" class="footer">
+    <div class="container" id="footer-container"></div>
+  </footer>
+
+  <!-- Modular JavaScript Apps -->
+  <script type="module" src="./js/app.js"></script>
+
+</body>
+</html>

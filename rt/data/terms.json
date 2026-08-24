@@ -1,0 +1,22 @@
+{
+  "title": "Terms & Conditions",
+  "effectiveDate": "January 1, 2026",
+  "sections": [
+    {
+      "heading": "1. Reservations and Seating",
+      "content": "Reservations made through AURA's website or digital ordering portal are subject to table availability. Guests are requested to arrive within 15 minutes of their scheduled booking time. After 15 minutes without notification, tables may be released to waiting patrons."
+    },
+    {
+      "heading": "2. WhatsApp Ordering & Digital Requests",
+      "content": "Orders placed via the digital menu workflow transmit directly to our restaurant front desk. Order confirmation, exact timing, and payment processing (for takeaway/delivery) are confirmed directly with our team via WhatsApp message exchange."
+    },
+    {
+      "heading": "3. Dietary Restrictions and Allergies",
+      "content": "While our kitchen takes extreme care to prevent cross-contamination, we operate in an open wood-fire environment where tree nuts, seafood, dairy, and gluten are handled daily. Guests with severe or life-threatening allergies must inform their server prior to ordering."
+    },
+    {
+      "heading": "4. Intellectual Property & Brand Usage",
+      "content": "All trademarks, menu descriptions, original photography, logo assets, and bespoke recipes published on this engine are the exclusive property of the restaurant owner and white-label licensor."
+    }
+  ]
+}

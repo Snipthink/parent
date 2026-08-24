@@ -1,0 +1,30 @@
+{
+  "heading": "Frequently Asked Questions",
+  "subheading": "Everything You Need to Know Before Joining Us",
+  "faqs": [
+    {
+      "question": "What is the dress code at AURA?",
+      "answer": "We encourage Smart Casual to Elegant attire. While jackets are not mandatory, we kindly request guests refrain from athletic wear, beachwear, or flip-flops."
+    },
+    {
+      "question": "How does ordering via WhatsApp work?",
+      "answer": "Simply select your desired dishes in our interactive digital menu, choose your preferred table or takeaway option, add any custom dietary requests, and click 'Submit Order via WhatsApp'. Our concierge immediately receives your complete order and confirms estimated timing with you."
+    },
+    {
+      "question": "Do you accommodate allergies and specific dietary preferences?",
+      "answer": "Absolutely. Our menu features clear indicators for Vegetarian (V), Vegan (VG), and Gluten-Free (GF) options. Chef Vance and our kitchen team take severe food allergies with utmost seriousness—please note any restrictions in your order special requests."
+    },
+    {
+      "question": "Can I book a table for large groups or private events?",
+      "answer": "Yes! Our Wine Cellar Suite accommodates private parties of up to 8, while full private hall buyouts are available for up to 40 guests. Contact our events coordinator at reservations@auradining.com or select Private Events in our services."
+    },
+    {
+      "question": "Is valet parking available on-site?",
+      "answer": "Complimentary valet parking is available at our main entrance on Grand Promenade during all dinner service hours starting from 5:00 PM."
+    },
+    {
+      "question": "What is your cancellation policy for reservations?",
+      "answer": "We kindly request at least 24 hours' notice for cancellations or guest count changes so we may offer the table to guests on our waiting list."
+    }
+  ]
+}
