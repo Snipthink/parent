@@ -16,17 +16,18 @@
 /* ---------- fallback data, used only if data.json can't be fetched ---------- */
 const FALLBACK_DATA = {
   site: {
-    whatsappNumber: "91XXXXXXXXXX",
+    whatsappNumber: "917007983928",
+    contact: { phone:"+91 70079 83928", whatsapp:"+91 70079 83928", email:"orgnica2022@outlook.com", address:"Ward 27, Musahari, Near Govt Qtrs, Muzaffarpur, Bihar - 842001, India" },
     images: { hero: "images/brand/hero.webp", doctor: "images/doctor/doctor.webp",
       models: { woman:"images/models/woman-soap.webp", womanNatural:"images/models/woman-natural-skincare.webp", man:"images/models/man-soap.webp", family:"images/models/family.webp" },
-      story: { women:"images/story/women-artisans.png", making:"images/story/soap-making.webp", village:"images/story/village.webp" } },
+      story: { women:"images/story/women-artisans.webp", making:"images/story/soap-making.webp", village:"images/story/village.webp" } },
     sections: { featuredProduct:true, ourStory:true, womenArtisans:true, modelCampaign:true, skinExpert:true, customerReviews:true, reviewVideos:true, productDetailReviews:true, mission:true, social:true, footerVideo:true },
     featuredProductId: "rose",
-    skinExpert: { enabled:true, name:"[Doctor Name]", qualification:"[Qualification]", statement:"Skin suitability varies between individuals.", doctorVideoUrl:"" },
+    skinExpert: { enabled:true, name:"Dr. Ritu Sharma", qualification:"MBBS, MD (Dermatology)", statement:"Skin suitability varies between individuals.", doctorVideoUrl:"" },
     customerReviewVideos: [], footerVideo: { title:"A glimpse into Organicabelle", description:"", youtubeUrl:"" },
     social: [{ name:"Instagram", url:"#", icon:"instagram" }, { name:"WhatsApp", url:"#", icon:"whatsapp", isWhatsApp:true }]
   },
-  products: [{ id:"neem", name:"Neem Botanical Soap", category:"Neem", mood:"Fresh", accent:"#4E5E3A", icon:"neem", mrp:249, price:249, image:"images/products/neem.png", ingredientImage:"images/ingredients/neem.webp", desc:"", about:"", benefits:[], ingredients:[], skinFeel:"", suitableFor:"" }],
+  products: [{ id:"neem", name:"Neem Botanical Soap", category:"Neem", mood:"Fresh", accent:"#4E5E3A", icon:"neem", mrp:249, price:249, image:"images/products/neem.webp", ingredientImage:"images/ingredients/neem.webp", desc:"", about:"", benefits:[], ingredients:[], skinFeel:"", suitableFor:"" }],
   reviews: []
 };
 
@@ -154,6 +155,7 @@ const socialIcons = {
   instagram:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>',
   facebook:'<path d="M15 8h-2a2 2 0 00-2 2v10M8 13h6"/><path d="M9 3h6a6 6 0 016 6v6a6 6 0 01-6 6H9a6 6 0 01-6-6V9a6 6 0 016-6z"/>',
   youtube:'<rect x="2" y="6" width="20" height="12" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="none"/>',
+  twitter:'<path d="M20.5 4h-3.3l-4.2 5.6L8.8 4H3.5l6.8 9.3L3.7 20h3.3l4.6-6.1L16.8 20h5.3l-7.1-9.7L20.5 4z" fill="currentColor" stroke="none"/>',
   whatsapp:'<path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z"/><path d="M8.5 8.7c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .5.4.2.5.6 1.6.6 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.3-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.9-.2 1.4-.4.6-1.6 1.1-2.2 1.1-.6.1-1.2.1-3.9-1.6-3.2-2-4.3-5.3-4.4-5.6-.1-.2-.6-1-.6-1.9 0-1 .5-1.5.7-1.7z" fill="currentColor" stroke="none"/>'
 };
 
@@ -291,7 +293,6 @@ function init(){
           <p class="cred">${e.qualification}</p>
           <p class="expert-quote">${e.statement}</p>
           <p class="expert-disclaimer">Skin suitability varies between individuals. For persistent skin concerns, please consult a qualified dermatologist. Organicabelle products are not intended to diagnose, treat, or cure any condition.</p>
-          <p class="config-note">Doctor image and video are set in <code>data/data.json</code> → <code>site.skinExpert</code>.</p>
         </div>
       </div>`;
     const playBtn = document.getElementById("playExpertVideo");
@@ -748,6 +749,37 @@ function openWhatsApp(){
   const msg = encodeURIComponent("Hello Organicabelle, I'd like to know more about your handmade botanical soaps.");
   window.open(`https://wa.me/${DATA.site.whatsappNumber}?text=${msg}`, "_blank", "noopener");
 }
+
+/* ============ CONTACT FORM -> WHATSAPP ============ */
+(function initContactForm(){
+  const form = document.getElementById("contactUsForm");
+  if(!form) return;
+  const purposeSel = document.getElementById("cfPurpose");
+  const otherWrap = document.getElementById("cfOtherWrap");
+  const otherInput = document.getElementById("cfOther");
+  purposeSel.addEventListener("change", ()=>{
+    const isOther = purposeSel.value === "Other";
+    otherWrap.hidden = !isOther;
+    if(!isOther) otherInput.value = "";
+  });
+  form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const name = document.getElementById("cfName").value.trim();
+    const purpose = purposeSel.value;
+    const other = otherInput.value.trim();
+    const message = document.getElementById("cfMessage").value.trim();
+    if(!name || !purpose || !message){ form.reportValidity(); return; }
+    const lines = [
+      "Hello Organicabelle,", "",
+      `Name: ${name}`,
+      `Reason: ${purpose}${purpose === "Other" && other ? " — " + other : ""}`,
+      "", "Message:", message
+    ];
+    const msg = encodeURIComponent(lines.join("\n"));
+    const number = (DATA && DATA.site.whatsappNumber) || FALLBACK_DATA.site.whatsappNumber;
+    window.open(`https://wa.me/${number}?text=${msg}`, "_blank", "noopener");
+  });
+})();
 
 /* ============ FLOATING ORDER SOAP BUTTON — scrolls to collection, never opens WhatsApp directly ============ */
 document.getElementById("fabOrder").addEventListener("click", ()=>{

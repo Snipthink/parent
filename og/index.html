@@ -8,7 +8,7 @@
 <meta property="og:title" content="Organicabelle | Handmade Organic Soap & Natural Skincare">
 <meta property="og:description" content="Handmade botanical soaps created by women artisans with care for natural ingredients, families, and everyday skincare rituals.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/brand/hero.png">
+<meta property="og:image" content="images/brand/hero.webp">
 <meta name="theme-color" content="#2b2418">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -264,6 +264,55 @@
     </div>
   </div>
 </section>
+
+<!-- ================= 16b · CONTACT FORM ================= -->
+<section id="contactForm" class="alt-bg">
+  <div class="wrap container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Write To Us</span>
+      <h2>Bulk orders, complaints &amp; questions</h2>
+      <p>Fill this in and it opens a pre-filled WhatsApp message to us — nothing is stored on this site.</p>
+    </div>
+    <div class="contact-form-grid row g-4 g-lg-5 justify-content-center reveal">
+      <div class="col-lg-5">
+        <div class="contact-info-card">
+          <h4>Organicabelle</h4>
+          <p><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="contactAddress">Ward 27, Musahari, Near Govt Qtrs, Muzaffarpur, Bihar - 842001, India</span></p>
+          <p><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .7 2.9a2 2 0 01-.4 2.1L8 10.1a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.4 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg><span id="contactPhone">+91 70079 83928</span></p>
+          <p><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span id="contactEmail">orgnica2022@outlook.com</span></p>
+          <p><svg viewBox="0 0 24 24"><path d="M20.5 14.9c-1-1-2.6-1.6-3.4-1.2-.4.2-.9.9-1.4 1.4-.3.3-.6.3-1 .1-1.4-.6-2.8-1.9-3.7-3.3-.2-.4-.2-.7.1-1 .5-.5 1.1-1 1.3-1.4.3-.8-.2-2.4-1.2-3.4-1-1-2.3-.9-3 .1C6.5 7.9 6 9.6 6.8 11.8c1.1 3 4.3 6.2 7.3 7.3 2.2.8 3.9.3 5.6-1.1 1-.7 1.1-2 .1-3.1z"/></svg><span>WhatsApp: <span id="contactWhatsapp">+91 70079 83928</span></span></p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <form id="contactUsForm" class="contact-form" novalidate>
+          <div class="cf-field">
+            <label for="cfName">Your Name</label>
+            <input type="text" id="cfName" name="name" required placeholder="Full name" autocomplete="name">
+          </div>
+          <div class="cf-field">
+            <label for="cfPurpose">I'm writing about</label>
+            <select id="cfPurpose" name="purpose" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="Bulk Order (Resell)">Bulk order — I want to resell</option>
+              <option value="Product Complaint">Complaint about a product</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="cf-field" id="cfOtherWrap" hidden>
+            <label for="cfOther">Please specify</label>
+            <input type="text" id="cfOther" name="other" placeholder="Briefly tell us what this is about">
+          </div>
+          <div class="cf-field">
+            <label for="cfMessage">Your Message</label>
+            <textarea id="cfMessage" name="message" rows="5" required placeholder="Write your message, order details, or complaint here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-whatsapp btn-block" id="cfSubmit">Send on WhatsApp</button>
+          <p class="cf-note">Submitting opens WhatsApp with your message pre-filled — you'll need to hit send there to reach us.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
 <!-- ================= 17 · FOOTER ================= -->
@@ -274,6 +323,8 @@
       <div class="col-md-6 col-lg-5">
         <span class="logo">Organicabelle</span>
         <p class="footer-tag">Handmade organic soap, wrapped by hand in kraft paper and jute thread — crafted by women artisans.</p>
+        <p class="footer-tag">Ward 27, Musahari, Near Govt Qtrs, Muzaffarpur, Bihar - 842001, India</p>
+        <p class="footer-tag"><a href="tel:+917007983928">+91 70079 83928</a> · <a href="mailto:orgnica2022@outlook.com">orgnica2022@outlook.com</a></p>
       </div>
       <div class="col-6 col-md-3 col-lg-2 footer-col">
         <h5>Explore</h5>
@@ -288,13 +339,14 @@
         <div class="footer-social">
           <a href="https://instagram.com/organicabelle" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="#EFE7D3" stroke="none"/></svg></a>
           <a href="https://facebook.com/organicabelle" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 00-2 2v10M8 13h6"/><path d="M9 3h6a6 6 0 016 6v6a6 6 0 01-6 6H9a6 6 0 01-6-6V9a6 6 0 016-6z"/></svg></a>
-          <a href="https://youtube.com/@organicabelle" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M10 9l6 3-6 3z" fill="#EFE7D3" stroke="none"/></svg></a>
+          <a href="https://x.com/organicabelle" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M20.5 4h-3.3l-4.2 5.6L8.8 4H3.5l6.8 9.3L3.7 20h3.3l4.6-6.1L16.8 20h5.3l-7.1-9.7L20.5 4z" fill="#EFE7D3" stroke="none"/></svg></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© <span id="year"></span> Organicabelle. All rights reserved.</p>
       <p>Skin suitability varies between individuals. For persistent concerns, consult a qualified dermatologist.</p>
+      <p class="footer-credit">Developed by <a href="https://snipthink.org" target="_blank" rel="noopener">SnipThinK.ORG</a></p>
     </div>
   </div>
 </footer>

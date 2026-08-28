@@ -2,20 +2,27 @@
   "_readme": "Edit this file to update the whole site — no coding needed. Prices are plain numbers (no currency symbol). Set 'mrp' equal to 'price' to hide the strikethrough/offer badge for that product. Image paths are relative to the site root (the images/ folder next to index.html) — drop your real photos in with these exact filenames, or change the paths to match your own files.",
 
   "site": {
-    "whatsappNumber": "91XXXXXXXXXX",
-    "_whatsappNumber_note": "TODO — replace with the real Organicabelle WhatsApp Business number: country code + number, digits only, no + or spaces.",
+    "whatsappNumber": "917007983928",
+
+    "contact": {
+      "phone": "+91 70079 83928",
+      "whatsapp": "+91 70079 83928",
+      "email": "orgnica2022@outlook.com",
+      "address": "Ward 27, Musahari, Near Govt Qtrs, Muzaffarpur, Bihar - 842001, India"
+    },
+    "_contact_note": "Sourced from organicabelle.com. Update here if the business phone, WhatsApp, email, or address ever changes — the Contact section and footer both read from this block.",
 
     "images": {
-      "hero": "images/brand/hero.png",
+      "hero": "images/brand/hero.webp",
       "doctor": "images/doctor/doctor.webp",
       "models": {
-        "woman": "images/models/woman-soap.png",
-        "womanNatural": "images/models/woman-natural-skincare.png",
-        "man": "images/models/man-soap.png",
-        "family": "images/models/family.png"
+        "woman": "images/models/woman-soap.webp",
+        "womanNatural": "images/models/woman-natural-skincare.webp",
+        "man": "images/models/man-soap.webp",
+        "family": "images/models/family.webp"
       },
       "story": {
-        "women": "images/story/women-artisans.png",
+        "women": "images/story/women-artisans.webp",
         "making": "images/story/soap-making.webp",
         "village": "images/story/village.webp"
       }
@@ -43,11 +50,12 @@
 
     "skinExpert": {
       "enabled": true,
-      "name": "[Doctor Name]",
-      "qualification": "[Dermatologist / Skin Care Specialist — qualification to be supplied]",
+      "name": "Dr. Ritu Sharma",
+      "qualification": "MBBS, MD (Dermatology, Venereology & Leprosy) — Cosmetic Dermatology & Skin Care Specialist",
       "statement": "Choosing a cleansing product according to your individual skin type can help make your daily skincare routine more comfortable and enjoyable. Skin suitability varies between individuals, so it's worth paying attention to how your own skin responds.",
       "doctorVideoUrl": "",
-      "_doctorVideoUrl_note": "Leave empty to show the doctor image instead of a video. Paste a full YouTube URL to enable the video."
+      "_doctorVideoUrl_note": "Leave empty to show the doctor image instead of a video. Paste a full YouTube URL to enable the video.",
+      "_skinExpert_note": "Name and qualification are placeholder/dummy content, not a real person — organicabelle.com does not list a dermatologist. Replace with a real, verifiable, licensed expert (name, real qualification, registration number if required) before launch. Making medical/dermatological claims using a fabricated or unverifiable expert can be a legal and consumer-trust risk in most jurisdictions, including India (Consumer Protection Act / advertising standards)."
     },
 
     "customerReviewVideos": [
@@ -65,7 +73,7 @@
     "social": [
       { "name": "Instagram", "url": "https://instagram.com/organicabelle", "icon": "instagram" },
       { "name": "Facebook", "url": "https://facebook.com/organicabelle", "icon": "facebook" },
-      { "name": "YouTube", "url": "https://youtube.com/@organicabelle", "icon": "youtube" },
+      { "name": "Twitter", "url": "https://x.com/organicabelle", "icon": "twitter" },
       { "name": "WhatsApp", "url": "#", "icon": "whatsapp", "isWhatsApp": true }
     ]
   },
@@ -80,7 +88,7 @@
       "icon": "neem",
       "mrp": 299,
       "price": 249,
-      "image": "images/products/neem.png",
+      "image": "images/products/neem.webp",
       "ingredientImage": "images/ingredients/neem.webp",
       "desc": "A grounding, earthy bar built around neem — the classic botanical of an everyday ritual.",
       "about": "Our Neem bar is cut and cured slowly, then wrapped by hand the same day it's cut, so the botanical character stays close to its source.",
@@ -108,7 +116,7 @@
       "icon": "aloe",
       "mrp": 299,
       "price": 249,
-      "image": "images/products/aloe-vera.png",
+      "image": "images/products/aloe-vera.webp",
       "ingredientImage": "images/ingredients/aloe-vera.webp",
       "desc": "A soft, clean bar built around aloe — light, gentle, and easy to fold into a daily ritual.",
       "about": "Aloe's cooling, soft character comes through in a bar that's gentle enough for daily use, wrapped the traditional Organicabelle way.",
@@ -136,7 +144,7 @@
       "icon": "rose",
       "mrp": 329,
       "price": 279,
-      "image": "images/products/rose.png",
+      "image": "images/products/rose.webp",
       "ingredientImage": "images/ingredients/rose.webp",
       "desc": "An elegant, romantic bar carrying rose's soft floral character — the most premium bar in the collection.",
       "about": "Rose petals inform both the scent and the soft rose-muted tone of this bar, wrapped with an extra fold of care.",
@@ -164,7 +172,7 @@
       "icon": "charcoal",
       "mrp": 299,
       "price": 269,
-      "image": "images/products/charcoal.png",
+      "image": "images/products/charcoal.webp",
       "ingredientImage": "images/ingredients/charcoal.webp",
       "desc": "A modern, minimal bar with a deep matte tone — refined and understated, for a focused evening ritual.",
       "about": "Charcoal lends this bar its deep, minimal look, balanced with the same botanical base as the rest of the collection.",
@@ -192,7 +200,7 @@
       "icon": "lavender",
       "mrp": 299,
       "price": 259,
-      "image": "images/products/lavender.png",
+      "image": "images/products/lavender.webp",
       "ingredientImage": "images/ingredients/lavender.webp",
       "desc": "A calm, refined bar carrying lavender's familiar, quieting character — well suited to an evening ritual.",
       "about": "Lavender stems inspire both the muted lavender tone and the calm, unhurried feel of this bar.",
@@ -220,7 +228,7 @@
       "icon": "redwine",
       "mrp": 349,
       "price": 289,
-      "image": "images/products/red-wine.png",
+      "image": "images/products/red-wine.webp",
       "ingredientImage": "images/ingredients/red-wine.webp",
       "desc": "A rich, sophisticated bar in deep burgundy — the most indulgent expression in the Organicabelle collection.",
       "about": "Grape-derived botanical extract gives this bar its rich burgundy tone and its place as the collection's most indulgent bar.",
