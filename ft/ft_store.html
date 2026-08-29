@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book Store — FutureTrack</title>
+<meta name="description" content="Find question sets and practice resources from Nursery to PhD — school boards, competitive exams, and higher education, all in one place.">
+<link rel="icon" href="images/favicon.svg">
+<meta property="og:site_name" content="FutureTrack">
+<meta property="og:title" content="Book Store — FutureTrack">
+<meta property="og:description" content="Find question sets and practice resources from Nursery to PhD.">
+<meta property="og:url" content="https://snipthink.org/ft/ft_store.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══ Book Store — page-specific styles (inline, matches FutureTrack theme) ═══ */
+.store-hero{padding:150px 24px 40px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(70,213,249,.10),transparent 45%)}
+.store-hero h1{font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;margin-bottom:12px}
+.store-hero p{color:var(--muted);font-size:16px;max-width:520px;margin:0 auto 32px}
+.store-search{max-width:640px;margin:0 auto;position:relative}
+.store-search i{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:18px}
+.store-search input{width:100%;padding:16px 20px 16px 52px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.store-search input:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(70,213,249,.12)}
+.store-search input::placeholder{color:var(--muted)}
+
+.store-breadcrumb{max-width:1080px;margin:0 auto;padding:0 24px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.store-breadcrumb.hidden{display:none}
+.store-breadcrumb a{color:var(--cyan);text-decoration:none;font-weight:600}
+.store-breadcrumb a:hover{text-decoration:underline}
+.store-breadcrumb span{color:var(--text);font-weight:600}
+.store-breadcrumb i{font-size:10px;color:var(--muted)}
+
+.store-body{padding:10px 24px 90px}
+.store-layout{max-width:1080px;margin:0 auto}
+
+.store-entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:44px}
+.store-entry-card{background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:20px;padding:30px 22px;text-align:left;cursor:pointer;transition:all .25s;color:var(--text);font-family:'Inter',sans-serif}
+.store-entry-card:hover{transform:translateY(-5px);border-color:rgba(70,213,249,.34);box-shadow:var(--shadow-cyan)}
+.store-entry-icon{font-size:34px;display:block;margin-bottom:12px}
+.store-entry-card h3{font-family:'Space Grotesk',sans-serif;font-size:19px;margin-bottom:6px}
+.store-entry-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+.store-section-title{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;margin:8px 0 20px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.store-section-sub{font-size:13px;color:var(--muted);font-weight:500}
+
+.store-tile-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-bottom:40px}
+.store-tile{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 14px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;transition:all .2s;color:var(--text);font-family:'Inter',sans-serif;text-align:center}
+.store-tile:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 10px 26px rgba(70,213,249,.14)}
+.store-tile-icon{font-size:26px}
+.store-tile-label{font-size:13px;font-weight:700}
+.store-tile-sub{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.store-tile-empty{opacity:.5}
+.store-tile-empty:hover{opacity:.75}
+
+.store-results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-bottom:40px}
+.store-card{position:relative;background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px;transition:all .25s}
+.store-card:hover{transform:translateY(-4px);border-color:rgba(70,213,249,.3);box-shadow:var(--shadow-cyan)}
+.store-card-icon{font-size:26px}
+.store-card h3{font-family:'Space Grotesk',sans-serif;font-size:16px;line-height:1.3}
+.store-card-meta{font-size:11px;color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.store-card-medium{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.store-card-desc{font-size:13px;color:var(--muted);line-height:1.6;flex:1}
+.store-card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:10px}
+.store-qcount{font-size:11px;color:var(--muted);font-weight:600}
+.store-open-btn{padding:9px 16px;font-size:12px;font-weight:700;border-radius:999px;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.store-badge{position:absolute;top:-9px;right:16px;font-size:10px;font-weight:800;padding:5px 10px;border-radius:999px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.35);color:var(--gold)}
+
+.store-empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.store-empty-icon{font-size:40px;margin-bottom:12px}
+
+@media(max-width:760px){
+.store-hero{padding:120px 18px 30px}
+.store-hero h1{font-size:32px}
+.store-entry-grid{grid-template-columns:1fr}
+.store-tile-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+<div class="nav-inner">
+  <a href="index.html#home" class="logo">
+    <img class="logo-icon" src="images/favicon.svg" alt="FutureTrack">
+    <span class="logo-text">FutureTrack</span>
+    <span class="logo-sub">by SnipThinK</span>
+  </a>
+  <button class="hamburger" onclick="toggleMenu()" id="ham">&#9776;</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#home"      onclick="closeMenu()">Home</a></li>
+    <li><a href="index.html#features"  onclick="closeMenu()">Features</a></li>
+    <li><a href="index.html#download"  onclick="closeMenu()">Download</a></li>
+    <li><a href="ft-teacher.html"      onclick="closeMenu()">Teachers</a></li>
+    <li><a href="ft_store.html" style="color:var(--cyan);background:rgba(70,213,249,.08)" onclick="closeMenu()"><i class="bi bi-book-half"></i> Book Store</a></li>
+    <li><a href="gurukul/index.html" class="nav-dashboard-btn" onclick="closeMenu()">Dashboard</a></li>
+  </ul>
+</div>
+</nav>
+
+<div id="storeTop"></div>
+
+<!-- ═══ Hero ═══ -->
+<section class="store-hero">
+  <h1>📚 Book Store</h1>
+  <p>Find question sets and practice resources from Nursery to PhD.</p>
+  <div class="store-search">
+    <i class="bi bi-search"></i>
+    <input id="storeSearch" type="text" placeholder="Search Question Sets, Books, Subjects, Exams..." autocomplete="off">
+  </div>
+</section>
+
+<!-- ═══ Breadcrumb ═══ -->
+<div class="store-breadcrumb hidden" id="storeBreadcrumb"></div>
+
+<!-- ═══ Main content (rendered by ft_store.js) ═══ -->
+<section class="store-body">
+  <div class="store-layout" id="storeMain"></div>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer class="footer">
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="images/favicon.svg" alt="FutureTrack">
+        <span>FutureTrack</span>
+      </div>
+      <p>India's paperless education platform by SnipThinK — helping students focus, practise, and track performance to score higher in every exam.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Book Store</h4>
+      <ul>
+        <li><a href="javascript:void(0)" onclick="resetAll('class-grid');go('class-grid',{category:'school'})">School</a></li>
+        <li><a href="javascript:void(0)" onclick="resetAll('competitive-country');go('competitive-country',{category:'competitive'})">Competitive Exams</a></li>
+        <li><a href="javascript:void(0)" onclick="resetAll('higher-ed-level');go('higher-ed-level',{category:'higher-ed'})">Higher Education</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="https://snipthink.org">SnipThinK</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:support.futuretrack@gmail.com">support.futuretrack@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 FutureTrack by <a href="https://snipthink.org">SnipThinK</a>. All rights reserved.</p>
+  </div>
+</div>
+</footer>
+
+<script src="ft_store_config.js"></script>
+<script src="ft_store.js"></script>
+</body>
+</html>

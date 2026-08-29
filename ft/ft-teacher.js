@@ -34,6 +34,36 @@ document.querySelectorAll('.tr-faq-item').forEach(function(item){
   });
 });
 
+// ── Floating apply button ─────────────────────────────────────────
+(function(){
+  var floatBtn = document.getElementById('trFloatApply');
+  if (!floatBtn) return;
+  var hero = document.getElementById('home');
+  var footer = document.querySelector('.footer');
+
+  var pastHero = false;
+  var nearFooter = false;
+
+  function sync(){
+    floatBtn.classList.toggle('show', pastHero && !nearFooter);
+  }
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      pastHero = !entries[0].isIntersecting;
+      sync();
+    }, {rootMargin: '-80% 0px 0px 0px'}).observe(hero);
+
+    new IntersectionObserver(function(entries){
+      nearFooter = entries[0].isIntersecting;
+      sync();
+    }, {rootMargin: '0px 0px -20% 0px'}).observe(footer);
+  } else {
+    pastHero = true;
+    sync();
+  }
+})();
+
 // ── Share button (Web Share API with clipboard fallback) ─────────
 var shareBtn = document.getElementById('trShareBtn');
 if (shareBtn) {

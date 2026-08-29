@@ -35,7 +35,8 @@
     <li><a href="#tracking"   onclick="closeMenu()">Tracking</a></li>
     <li><a href="#download"   onclick="closeMenu()">Download</a></li>
     <li><a href="#contact"    onclick="closeMenu()">Contact</a></li>
-    <li><a href="ft-teacher.html" onclick="closeMenu()">Teachers</a></li>
+    <li><a href="#teacher-tools" onclick="closeMenu()">Teachers</a></li>
+    <li><a href="#bookstore" onclick="closeMenu()"><i class="bi bi-book-half"></i> Book Store</a></li>
     <li><a href="gurukul/index.html" class="nav-dashboard-btn" onclick="closeMenu()">Dashboard</a></li>
   </ul>
 </div>
@@ -77,6 +78,10 @@
   <div class="float-card fc4">
     <div class="fc-icon"><i class="bi bi-bullseye"></i></div>
     <div class="fc-text">Daily Goal<br><strong class="gold">50 / 50 &#10003;</strong></div>
+  </div>
+  <div class="float-card fc5">
+    <div class="fc-icon"><i class="bi bi-camera-video"></i></div>
+    <div class="fc-text">Phone Caught Mid-Reel<br><strong class="purple">Quiz Popped in 3s</strong></div>
   </div>
 </div>
 </section>
@@ -205,6 +210,188 @@
         <li>Set weekly targets and measure if your strategy works</li>
       </ul>
       <a href="https://play.google.com/store/apps/details?id=com.snipthink.smartkidbreak" class="btn btn-primary" target="_blank" rel="noopener">See Your Score Card</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Teacher Tools Deep-Dive ═════════════════════════════════════ -->
+<style>
+.tt-mock{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;max-width:320px}
+.tt-mock-row{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 20px;font-size:14px;font-weight:700;color:var(--text);width:100%;justify-content:center}
+.tt-mock-row i{font-size:20px;color:var(--cyan)}
+.tt-mock-arrow{color:var(--muted);font-size:18px}
+.tt-mock-split{display:flex;gap:12px;width:100%}
+.tt-mock-chip{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;background:rgba(70,213,249,.06);border:1px solid rgba(70,213,249,.18);border-radius:14px;padding:16px 10px;font-size:12px;font-weight:700;color:var(--cyan-light);text-align:center}
+.tt-mock-chip i{font-size:22px;color:var(--cyan)}
+.tt-mock-chip.accent{background:rgba(139,92,246,.08);border-color:rgba(139,92,246,.22);color:#c4b5fd}
+.tt-mock-chip.accent i{color:var(--purple)}
+</style>
+<section class="section section-dark" id="teacher-tools">
+<div class="container">
+  <div class="feature-section reverse">
+    <div class="feature-img" data-aos="right">
+      <div class="tt-mock">
+        <div class="tt-mock-row"><i class="bi bi-file-earmark-text"></i>Question Set</div>
+        <div class="tt-mock-arrow"><i class="bi bi-arrow-down"></i></div>
+        <div class="tt-mock-split">
+          <div class="tt-mock-chip"><i class="bi bi-file-earmark-pdf"></i>Ready-to-Print PDF</div>
+          <div class="tt-mock-chip accent"><i class="bi bi-shield-lock"></i>Protected Mode<br>(App-Only)</div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-text" data-aos="left">
+      <span class="feature-label">&#128221; Teacher Tools</span>
+      <h2>Create Once.<br>Print, Protect &amp; <span class="gradient-text">Share.</span></h2>
+      <p>Teachers can build their own question sets right inside the FutureTrack app — tag every question by chapter, concept and difficulty, then decide exactly how it leaves your hands.</p>
+      <ul class="feature-list">
+        <li>Build custom MCQ &amp; NCERT-aligned question sets by chapter and concept</li>
+        <li>Export a branded, ready-to-print PDF — with or without answers</li>
+        <li>Your name, publisher info and a scan-to-download QR code on every page</li>
+        <li>Protected Mode locks a set so it only opens inside FutureTrack's Daily Practice — never copied, edited, or shared elsewhere</li>
+        <li>Get discovered by students and parents as a Verified Teacher</li>
+      </ul>
+      <a href="ft-teacher.html#question-creation" class="btn btn-primary">Explore Teacher Tools</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Book Store Deep-Dive ════════════════════════════════════════ -->
+<style>
+.bs-mock-card{background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:18px;padding:22px;width:100%;max-width:300px;box-shadow:var(--shadow)}
+.bs-mock-icon{font-size:24px;margin-bottom:8px}
+.bs-mock-card h4{font-family:'Space Grotesk',sans-serif;font-size:15px;margin-bottom:6px}
+.bs-mock-meta{font-size:11px;color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.bs-mock-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.bs-mock-qcount{font-size:11px;color:var(--muted);font-weight:600}
+.bs-mock-open{padding:8px 14px;font-size:11px;font-weight:700;border-radius:999px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#000}
+.bs-mock-trail{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;font-size:10px}
+.bs-mock-trail span{background:rgba(70,213,249,.08);border:1px solid rgba(70,213,249,.18);color:var(--cyan-light);padding:4px 9px;border-radius:999px;font-weight:700}
+</style>
+<section class="section" id="bookstore">
+<div class="container">
+  <div class="feature-section">
+    <div class="feature-img" data-aos="left">
+      <div>
+        <div class="bs-mock-trail"><span>Class 8</span><span>CBSE</span><span>English</span></div>
+        <div class="bs-mock-card">
+          <div class="bs-mock-icon">&#128218;</div>
+          <h4>Mathematics Question Bank</h4>
+          <div class="bs-mock-meta">Class 8 &bull; CBSE &bull; English Medium</div>
+          <div class="bs-mock-foot">
+            <span class="bs-mock-qcount">500+ Questions</span>
+            <span class="bs-mock-open">Open <i class="bi bi-box-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-text" data-aos="right">
+      <span class="feature-label">&#128218; Book Store</span>
+      <h2>Every Question Set.<br><span class="gradient-text">One Search Away.</span></h2>
+      <p>No more digging through shared folders. Pick your class, board, language and subject on the website — FutureTrack takes you straight to the right question set, every time.</p>
+      <ul class="feature-list">
+        <li>Class-wise &amp; board-wise catalogue — Nursery to PhD, CBSE/ICSE/State Boards &amp; more</li>
+        <li>Filter by language, medium and subject to see only what's relevant to you</li>
+        <li>Dedicated Competitive Exams section — UPSC, JEE, NEET, SAT, GCSE &amp; more</li>
+        <li>Instant search across every book, subject and exam in the catalogue</li>
+        <li>One click opens the exact question set — no folder-hunting</li>
+      </ul>
+      <a href="ft_store.html" class="btn btn-primary">Browse Book Store</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Platform / Ecosystem ═══════════════════════════════════════ -->
+<style>
+.platform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.platform-card{background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;transition:all .25s;text-decoration:none;color:inherit}
+.platform-card:hover{transform:translateY(-6px);border-color:rgba(70,213,249,.32);box-shadow:var(--shadow-cyan)}
+.platform-icon{width:50px;height:50px;border-radius:15px;background:linear-gradient(135deg,rgba(70,213,249,.18),rgba(59,130,246,.10));border:1px solid rgba(168,237,252,.16);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:22px}
+.platform-card h3{font-family:'Space Grotesk',sans-serif;font-size:17px}
+.platform-card p{font-size:13px;color:var(--muted);line-height:1.65;flex:1}
+.platform-link{font-size:12px;font-weight:700;color:var(--cyan);display:inline-flex;align-items:center;gap:5px}
+.platform-card:hover .platform-link{text-decoration:underline}
+@media(max-width:900px){.platform-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.platform-grid{grid-template-columns:1fr}}
+</style>
+<section class="section" id="platform">
+<div class="container">
+  <div class="section-header">
+    <span class="section-tag">The Ecosystem</span>
+    <h2>One Platform.<br><span class="gradient-text">Every Role Covered.</span></h2>
+    <p>FutureTrack isn't just a student app — it's a complete ecosystem built for schools, teachers, students, and parents.</p>
+  </div>
+  <div class="platform-grid">
+    <a href="gurukul/index.html" class="platform-card" data-aos>
+      <div class="platform-icon"><i class="bi bi-building"></i></div>
+      <h3>Gurukul ERP</h3>
+      <p>Admissions, attendance, fees, and academic records — the school-management system behind FutureTrack.</p>
+      <span class="platform-link">Open Dashboard <i class="bi bi-arrow-right"></i></span>
+    </a>
+    <a href="#features" class="platform-card" data-aos style="--delay:0.1s">
+      <div class="platform-icon"><i class="bi bi-mortarboard"></i></div>
+      <h3>Student Workspace</h3>
+      <p>Focus Mode, Module Tests, and a personal Score Card — everything a student needs to study, in one place.</p>
+      <span class="platform-link">Explore Student Features <i class="bi bi-arrow-right"></i></span>
+    </a>
+    <a href="ft-teacher.html" class="platform-card" data-aos style="--delay:0.2s">
+      <div class="platform-icon"><i class="bi bi-easel2"></i></div>
+      <h3>Teacher Portal</h3>
+      <p>Generate module tests, track class performance, and join our teacher research program.</p>
+      <span class="platform-link">Visit Teacher Portal <i class="bi bi-arrow-right"></i></span>
+    </a>
+    <a href="ft_store.html" class="platform-card" data-aos style="--delay:0.3s">
+      <div class="platform-icon"><i class="bi bi-book-half"></i></div>
+      <h3>Book Store</h3>
+      <p>Class-wise, board-wise question sets and practice books — searchable and filtered, ready to download.</p>
+      <span class="platform-link">Browse Book Store <i class="bi bi-arrow-right"></i></span>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- ═══ Kid Mode & Facial Recognition Focus Guard ══════════════════ -->
+<style>
+.kidsafe-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.kidsafe-card{background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;gap:12px}
+.kidsafe-card .platform-icon{width:56px;height:56px;font-size:26px}
+.kidsafe-card h3{font-family:'Space Grotesk',sans-serif;font-size:19px}
+.kidsafe-card p{font-size:13.5px;color:var(--muted);line-height:1.75}
+.kidsafe-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.kidsafe-foot{margin-top:auto;padding-top:6px}
+@media(max-width:900px){.kidsafe-grid{grid-template-columns:1fr}}
+</style>
+<section class="section section-dark" id="kidsafety">
+<div class="container">
+  <div class="section-header">
+    <span class="section-tag">Built for Every Age</span>
+    <h2>From First Grade<br>to <span class="gradient-text">Board Exams</span></h2>
+    <p>FutureTrack isn't only for older students preparing for competitive exams — Kid Mode adapts the whole app for young learners, with on-device safeguards parents can trust.</p>
+  </div>
+  <div class="kidsafe-grid">
+    <div class="kidsafe-card" data-aos>
+      <div class="platform-icon"><i class="bi bi-emoji-smile"></i></div>
+      <h3>Kid Mode</h3>
+      <p>A simplified, playful interface for young children — bigger buttons, guided flows, and age-appropriate content, so even first-time users can practise independently.</p>
+      <div class="kidsafe-pills">
+        <span class="fc-pill">Simplified UI</span>
+        <span class="fc-pill">Guided Flows</span>
+        <span class="fc-pill">Age-Appropriate Content</span>
+      </div>
+      <div class="kidsafe-foot"><a href="https://play.google.com/store/apps/details?id=com.snipthink.smartkidbreak" class="platform-link" target="_blank" rel="noopener">See it in the app <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <div class="kidsafe-card" data-aos style="--delay:0.1s">
+      <div class="platform-icon"><i class="bi bi-camera-video"></i></div>
+      <h3>Facial Recognition Focus Guard</h3>
+      <p>While Kid Mode is active, the camera periodically checks for a registered family member's face. If a child picks up the phone outside study hours, Focus Mode locks in automatically with short check-in questions every minute to keep study time honest.</p>
+      <div class="kidsafe-pills">
+        <span class="fc-pill fc-pill-blue">100% On-Device</span>
+        <span class="fc-pill fc-pill-blue">No Photos Uploaded</span>
+        <span class="fc-pill fc-pill-blue">Toggle Off Anytime</span>
+      </div>
+      <div class="kidsafe-foot"><a href="https://play.google.com/store/apps/details?id=com.snipthink.smartkidbreak" class="platform-link" target="_blank" rel="noopener">See it in the app <i class="bi bi-arrow-right"></i></a></div>
     </div>
   </div>
 </div>
@@ -419,6 +606,154 @@
   </div>
 </div>
 </footer>
+
+<!-- ═══ Floating Teacher CTA ══════════════════════════════════════ -->
+<style>
+.float-teacher-btn{position:fixed;right:24px;bottom:24px;z-index:200;display:inline-flex;align-items:center;gap:9px;padding:15px 24px;border-radius:999px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#06131b;font-family:'Inter',sans-serif;font-weight:800;font-size:14px;text-decoration:none;box-shadow:0 14px 36px rgba(70,213,249,.35);animation:ftPulse 2.6s ease-in-out infinite}
+.float-teacher-btn i{font-size:18px}
+.float-teacher-btn:hover{color:#06131b;transform:translateY(-3px) scale(1.03);box-shadow:0 18px 44px rgba(70,213,249,.5);animation-play-state:paused}
+@keyframes ftPulse{0%,100%{box-shadow:0 14px 36px rgba(70,213,249,.35)}50%{box-shadow:0 14px 36px rgba(70,213,249,.35),0 0 0 8px rgba(70,213,249,.12)}}
+.float-store-btn{position:fixed;left:24px;bottom:24px;z-index:200;display:inline-flex;align-items:center;gap:9px;padding:15px 24px;border-radius:999px;background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:14px;text-decoration:none;box-shadow:0 14px 36px rgba(139,92,246,.35);animation:ftPulseStore 2.6s ease-in-out infinite}
+.float-store-btn i{font-size:18px}
+.float-store-btn:hover{color:#fff;transform:translateY(-3px) scale(1.03);box-shadow:0 18px 44px rgba(139,92,246,.5);animation-play-state:paused}
+@keyframes ftPulseStore{0%,100%{box-shadow:0 14px 36px rgba(139,92,246,.35)}50%{box-shadow:0 14px 36px rgba(139,92,246,.35),0 0 0 8px rgba(139,92,246,.12)}}
+.float-parent-btn{position:fixed;right:24px;bottom:96px;z-index:200;display:inline-flex;align-items:center;gap:9px;padding:15px 24px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#d97706);color:#1a1206;font-family:'Inter',sans-serif;font-weight:800;font-size:14px;border:none;cursor:pointer;box-shadow:0 14px 36px rgba(245,158,11,.35);animation:ftPulseParent 2.6s ease-in-out infinite}
+.float-parent-btn i{font-size:18px}
+.float-parent-btn:hover{color:#1a1206;transform:translateY(-3px) scale(1.03);box-shadow:0 18px 44px rgba(245,158,11,.5);animation-play-state:paused}
+@keyframes ftPulseParent{0%,100%{box-shadow:0 14px 36px rgba(245,158,11,.35)}50%{box-shadow:0 14px 36px rgba(245,158,11,.35),0 0 0 8px rgba(245,158,11,.12)}}
+@media(max-width:640px){
+.float-teacher-btn{left:16px;right:16px;bottom:16px;justify-content:center;padding:14px 20px;font-size:13px}
+.float-store-btn{left:16px;right:16px;bottom:78px;justify-content:center;padding:14px 20px;font-size:13px}
+.float-parent-btn{left:16px;right:16px;bottom:140px;justify-content:center;padding:14px 20px;font-size:13px}
+}
+
+/* Parent Enquiry modal */
+.parent-modal-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(4,8,14,.72);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}
+.parent-modal-overlay.open{display:flex}
+.parent-modal{position:relative;width:100%;max-width:440px;max-height:88vh;overflow-y:auto;background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:22px;padding:34px 30px;box-shadow:var(--shadow)}
+.parent-modal-close{position:absolute;top:14px;right:14px;background:none;border:none;color:var(--muted);font-size:24px;line-height:1;cursor:pointer}
+.parent-modal-close:hover{color:var(--text)}
+.parent-modal-head{text-align:center;margin-bottom:22px}
+.parent-modal-head i{display:block;font-size:32px;color:var(--gold);margin-bottom:10px}
+.parent-modal-head h3{font-family:'Space Grotesk',sans-serif;font-size:21px;margin-bottom:6px}
+.parent-modal-head p{font-size:13px;color:var(--muted);line-height:1.65}
+.parent-modal-submit{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;border:none;cursor:pointer}
+@media(max-width:480px){.parent-modal{padding:26px 20px}}
+</style>
+<button type="button" class="float-parent-btn" onclick="openParentModal()">
+  <i class="bi bi-people-fill"></i><span>Are You a Parent?</span>
+</button>
+<a href="ft-teacher.html" class="float-teacher-btn">
+  <i class="bi bi-mortarboard-fill"></i><span>Teacher? Join Our Research</span>
+</a>
+<a href="ft_store.html" class="float-store-btn">
+  <i class="bi bi-book-half"></i><span>Book Store</span>
+</a>
+
+<!-- ═══ Parent Enquiry Modal ════════════════════════════════════════ -->
+<div class="parent-modal-overlay" id="parentModalOverlay" onclick="if(event.target===this)closeParentModal()">
+  <div class="parent-modal">
+    <button type="button" class="parent-modal-close" onclick="closeParentModal()" aria-label="Close">&times;</button>
+    <div class="parent-modal-head">
+      <i class="bi bi-people-fill"></i>
+      <h3>Are You a Parent?</h3>
+      <p>Tell us a little about your child and we'll guide you on WhatsApp — free, no obligation.</p>
+    </div>
+    <form id="parentEnquiryForm">
+      <div class="form-group">
+        <label for="pName">Parent Name (optional)</label>
+        <input type="text" class="form-control" id="pName" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="pAge">Child's Age Group</label>
+        <select class="form-control" id="pAge" required>
+          <option value="" disabled selected>— Select age group —</option>
+          <option>Under 5</option>
+          <option>5 – 8</option>
+          <option>9 – 11</option>
+          <option>12 – 14</option>
+          <option>15 – 17</option>
+          <option>18+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pClass">Child's Class</label>
+        <select class="form-control" id="pClass" required>
+          <option value="" disabled selected>— Select class —</option>
+          <option>Nursery</option>
+          <option>LKG</option>
+          <option>UKG</option>
+          <option>Class 1</option>
+          <option>Class 2</option>
+          <option>Class 3</option>
+          <option>Class 4</option>
+          <option>Class 5</option>
+          <option>Class 6</option>
+          <option>Class 7</option>
+          <option>Class 8</option>
+          <option>Class 9</option>
+          <option>Class 10</option>
+          <option>Class 11</option>
+          <option>Class 12</option>
+          <option>12+ / Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pLang">Preferred Language</label>
+        <select class="form-control" id="pLang" required>
+          <option value="" disabled selected>— Select language —</option>
+          <option>English</option>
+          <option>Hindi</option>
+          <option>Bengali</option>
+          <option>Marathi</option>
+          <option>Tamil</option>
+          <option>Telugu</option>
+          <option>Kannada</option>
+          <option>Malayalam</option>
+          <option>Gujarati</option>
+          <option>Punjabi</option>
+          <option>Urdu</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary parent-modal-submit"><i class="bi bi-whatsapp"></i> Send via WhatsApp</button>
+    </form>
+  </div>
+</div>
+<script>
+function openParentModal(){
+  document.getElementById('parentModalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeParentModal(){
+  document.getElementById('parentModalOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeParentModal();
+});
+document.getElementById('parentEnquiryForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = document.getElementById('pName').value.trim();
+  var age = document.getElementById('pAge').value;
+  var cls = document.getElementById('pClass').value;
+  var lang = document.getElementById('pLang').value;
+  var lines = [
+    '🎓 *New Parent Enquiry — FutureTrack App*',
+    '',
+    '👤 Parent Name: ' + (name || 'Not provided'),
+    '🎂 Child\'s Age Group: ' + age,
+    '📚 Class: ' + cls,
+    '🌐 Preferred Language: ' + lang,
+    '',
+    'I would like to know how to use FutureTrack for my child.'
+  ];
+  var msg = encodeURIComponent(lines.join('\n'));
+  window.open('https://wa.me/919959059984?text=' + msg, '_blank', 'noopener');
+  closeParentModal();
+  e.target.reset();
+});
+</script>
 
 <script src="script.js"></script>
 </body>

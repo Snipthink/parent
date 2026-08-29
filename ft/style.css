@@ -31,8 +31,9 @@ body{font-family:'Inter',sans-serif;background:radial-gradient(circle at 15% 10%
 .logo-icon{width:28px;height:28px;object-fit:contain}
 .logo-text{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--cyan);letter-spacing:0.5px}
 .logo-sub{font-size:10px;color:var(--muted);margin-left:4px}
-.nav-links{display:flex;list-style:none;gap:4px}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;transition:all 0.2s}
+.nav-links{display:flex;list-style:none;gap:2px;flex-wrap:nowrap}
+.nav-links li{flex-shrink:0}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;padding:8px 11px;border-radius:999px;transition:all 0.2s;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
 .nav-links a:hover{color:#fff;background:rgba(70,213,249,0.12)}
 .nav-dashboard-btn{color:#06131b!important;background:linear-gradient(135deg,var(--cyan),var(--cyan2));border:1px solid rgba(70,213,249,.55);border-radius:999px;padding:7px 17px!important;margin-left:8px;font-weight:800!important;box-shadow:0 8px 24px rgba(70,213,249,.22)}
 .nav-dashboard-btn:hover{background:var(--cyan)!important;color:#060c14!important}
@@ -80,6 +81,7 @@ body{font-family:'Inter',sans-serif;background:radial-gradient(circle at 15% 10%
 .fc2{top:55%;right:3%;animation-delay:1.5s}
 .fc3{bottom:12%;left:18%;animation-delay:3s}
 .fc4{top:22%;right:18%;animation-delay:4.5s}
+.fc5{top:78%;left:32%;animation-delay:6s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 
 /* ── Sections ─────────────────────────────────────────────────── */
