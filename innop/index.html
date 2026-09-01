@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INNOP Global India | Startup Accelerator in Bihar</title>
+<meta name="description" content="INNOP Global India is an India-focused startup and innovation ecosystem being built from Purnia, Bihar — connecting founders, mentors, investors and individuals with the wider INNOP Global network.">
+<meta property="og:title" content="INNOP Global India | Startup Accelerator in Bihar">
+<meta property="og:description" content="Build from Bihar. Scale to the world. An India-focused startup ecosystem from Purnia, Bihar, connected to the wider INNOP Global network.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="INNOP Global India | Startup Accelerator in Bihar">
+<meta name="twitter:description" content="Build from Bihar. Scale to the world. An India-focused startup ecosystem from Purnia, Bihar.">
+<link rel="canonical" href="https://snipthink.org/eco/index.html">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Inline favicon (no external file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b63d6'/%3E%3Cstop offset='1' stop-color='%2314a76c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='url(%23g)'/%3E%3Ctext x='12' y='17' font-size='13' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EI%3C/text%3E%3C/svg%3E">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "INNOP Global India",
+  "description": "India-focused startup and innovation ecosystem initiative of INNOP Global, based in Purnia, Bihar, India.",
+  "url": "https://snipthink.org/eco/index.html",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "INNOP Global Accelerator",
+    "url": "https://innopglobal.com/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Purnia",
+    "addressRegion": "Bihar",
+    "addressCountry": "IN"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Every icon on this page is plain inline SVG (no external icon font/CDN dependency). -->
+
+<!-- FLOATING APPLY WIDGET -->
+<div class="fab-wrap" id="fabWrap">
+  <div class="fab-menu">
+    <div class="fab-item">
+      <span class="fab-item-label">Startup / Founder</span>
+      <button type="button" class="fab-item-btn" style="background:var(--blue);" data-apply-type="Startup / Founder" title="Apply as Startup">🚀</button>
+    </div>
+    <div class="fab-item">
+      <span class="fab-item-label">Mentor</span>
+      <button type="button" class="fab-item-btn" style="background:var(--teal);" data-apply-type="Mentor" title="Join as Mentor">🧑‍🏫</button>
+    </div>
+    <div class="fab-item">
+      <span class="fab-item-label">Investor</span>
+      <button type="button" class="fab-item-btn" style="background:var(--saffron);" data-apply-type="Investor" title="Join as Investor">💼</button>
+    </div>
+    <div class="fab-item">
+      <span class="fab-item-label">Individual</span>
+      <button type="button" class="fab-item-btn" style="background:var(--green);" data-apply-type="Individual" title="Apply as Individual">💡</button>
+    </div>
+  </div>
+  <button class="fab-main" id="fabToggle" title="Apply Now">
+    <svg class="icon" viewBox="0 0 24 24" style="width:1.6rem;height:1.6rem;"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="12" x2="20" y2="12" transform="rotate(90 12 12)"/></svg>
+  </button>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#top">
+      <span class="brand-mark">I</span> INNOP Global India
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mission">Mission</a></li>
+        <li class="nav-item"><a class="nav-link" href="#accelerator">Accelerator</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why-purnia">Why Purnia</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="#network">Network</a></li>
+        <li class="nav-item"><a class="nav-link" href="#apply">Apply</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+        <a href="https://innopglobal.com/" target="_blank" rel="noopener" class="parent-link">INNOP Global <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="11" height="11" rx="2"/><polyline points="10,3 21,3 21,14"/><line x1="21" y1="3" x2="11" y2="13"/></svg></a>
+        <button class="theme-toggle" id="themeToggle" title="Toggle dark mode"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/>
+  <circle cx="9.3" cy="10" r="1" fill="currentColor" stroke="none"/>
+  <circle cx="14.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg></button>
+        <a href="#apply" class="btn btn-grad btn-sm">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas id="hero-canvas"></canvas>
+  <div class="container hero-content">
+    <div class="row">
+      <div class="col-lg-9">
+        <span class="eyebrow"><span class="dot"></span> INNOP Global India · Startup Accelerator</span>
+        <h1>Build From Bihar. <span class="grad-text">Scale To The World.</span></h1>
+        <p class="lead">A startup and innovation ecosystem being built from Purnia, Bihar to help founders and aspiring entrepreneurs move from ideas to execution — through upskilling, mentorship, technology, design, marketing, legal guidance, business development, sales support, and access to a global network.</p>
+        <div class="hero-btns">
+          <a href="#apply" class="btn btn-grad">Apply Now</a>
+          <a href="#accelerator" class="btn btn-outline-line">Explore Accelerator</a>
+        </div>
+        <div class="hero-link-sub">Connected to the wider <a href="https://innopglobal.com/" target="_blank" rel="noopener">INNOP Global ecosystem ↗</a></div>
+
+        <div class="flow-wrap mt-5 reveal">
+          <div class="flow-track">
+            <div class="flow-step is-active"><div class="flow-node mono" style="font-size:.75rem;">PUR</div><span class="flow-label">Purnia</span></div>
+            <div class="flow-connector"></div>
+            <div class="flow-step"><div class="flow-node mono" style="font-size:.75rem;">BIH</div><span class="flow-label">Bihar</span></div>
+            <div class="flow-connector"></div>
+            <div class="flow-step"><div class="flow-node mono" style="font-size:.75rem;">IND</div><span class="flow-label">India</span></div>
+            <div class="flow-connector"></div>
+            <div class="flow-step"><div class="flow-node mono" style="font-size:.75rem;">USA</div><span class="flow-label">USA Network</span></div>
+            <div class="flow-connector"></div>
+            <div class="flow-step"><div class="flow-node mono" style="font-size:.7rem;">GLB</div><span class="flow-label">Global Network</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY STRIP -->
+<div class="cred-strip">
+  <div class="container">
+    <div class="row g-0 text-center">
+      <div class="col-6 col-md-3 cred-item reveal"><div class="cred-title">INNOP Global</div><div class="cred-sub">Global Ecosystem</div></div>
+      <div class="col-6 col-md-3 cred-item reveal"><div class="cred-title">INNOP Global India</div><div class="cred-sub">India Initiative</div></div>
+      <div class="col-6 col-md-3 cred-item reveal"><div class="cred-title">Purnia</div><div class="cred-sub">Bihar Headquarters</div></div>
+      <div class="col-6 col-md-3 cred-item reveal"><div class="cred-title">Startup Accelerator</div><div class="cred-sub">Idea &rarr; Execution</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PARENT ORGANIZATION CREDIBILITY -->
+<section class="section section-mist" id="ecosystem">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Part Of A Global Ecosystem</span>
+      <h2 class="mt-2">INNOP Global India is the India-focused initiative of the wider INNOP Global ecosystem</h2>
+      <p class="text-soft mt-2" style="max-width:720px;margin-inline:auto;">Being developed from Purnia, Bihar to connect founders, innovators, developers, professionals, mentors and investors with opportunities across India and the INNOP Global network. The facts below are drawn directly from the parent organization's public website.</p>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 reveal">
+        <div class="program-card h-100">
+          <span class="eyebrow">Who Is INNOP Global?</span>
+          <p class="text-soft small mt-2 mb-0">INNOP Global describes itself as a convenient, accessible and affordable mentorship hub for entrepreneurs, startup teams and independent professionals, run under the banner "Innovate, Launch and Accelerate." It operates as a US-based startup accelerator supporting founders through structured mentorship rather than a single one-off program.</p>
+        </div>
+      </div>
+      <div class="col-md-6 reveal">
+        <div class="program-card h-100">
+          <span class="eyebrow">What Does INNOP Global Do?</span>
+          <p class="text-soft small mt-2 mb-0">The organization develops and leads a venture ecosystem that leverages impact investment, pairing founders with mentors and helping them move from concept to a fundable, sellable business across sectors including AgTech, BioTech, CleanTech, AI, Big Data, IoT and Quantum technologies.</p>
+        </div>
+      </div>
+      <div class="col-md-6 reveal">
+        <div class="program-card h-100">
+          <span class="eyebrow">Where Does It Operate?</span>
+          <p class="text-soft small mt-2 mb-0">INNOP Global is headquartered at 2430 6th Ave, Suite A1, Greeley, Colorado, USA, and states an intent to establish a global startup ecosystem and facilitate technology transfer across borders — the same global-network ambition INNOP Global India is extending into Bihar.</p>
+        </div>
+      </div>
+      <div class="col-md-6 reveal">
+        <div class="program-card h-100">
+          <span class="eyebrow">Why Does This Matter To India?</span>
+          <p class="text-soft small mt-2 mb-0">A parent organization with an established US accelerator model and a stated global-ecosystem vision gives the India initiative a proven mentorship framework to adapt locally — rather than starting from zero — while connecting Bihar-origin founders to a wider international network over time, subject to program fit.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3 reveal"><div class="stat-box glass"><div class="stat-num" data-count="45">0</div><div class="stat-label">Startups Supported<br>(2019&ndash;2025)</div></div></div>
+      <div class="col-6 col-md-3 reveal"><div class="stat-box glass"><div class="stat-num">$50M</div><div class="stat-label">Capital Raise Facilitated<br>(2019&ndash;2025)</div></div></div>
+      <div class="col-6 col-md-3 reveal"><div class="stat-box glass"><div class="stat-num mono" style="font-size:1.1rem;">AgTech · BioTech<br>CleanTech · AI</div><div class="stat-label">Focus Sectors</div></div></div>
+      <div class="col-6 col-md-3 reveal"><div class="stat-box glass"><div class="stat-num mono" style="font-size:1.1rem;">Greeley,<br>Colorado, USA</div><div class="stat-label">Parent Organization HQ</div></div></div>
+    </div>
+    <div class="text-center mt-4 reveal">
+      <p class="text-soft small">Source: <a href="https://innopglobal.com/" target="_blank" rel="noopener">innopglobal.com</a> and <a href="https://innopglobal.com/about-us/" target="_blank" rel="noopener">innopglobal.com/about-us</a>. These figures describe the parent organization's overall program; access to any specific service through INNOP Global India depends on program availability and is not automatically guaranteed.</p>
+      <a href="https://innopglobal.com/" target="_blank" rel="noopener" class="btn btn-outline-line btn-sm mt-2">Explore INNOP Global <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal">
+        <span class="eyebrow">One Ecosystem</span>
+        <h2 class="mt-2 mb-3">From Idea To Execution.</h2>
+        <p class="text-soft fs-5">Talent exists beyond metropolitan cities. INNOP Global India is being developed from Purnia, Bihar to create access to knowledge, mentorship, technology, design, marketing, legal guidance, business development, sales capability, networks and upskilling — so founders in Bihar can build for India and the world.</p>
+        <p class="text-soft">Startup ecosystems tend to cluster around a handful of large Indian cities, where most accelerators, investors and mentor networks are based. Bihar has no shortage of students, developers, professionals and people with ideas — what is often missing is convenient, local access to the people and capabilities that turn an idea into a working venture. INNOP Global India exists to narrow that gap.</p>
+        <p class="text-soft">The initiative is deliberately based in Purnia rather than only in a state capital or metro hub, on the premise that founders shouldn't have to relocate before they can get started. Building from a smaller city is also a statement: that the next founder, developer or mentor can come from anywhere in Bihar, not only from the places startup infrastructure has historically concentrated in.</p>
+        <p class="text-soft">In practice, that means creating access to mentorship, practical upskilling, technology and product support, design, marketing, legal and registration guidance, business development, sales support, and a growing network — organized around the stage a founder is actually at, and connected, where relevant, to the wider INNOP Global network.</p>
+        <button type="button" class="btn btn-know-more" data-bs-toggle="modal" data-bs-target="#aboutModal">Know More <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg></button>
+      </div>
+      <div class="col-lg-6 reveal">
+        <div class="glass p-4">
+          <div class="d-flex flex-column gap-2">
+            <div class="hub-pill" style="background:var(--mist); border-color:var(--line); color:var(--ink);"><span class="dot"></span>Purnia — India Headquarters</div>
+            <div class="hub-pill" style="background:var(--mist); border-color:var(--line); color:var(--ink);"><span class="dot"></span>Bihar — Regional Ecosystem</div>
+            <div class="hub-pill" style="background:var(--mist); border-color:var(--line); color:var(--ink);"><span class="dot"></span>India — National Initiative</div>
+            <div class="hub-pill" style="background:var(--mist); border-color:var(--line); color:var(--ink);"><span class="dot"></span>USA — INNOP Global Parent HQ (Greeley, CO)</div>
+            <div class="hub-pill" style="background:var(--mist); border-color:var(--line); color:var(--ink);"><span class="dot"></span>Global Network — Founders, Mentors, Investors</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION -->
+<section class="section section-mist-green" id="mission">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 reveal">
+        <div class="glass p-4 h-100">
+          <span class="eyebrow">Our Mission</span>
+          <p class="fs-5 mt-3 mb-0">To create a practical ecosystem where people from Bihar can access the knowledge, skills, people, technology and business support required to transform ideas into execution.</p>
+        </div>
+      </div>
+      <div class="col-md-6 reveal">
+        <div class="glass p-4 h-100">
+          <span class="eyebrow">Our Vision</span>
+          <p class="fs-5 mt-3 mb-0">To build a globally connected innovation ecosystem originating from Bihar, creating opportunities for founders, developers, professionals and innovators to build for India and the world.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 mb-4 reveal"><span class="eyebrow">The Mission, In Five Pillars</span></div>
+    <div class="row g-4">
+      <div class="col-6 col-lg reveal">
+        <div class="program-card text-center h-100"><svg class="icon" viewBox="0 0 24 24" style="margin-inline:auto;"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.6" fill="currentColor" stroke="none"/></svg><h5 class="mt-2">Access</h5><p class="text-soft small mb-0">Make useful startup and business capabilities easier to reach for people who are not based in a metro city.</p></div>
+      </div>
+      <div class="col-6 col-lg reveal">
+        <div class="program-card text-center h-100"><svg class="icon" viewBox="0 0 24 24" style="margin-inline:auto;"><path d="M4 19.5V6a2 2 0 0 1 2-2h9l5 5v10.5"/><path d="M13 4v5h5"/></svg><h5 class="mt-2">Upskill</h5><p class="text-soft small mb-0">Develop practical entrepreneurial, business and technical skills that founders can apply immediately.</p></div>
+      </div>
+      <div class="col-6 col-lg reveal">
+        <div class="program-card text-center h-100"><svg class="icon" viewBox="0 0 24 24" style="margin-inline:auto;"><rect x="3" y="9" width="7" height="12"/><rect x="14" y="3" width="7" height="18"/></svg><h5 class="mt-2">Build</h5><p class="text-soft small mb-0">Help transform ideas into tangible products and services, with access to technology and design support.</p></div>
+      </div>
+      <div class="col-6 col-lg reveal">
+        <div class="program-card text-center h-100"><svg class="icon" viewBox="0 0 24 24" style="margin-inline:auto;"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.7" y1="10.5" x2="15.3" y2="7.5"/><line x1="8.7" y1="13.5" x2="15.3" y2="16.5"/></svg><h5 class="mt-2">Connect</h5><p class="text-soft small mb-0">Create connections between founders and the mentors, professionals and investors who are relevant to them.</p></div>
+      </div>
+      <div class="col-6 col-lg reveal">
+        <div class="program-card text-center h-100"><svg class="icon" viewBox="0 0 24 24" style="margin-inline:auto;"><polyline points="3,17 9,11 13,15 21,5"/><polyline points="15,5 21,5 21,11"/></svg><h5 class="mt-2">Execute</h5><p class="text-soft small mb-0">Move beyond ideas toward practical, on-the-ground execution rather than advice alone.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Our Vision</span>
+      <h2 class="mt-2">A Globally Connected Ecosystem, Rooted In Bihar.</h2>
+      <p class="text-soft mt-2" style="max-width:720px;margin-inline:auto;">To build a globally connected innovation ecosystem originating from Bihar, creating opportunities for founders, developers, professionals and innovators to build for India and the world.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.6" fill="currentColor" stroke="none"/></svg>
+          <h5 class="mt-2">Local Roots</h5>
+          <p class="text-soft small mb-0">Build from Bihar — with Purnia as the India headquarters — rather than treating the region as an afterthought to a metro-first strategy.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M12 8v8"/></svg>
+          <h5 class="mt-2">National Reach</h5>
+          <p class="text-soft small mb-0">Create opportunities that extend across India, welcoming founders, mentors and investors from beyond Bihar into the same ecosystem.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+          <h5 class="mt-2">Global Connections</h5>
+          <p class="text-soft small mb-0">Connect into the wider INNOP Global network and its international contacts, where relevant and subject to program fit.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2 2 12l10 10 10-10z"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg>
+          <h5 class="mt-2">Entrepreneurial Culture</h5>
+          <p class="text-soft small mb-0">Encourage practical, hands-on entrepreneurship and innovation as a normal path, not an exceptional one, for people from Bihar.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5V6a2 2 0 0 1 2-2h9l5 5v10.5"/><path d="M13 4v5h5"/></svg>
+          <h5 class="mt-2">Long-Term Ecosystem</h5>
+          <p class="text-soft small mb-0">Build something durable that continues to support new founders beyond any single cohort or program cycle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOALS -->
+<section class="section section-mist">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Our Goals</span>
+      <h2 class="mt-2">Six Goals That Guide The Work</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="program-card h-100"><span class="eyebrow">01</span><h5 class="mt-2">Upskill</h5><p class="text-soft small mb-0">Provide practical, applicable learning for founders and professionals — not just theory, but skills they can use on their venture immediately.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="program-card h-100"><span class="eyebrow">02</span><h5 class="mt-2">Validate</h5><p class="text-soft small mb-0">Help founders understand their market, their customers and their business model before they over-invest in the wrong direction.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="program-card h-100"><span class="eyebrow">03</span><h5 class="mt-2">Build</h5><p class="text-soft small mb-0">Support product and technology development so ideas become working, testable versions of themselves.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="program-card h-100"><span class="eyebrow">04</span><h5 class="mt-2">Connect</h5><p class="text-soft small mb-0">Create access to mentors, relevant professionals and a growing network of peers across the ecosystem.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="program-card h-100"><span class="eyebrow">05</span><h5 class="mt-2">Execute</h5><p class="text-soft small mb-0">Move ideas toward practical implementation — registration, a first version of the product, a first customer conversation.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="program-card h-100"><span class="eyebrow">06</span><h5 class="mt-2">Scale</h5><p class="text-soft small mb-0">Help promising ventures identify relevant growth opportunities, partnerships and, where appropriate, wider network access.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE HELP YOU DO -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">What We Help You Do</span>
+      <h2 class="mt-2">Six Things The Ecosystem Is Built Around</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-lg-4 reveal"><div class="program-card h-100"><h5>Discover</h5><p class="text-soft small mb-0">Find and clarify the opportunity behind an idea before committing resources to it.</p></div></div>
+      <div class="col-6 col-lg-4 reveal"><div class="program-card h-100"><h5>Validate</h5><p class="text-soft small mb-0">Understand real customers, real markets and whether the business model actually holds up.</p></div></div>
+      <div class="col-6 col-lg-4 reveal"><div class="program-card h-100"><h5>Learn</h5><p class="text-soft small mb-0">Build practical business and technical skills through hands-on sessions, not just lectures.</p></div></div>
+      <div class="col-6 col-lg-4 reveal"><div class="program-card h-100"><h5>Create</h5><p class="text-soft small mb-0">Build the actual product or solution, with access to relevant technology and design support.</p></div></div>
+      <div class="col-6 col-lg-4 reveal"><div class="program-card h-100"><h5>Grow</h5><p class="text-soft small mb-0">Develop marketing, sales and business-development capability to reach real customers.</p></div></div>
+      <div class="col-6 col-lg-4 reveal"><div class="program-card h-100"><h5>Connect</h5><p class="text-soft small mb-0">Access relevant people and networks — mentors, peers and, where appropriate, the wider INNOP Global community.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCELERATOR -->
+<section class="section" id="accelerator">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">The INNOP Accelerator</span>
+      <h2 class="mt-2">Not Just Mentorship. Execution Support.</h2>
+      <p class="text-soft mt-3" style="max-width:760px;margin-inline:auto;">The INNOP Accelerator is an eight-stage support structure for founders connected to INNOP Global India — open to idea-stage founders, early-stage startups and existing businesses alike. Rather than a single workshop or a one-time mentoring session, it is organized around the stages a venture actually moves through, from clarifying the first idea to scaling what works. Access to any specific stage's support depends on program availability, cohort timing and applicant needs — participants move through the stages that are relevant to where their venture already is, not necessarily all eight in sequence.</p>
+    </div>
+    <div class="text-center mb-4 reveal">
+      <div class="glass p-4 d-inline-block" style="max-width:760px;">
+        <p class="fs-5 mb-0" style="font-family:'Space Grotesk',sans-serif;">"From the first idea to the first customer and beyond, the objective is to bring relevant capabilities closer to the founder."</p>
+      </div>
+    </div>
+    <div class="flow-wrap reveal">
+      <div class="flow-track" id="flowTrack">
+        <div class="flow-step is-active"><div class="flow-node mono" style="font-size:.9rem;">01</div><span class="flow-label">Idea</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">02</div><span class="flow-label">Validate</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">03</div><span class="flow-label">Upskill</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">04</div><span class="flow-label">Build</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">05</div><span class="flow-label">Register</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">06</div><span class="flow-label">Market</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">07</div><span class="flow-label">Sell</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">08</div><span class="flow-label">Scale</span></div>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card"><span class="eyebrow">01</span><h5 class="mt-2">Idea</h5><p class="text-soft small mb-0">Help clarify the problem being solved, the intended user, the underlying opportunity and an initial concept worth testing further.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card"><span class="eyebrow">02</span><h5 class="mt-2">Validate</h5><p class="text-soft small mb-0">Explore the customer, the market, the competitive landscape, the business model and whether real demand exists before building further.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card"><span class="eyebrow">03</span><h5 class="mt-2">Upskill</h5><p class="text-soft small mb-0">Develop business skills, relevant technology skills, product thinking, communication and practical entrepreneurship fundamentals.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card"><span class="eyebrow">04</span><h5 class="mt-2">Build</h5><p class="text-soft small mb-0">Potential access to technology guidance, UI/UX support, product development and prototyping help appropriate to the venture's stage.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card"><span class="eyebrow">05</span><h5 class="mt-2">Register</h5><p class="text-soft small mb-0">Guidance around business structure, registration and documentation. Legal matters may require qualified professional advice beyond this guidance.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card"><span class="eyebrow">06</span><h5 class="mt-2">Market</h5><p class="text-soft small mb-0">Support around brand, positioning, digital presence and a marketing strategy suited to the venture's customers.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card"><span class="eyebrow">07</span><h5 class="mt-2">Sell</h5><p class="text-soft small mb-0">Support around sales strategy, customer acquisition, business development and relevant partnerships.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card"><span class="eyebrow">08</span><h5 class="mt-2">Scale</h5><p class="text-soft small mb-0">Focus shifts to growth, partnerships, new markets, operational improvement and access to the wider network.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / ECOSYSTEM -->
+<section class="section section-mist" id="services">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Ecosystem</span>
+      <h2 class="mt-2">Access The Capabilities You Need To Build</h2>
+    </div>
+    <div class="row g-4" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- WHAT MAKES THE MODEL DIFFERENT -->
+<section class="section section-mist-green">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">The Intended Model</span>
+      <h2 class="mt-2">More Than A Single Service</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card h-100 text-center"><h5>One Ecosystem</h5><p class="text-soft small mb-0">Mentorship, upskilling, technology, marketing, legal guidance and networking are meant to connect to each other, not sit as separate, disconnected offerings.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card h-100 text-center"><h5>Idea To Execution</h5><p class="text-soft small mb-0">Support is designed around the founder's journey — idea, validation, build, launch, growth — rather than a single workshop or one-off session.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card h-100 text-center"><h5>Local + Global</h5><p class="text-soft small mb-0">A Purnia, Bihar foundation paired with wider connections through the INNOP Global network, subject to program fit.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card h-100 text-center"><h5>People + Technology + Business</h5><p class="text-soft small mb-0">Mentors, technical capability and business know-how are brought together around each founder, instead of leaving them to find each separately.</p></div></div>
+    </div>
+    <p class="text-soft text-center small mt-4 mb-0">This describes the intended model and differentiation INNOP Global India is building toward — not a claim that the approach is unique in the market.</p>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Who Is This For</span>
+      <h2 class="mt-2">An Ecosystem For People Who Want To Build</h2>
+      <p class="text-soft mt-2" style="max-width:720px;margin-inline:auto;">Whether you have an idea, a startup, expertise to share, capital to deploy or simply the desire to learn and build, there is a place to explore within the INNOP Global India ecosystem.</p>
+    </div>
+    <div class="focus-grid reveal">
+      <div class="focus-chip"><span>Founder</span></div>
+      <div class="focus-chip"><span>Developer</span></div>
+      <div class="focus-chip"><span>Student</span></div>
+      <div class="focus-chip"><span>Professional</span></div>
+      <div class="focus-chip"><span>Mentor</span></div>
+      <div class="focus-chip"><span>Investor</span></div>
+      <div class="focus-chip"><span>Business Leader</span></div>
+      <div class="focus-chip"><span>Innovator</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO CAN APPLY -->
+<section class="section section-mist">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Who Can Apply</span>
+      <h2 class="mt-2">Four Ways To Join The Ecosystem</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><path d="M4.5 16.5c0-3 3.5-5.5 7.5-5.5s7.5 2.5 7.5 5.5"/><circle cx="12" cy="7" r="3.5"/></svg>
+          <h5 class="mt-2">Startup / Founder</h5>
+          <p class="text-soft small">Idea-stage founders, early-stage startups, existing businesses and product builders can seek validation, mentorship, upskilling, product support, marketing, sales, business development and network access — whatever combination fits where the venture is today.</p>
+          <button type="button" class="btn-know-more mb-2" data-service-title="Startup / Founder" data-service-modal="Open to idea-stage founders with nothing built yet, early-stage startups already testing a product, existing small businesses looking to grow, and technical builders shaping a product on their own. What you can seek through the ecosystem depends on your stage: validation and mentorship early on, then product, technology, marketing, sales, business-development and networking support as the venture matures. Access to any specific service depends on program availability and fit — applying does not guarantee funding, a development team or a specific outcome.">Know More</button>
+          <div><button type="button" class="btn btn-grad btn-sm" data-apply-type="Startup / Founder">Apply as Startup</button></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"/><path d="M9 8h6"/></svg>
+          <h5 class="mt-2">Mentor</h5>
+          <p class="text-soft small">Experienced professionals, entrepreneurs, domain experts and technology or business leaders can contribute time and expertise to support founders working through the accelerator stages.</p>
+          <button type="button" class="btn-know-more mb-2" data-service-title="Mentor" data-service-modal="Mentors are typically experienced founders, business professionals, technologists or domain specialists with real operating experience to draw on. Useful expertise spans startup strategy, technology, product, marketing, sales, finance and legal/regulatory basics. Mentors contribute through structured or informal conversations, reviewing a founder's plan, or offering feedback at a specific stage — the exact format depends on availability and the founder's needs. Mentors may be matched with founders whose stage and sector overlap with their own experience.">Know More</button>
+          <div><button type="button" class="btn btn-grad btn-sm" data-apply-type="Mentor">Join as Mentor</button></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><path d="M3 10h18l-1.5 9h-15z"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <h5 class="mt-2">Investor</h5>
+          <p class="text-soft small">Angels, investors, investment professionals and organizations can join the ecosystem to meet founders and stay close to what is being built from Bihar.</p>
+          <button type="button" class="btn-know-more mb-2" data-service-title="Investor" data-service-modal="Individual angels, investment professionals and organizations interested in the venture ecosystem coming out of Bihar and the wider INNOP Global network are welcome to join. Being part of the ecosystem may mean visibility into founders and ventures at different stages, informal conversations, or participation in relevant events — the specific format is still being defined. Joining the network does not imply guaranteed investment opportunities, deal flow, or introductions; interaction with founders depends on program stage and mutual fit.">Know More</button>
+          <div><button type="button" class="btn btn-grad btn-sm" data-apply-type="Investor">Join as Investor</button></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="partner-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.6" fill="currentColor" stroke="none"/></svg>
+          <h5 class="mt-2">Individual</h5>
+          <p class="text-soft small">Developers, students, professionals, innovators and aspiring entrepreneurs can explore the ecosystem even without a startup idea yet.</p>
+          <button type="button" class="btn-know-more mb-2" data-service-title="Individual" data-service-modal="Students, developers, working professionals, innovators and anyone considering entrepreneurship — with or without a concrete idea yet — can join as an individual. What individuals may seek includes practical learning, mentorship, networking with founders and mentors, early exposure to how startups are built, relevant skills, and collaboration opportunities with founders who need a hand. It is a reasonable entry point for people who want to explore the startup world before committing to a venture of their own.">Know More</button>
+          <div><button type="button" class="btn btn-grad btn-sm" data-apply-type="Individual">Apply as Individual</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-mist-green">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Process</span>
+      <h2 class="mt-2">How It Works</h2>
+    </div>
+    <div class="flow-wrap reveal">
+      <div class="flow-track">
+        <div class="flow-step is-active"><div class="flow-node mono" style="font-size:.9rem;">01</div><span class="flow-label">Apply</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">02</div><span class="flow-label">Review</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">03</div><span class="flow-label">Connect</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">04</div><span class="flow-label">Select</span></div>
+        <div class="flow-connector"></div>
+        <div class="flow-step"><div class="flow-node mono" style="font-size:.9rem;">05</div><span class="flow-label">Accelerate</span></div>
+      </div>
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-md-6 col-lg reveal"><div class="program-card h-100"><span class="eyebrow">01</span><h5 class="mt-2">Apply</h5><p class="text-soft small mb-0">Complete the relevant application for your applicant type — startup, mentor, investor or individual — with your details and vision.</p></div></div>
+      <div class="col-md-6 col-lg reveal"><div class="program-card h-100"><span class="eyebrow">02</span><h5 class="mt-2">Review</h5><p class="text-soft small mb-0">The relevant team reviews the information submitted to understand your stage, needs and fit with the ecosystem.</p></div></div>
+      <div class="col-md-6 col-lg reveal"><div class="program-card h-100"><span class="eyebrow">03</span><h5 class="mt-2">Connect</h5><p class="text-soft small mb-0">A discussion may take place with relevant ecosystem representatives to clarify your application and answer questions.</p></div></div>
+      <div class="col-md-6 col-lg reveal"><div class="program-card h-100"><span class="eyebrow">04</span><h5 class="mt-2">Select</h5><p class="text-soft small mb-0">Suitable participants may be invited into a relevant program, mentorship relationship or the wider network.</p></div></div>
+      <div class="col-md-6 col-lg reveal"><div class="program-card h-100"><span class="eyebrow">05</span><h5 class="mt-2">Accelerate</h5><p class="text-soft small mb-0">Participants may access relevant support based on their stage and requirements, moving through the accelerator stages that apply to them.</p></div></div>
+    </div>
+    <p class="text-soft text-center mt-4 small">Applications are reviewed by the relevant team. Selection is not automatic and depends on program fit and availability.</p>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">People Behind The Mission</span>
+      <h2 class="mt-2">Our Team</h2>
+      <p class="text-soft mt-2" style="max-width:640px;margin-inline:auto;">Leadership profiles for INNOP Global India are being finalized. The cards below are development placeholders, not real people.</p>
+    </div>
+    <!-- MOCK DATA — REPLACE BEFORE PRODUCTION. Rendered from MOCK_DATA.team in assets/js/main.js. Every card is a placeholder, not a real person; see README.md replacement checklist. -->
+    <div class="row g-4" id="teamGrid"></div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section class="section section-mist" id="network">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Our Network</span>
+      <h2 class="mt-2">From Purnia To The World</h2>
+    </div>
+    <div class="network-wrap reveal">
+      <canvas id="network-canvas"></canvas>
+      <div class="network-overlay">
+        <div class="hub-pill"><span class="dot"></span>Purnia, Bihar — India HQ</div>
+        <div class="hub-pill"><span class="dot"></span>Bihar — Regional Ecosystem</div>
+        <div class="hub-pill"><span class="dot"></span>India — National Initiative</div>
+        <div class="hub-pill"><span class="dot"></span>Greeley, Colorado, USA — INNOP Global Parent HQ</div>
+        <div class="hub-pill"><span class="dot"></span>Global Network — Founders · Mentors · Investors</div>
+        <p class="mt-4 mb-0" style="max-width:640px; color:rgba(255,255,255,.85); font-size:.92rem;">INNOP Global India connects Bihar-origin talent to India's national startup landscape and, through the wider INNOP Global ecosystem, to an international network of mentors and industry contacts — subject to program fit and availability.</p>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-1">
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card h-100"><span class="eyebrow">Purnia</span><p class="text-soft small mt-2 mb-0">The India headquarters of the initiative — where the ecosystem is being built from, and the base for local programs and events.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card h-100"><span class="eyebrow">Bihar</span><p class="text-soft small mt-2 mb-0">The regional talent and founder ecosystem — students, developers, professionals and entrepreneurs across the state.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card h-100"><span class="eyebrow">India</span><p class="text-soft small mt-2 mb-0">The national business, technology and entrepreneurial ecosystem that founders, mentors and investors from beyond Bihar can join.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="program-card h-100"><span class="eyebrow">Global</span><p class="text-soft small mt-2 mb-0">Connections through the wider INNOP Global organization, headquartered in Greeley, Colorado, USA, and its international network — subject to program fit.</p></div></div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <span class="eyebrow d-block mb-3">How The Ecosystem Interacts</span>
+      <div class="d-inline-flex flex-column align-items-center gap-1 mono small text-soft">
+        <span>Founders</span><span>↕</span><span>Mentors</span><span>↕</span><span>Developers</span><span>↕</span><span>Investors</span><span>↕</span><span>Business Professionals</span><span>↕</span><span>Global Network</span>
+      </div>
+      <p class="text-soft small mt-3" style="max-width:600px;margin-inline:auto;">These groups are meant to interact rather than sit in isolated tracks — a founder may draw on a mentor and a developer, a mentor may connect a founder to an investor, and the global network extends reach for all of them where relevant.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PURNIA -->
+<section class="section" id="why-purnia">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Why Purnia?</span>
+      <h2 class="mt-2">Innovation Should Not Be Limited To Metropolitan Cities.</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+          <h5 class="mt-2">Talent</h5>
+          <p class="text-soft small mb-0">Bihar has students, professionals, developers, entrepreneurs and people with ideas who can contribute to an innovation ecosystem — talent is not the limiting factor.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M12 8v8"/></svg>
+          <h5 class="mt-2">Access</h5>
+          <p class="text-soft small mb-0">Startup resources — mentors, accelerators, investors — are often concentrated in major cities. This initiative aims to create greater local access from within Bihar itself.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.7" y1="10.5" x2="15.3" y2="7.5"/><line x1="8.7" y1="13.5" x2="15.3" y2="16.5"/></svg>
+          <h5 class="mt-2">Community</h5>
+          <p class="text-soft small mb-0">A local ecosystem can bring founders, mentors and professionals physically closer together, making informal, everyday collaboration easier to sustain.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="9" width="7" height="12"/><rect x="14" y="3" width="7" height="18"/></svg>
+          <h5 class="mt-2">Proximity</h5>
+          <p class="text-soft small mb-0">Building closer to the people being served can create practical advantages in how quickly support reaches a founder who needs it.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="partner-card h-100"><svg class="icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,15 21,5"/><polyline points="15,5 21,5 21,11"/></svg>
+          <h5 class="mt-2">Global Connection</h5>
+          <p class="text-soft small mb-0">Being based in Purnia does not mean thinking locally — the goal is local foundation, national opportunity and global connection, together.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <div class="glass p-4 d-inline-block" style="max-width:640px;">
+        <p class="fs-5 mb-0 mono">Local foundation + national opportunity + global connection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT FOUNDERS MAY NEED -->
+<section class="section section-mist">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">The Ecosystem</span>
+      <h2 class="mt-2">What Founders May Need</h2>
+    </div>
+    <div class="row g-4 justify-content-center mb-5">
+      <div class="col-6 col-md-2 reveal"><div class="stat-box glass"><div class="stat-num mono" style="font-size:1.2rem;">Ideas</div></div></div>
+      <div class="col-6 col-md-2 reveal"><div class="stat-box glass"><div class="stat-num mono" style="font-size:1.2rem;">People</div></div></div>
+      <div class="col-6 col-md-2 reveal"><div class="stat-box glass"><div class="stat-num mono" style="font-size:1.2rem;">Technology</div></div></div>
+      <div class="col-6 col-md-2 reveal"><div class="stat-box glass"><div class="stat-num mono" style="font-size:1.2rem;">Business</div></div></div>
+      <div class="col-6 col-md-2 reveal"><div class="stat-box glass"><div class="stat-num mono" style="font-size:1.05rem;">Networks</div></div></div>
+      <div class="col-6 col-md-2 reveal"><div class="stat-box glass"><div class="stat-num mono" style="font-size:1rem;">Global</div></div></div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-9 reveal">
+        <div class="program-card p-4">
+          <p class="text-soft mb-0">A founder may need different capabilities at different stages — from validating an idea to finding the right technology or reaching customers. Early on, the need is often clarity: is this problem real, and for whom? Later, it shifts toward execution — a working product, a first sale, a registered business. The purpose of the ecosystem is to bring the right kind of support closer to whichever stage a founder is actually at, rather than offering the same thing to everyone regardless of where they stand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION -->
+<section class="section section-mist-green" id="apply">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">Ready To Build?</span>
+      <h2 class="mt-2">Choose How You Want To Participate</h2>
+      <p class="text-soft mt-2">Applications are reviewed by the team. This does not guarantee acceptance, funding or a development team.</p>
+    </div>
+
+    <div class="row justify-content-center reveal mb-4">
+      <div class="col-lg-9">
+        <div class="glass p-4">
+          <span class="eyebrow">What Happens After You Apply?</span>
+          <ol class="text-soft small mt-3 mb-0" style="padding-left:1.2rem; line-height:1.9;">
+            <li>We receive your application through the channel you choose — WhatsApp or Google Form.</li>
+            <li>Relevant information is reviewed by the team.</li>
+            <li>The appropriate team may contact you to discuss your application further.</li>
+            <li>Your application may be considered for relevant programs, mentorship or ecosystem participation.</li>
+            <li>Participation depends on suitability, availability and program requirements — it is not automatic.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center reveal">
+      <div class="col-lg-9">
+        <form class="contact-form glass" id="applyForm" novalidate>
+
+          <div class="step-progress"><div class="dot done" data-step="1"></div><div class="dot" data-step="2"></div><div class="dot" data-step="3"></div><div class="dot" data-step="4"></div><div class="dot" data-step="5"></div></div>
+
+          <!-- STEP 1: APPLICANT TYPE -->
+          <div class="form-step active" data-step="1">
+            <h5 class="mb-3">Step 1 — Applicant Type</h5>
+            <div class="row g-3">
+              <div class="col-6 col-md-3"><div class="applicant-choice" data-type="Startup / Founder"><svg class="icon" viewBox="0 0 24 24"><path d="M4.5 16.5c0-3 3.5-5.5 7.5-5.5s7.5 2.5 7.5 5.5"/><circle cx="12" cy="7" r="3.5"/></svg><div class="small fw-semibold mt-1">Startup / Founder</div></div></div>
+              <div class="col-6 col-md-3"><div class="applicant-choice" data-type="Mentor"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"/></svg><div class="small fw-semibold mt-1">Mentor</div></div></div>
+              <div class="col-6 col-md-3"><div class="applicant-choice" data-type="Investor"><svg class="icon" viewBox="0 0 24 24"><path d="M3 10h18l-1.5 9h-15z"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div class="small fw-semibold mt-1">Investor</div></div></div>
+              <div class="col-6 col-md-3"><div class="applicant-choice" data-type="Individual"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/></svg><div class="small fw-semibold mt-1">Individual</div></div></div>
+            </div>
+            <input type="hidden" id="applicantType" required>
+            <div class="d-flex justify-content-end mt-4"><button type="button" class="btn btn-grad btn-sm next-step">Next</button></div>
+          </div>
+
+          <!-- STEP 2: PERSONAL INFORMATION -->
+          <div class="form-step" data-step="2">
+            <h5 class="mb-3">Step 2 — Personal Information</h5>
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label">Full Name *</label><input type="text" class="form-control" id="fName" required></div>
+              <div class="col-md-6"><label class="form-label">Email *</label><input type="email" class="form-control" id="fEmail" required></div>
+              <div class="col-md-6"><label class="form-label">Phone Number *</label><input type="tel" class="form-control" id="fPhone" required></div>
+              <div class="col-md-6"><label class="form-label">Age</label><input type="number" min="13" max="100" class="form-control" id="fAge"></div>
+              <div class="col-md-4"><label class="form-label">Gender</label><select class="form-select" id="fGender"><option value="">Prefer not to say</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+              <div class="col-md-8"><label class="form-label">Current Address *</label><input type="text" class="form-control" id="fAddress" required></div>
+              <div class="col-md-6"><label class="form-label">City *</label><input type="text" class="form-control" id="fCity" required></div>
+              <div class="col-md-6"><label class="form-label">State *</label><input type="text" class="form-control" id="fState" required></div>
+              <div class="col-md-6"><label class="form-label">Designation / Current Role *</label><input type="text" class="form-control" id="fRole" required></div>
+              <div class="col-md-6"><label class="form-label">Qualification *</label><input type="text" class="form-control" id="fQualification" required></div>
+            </div>
+            <div class="d-flex justify-content-between mt-4"><button type="button" class="btn btn-outline-line btn-sm prev-step">Back</button><button type="button" class="btn btn-grad btn-sm next-step">Next</button></div>
+          </div>
+
+          <!-- STEP 3: PROFESSIONAL / TYPE-SPECIFIC INFORMATION -->
+          <div class="form-step" data-step="3">
+            <h5 class="mb-3">Step 3 — Professional Information</h5>
+
+            <div class="type-fields" data-for="Startup / Founder">
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label">Startup Name</label><input type="text" class="form-control" id="sName"></div>
+                <div class="col-md-6"><label class="form-label">Startup Stage</label><select class="form-select" id="sStage"><option>Idea</option><option>Early-stage</option><option>Growth</option><option>Existing Business</option></select></div>
+                <div class="col-md-6"><label class="form-label">Industry</label><input type="text" class="form-control" id="sIndustry"></div>
+                <div class="col-md-6"><label class="form-label">Team Size</label><input type="number" min="1" class="form-control" id="sTeam"></div>
+                <div class="col-12"><label class="form-label">Problem</label><textarea class="form-control" rows="2" id="sProblem"></textarea></div>
+                <div class="col-12"><label class="form-label">Solution</label><textarea class="form-control" rows="2" id="sSolution"></textarea></div>
+                <div class="col-md-6"><label class="form-label">Current Product Status</label><input type="text" class="form-control" id="sStatus"></div>
+                <div class="col-md-6"><label class="form-label">Website</label><input type="url" class="form-control" id="sWebsite"></div>
+                <div class="col-md-6"><label class="form-label">Funding Status</label><input type="text" class="form-control" id="sFunding"></div>
+                <div class="col-md-6"><label class="form-label">Revenue (if applicable)</label><input type="text" class="form-control" id="sRevenue"></div>
+                <div class="col-12"><label class="form-label">Support Required</label><textarea class="form-control" rows="2" id="sSupport"></textarea></div>
+              </div>
+            </div>
+
+            <div class="type-fields" data-for="Mentor">
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label">Area of Expertise</label><input type="text" class="form-control" id="mExpertise"></div>
+                <div class="col-md-6"><label class="form-label">Years of Experience</label><input type="number" min="0" class="form-control" id="mYears"></div>
+                <div class="col-md-6"><label class="form-label">Current Organization</label><input type="text" class="form-control" id="mOrg"></div>
+                <div class="col-md-6"><label class="form-label">LinkedIn</label><input type="url" class="form-control" id="mLinkedin"></div>
+                <div class="col-12"><label class="form-label">Professional Background</label><textarea class="form-control" rows="2" id="mBackground"></textarea></div>
+                <div class="col-12"><label class="form-label">Mentoring Experience</label><textarea class="form-control" rows="2" id="mExperience"></textarea></div>
+                <div class="col-md-6"><label class="form-label">Areas of Support</label><input type="text" class="form-control" id="mSupport"></div>
+                <div class="col-md-6"><label class="form-label">Availability</label><input type="text" class="form-control" id="mAvailability"></div>
+              </div>
+            </div>
+
+            <div class="type-fields" data-for="Investor">
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label">Organization</label><input type="text" class="form-control" id="iOrg"></div>
+                <div class="col-md-6"><label class="form-label">LinkedIn / Website</label><input type="url" class="form-control" id="iLink"></div>
+                <div class="col-md-6"><label class="form-label">Investment Experience</label><input type="text" class="form-control" id="iExperience"></div>
+                <div class="col-md-6"><label class="form-label">Preferred Startup Stage</label><input type="text" class="form-control" id="iStage"></div>
+                <div class="col-12"><label class="form-label">Investment Interests / Preferred Industries</label><textarea class="form-control" rows="2" id="iInterests"></textarea></div>
+                <div class="col-12"><label class="form-label">Investment Approach</label><textarea class="form-control" rows="2" id="iApproach"></textarea></div>
+              </div>
+            </div>
+
+            <div class="type-fields" data-for="Individual">
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label">Current Skills</label><input type="text" class="form-control" id="pSkills"></div>
+                <div class="col-md-6"><label class="form-label">Education</label><input type="text" class="form-control" id="pEducation"></div>
+                <div class="col-12"><label class="form-label">Interests</label><textarea class="form-control" rows="2" id="pInterests"></textarea></div>
+                <div class="col-12"><label class="form-label">Career Background</label><textarea class="form-control" rows="2" id="pCareer"></textarea></div>
+                <div class="col-12"><label class="form-label">Startup Experience (if any)</label><textarea class="form-control" rows="2" id="pStartupExp"></textarea></div>
+                <div class="col-md-6"><label class="form-label">LinkedIn / Portfolio / Website</label><input type="url" class="form-control" id="pLink"></div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4"><button type="button" class="btn btn-outline-line btn-sm prev-step">Back</button><button type="button" class="btn btn-grad btn-sm next-step">Next</button></div>
+          </div>
+
+          <!-- STEP 4: VISION & REQUIREMENTS -->
+          <div class="form-step" data-step="4">
+            <h5 class="mb-3">Step 4 — Vision &amp; Requirements</h5>
+            <div class="row g-3">
+              <div class="col-12"><label class="form-label">Your Vision *</label><textarea class="form-control" rows="3" id="fVision" required placeholder="What do you want to build, achieve or contribute?"></textarea></div>
+              <div class="col-12"><label class="form-label">Why INNOP Global India?</label><textarea class="form-control" rows="2" id="fWhy"></textarea></div>
+            </div>
+            <div class="d-flex justify-content-between mt-4"><button type="button" class="btn btn-outline-line btn-sm prev-step">Back</button><button type="button" class="btn btn-grad btn-sm next-step">Next</button></div>
+          </div>
+
+          <!-- STEP 5: SUBMISSION METHOD -->
+          <div class="form-step" data-step="5">
+            <h5 class="mb-3">Step 5 — Submission Method</h5>
+            <p class="text-soft small">Submit Through</p>
+            <div class="segmented mb-4" id="submitSegmented">
+              <button type="button" class="active" data-mode="whatsapp">WhatsApp</button>
+              <button type="button" data-mode="googleform">Google Form</button>
+            </div>
+            <div id="whatsappSubmitBlock">
+              <p class="text-soft small">We'll open WhatsApp with your application details pre-filled. Review the message before sending.</p>
+              <button type="submit" class="btn btn-grad">Send via WhatsApp <svg class="icon" viewBox="0 0 24 24"><path d="M4 20l1.4-4.2A8 8 0 1 1 9 19l-5 1z"/></svg></button>
+            </div>
+            <div id="googleFormSubmitBlock" class="d-none">
+              <p class="text-soft small">Continue to the INNOP Global India Google Form in a new tab. Your details entered here are not automatically transferred.</p>
+              <button type="button" id="googleFormBtn" class="btn btn-grad">Continue to Google Form <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="11" height="11" rx="2"/><polyline points="10,3 21,3 21,14"/><line x1="21" y1="3" x2="11" y2="13"/></svg></button>
+            </div>
+            <div class="privacy-notice mt-4">By submitting this application, you agree that the information provided may be used by INNOP Global India for application review and communication regarding relevant programs or opportunities. This is a development version — a full <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a> will be published before production.</div>
+            <div class="d-flex justify-content-start mt-4"><button type="button" class="btn btn-outline-line btn-sm prev-step">Back</button></div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="mt-2">Frequently Asked Questions</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-9 reveal">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Who can apply?</button></h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Founders, startups, developers, mentors, investors, professionals and individuals interested in the ecosystem can apply.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Do I need an existing startup?</button></h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. Idea-stage founders, early-stage startups and existing businesses can all apply.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Where is INNOP Global India headquartered?</button></h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Purnia, Bihar, India.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Can people outside Bihar apply?</button></h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. While the initiative is rooted in Bihar, applications are open to founders, mentors, investors and individuals elsewhere in India and beyond.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">How can I apply?</button></h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Use the "Apply Now" button or the Application section below, choose your applicant type, and submit via WhatsApp or the Google Form.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Can I apply as a mentor?</button></h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes, experienced professionals, entrepreneurs and domain experts are welcome to join as mentors.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">Can investors join?</button></h2>
+            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes, angels, investors, investment professionals and organizations can apply to join the network.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">Does INNOP guarantee funding?</button></h2>
+            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. INNOP Global India provides guidance, mentorship, resources and access to a network. Funding, acceptance and outcomes are not guaranteed.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">Why is the accelerator being built in Purnia specifically?</button></h2>
+            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Startup infrastructure in India tends to concentrate in a handful of large cities, even though talent is far more widely distributed. Purnia was chosen as the India headquarters to test whether a serious, well-designed ecosystem can be built and sustained from a smaller city, closer to the people it aims to serve, while still connecting outward to national and global networks.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">How is my application reviewed?</button></h2>
+            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The relevant team reviews the information you submit — your stage, background and stated vision — to understand what kind of support might fit. Depending on the application, a follow-up conversation may take place before any decision on participation is made. Review timelines can vary with volume and program availability.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-md-3">
+        <h6>INNOP Global India</h6>
+        <p class="small" style="color:#aebedb; max-width:240px;">Building an ecosystem where Bihar-origin talent can build for India and the world. India Headquarters: Purnia, Bihar, India. Parent organization: <a href="https://innopglobal.com/" target="_blank" rel="noopener" style="display:inline;">INNOP Global ↗</a></p>
+        <a href="#apply" style="color:#fff; font-weight:600;">Ready to build? Apply Now →</a>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6>Explore</h6>
+        <a href="#about">About</a>
+        <a href="#mission">Mission</a>
+        <a href="#accelerator">Accelerator</a>
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#network">Network</a>
+        <a href="#apply">Apply</a>
+      </div>
+      <div class="col-6 col-md-3">
+        <h6>Contact</h6>
+        <a href="#" onclick="return false;" style="cursor:default;">Purnia, Bihar, India</a>
+        <a href="https://wa.me/919959059985" target="_blank" rel="noopener">WhatsApp: +91 99590 59985</a>
+        <a href="https://innopglobal.com/" target="_blank" rel="noopener">INNOP Global — Parent Website ↗</a>
+      </div>
+      <div class="col-6 col-md-4">
+        <h6>Follow INNOP Global</h6>
+        <div class="footer-social" id="footerSocial"></div>
+        <p class="small mt-2" style="color:#8fa1c2;">Official channels of the parent organization, INNOP Global.</p>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+      <div>&copy; 2026 INNOP Global India. All rights reserved.</div>
+      <div class="d-flex gap-3 flex-wrap">
+        <span>Purnia · Bihar · India</span><span>·</span><span>Part of the INNOP Global ecosystem</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ABOUT MODAL -->
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--teal);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon"><svg class="icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,15 21,5"/><polyline points="15,5 21,5 21,11"/></svg></div>
+          <div><h5 class="modal-title mb-1">About INNOP Global India</h5><div class="org-modal-meta">Purnia, Bihar, India</div></div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-soft">INNOP Global India is the India-focused initiative of the wider INNOP Global ecosystem, being developed from Purnia, Bihar to connect founders, innovators, developers, professionals, mentors and investors with opportunities across India and the INNOP Global network.</p>
+        <div class="whw-flow">
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><line x1="10" y1="16" x2="10" y2="20"/><line x1="14" y1="16" x2="14" y2="20"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></div><h6>Why</h6><p>Innovation and entrepreneurship are often concentrated in a handful of metropolitan hubs, leaving talent in regions like Bihar without easy access to mentors, skills and networks.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12 A8 8 0 0 1 17 6"/><polyline points="17,2 17,6 13,6"/><path d="M20 12 A8 8 0 0 1 7 18"/><polyline points="7,22 7,18 11,18"/></svg></div><h6>How</h6><p>Through an accelerator model spanning idea, validation, upskilling, build, registration guidance, marketing, sales and scale — supported by mentorship and, where relevant, the wider INNOP Global network.</p></div>
+          <div class="whw-connector"></div>
+          <div class="whw-step"><div class="whw-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg></div><h6>What</h6><p>A startup and innovation ecosystem for founders, mentors, investors and individuals, headquartered in Purnia, Bihar, connected to INNOP Global's US-based accelerator network.</p></div>
+        </div>
+        <hr class="my-4">
+        <span class="eyebrow">What INNOP Global India Wants To Provide</span>
+        <div class="mt-2 mb-4">
+          <span class="tag-pill">Knowledge</span><span class="tag-pill">Mentorship</span><span class="tag-pill">Upskilling</span><span class="tag-pill">Technology</span><span class="tag-pill">Product Development</span><span class="tag-pill">Design</span><span class="tag-pill">Marketing</span><span class="tag-pill">Business Development</span><span class="tag-pill">Sales</span><span class="tag-pill">Networking</span><span class="tag-pill">Global Connections</span>
+        </div>
+        <p class="text-soft small mb-0">INNOP Global (parent organization): a mentorship hub for entrepreneurs, startup teams and independent professionals, headquartered in Greeley, Colorado, USA, focused on AgTech, BioTech, CleanTech and AI/IoT/Big Data ventures. Source: <a href="https://innopglobal.com/" target="_blank" rel="noopener">innopglobal.com</a>.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button>
+        <a href="https://innopglobal.com/" target="_blank" rel="noopener" class="btn btn-grad btn-sm">Visit INNOP Global <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="5" width="11" height="11" rx="2"/><polyline points="10,3 21,3 21,14"/><line x1="21" y1="3" x2="11" y2="13"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APPLICANT TYPE CHOOSER (from floating Apply button) -->
+<div class="modal fade" id="applyChooserModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--blue);">
+        <h5 class="modal-title">How would you like to participate?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column gap-2">
+        <button type="button" class="btn btn-outline-line chooser-option" data-type="Startup / Founder">🚀 Startup / Founder</button>
+        <button type="button" class="btn btn-outline-line chooser-option" data-type="Mentor">🧑‍🏫 Mentor</button>
+        <button type="button" class="btn btn-outline-line chooser-option" data-type="Investor">💼 Investor</button>
+        <button type="button" class="btn btn-outline-line chooser-option" data-type="Individual">💡 Individual</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SHARED DYNAMIC MODAL (Services / Team) -->
+<div class="modal fade" id="dynamicModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content org-modal">
+      <div class="modal-header org-modal-header" style="--accent:var(--blue);">
+        <div class="d-flex align-items-center gap-3">
+          <div class="org-modal-icon" id="dynamicModalIcon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg></div>
+          <div><h5 class="modal-title mb-1" id="dynamicModalTitle"></h5><div class="org-modal-meta" id="dynamicModalMeta"></div></div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"><p class="text-soft" id="dynamicModalBody"></p></div>
+      <div class="modal-footer"><button class="btn btn-outline-line btn-sm" data-bs-dismiss="modal">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY / TERMS -->
+<div class="modal fade" id="privacyModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content org-modal">
+    <div class="modal-header org-modal-header" style="--accent:var(--deep-blue);"><h5 class="modal-title">Privacy Policy</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+    <div class="modal-body"><p class="text-soft">[Content to be updated] — a full privacy policy for INNOP Global India will be published here.</p></div>
+  </div></div>
+</div>
+<div class="modal fade" id="termsModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content org-modal">
+    <div class="modal-header org-modal-header" style="--accent:var(--deep-blue);"><h5 class="modal-title">Terms of Use</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+    <div class="modal-body"><p class="text-soft">[Content to be updated] — full terms of use for INNOP Global India will be published here.</p></div>
+  </div></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
