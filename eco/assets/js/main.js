@@ -43,6 +43,13 @@ const SOCIAL_LINKS = {
   });
 })();
 
+/* ---------- Reveal-on-scroll (also covers elements injected after initial load) ---------- */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revealObserver.unobserve(en.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+function revealObserverLater(el){ revealObserver.observe(el); }
+
 /* ---------- Services (rendered from data so each gets a consistent "Know More" modal) ---------- */
 const SERVICES = [
   {title:'Mentorship', icon:'<circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"/>', desc:'Guidance from experienced founders, professionals and domain experts across the ecosystem.', modal:'One-on-one and group mentorship connecting you with experienced professionals who can guide your idea, product or business decisions. Availability depends on mentor capacity and program stage.'},
@@ -130,13 +137,6 @@ document.addEventListener('click', (e) => {
   document.getElementById('dynamicModalBody').textContent = btn.dataset.serviceModal;
   bootstrap.Modal.getOrCreateInstance(document.getElementById('dynamicModal')).show();
 });
-
-/* ---------- Reveal-on-scroll (also covers elements injected after initial load) ---------- */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revealObserver.unobserve(en.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-function revealObserverLater(el){ revealObserver.observe(el); }
 
 /* ---------- Counters ---------- */
 document.querySelectorAll('.stat-num[data-count]').forEach(el => {
