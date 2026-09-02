@@ -11,34 +11,37 @@ const INNOP_CONFIG = {
     facebook: "https://www.facebook.com/Innovative-Preneurship-InnoP-869392506772440/",
     youtube: "",
     x: "https://twitter.com/innopglobal"
-  }
+  },
+  whatsappCommunityUrl: "https://chat.whatsapp.com/HrxY8R4igpOBREiodn9BIZ"
 };
 const SOCIAL_LINKS = {
   linkedin: INNOP_CONFIG.socialLinks.linkedin,
-  instagram: "",
+  instagram: INNOP_CONFIG.socialLinks.instagram,
   facebook: INNOP_CONFIG.socialLinks.facebook,
-  youtube: "",
+  youtube: INNOP_CONFIG.socialLinks.youtube,
   x: INNOP_CONFIG.socialLinks.x,
-  whatsapp: "https://wa.me/" + INNOP_CONFIG.whatsappNumber
+  whatsapp: "https://wa.me/" + INNOP_CONFIG.whatsappNumber,
+  whatsappCommunity: INNOP_CONFIG.whatsappCommunityUrl
+};
+const SOCIAL_ICONS = {
+  facebook: '<rect x="2" y="2" width="20" height="20" rx="4"/><circle cx="7" cy="8" r="1.4" fill="currentColor" stroke="none"/><line x1="7" y1="11" x2="7" y2="17"/><path d="M11 17v-6M11 11.5c0-1 1-1.7 2.2-1.7 1.6 0 2.8 1 2.8 3v4.2" fill="none"/>',
+  x: '<rect x="2" y="2" width="20" height="20" rx="4"/><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/>',
+  linkedin: '<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><path d="M11 17v-4c0-1.6 1.2-2.7 2.6-2.7 1.6 0 2.9 1.1 2.9 2.9v3.8" fill="none"/>',
+  instagram: '<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/>',
+  youtube: '<rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/>',
+  whatsapp: '<path d="M4 20l1.4-4.2A8 8 0 1 1 9 19l-5 1z"/>',
+  whatsappCommunity: '<path d="M4 20l1.4-4.2A8 8 0 1 1 9 19l-5 1z"/>'
 };
 
 /* ---------- Footer social icons (only verified links rendered) ---------- */
 (function renderFooterSocial(){
   const wrap = document.getElementById('footerSocial');
-  const icons = {
-    facebook: '<rect x="2" y="2" width="20" height="20" rx="4"/><circle cx="7" cy="8" r="1.4" fill="currentColor" stroke="none"/><line x1="7" y1="11" x2="7" y2="17"/><path d="M11 17v-6M11 11.5c0-1 1-1.7 2.2-1.7 1.6 0 2.8 1 2.8 3v4.2" fill="none"/>',
-    x: '<rect x="2" y="2" width="20" height="20" rx="4"/><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/>',
-    linkedin: '<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><path d="M11 17v-4c0-1.6 1.2-2.7 2.6-2.7 1.6 0 2.9 1.1 2.9 2.9v3.8" fill="none"/>',
-    instagram: '<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/>',
-    youtube: '<rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/>',
-    whatsapp: '<path d="M4 20l1.4-4.2A8 8 0 1 1 9 19l-5 1z"/>'
-  };
-  Object.keys(icons).forEach(key => {
+  ['facebook','x','linkedin','instagram','youtube','whatsapp'].forEach(key => {
     const url = SOCIAL_LINKS[key];
     if (!url) return;
     const a = document.createElement('a');
     a.href = url; a.target = '_blank'; a.rel = 'noopener';
-    a.innerHTML = `<svg class="icon" viewBox="0 0 24 24">${icons[key]}</svg>`;
+    a.innerHTML = `<svg class="icon" viewBox="0 0 24 24">${SOCIAL_ICONS[key]}</svg>`;
     wrap.appendChild(a);
   });
 })();
@@ -179,21 +182,10 @@ themeBtn.addEventListener('click', () => {
     : '<svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>';
 });
 
-/* ---------- Floating Apply widget ---------- */
-const fabWrap = document.getElementById('fabWrap');
-const fabToggle = document.getElementById('fabToggle');
-if (fabWrap && fabToggle) {
-  fabToggle.addEventListener('click', () => fabWrap.classList.toggle('open'));
-  document.addEventListener('click', (e) => {
-    if (!fabWrap.contains(e.target) && !e.target.closest('[data-apply-type]')) fabWrap.classList.remove('open');
-  });
-}
-
-/* ---------- Applicant-type presets (FAB items, Who Can Apply cards) jump straight to the form ---------- */
+/* ---------- Applicant-type presets (Who Can Apply cards) jump straight to the form ---------- */
 document.querySelectorAll('[data-apply-type]').forEach(el => {
   el.addEventListener('click', () => {
     presetApplicantType(el.dataset.applyType);
-    fabWrap.classList.remove('open');
     document.getElementById('apply').scrollIntoView({ behavior:'smooth', block:'start' });
   });
 });
