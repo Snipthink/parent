@@ -41,6 +41,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
 .btn-link{color:var(--green);text-decoration:none;font-size:13px;font-weight:600;transition:all 0.2s}
 .btn-link:hover{letter-spacing:1px}
 
+/* Play Store icon */
+.play-icon{display:inline-block;width:14px;height:14px;margin-right:8px;vertical-align:-2px;background:currentColor;-webkit-mask:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTMgM2wxOCA5LTE4IDlWM3oiLz48L3N2Zz4=') center/contain no-repeat;mask:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTMgM2wxOCA5LTE4IDlWM3oiLz48L3N2Zz4=') center/contain no-repeat}
+
 /* Gradient Text */
 .gradient-text{background:linear-gradient(135deg,var(--green),#2ecc71,var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
