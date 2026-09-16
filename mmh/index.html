@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('mmh-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>My Medical History | Store &amp; Organize Your Family's Medical Records</title>
+  <meta name="description" content="Store and arrange your family's medical history — reports, prescriptions, and test results for every family member, organized in one place.">
+  <link rel="canonical" href="https://example.com/mmh/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="My Medical History | Store &amp; Organize Your Family's Medical Records">
+  <meta property="og:description" content="Store and arrange your family's medical history — reports, prescriptions, and test results for every family member, organized in one place.">
+  <meta property="og:image" content="assets/images/logo.png">
+  <meta property="og:url" content="https://example.com/mmh/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My Medical History | Store &amp; Organize Your Family's Medical Records">
+  <meta name="twitter:description" content="Store and arrange your family's medical history — reports, prescriptions, and test results for every family member, organized in one place.">
+  <meta name="twitter:image" content="assets/images/logo.png">
+
+  <meta name="theme-color" content="#f5f8fb">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-navbar" id="siteNavbar">
+    <div class="container-xl">
+      <div class="navbar-inner">
+        <a class="brand" href="#top">
+          <img src="assets/images/logo.png" alt="My Medical History logo" width="34" height="34">
+          <span>My Medical History</span>
+        </a>
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+            <i class="bi bi-moon-stars" aria-hidden="true"></i>
+          </button>
+          <a class="btn btn-primary js-play-store-link" href="#download" aria-describedby="playStoreNote"><i class="bi bi-google-play" aria-hidden="true"></i> Download App</a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-panel" id="mobilePanel">
+        <a href="#top">Home</a>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <div class="theme-toggle-row">
+          <span>Dark theme</span>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+            <i class="bi bi-moon-stars" aria-hidden="true"></i>
+          </button>
+        </div>
+        <a class="btn btn-primary btn-block js-play-store-link" href="#download"><i class="bi bi-google-play" aria-hidden="true"></i> Download App</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container-xl">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Family medical record organizer</p>
+            <h1>Store and Arrange<br><span class="gradient-text">Your Family's Medical History.</span></h1>
+            <p class="lead">Keep medical reports, prescriptions, test results, and health history organized for yourself and every member of your family — all in one place.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary js-play-store-link" href="#download"><i class="bi bi-google-play" aria-hidden="true"></i> Download the App</a>
+              <a class="btn btn-outline" href="#features">Explore Features</a>
+            </div>
+            <div class="hero-tags">
+              <span><i class="bi bi-people" aria-hidden="true"></i> Family records</span>
+              <span><i class="bi bi-folder2-open" aria-hidden="true"></i> Medical records</span>
+              <span><i class="bi bi-graph-up" aria-hidden="true"></i> Test history</span>
+              <span><i class="bi bi-file-earmark-text" aria-hidden="true"></i> Reports</span>
+              <span><i class="bi bi-shield-check" aria-hidden="true"></i> Privacy</span>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-visual-decor" aria-hidden="true"></div>
+            <div class="app-device phone">
+              <div class="device-frame">
+                <div class="device-screen">
+                  <img src="assets/screens/dashboard.png" alt="My Medical History app screen showing an all test results dashboard with normal, borderline, and abnormal counts">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="section section--tight">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Built Around Your Medical Records</p>
+        </div>
+        <div class="trust-strip">
+          <div class="trust-item reveal">
+            <h3>Organized</h3>
+            <p>Keep records structured and easier to find.</p>
+          </div>
+          <div class="trust-item reveal">
+            <h3>Historical</h3>
+            <p>Review test results across dates.</p>
+          </div>
+          <div class="trust-item reveal">
+            <h3>Private</h3>
+            <p>Keep control over when medical information is shared.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App showcase -->
+    <section class="section section--alt" id="app-showcase">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Product Tour</p>
+          <h2>See My Medical History in Action</h2>
+          <p>Real screens from the application.</p>
+        </div>
+        <div class="showcase-grid">
+          <article class="showcase-card reveal">
+            <div class="app-device phone">
+              <div class="device-frame">
+                <div class="device-screen">
+                  <img src="assets/screens/image-upload.png" alt="Placeholder screen for storing medical images inside My Medical History" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <h3>Store Medical Images</h3>
+            <p>Capture and organize medical report images, prescriptions, and other important medical documents.</p>
+            <div class="showcase-tags"><span>Camera capture</span><span>Gallery import</span></div>
+          </article>
+          <article class="showcase-card reveal">
+            <div class="app-device phone">
+              <div class="device-frame">
+                <div class="device-screen">
+                  <img src="assets/screens/pdf-upload.png" alt="Placeholder screen for uploading PDF medical reports into My Medical History" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <h3>Keep Your PDFs Organized</h3>
+            <p>Store original medical PDFs alongside your other health records for easy access when needed.</p>
+            <div class="showcase-tags"><span>Original file kept</span><span>Quick access</span></div>
+          </article>
+          <article class="showcase-card reveal">
+            <div class="app-device phone">
+              <div class="device-frame">
+                <div class="device-screen">
+                  <img src="assets/screens/alt-history.png" alt="My Medical History app screen showing ALT test results tracked across five dates with a trend graph" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <h3>Track Your Test Results</h3>
+            <p>Organize structured test results and view historical changes through test-wise history and visual progress tracking.</p>
+            <div class="showcase-tags"><span>Test history</span><span>Trend view</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Family medical records — the app's central purpose -->
+    <section class="section" id="family">
+      <div class="container-xl">
+        <div class="family-spotlight">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6 reveal">
+              <p class="eyebrow">The Core of My Medical History</p>
+              <h2>One App for Your Family's Medical Records</h2>
+              <p>Storing and arranging your family's medical history is what My Medical History is built around. Each person's records are kept separately within the application so reports and test history can be organized by individual.</p>
+              <div class="family-grid mt-4">
+                <div class="family-card"><div class="avatar">Me</div><h3>Myself</h3></div>
+                <div class="family-card"><div class="avatar">P</div><h3>Parent</h3></div>
+                <div class="family-card"><div class="avatar">C</div><h3>Child</h3></div>
+                <div class="family-card"><div class="avatar">S</div><h3>Spouse</h3></div>
+                <div class="family-card"><div class="avatar">O</div><h3>Other</h3></div>
+              </div>
+            </div>
+            <div class="col-lg-6 reveal">
+              <div class="app-device phone" style="margin: 0 auto;">
+                <div class="device-frame">
+                  <div class="device-screen">
+                    <img src="assets/screens/family-people.png" alt="My Medical History app screen listing People profiles including a sample demo patient and Myself" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Why keep your medical history -->
+    <section class="section" id="why">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">The Problem</p>
+          <h2>Why Keep Your Medical History?</h2>
+        </div>
+        <div class="card-grid">
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-shuffle" aria-hidden="true"></i></div>
+            <h3>Medical Records Get Scattered</h3>
+            <p>Reports can end up across phones, WhatsApp conversations, email, paper files, and different folders.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-clock-history" aria-hidden="true"></i></div>
+            <h3>Medical History Matters</h3>
+            <p>Looking at one test result gives limited historical context. Keeping dated records makes it easier to revisit changes over time.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-people" aria-hidden="true"></i></div>
+            <h3>Family Records Are Hard to Organize</h3>
+            <p>Families may have medical documents belonging to multiple people. Separate profiles help keep records organized.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-search" aria-hidden="true"></i></div>
+            <h3>Finding Old Reports Takes Time</h3>
+            <p>Important reports may be difficult to locate when visiting a doctor or reviewing previous medical information.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></div>
+            <h3>Test Results Change Over Time</h3>
+            <p>Historical records can help users see how a particular test result has changed across different dates.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-lock" aria-hidden="true"></i></div>
+            <h3>Privacy Matters</h3>
+            <p>Medical records are highly personal. The application is designed around keeping users in control of their records.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--alt" id="how-it-works">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">How It Works</p>
+          <h2>Four Simple Steps</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-step reveal">
+            <div class="step-num">1</div>
+            <h3>Create Your Profile</h3>
+            <p>Start with yourself or add family members.</p>
+          </div>
+          <div class="timeline-step reveal">
+            <div class="step-num">2</div>
+            <h3>Add Medical Records</h3>
+            <p>Capture images or upload medical PDFs.</p>
+          </div>
+          <div class="timeline-step reveal">
+            <div class="step-num">3</div>
+            <h3>Organize Test Results</h3>
+            <p>Keep structured results associated with the correct person and report.</p>
+          </div>
+          <div class="timeline-step reveal">
+            <div class="step-num">4</div>
+            <h3>Review Your History</h3>
+            <p>View historical results, test trends, reports, and supporting information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core features -->
+    <section class="section" id="features">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Core Features</p>
+          <h2>Everything to Keep Your Records Organized</h2>
+        </div>
+        <div class="card-grid">
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-images" aria-hidden="true"></i></div>
+            <h3>Medical Document Storage</h3>
+            <p>Keep important medical images and documents organized in one place.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></div>
+            <h3>PDF Support</h3>
+            <p>Store original PDF medical reports without converting them into images.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-people-fill" aria-hidden="true"></i></div>
+            <h3>Family Profiles</h3>
+            <p>Maintain separate medical histories for different family members.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i></div>
+            <h3>Test History</h3>
+            <p>Keep historical records of recurring tests across multiple dates.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></div>
+            <h3>Progress Graphs</h3>
+            <p>View numerical test results across time through simple historical graphs.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-speedometer2" aria-hidden="true"></i></div>
+            <h3>Medical Dashboard</h3>
+            <p>Review available test results and their current interpretation status.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-building" aria-hidden="true"></i></div>
+            <h3>Lab Information</h3>
+            <p>Keep laboratory and diagnostic-center information associated with imported results where available.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-stars" aria-hidden="true"></i></div>
+            <h3>AI-Assisted Report Import</h3>
+            <p>Use an external AI assistant to convert medical reports into structured CSV data that can be imported into the application. External AI services have their own privacy policies, and AI-assisted results are not guaranteed to be accurate.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-share" aria-hidden="true"></i></div>
+            <h3>Secure Medical Data Sharing</h3>
+            <p>Share medical information when needed while keeping the user's records organized.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test history & analysis -->
+    <section class="section section--alt" id="test-history">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Medical Test History &amp; Analysis</p>
+          <h2>See Your Test History Over Time</h2>
+          <p>When multiple reports are collected over months or years, My Medical History can organize recurring test results into a continuous history.</p>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-12 col-sm-6 col-lg-4 col-xl reveal">
+            <div class="test-card">
+              <p class="test-name">HbA1c</p>
+              <p class="test-value">6.5%</p>
+              <span class="status-pill status-attention">Attention</span>
+              <dl>
+                <dt>First recorded</dt><dd>01 Sep 2025</dd>
+                <dt>Latest date</dt><dd>01 Jul 2026</dd>
+                <dt>Results</dt><dd>4</dd>
+              </dl>
+              <span class="sample-tag">Sample data</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl reveal">
+            <div class="test-card">
+              <p class="test-name">Fasting Glucose</p>
+              <p class="test-value">92 mg/dL</p>
+              <span class="status-pill status-normal">Normal</span>
+              <dl>
+                <dt>First recorded</dt><dd>10 Mar 2025</dd>
+                <dt>Latest date</dt><dd>12 Sep 2026</dd>
+                <dt>Results</dt><dd>4</dd>
+              </dl>
+              <span class="sample-tag">Sample data</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl reveal">
+            <div class="test-card">
+              <p class="test-name">Hemoglobin</p>
+              <p class="test-value">13.8 g/dL</p>
+              <span class="status-pill status-normal">Normal</span>
+              <dl>
+                <dt>First recorded</dt><dd>01 Sep 2025</dd>
+                <dt>Latest date</dt><dd>01 Jul 2026</dd>
+                <dt>Results</dt><dd>5</dd>
+              </dl>
+              <span class="sample-tag">Sample data</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl reveal">
+            <div class="test-card">
+              <p class="test-name">ALT</p>
+              <p class="test-value">72 U/L</p>
+              <span class="status-pill status-abnormal">Abnormal</span>
+              <dl>
+                <dt>First recorded</dt><dd>01 Sep 2025</dd>
+                <dt>Latest date</dt><dd>01 Jul 2026</dd>
+                <dt>Results</dt><dd>5</dd>
+              </dl>
+              <span class="sample-tag">Sample data</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl reveal">
+            <div class="test-card">
+              <p class="test-name">Cholesterol</p>
+              <p class="test-value">220 mg/dL</p>
+              <span class="status-pill status-abnormal">Abnormal</span>
+              <dl>
+                <dt>First recorded</dt><dd>05 Apr 2026</dd>
+                <dt>Latest date</dt><dd>01 Jul 2026</dd>
+                <dt>Results</dt><dd>2</dd>
+              </dl>
+              <span class="sample-tag">Sample data</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7 reveal">
+            <div class="graph-card">
+              <p class="eyebrow">Illustration only</p>
+              <h3>HbA1c — Historical Result</h3>
+              <div class="graph-visual" role="img" aria-label="Bar chart illustrating HbA1c rising from 5.8 percent to 6.5 percent across four sample dates">
+                <div class="bar" style="height:40%"><span>5.8%</span></div>
+                <div class="bar" style="height:55%"><span>6.0%</span></div>
+                <div class="bar" style="height:70%"><span>6.2%</span></div>
+                <div class="bar" style="height:100%"><span>6.5%</span></div>
+              </div>
+              <div class="graph-labels">
+                <span>Sep 2025</span><span>Jan 2026</span><span>Apr 2026</span><span>Jul 2026</span>
+              </div>
+              <span class="sample-tag">Sample data — Demo Patient</span>
+            </div>
+          </div>
+          <div class="col-lg-5 reveal">
+            <div class="app-device phone">
+              <div class="device-frame">
+                <div class="device-screen">
+                  <img src="assets/screens/compare-tests.png" alt="My Medical History app screen comparing Hemoglobin results over time with a trend line and reference range band" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Medical analysis explanation -->
+    <section class="section" id="analysis">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">From Reports to Organized Medical Data</p>
+          <h2>How Report Data Becomes Useful History</h2>
+        </div>
+        <div class="workflow reveal">
+          <div class="workflow-step">Medical Report</div>
+          <div class="workflow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+          <div class="workflow-step">Report Data Extraction</div>
+          <div class="workflow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+          <div class="workflow-step">Structured Medical Results</div>
+          <div class="workflow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+          <div class="workflow-step">Reference &amp; Interpretation</div>
+          <div class="workflow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+          <div class="workflow-step">Historical Tracking</div>
+        </div>
+        <div class="callout-box reveal">
+          <p><strong>How reference ranges work:</strong> The application can organize structured medical information and apply available reference information where appropriate. Reference values may depend on age, sex, laboratory method, specimen, pregnancy status, body measurements, and other clinical context.</p>
+          <p>If reliable information is unavailable, the application may mark a result as requiring review rather than making an unsupported interpretation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy & security -->
+    <section class="section" id="privacy">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Privacy &amp; Security</p>
+          <h2>Your Medical Records Belong to You</h2>
+        </div>
+        <div class="card-grid">
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-file-earmark-lock" aria-hidden="true"></i></div>
+            <h3>Private Medical Records</h3>
+            <p>Medical information is sensitive and should be handled carefully.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-person-check" aria-hidden="true"></i></div>
+            <h3>Person-Based Organization</h3>
+            <p>Records are associated with the selected individual.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-toggle2-on" aria-hidden="true"></i></div>
+            <h3>Controlled Sharing</h3>
+            <p>Users decide when and where to share their records.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-hdd-network" aria-hidden="true"></i></div>
+            <h3>Secure File Handling</h3>
+            <p>The application is designed to use controlled file access and secure sharing mechanisms.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-key" aria-hidden="true"></i></div>
+            <h3>Protected Medical Export</h3>
+            <p>Where supported, protected medical data exports can be encrypted and protected by a user-created PIN.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI privacy warning -->
+    <section class="section section--alt" id="ai-privacy">
+      <div class="container-xl">
+        <div class="ai-warning reveal">
+          <h3><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> Using External AI Services</h3>
+          <p>My Medical History can allow users to copy structured prompts and medical-report data into an AI service such as ChatGPT, Gemini, Claude, or another compatible service.</p>
+          <ul>
+            <li>These services are external to My Medical History and may have their own privacy policies, data retention policies, and terms.</li>
+            <li>Users should review the privacy policy of the AI service they choose before sharing medical information.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who is it for -->
+    <section class="section" id="who">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Who Is It For?</p>
+          <h2>Built for Anyone Managing Medical Records</h2>
+        </div>
+        <div class="card-grid">
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-person" aria-hidden="true"></i></div>
+            <h3>Individuals</h3>
+            <p>Keep your personal medical history organized.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-people" aria-hidden="true"></i></div>
+            <h3>Families</h3>
+            <p>Maintain separate records for family members.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-emoji-smile" aria-hidden="true"></i></div>
+            <h3>Parents</h3>
+            <p>Keep children's medical documents organized.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-heart-pulse" aria-hidden="true"></i></div>
+            <h3>Patients With Long-Term Records</h3>
+            <p>Track historical reports and recurring test results.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-hand-thumbs-up" aria-hidden="true"></i></div>
+            <h3>Caregivers</h3>
+            <p>Organize medical information for people they help care for.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon-badge"><i class="bi bi-folder2" aria-hidden="true"></i></div>
+            <h3>Anyone Managing Multiple Reports</h3>
+            <p>Keep medical documents easier to find and revisit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="section section--alt" id="disclaimer">
+      <div class="container-xl">
+        <div class="disclaimer-box reveal">
+          <h2><i class="bi bi-info-circle" aria-hidden="true"></i> Important Medical Information</h2>
+          <p>My Medical History is designed to help users organize, store, review, and track medical records and test information.</p>
+          <p>It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+          <p>Reference ranges and automated interpretations may vary depending on age, sex, laboratory, testing method, specimen, clinical context, and other factors.</p>
+          <p>Always consult a qualified healthcare professional for diagnosis, treatment decisions, or interpretation of concerning medical findings.</p>
+          <p><strong>Do not use the application as an emergency medical service.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="accordion reveal" id="faqAccordion" style="max-width: 820px; margin: 0 auto;">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq1h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">What is My Medical History?</button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">My Medical History is an app that helps you organize, store, and track medical reports, prescriptions, and test results over time.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq2h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Can I store medical reports?</button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. You can capture and store images of medical reports, prescriptions, and other documents inside the app.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq3h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Can I upload PDFs?</button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Original PDF medical reports can be stored alongside your other health records without converting them into images.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq4h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Can I manage family members?</button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. You can create separate profiles for family members so records stay organized by person.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq5h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Can I track test results over time?</button>
+            </h3>
+            <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Recurring tests can be organized into a history so you can see how results have changed across dates.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq6h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">Can I see historical graphs?</button>
+            </h3>
+            <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faq6h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Numerical test results can be viewed across time through simple historical graphs within the app.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq7h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">Does the app diagnose diseases?</button>
+            </h3>
+            <div id="faq7" class="accordion-collapse collapse" aria-labelledby="faq7h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">No. My Medical History helps organize and track medical information. It does not diagnose diseases and is not a substitute for professional medical advice.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq8h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">How does medical report analysis work?</button>
+            </h3>
+            <div id="faq8" class="accordion-collapse collapse" aria-labelledby="faq8h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Structured medical information can be organized against available reference information where appropriate. When reliable information isn't available, a result may be marked as requiring review instead of an unsupported interpretation.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq9h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">Does the app use AI?</button>
+            </h3>
+            <div id="faq9" class="accordion-collapse collapse" aria-labelledby="faq9h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">The app supports an optional, user-initiated workflow where structured prompts and report data can be copied to an external AI service to help convert reports into structured data. This is optional and uses services external to the app.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq10h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">Is my medical data shared automatically?</button>
+            </h3>
+            <div id="faq10" class="accordion-collapse collapse" aria-labelledby="faq10h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">No. Sharing is user-initiated. You decide when and where to share your records.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq11h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11" aria-expanded="false" aria-controls="faq11">Can I export my medical information?</button>
+            </h3>
+            <div id="faq11" class="accordion-collapse collapse" aria-labelledby="faq11h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Where supported, medical data exports can be protected and, where supported, encrypted with a user-created PIN.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq12h">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12" aria-expanded="false" aria-controls="faq12">Can I use the app without an AI service?</button>
+            </h3>
+            <div id="faq12" class="accordion-collapse collapse" aria-labelledby="faq12h" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. AI-assisted report import is optional. You can add and organize records manually without using any external AI service.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="section" id="download">
+      <div class="container-xl">
+        <div class="cta-band reveal">
+          <h2>Keep Your Medical History With You.</h2>
+          <p>Organize your reports today and make your medical history easier to revisit tomorrow.</p>
+          <a class="btn btn-primary js-play-store-link" href="#download" id="playStoreNote"><i class="bi bi-google-play" aria-hidden="true"></i> Download My Medical History</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-xl">
+      <div class="footer-grid">
+        <div>
+          <h3>My Medical History</h3>
+          <p>Your Health Records, Always with You</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Disclaimer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span class="js-current-year">2026</span> My Medical History</span>
+        <span>Made for people who want their medical records organized.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

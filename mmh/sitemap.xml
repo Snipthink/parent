@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Placeholder sitemap. Replace https://example.com/mmh/ with the final deployed domain before publishing. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/mmh/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.com/mmh/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://example.com/mmh/terms.html</loc>
+  </url>
+  <url>
+    <loc>https://example.com/mmh/contact.html</loc>
+  </url>
+</urlset>
