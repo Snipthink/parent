@@ -15,8 +15,8 @@ const DISCORD_URL = "";
 
 const GAME_CONFIG = {
   developer: "SnipThinK Software Private Limited",
-  privacyPolicyUrl: "",
-  termsUrl: "",
+  privacyPolicyUrl: "privacy.html",
+  termsUrl: "terms.html",
   contactUrl: "", // https://... or mailto:your-confirmed-address
   qrCode: null, // e.g. assets/images/google-play-qr.png — supply a REAL QR.
 };
@@ -25,17 +25,26 @@ const GAME_ASSETS = {
   hero: "assets/images/ludo-punch-action-banner.png",
   logo: "assets/images/ludo-punch-pro-cover.png",
   cover: "assets/images/ludo-punch-pro-cover.png",
-  menu: null,
-  board: null,
-  lobby: null,
-  preview: null,
+  menu: "assets/screenshots/Screenshot from 2026-10-02 07-55-29.png",
+  board: "assets/screenshots/Screenshot from 2026-10-02 07-56-55.png",
+  proBoard: "assets/screenshots/Screenshot from 2026-10-02 07-57-14.png",
+  lobby: "assets/screenshots/Screenshot from 2026-10-02 07-57-47.png",
+  preview: "assets/screenshots/Screenshot from 2026-10-02 07-56-30.png",
   splash: null,
-  characterSelection: null,
+  characterSelection: "assets/screenshots/Screenshot from 2026-10-02 07-55-42.png",
+  moreCharacters: "assets/screenshots/Screenshot from 2026-10-02 07-56-05.png",
+  nearby: "assets/screenshots/Screenshot from 2026-10-02 07-57-24.png",
+  settings: "assets/screenshots/Screenshot from 2026-10-02 07-56-19.png",
   playStore: null,
-  gardenBoard: null,
+  gardenBoard: "assets/screenshots/Screenshot from 2026-10-02 07-56-40.png",
   characterBoard: null,
-  futureBoard: null,
+  futureBoard: "assets/boards/forest-friends-concept.png",
 };
+
+// Pixel-accurate display crops: remove the desktop/device surround with CSS,
+// retaining original files and every pixel of the actual game UI.
+const SCREEN_CROP = { x: 22, y: 48, width: 282, height: 581, sourceWidth: 316, sourceHeight: 644 };
+const BOARD_CROP = { x: 24, y: 191, width: 280, height: 280, sourceWidth: 316, sourceHeight: 644 };
 
 // A symbol is a UI selection marker, not a representation of in-game art.
 // Add image: "assets/characters/name.webp" to replace a marker with real art.
@@ -62,22 +71,24 @@ const CHARACTERS = [
 ];
 
 const BOARDS = [
-  { id: "classic", name: "Classic board", title: "CLASSIC ENERGY", description: "The familiar four-color world of Ludo, full of life. Board shown in official promotional artwork.", asset: "board", fallback: GAME_ASSETS.hero, status: "PROMOTIONAL VIEW", color: "#ffda32", comingSoon: false },
-  { id: "garden", name: "Colorful garden", title: "A FRESH LITTLE ESCAPE", description: "A garden-inspired visual direction. The actual board preview and release availability are yet to be confirmed.", asset: "gardenBoard", status: "COMING SOON", color: "#58d491", comingSoon: true },
-  { id: "character", name: "Character-themed", title: "A BOARD WITH PERSONALITY", description: "More ways to bring character to classic Ludo. Theme artwork and availability will be shared when confirmed.", asset: "characterBoard", status: "COMING SOON", color: "#b391ff", comingSoon: true },
-  { id: "future", name: "The next adventure", title: "MORE BOARDS. MORE FUN.", description: "Future board concepts can introduce new looks to a familiar favorite. No release date has been announced.", asset: "futureBoard", status: "COMING SOON", color: "#5caaff", comingSoon: true },
+  { id: "classic", name: "Classic", title: "THE CLASSIC. ALWAYS A FAVORITE.", description: "Clean tiles. Four familiar colors. The original Ludo look, with the character pieces shown in your game.", asset: "board", status: "ACTUAL GAMEPLAY", color: "#ffda32", crop: BOARD_CROP, detail: "FAMILIAR COLORS · TIMELESS FUN" },
+  { id: "pro", name: "Pro", title: "CLASSIC LUDO. A MODERN FINISH.", description: "Glossy colored yards, sculpted tiles and a gold-trimmed finish. This is the Pro board, captured directly from the app.", asset: "proBoard", status: "ACTUAL GAMEPLAY", color: "#879bff", crop: BOARD_CROP, detail: "GLOSSY TILES · PREMIUM FINISH" },
+  { id: "garden", name: "Forest", title: "TAKE YOUR NEXT ROLL OUTSIDE.", description: "Little houses, leafy gardens and stone paths bring the Forest board to life. The footballer and character pieces shown here are from the real game.", asset: "gardenBoard", status: "ACTUAL GAMEPLAY", color: "#58d491", crop: BOARD_CROP, detail: "GARDEN HOMES · FOREST PATHS" },
+  { id: "future", name: "Forest friends", title: "A LITTLE WORLD OF CHARACTER.", description: "Frogs, owls and dogs meet a footballer, cricket batsman, an elderly character with a walking stick and a kid. An illustrated tree-house board concept—not an available game board or screenshot.", asset: "futureBoard", status: "CONCEPT ART · NOT IN GAME", color: "#a5d86b", concept: true, detail: "ILLUSTRATED CONCEPT · NOT IN GAME" },
 ];
 
 // Every real screenshot goes inside the reusable CSS phone frame.
 const SCREENSHOTS = [
   { asset: "menu", title: "HOME / MENU", variant: "phone-black", icon: "i-dice" },
-  { asset: "cover", title: "OFFICIAL COVER ART", variant: "phone-gold", icon: "i-bolt", promotional: true },
   { asset: "characterSelection", title: "CHARACTER SELECTION", variant: "phone-purple", icon: "i-users" },
-  { asset: "board", title: "GAMEPLAY / BOARD", variant: "phone-black", icon: "i-grid" },
-  { asset: "lobby", title: "GAME LOBBY", variant: "phone-purple", icon: "i-globe" },
-  { asset: "preview", title: "GAME PREVIEW", variant: "phone-black", icon: "i-dice" },
-  { asset: "playStore", title: "PLAY STORE PREVIEW", variant: "phone-gold", icon: "i-play" },
-  { asset: "splash", title: "SPLASH SCREEN", variant: "phone-black", icon: "i-bolt" },
+  { asset: "gardenBoard", title: "FOREST GAMEPLAY", variant: "phone-gold", icon: "i-grid" },
+  { asset: "proBoard", title: "PRO GAMEPLAY", variant: "phone-black", icon: "i-grid" },
+  { asset: "board", title: "CLASSIC GAMEPLAY", variant: "phone-gold", icon: "i-grid" },
+  { asset: "moreCharacters", title: "MORE FIGHTERS", variant: "phone-purple", icon: "i-users" },
+  { asset: "preview", title: "BOARD SELECTION", variant: "phone-black", icon: "i-grid" },
+  { asset: "nearby", title: "PLAY NEARBY", variant: "phone-gold", icon: "i-users" },
+  { asset: "lobby", title: "ONLINE MATCHMAKING", variant: "phone-purple", icon: "i-globe" },
+  { asset: "settings", title: "GAME SETTINGS", variant: "phone-black", icon: "i-bolt" },
 ];
 
 const FAQS = [
@@ -87,7 +98,7 @@ const FAQS = [
   ["Can I play with friends?", "Yes. Play with friends and family locally on the same device, or use online multiplayer."],
   ["Can I play against the computer?", "Yes. Computer mode lets you play against computer opponents, including when you are offline."],
   ["Can I choose different characters?", "Yes. Choose a character that matches your personality. The available character selection may change with game updates."],
-  ["Are there different boards?", "Yes. Ludo Punch Pro includes different visual board themes. Items marked Coming Soon are future previews and are not being presented as currently playable."],
+  ["Are there different boards?", "Yes. The screenshots show Classic, Pro and Forest board themes. Forest Friends is a promotional illustration labeled Concept Art, not a currently playable board."],
   ["Will more characters be added?", "New characters can be introduced through future updates. No specific release date has been announced."],
   ["Will more boards be added?", "New boards and visual experiences can arrive through future updates. Check the official game channels for announcements."],
   ["Where can I download Ludo Punch Pro?", "Use the Google Play download buttons on this website. The official store link will be activated here once it is configured."],
@@ -214,20 +225,34 @@ CHARACTERS.forEach(character => {
 });
 selectCharacter(CHARACTERS[0]);
 
+function cropImage(src, alt, crop, className = "") {
+  const viewport = element("div", `screenshot-crop ${className}`);
+  viewport.style.aspectRatio = `${crop.width} / ${crop.height}`;
+  const img = element("img");
+  Object.assign(img, { src, alt, width: crop.sourceWidth, height: crop.sourceHeight, loading: "lazy", decoding: "async" });
+  img.style.cssText = `width:${crop.sourceWidth / crop.width * 100}%;left:${-crop.x / crop.width * 100}%;top:${-crop.y / crop.height * 100}%;`;
+  viewport.append(img);
+  return viewport;
+}
+
 function selectBoard(board) {
-  const img = $("#board-image");
-  const image = GAME_ASSETS[board.asset] || board.fallback;
-  const realBoard = !!GAME_ASSETS[board.asset];
-  img.hidden = !image;
-  if (image) { img.src = image; img.alt = realBoard ? `${board.name} — supplied Ludo Punch Pro board preview` : "Ludo board shown in official promotional artwork, not a gameplay screenshot"; }
-  $("#board-placeholder").hidden = !!image;
+  const artwork = $("#board-artwork");
+  const image = GAME_ASSETS[board.asset];
+  artwork.replaceChildren();
+  if (board.crop) artwork.append(cropImage(image, `${board.name} Ludo board cropped from an actual app screenshot; original board pixels preserved`, board.crop, "board-crop"));
+  else {
+    const img = element("img", "concept-board-image");
+    Object.assign(img, { src: image, alt: "Illustrated forest Ludo concept with tree houses, frog, owl, dog, footballer, cricket batsman, elderly character and kid; not an in-game board", width: 1254, height: 1254, loading: "lazy" });
+    artwork.append(img);
+  }
+  $("#board-preview").classList.toggle("is-concept", !!board.concept);
   $("#board-title").textContent = board.title;
-  $("#board-description").textContent = realBoard && board.id === "classic" ? "The familiar four-color Ludo board. A classic look for your next match." : board.description;
-  $("#board-status").textContent = !board.comingSoon && realBoard ? "BOARD PREVIEW" : board.status;
+  $("#board-description").textContent = board.description;
+  $("#board-status").textContent = board.status;
   $("#board-preview").style.borderColor = board.color;
   $("#board-preview").style.background = `radial-gradient(circle,${board.color}30,#0d1728)`;
   $$(".board-option").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.board === board.id)));
-  transitionSelection($(".board-overlay"));
+  transitionSelection(artwork);
 }
 BOARDS.forEach(board => {
   const button = element("button", "board-option");
@@ -235,31 +260,43 @@ BOARDS.forEach(board => {
   button.dataset.board = board.id;
   button.style.setProperty("--board-color", board.color);
   button.setAttribute("aria-pressed", String(board.id === "classic"));
-  const visual = element("span", "board-icon"); visual.append(icon("i-grid"));
-  const copy = element("span"); copy.append(element("h3", "", board.name.toUpperCase()), element("small", "", board.comingSoon ? "COMING SOON" : "THE FAMILIAR FOUR-COLOR CLASSIC"));
+  const visual = element("span", "board-thumb");
+  if (board.crop) visual.append(cropImage(GAME_ASSETS[board.asset], `${board.name} board thumbnail`, board.crop));
+  else { const thumb = element("img"); Object.assign(thumb, { src: GAME_ASSETS[board.asset], alt: "Forest friends concept thumbnail", width: 70, height: 70, loading: "lazy" }); visual.append(thumb); }
+  const copy = element("span", "board-option-copy"); copy.append(element("strong", "board-option-name", board.name.toUpperCase()), element("small", "", board.detail));
   button.append(visual, copy, element("span", "option-arrow", "↗"));
   button.addEventListener("click", () => selectBoard(board));
   $("#board-options").append(button);
 });
 selectBoard(BOARDS[0]);
 
-SCREENSHOTS.forEach(screen => {
-  const item = element("article", "phone-item");
-  const phone = element("div", `phone-mockup ${screen.variant}`);
+function createPhone(asset, title, variant = "phone-black") {
+  const phone = element("div", `phone-mockup ${variant} phone-real`);
   const speaker = element("div", "phone-speaker"); speaker.setAttribute("aria-hidden", "true");
   const display = element("div", "phone-screen");
-  if (GAME_ASSETS[screen.asset]) {
-    const img = element("img");
-    Object.assign(img, { src: GAME_ASSETS[screen.asset], alt: screen.promotional ? "Official Ludo Punch Pro promotional cover, not a gameplay screenshot" : `Ludo Punch Pro ${screen.title.toLowerCase()} screenshot`, loading: "lazy", decoding: "async", width: screen.promotional ? 1254 : 1080, height: screen.promotional ? 1254 : 1920 });
-    display.append(img);
-  } else {
-    const placeholder = element("div", "phone-placeholder");
-    placeholder.append(icon(screen.icon), element("strong", "", screen.title), element("span", "", "SCREENSHOT COMING SOON"), element("p", "", "A real look at the game will be added here."));
-    display.append(placeholder);
-  }
+  display.append(cropImage(GAME_ASSETS[asset], `Actual Ludo Punch Pro ${title.toLowerCase()} screenshot`, SCREEN_CROP));
   phone.append(speaker, display);
+  return phone;
+}
+SCREENSHOTS.forEach(screen => {
+  const item = element("article", "phone-item");
+  const phone = createPhone(screen.asset, screen.title, screen.variant);
   item.append(phone, element("p", "", screen.title));
   $("#screenshots-track").append(item);
+});
+
+// Actual game screens beside the feature copy, in the same phone component.
+const FEATURE_SCREENS = [
+  { asset: "proBoard", title: "Pro board gameplay", variant: "phone-black" },
+  { asset: "nearby", title: "nearby multiplayer options", variant: "phone-gold" },
+  { asset: "characterSelection", title: "character selection", variant: "phone-purple" },
+];
+$$('.feature-visual').forEach((visual, index) => {
+  const screen = FEATURE_SCREENS[index];
+  if (!screen) return;
+  visual.querySelector(":scope > img")?.remove();
+  visual.classList.add("feature-real-screen");
+  visual.prepend(createPhone(screen.asset, screen.title, screen.variant));
 });
 
 $$('[data-scroll]').forEach(button => button.addEventListener("click", () => {
@@ -309,7 +346,7 @@ const information = {
 };
 $$('[data-info]').forEach(link => {
   const info = information[link.dataset.info];
-  if (validUrl(info.url, true)) { link.href = info.url; return; }
+  if (validUrl(info.url, true) || /^(privacy|terms)\.html$/.test(info.url)) { link.href = info.url; return; }
   link.addEventListener("click", event => {
     event.preventDefault();
     $("#info-title").textContent = info.title;

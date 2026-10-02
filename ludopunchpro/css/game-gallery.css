@@ -1,0 +1,36 @@
+/* Actual screenshot presentation. CSS crops are non-destructive. */
+.screenshot-crop{position:relative;overflow:hidden;width:100%;flex-shrink:0;background:#0b1029;isolation:isolate}
+.screenshot-crop>img{position:absolute;display:block;max-width:none!important;height:auto!important;margin:0!important;object-fit:initial!important;border-radius:0!important;transform:none!important;box-shadow:none!important}
+.phone-real{aspect-ratio:auto;padding:10px 8px 11px;background:linear-gradient(120deg,#555c6a,#14151d 12%,#050508 85%,#555c6a)}
+.phone-real .phone-screen{height:auto;display:block;border-radius:26px}
+.phone-real .phone-speaker{display:none}
+.phone-real .phone-screen:after{bottom:4px;width:28%;left:36%;right:auto;height:3px;background:#aab0c07a}
+.phone-real.phone-gold{background:linear-gradient(120deg,#cba850,#3d3227 12%,#181512 85%,#a3854b)}
+.phone-real.phone-purple{background:linear-gradient(120deg,#a089c7,#30273e 12%,#110d19 85%,#9281b6)}
+.phone-item{flex-basis:250px}
+.phones-track{justify-content:flex-start!important;gap:32px}
+.feature-real-screen{height:475px;padding:22px 25px 31px}
+.feature-real-screen .phone-mockup{width:194px;flex-shrink:0;transform:perspective(1000px) rotateY(-5deg) rotate(-3deg)}
+.feature-real-screen.red-visual .phone-mockup{transform:perspective(1000px) rotateY(5deg) rotate(3deg)}
+.feature-real-screen .floating-label{z-index:3}
+.board-layout{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);align-items:stretch;gap:25px}
+.board-preview{display:flex;flex-direction:column;justify-content:flex-start;min-height:0;box-shadow:0 0 65px #f8da3410;transition:border-color .25s,background .25s}
+.board-artwork{position:relative;display:grid;place-items:center;padding:25px 30px 15px;min-height:300px;background-image:radial-gradient(#fff1 1px,transparent 1px);background-size:18px 18px}
+.board-artwork .board-crop{width:min(100%,335px);border-radius:11px;box-shadow:0 18px 45px #0008,0 0 0 1px #ffffff24}
+.board-overlay{position:relative;inset:auto;padding:24px 28px;background:linear-gradient(transparent,#080e20c9);min-height:180px}
+.board-overlay h3{font-size:31px;margin:14px 0 10px}
+.board-overlay p{font-size:12px;max-width:520px;line-height:1.85}
+.concept-board-image{width:min(100%,370px);height:auto;object-fit:contain;filter:drop-shadow(0 14px 20px #0008)}
+.is-concept .pill{background:#a5d86b}
+.board-options{gap:14px;justify-content:center}
+.board-option{min-height:110px;padding:15px 18px;gap:17px}
+.board-thumb{width:76px;height:76px;border-radius:9px;overflow:hidden;display:grid;place-items:center;flex-shrink:0;background:#080e20}
+.board-thumb img{width:100%;height:100%;object-fit:contain}
+.board-thumb .screenshot-crop{height:100%;border-radius:7px}
+.board-option-name{display:block;font-family:var(--heading);font-size:26px;line-height:1.1;margin-bottom:7px}
+.board-option-copy{min-width:0}
+.board-option small{display:block;font-size:8px;letter-spacing:.7px;line-height:1.6}
+.board-option[aria-pressed="true"]{box-shadow:0 0 0 1px var(--primary-yellow),0 5px 35px #ffda3214}
+.board-option .option-arrow{font-size:21px}
+@media(max-width:900px){.board-artwork{padding:22px 18px 10px;min-height:270px}.board-artwork .board-crop{width:min(100%,310px)}.board-option{padding:13px;gap:12px;min-height:100px}.board-thumb{width:60px;height:60px}.board-option-name{font-size:23px}.board-overlay{padding:20px;min-height:170px}.board-overlay h3{font-size:27px}.board-overlay p{font-size:11px}.feature-real-screen{height:425px}.feature-real-screen .phone-mockup{width:175px}}
+@media(max-width:600px){.board-layout{display:flex;gap:16px}.board-artwork{padding:20px 18px 10px;min-height:0}.board-artwork .board-crop{width:min(100%,310px)}.board-options{justify-content:flex-start;gap:12px;padding:2px 2px 13px}.board-option{flex-basis:245px;min-height:95px;gap:13px}.board-option-name{font-size:24px}.board-option small{font-size:7px}.board-thumb{width:59px;height:59px}.board-overlay{min-height:175px;padding:19px 21px 23px}.board-overlay h3{font-size:29px}.board-overlay p{font-size:11px}.concept-board-image{width:100%}.phone-item{flex-basis:240px}.phones-track{gap:24px;padding-inline:max(0px,calc((100% - 240px)/2))}.feature-real-screen{height:425px}.feature-real-screen .phone-mockup{width:175px}}
